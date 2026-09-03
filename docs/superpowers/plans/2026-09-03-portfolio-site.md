@@ -28,7 +28,7 @@
 
 **Files:**
 - Create: `package.json`, `tsconfig.json`, `tsconfig.node.json`, `vite.config.ts`, `tailwind.config.js`, `postcss.config.js`, `index.html`
-- Create: `src/main.tsx`, `src/App.tsx`, `src/App.test.tsx`
+- Create: `src/main.tsx`, `src/App.tsx`, `src/App.test.tsx`, `src/vite-env.d.ts`
 - Create: `src/styles/index.css`
 - Create: `src/utils/contrast.ts`, `src/utils/contrast.test.ts`
 - Create: `src/test/setup.ts`
@@ -383,6 +383,14 @@ describe('App scaffold', () => {
   });
 });
 ```
+
+- [ ] **Step 14b: Write `src/vite-env.d.ts`**
+
+```ts
+/// <reference types="vite/client" />
+```
+
+(Without this, `tsc -b` cannot type-check asset imports like `import heroImage from '../assets/hero.jpg'` in Task 7's `Hero.tsx` — it fails with "Cannot find module '../assets/hero.jpg' or its corresponding type declarations." This surfaced only when `npm run build` ran after Task 12, since the intervening component-only test runs never invoked `tsc`.)
 
 - [ ] **Step 15: Write `src/main.tsx`**
 
