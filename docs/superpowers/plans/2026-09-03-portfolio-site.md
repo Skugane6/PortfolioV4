@@ -318,6 +318,13 @@ This test can't fail yet since `contrast.ts` already exists from Step 10 — tha
 
 ```ts
 import '@testing-library/jest-dom/vitest';
+import { afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+
+// Without vitest's `globals: true`, @testing-library/react's automatic
+// afterEach(cleanup) never registers, so DOM from one test leaks into the
+// next within the same file. Register it explicitly, once, for every test.
+afterEach(cleanup);
 
 class DefaultIntersectionObserver implements IntersectionObserver {
   readonly root: Element | Document | null = null;
@@ -853,7 +860,7 @@ Claude-Session: https://claude.ai/code/session_018qfxsQrxufX2kszSwYk3aH"
 
 ```tsx
 import { describe, it, expect, beforeEach } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import { useActiveSection } from './useActiveSection';
 
 let observedCallback: IntersectionObserverCallback;
@@ -892,16 +899,18 @@ describe('useActiveSection', () => {
 
   it('updates to the topmost intersecting section', () => {
     render(<TestHost ids={['hero', 'work']} />);
-    observedCallback(
-      [
-        {
-          isIntersecting: true,
-          boundingClientRect: { top: 50 } as DOMRectReadOnly,
-          target: document.getElementById('work') as Element,
-        } as IntersectionObserverEntry,
-      ],
-      {} as IntersectionObserver
-    );
+    act(() => {
+      observedCallback(
+        [
+          {
+            isIntersecting: true,
+            boundingClientRect: { top: 50 } as DOMRectReadOnly,
+            target: document.getElementById('work') as Element,
+          } as IntersectionObserverEntry,
+        ],
+        {} as IntersectionObserver
+      );
+    });
     expect(screen.getByTestId('active').textContent).toBe('work');
   });
 });

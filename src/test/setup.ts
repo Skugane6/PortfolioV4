@@ -1,4 +1,11 @@
 import '@testing-library/jest-dom/vitest';
+import { afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+
+// Without vitest's `globals: true`, @testing-library/react's automatic
+// afterEach(cleanup) never registers, so DOM from one test leaks into the
+// next within the same file. Register it explicitly, once, for every test.
+afterEach(cleanup);
 
 class DefaultIntersectionObserver implements IntersectionObserver {
   readonly root: Element | Document | null = null;
