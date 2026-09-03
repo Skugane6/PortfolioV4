@@ -215,6 +215,11 @@ button:focus-visible {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0c'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='700' fill='%23ff5a1f' text-anchor='middle'%3E%C2%A7%3C/text%3E%3C/svg%3E"
+    />
     <title>Searan Kuganesan — Software Engineer</title>
     <meta
       name="description"
@@ -1037,9 +1042,12 @@ export function NavRail() {
   const activeId = useActiveSection(SECTIONS.map((section) => section.id));
 
   return (
+    // Vertical rail, right edge, on desktop; collapses to a fixed bottom bar on
+    // mobile instead of disappearing — narrow viewports still need a way to jump
+    // sections without hand-scrolling past the whole page.
     <nav
       aria-label="Section navigation"
-      className="fixed right-6 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-4 font-mono text-xs tracking-widest md:flex"
+      className="fixed inset-x-0 bottom-0 z-20 flex justify-around border-t border-white/10 bg-void/90 px-4 py-3 font-mono text-[10px] tracking-widest backdrop-blur-sm md:inset-x-auto md:inset-y-1/2 md:bottom-auto md:right-6 md:top-1/2 md:flex-col md:justify-start md:gap-4 md:border-t-0 md:bg-transparent md:px-0 md:py-0 md:text-xs md:backdrop-blur-none md:-translate-y-1/2"
     >
       {SECTIONS.map((section) => (
         <a
@@ -1212,7 +1220,17 @@ function DriftingPoints() {
 
   return (
     <Points ref={pointsRef} positions={positions.current} stride={3}>
-      <PointMaterial transparent color="#ff5a1f" size={0.02} sizeAttenuation depthWrite={false} opacity={0.6} />
+      {/* sizeAttenuation is off on purpose: with it on, a particle that happens to
+          land near the camera's z plane balloons into an oversized "moon" blob —
+          a constant screen-space size keeps every dot uniformly small instead. */}
+      <PointMaterial
+        transparent
+        color="#ff5a1f"
+        size={2}
+        sizeAttenuation={false}
+        depthWrite={false}
+        opacity={0.6}
+      />
     </Points>
   );
 }
@@ -2343,16 +2361,17 @@ npm run preview -- --port 4173 &
 - [ ] **Step 3: Manual desktop pass**
 
 With the preview server running, open `http://localhost:4173` in a browser and confirm:
-- The particle field renders behind the hero name and parallaxes gently with the cursor, then eases out when scrolling to `#work`.
+- The particle field renders behind the hero name and parallaxes gently with the cursor, then eases out when scrolling to `#work`. Every dot should look uniformly small — the first screenshot taken during this check showed one dot ballooned into a large blurred "moon" (a `sizeAttenuation` artifact from a particle landing near the camera's z-plane), fixed in Task 6's `ParticleField.tsx` by using a constant screen-space point size instead.
 - The nav rail on the right highlights `01 WORK` / `02 EXPERIENCE` / `03 SKILLS` / `04 CONTACT` as you scroll past each section.
 - The CraftTraq screenshot renders with its callouts positioned over the correct UI regions.
-- No console errors in devtools.
+- No console errors in devtools. (The first run of this check found a 404 for `favicon.ico`, fixed in `index.html` with an inline SVG data-URI favicon — a real check-list catch, not a placeholder.)
 - In devtools' Performance panel, record ~5 seconds of moving the cursor across the hero: no long frames flagged (frame time should stay comfortably under the 16ms/frame budget the particle field was designed for — see spec §7).
 
 - [ ] **Step 4: Manual mobile-width / reduced-motion pass**
 
 - Resize the browser to a mobile width (< 768px) and reload: confirm the hero shows the static gradient fallback, not the canvas (no WebGL context created — check devtools' Network/Memory or simply confirm no `<canvas>` element exists in the DOM at this width).
 - In devtools, emulate `prefers-reduced-motion: reduce` and reload at desktop width: confirm the same static fallback renders instead of the canvas.
+- Also confirm the nav rail itself is usable at mobile width. The first pass through this check found `NavRail` was `hidden md:flex` — it disappeared entirely below 768px with no substitute, leaving mobile visitors with no way to jump sections, which contradicts the approved spec's "collapses to a slim horizontal bar" on mobile. Fixed in Task 5's `NavRail.tsx` with responsive classes that reflow the same links into a fixed bottom bar below `md:` instead of hiding them.
 
 - [ ] **Step 5: Keyboard-only pass**
 
@@ -2370,6 +2389,8 @@ npx lighthouse http://localhost:4173 --output=json --output-path=./lighthouse-mo
 ```
 
 Expected: the mobile report's `audits["largest-contentful-paint"].numericValue` is under 2500 (ms); note the performance/accessibility category scores. Delete both JSON reports afterward (`rm lighthouse-desktop.json lighthouse-mobile.json`) — they're a one-time check, not build artifacts.
+
+The first run here scored SEO 92/100 on a missing `robots.txt` (Lighthouse's `robots-txt` audit fails outright on a 404, not just a low score) — fixed by adding a plain `public/robots.txt` (`User-agent: *` / `Allow: /`), which also has nothing to do with the excluded-by-spec analytics/contact-form features, so it's in scope as a real Definition-of-Done catch.
 
 - [ ] **Step 8: Stop the preview server**
 

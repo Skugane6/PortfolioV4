@@ -31,7 +31,17 @@ function DriftingPoints() {
 
   return (
     <Points ref={pointsRef} positions={positions.current} stride={3}>
-      <PointMaterial transparent color="#ff5a1f" size={0.02} sizeAttenuation depthWrite={false} opacity={0.6} />
+      {/* sizeAttenuation is off on purpose: with it on, a particle that happens to
+          land near the camera's z plane balloons into an oversized "moon" blob —
+          a constant screen-space size keeps every dot uniformly small instead. */}
+      <PointMaterial
+        transparent
+        color="#ff5a1f"
+        size={2}
+        sizeAttenuation={false}
+        depthWrite={false}
+        opacity={0.6}
+      />
     </Points>
   );
 }
