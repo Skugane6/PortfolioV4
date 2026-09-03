@@ -104,7 +104,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "types": ["@testing-library/jest-dom"]
+    "types": ["@testing-library/jest-dom/vitest"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
@@ -246,7 +246,12 @@ button:focus-visible {
 node_modules
 dist
 .DS_Store
+*.tsbuildinfo
+/vite.config.js
+/vite.config.d.ts
 ```
+
+(The last three entries cover build artifacts `tsc -b`'s composite `tsconfig.node.json` project emits next to `vite.config.ts` — they showed up as untracked cruft the first time `npm run build` ran and needed to be ignored.)
 
 - [ ] **Step 9: Move the image assets into the project structure**
 
@@ -312,7 +317,7 @@ This test can't fail yet since `contrast.ts` already exists from Step 10 — tha
 - [ ] **Step 12: Write `src/test/setup.ts`**
 
 ```ts
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 
 class DefaultIntersectionObserver implements IntersectionObserver {
   readonly root: Element | Document | null = null;
@@ -327,7 +332,8 @@ class DefaultIntersectionObserver implements IntersectionObserver {
 }
 
 if (!('IntersectionObserver' in globalThis)) {
-  // @ts-expect-error jsdom has no IntersectionObserver; this is a minimal test-env stub
+  // jsdom has no runtime IntersectionObserver (the DOM lib types declare it, but nothing
+  // implements it here) — this is a minimal test-env stub.
   globalThis.IntersectionObserver = DefaultIntersectionObserver;
 }
 

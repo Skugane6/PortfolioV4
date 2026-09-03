@@ -1,0 +1,35 @@
+import '@testing-library/jest-dom/vitest';
+
+class DefaultIntersectionObserver implements IntersectionObserver {
+  readonly root: Element | Document | null = null;
+  readonly rootMargin: string = '';
+  readonly thresholds: ReadonlyArray<number> = [];
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords(): IntersectionObserverEntry[] {
+    return [];
+  }
+}
+
+if (!('IntersectionObserver' in globalThis)) {
+  // jsdom has no runtime IntersectionObserver (the DOM lib types declare it, but nothing
+  // implements it here) — this is a minimal test-env stub.
+  globalThis.IntersectionObserver = DefaultIntersectionObserver;
+}
+
+if (!window.matchMedia) {
+  // jsdom has no matchMedia; framer-motion's useReducedMotion and useCanRender3D both
+  // call it. Default to "no preference" so components render their normal (non-reduced)
+  // branch in tests unless a specific test overrides window.matchMedia itself.
+  window.matchMedia = ((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => false,
+  })) as unknown as typeof window.matchMedia;
+}
