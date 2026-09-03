@@ -1,3 +1,23 @@
+import { NavRail } from './components/NavRail';
+import { Hero } from './components/Hero';
+import { FeaturedProject } from './components/FeaturedProject';
+import { Experience } from './components/Experience';
+import { Skills } from './components/Skills';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+
 export function App() {
-  return <div className="min-h-screen bg-void px-6 py-section text-ink">Portfolio scaffold OK</div>;
+  return (
+    <div className="bg-void">
+      <NavRail />
+      <main>
+        <Hero />
+        <FeaturedProject />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
 }

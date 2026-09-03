@@ -1,10 +1,18 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { render } from '@testing-library/react';
 import { App } from './App';
 
-describe('App scaffold', () => {
-  it('renders without crashing', () => {
-    render(<App />);
-    expect(screen.getByText('Portfolio scaffold OK')).toBeInTheDocument();
+vi.mock('./hooks/useCanRender3D', () => ({ useCanRender3D: () => false }));
+
+describe('App', () => {
+  it('renders every section in order with the correct anchor ids', () => {
+    const { container } = render(<App />);
+    const ids = Array.from(container.querySelectorAll('section')).map((el) => el.id);
+    expect(ids).toEqual(['hero', 'work', 'experience', 'skills', 'contact']);
+  });
+
+  it('renders the nav rail', () => {
+    const { container } = render(<App />);
+    expect(container.querySelector('nav[aria-label="Section navigation"]')).not.toBeNull();
   });
 });
