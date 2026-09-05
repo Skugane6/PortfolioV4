@@ -14,11 +14,12 @@ export default {
         'accent-text': 'var(--color-accent-text)',
         'accent-wash': 'var(--color-accent-wash)',
         navy: 'var(--color-navy)',
+        'amber-signal': 'var(--color-amber)',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['"Big Shoulders Display"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['Fraunces', 'ui-serif', 'Georgia', '"Times New Roman"', 'serif'],
+        sans: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Saira Condensed"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Newsreader', 'ui-serif', 'Georgia', '"Times New Roman"', 'serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
       },
       fontSize: {
@@ -29,8 +30,8 @@ export default {
         section: '8rem',
       },
       boxShadow: {
-        'accent-lift': '0 4px 14px rgba(76, 141, 255, 0.35)',
-        'card-glow': '0 0 0 1px rgba(76, 141, 255, 0.25), 0 16px 40px -12px rgba(76, 141, 255, 0.3)',
+        'accent-lift': '0 4px 14px rgba(47, 106, 212, 0.35)',
+        'card-glow': '0 0 0 1px rgba(91, 143, 240, 0.25), 0 16px 40px -12px rgba(91, 143, 240, 0.3)',
       },
     },
   },

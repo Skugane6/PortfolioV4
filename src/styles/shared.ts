@@ -17,7 +17,7 @@ export const cardSurface =
 // Faint blueprint/graph-paper grid, used behind sparse sections (Hero, Contact).
 export const blueprintGrid =
   'pointer-events-none absolute inset-0 ' +
-  'bg-[linear-gradient(to_right,rgba(76,141,255,0.09)_1px,transparent_1px),linear-gradient(to_bottom,rgba(76,141,255,0.09)_1px,transparent_1px)] ' +
+  'bg-[linear-gradient(to_right,rgba(96,128,180,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(96,128,180,0.07)_1px,transparent_1px)] ' +
   'bg-[size:32px_32px]';
 
 // Stamped status/category chip: solid flat fill, white text, no gradient —

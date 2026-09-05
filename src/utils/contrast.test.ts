@@ -13,21 +13,21 @@ describe('contrastRatio', () => {
   // The site is dark-only — these are the actual tokens from index.css.
   describe('the site palette', () => {
     it('meets WCAG AA (>=4.5) for ink on the page background', () => {
-      expect(contrastRatio('#e7eaee', '#0b0e13')).toBeGreaterThanOrEqual(4.5);
+      expect(contrastRatio('#e7ecf3', '#0a0d13')).toBeGreaterThanOrEqual(4.5);
     });
 
     it('meets WCAG AA (>=4.5) for muted ink-dim text on the page background', () => {
-      expect(contrastRatio('#8b94a3', '#0b0e13')).toBeGreaterThanOrEqual(4.5);
+      expect(contrastRatio('#8b94a3', '#0a0d13')).toBeGreaterThanOrEqual(4.5);
     });
 
     it('meets WCAG AA (>=4.5) for accent text/links on the page background', () => {
-      // Deliberately brighter than the raw accent fill (#2563eb, which falls
-      // to ~3.7:1 here) — this is the token text/links actually use.
-      expect(contrastRatio('#4c8dff', '#0b0e13')).toBeGreaterThanOrEqual(4.5);
+      // Deliberately brighter than the raw accent fill (#2f6ad4, which falls
+      // short here) — this is the token text/links actually use.
+      expect(contrastRatio('#5b8ff0', '#0a0d13')).toBeGreaterThanOrEqual(4.5);
     });
 
     it('meets WCAG AA (>=4.5) for white button text on the accent fill', () => {
-      expect(contrastRatio('#ffffff', '#2563eb')).toBeGreaterThanOrEqual(4.5);
+      expect(contrastRatio('#ffffff', '#2f6ad4')).toBeGreaterThanOrEqual(4.5);
     });
   });
 });
