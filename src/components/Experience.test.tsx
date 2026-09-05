@@ -2,7 +2,6 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Experience } from './Experience';
 import { experience, education } from '../data/experience';
-import { secondaryProjects } from '../data/projects';
 
 describe('Experience', () => {
   it('renders the Mitsubishi role with its dates', () => {
@@ -18,17 +17,16 @@ describe('Experience', () => {
     });
   });
 
-  it('renders every secondary project title', () => {
-    render(<Experience />);
-    secondaryProjects.forEach((project) => {
-      expect(screen.getByText(project.name)).toBeInTheDocument();
-    });
-  });
-
   it('renders the education line', () => {
     render(<Experience />);
     expect(
       screen.getByText(`${education.program}, ${education.school} · ${education.graduation}`)
     ).toBeInTheDocument();
+  });
+
+  it('renders the initial cutaway phase and progress readout', () => {
+    render(<Experience />);
+    expect(screen.getByText('HULL CLOSED')).toBeInTheDocument();
+    expect(screen.getByText('00%')).toBeInTheDocument();
   });
 });

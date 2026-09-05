@@ -1,102 +1,202 @@
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { experience, education } from '../data/experience';
-import { secondaryProjects } from '../data/projects';
-import { Reveal, Stagger, staggerItem } from './Reveal';
-import { cardSurface } from '../styles/shared';
+import { PlaneCutawaySvg } from './experience/PlaneCutawaySvg';
+import { useCutawayMode } from './experience/useCutawayMode';
+import { computeCutawayValues, phaseLabel, progressFromRect } from './experience/cutawayMath';
 
-const cardHover = { y: -4 };
-const cardHoverTransition = { type: 'spring' as const, stiffness: 300, damping: 25 };
+const role = experience[0];
 
 export function Experience() {
+  const mode = useCutawayMode();
+  const trackRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>();
+  const [open, setOpen] = useState(mode === 'static');
+  const [readout, setReadout] = useState(0);
+  const [phase, setPhase] = useState(() => phaseLabel(mode === 'static' ? 1 : 0));
+
+  const applyP = (rawP: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const { p, pi, po, pr } = computeCutawayValues(rawP, mode);
+    el.style.setProperty('--pi', pi.toFixed(4));
+    el.style.setProperty('--po', po.toFixed(4));
+    el.style.setProperty('--pr', pr.toFixed(4));
+    const nextReadout = Math.round(p * 100);
+    setReadout((prev) => (prev === nextReadout ? prev : nextReadout));
+    const nextPhase = phaseLabel(p);
+    setPhase((prev) => (prev === nextPhase ? prev : nextPhase));
+  };
+
+  useEffect(() => {
+    if (mode !== 'scroll') {
+      applyP(mode === 'static' ? 1 : 0);
+      return;
+    }
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const el = trackRef.current;
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          applyP(progressFromRect(rect.top, rect.height, window.innerHeight));
+        }
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  useEffect(
+    () => () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    },
+    []
+  );
+
+  const onTap = () => {
+    if (mode === 'static') return;
+    const from = open ? 1 : 0;
+    const to = open ? 0 : 1;
+    setOpen(!open);
+    const start = performance.now();
+    const duration = 900;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    const step = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      applyP(from + (to - from) * eased);
+      if (t < 1) rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
+  };
+
+  const trackHeight = mode === 'scroll' ? '360vh' : '110vh';
+  const hint =
+    mode === 'static'
+      ? 'CUTAWAY SHOWN OPEN — REDUCED MOTION'
+      : mode === 'tap'
+        ? open
+          ? 'TAP TO CLOSE'
+          : 'TAP TO OPEN'
+        : 'SCROLL TO OPEN';
+
   return (
-    <section id="experience" className="bg-bg px-6 py-section">
-      <Reveal>
-        <div className="mx-auto max-w-4xl">
-          <p className="font-mono text-xs tracking-widest text-accent-text">§ 02 · EXPERIENCE</p>
+    <section id="experience" className="relative bg-[#07090d]" style={{ height: trackHeight }}>
+      <div ref={trackRef} className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(96,128,180,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(96,128,180,0.05)_1px,transparent_1px)] bg-[length:48px_48px]"
+        />
 
-          <Stagger className="mt-8 space-y-10">
-            {experience.map((role) => (
-              <motion.article key={role.company} variants={staggerItem} className="border-l border-border pl-6">
-                <p className="font-mono text-xs tracking-widest text-ink-dim">
-                  {role.start} – {role.end}
-                </p>
-                <div className="mt-1 flex flex-wrap items-center gap-3">
-                  <h3 className="font-display text-2xl text-ink">
-                    {role.role} · {role.company}
-                  </h3>
-                  {role.logo && (
-                    <span className="inline-flex items-center rounded-md bg-white px-2.5 py-1.5">
-                      <img src={role.logo} alt={`${role.company} logo`} className="h-5 w-auto md:h-6" />
-                    </span>
-                  )}
+        <div className="absolute left-8 right-8 top-8 flex items-start justify-between gap-5 font-mono text-[10px] tracking-widest text-ink-dim">
+          <div>
+            <div className="text-accent-text">§ 01 · EXPERIENCE</div>
+            <div className="mt-2">CRJ-900 · SIDE ELEVATION · CUTAWAY SEQUENCE</div>
+            <div className="mt-2 animate-pulse text-amber-signal">{hint}</div>
+          </div>
+          <div className="text-right">
+            <div>{phase}</div>
+            <div className="mt-2 flex items-center justify-end gap-2.5">
+              <div className="h-0.5 w-[120px] overflow-hidden bg-border">
+                <div
+                  className="h-full origin-left bg-amber-signal"
+                  style={{ transform: `scaleX(${readout / 100})` }}
+                />
+              </div>
+              <span className="inline-block w-9 text-right">{String(readout).padStart(2, '0')}%</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative w-[min(1560px,96vw)]">
+          <div
+            className="relative w-full"
+            style={{
+              aspectRatio: '1600 / 420',
+              containerType: 'size',
+              transform: 'scale(calc(0.955 + var(--pi, 0) * 0.045))',
+              opacity: 'calc(0.15 + var(--pi, 0) * 0.85)',
+            }}
+          >
+            <PlaneCutawaySvg />
+
+            <div
+              className="absolute overflow-hidden"
+              style={{
+                left: '20.8%',
+                right: '29.2%',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                height: 'calc(var(--po, 0) * 101%)',
+                background: 'linear-gradient(180deg, rgba(9,13,20,0.94), rgba(11,17,27,0.97))',
+                borderTop: '1px solid rgba(120,140,170,0.22)',
+                borderBottom: '1px solid rgba(120,140,170,0.22)',
+              }}
+            >
+              <div style={{ padding: '5cqh 3cqw', opacity: 'calc(var(--pr, 0) * 1.4)' }}>
+                <div className="flex items-baseline justify-between gap-4 border-b border-[rgba(120,140,170,0.16)] pb-[2.5cqh] font-mono text-[clamp(9px,4cqh,14px)] tracking-widest text-ink-dim">
+                  <span>STA 210 · CABIN BAY 02 · EXPERIENCE</span>
+                  <span className="text-amber-signal">● OPEN</span>
                 </div>
-                <p className="text-sm text-ink-dim">{role.location}</p>
-                <ul className="mt-4 space-y-2 text-ink">
-                  {role.highlights.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
-              </motion.article>
-            ))}
-          </Stagger>
-
-          <div className="mt-16">
-            <p className="font-mono text-xs tracking-widest text-ink-dim">ALSO BUILT</p>
-            <Stagger className="mt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {secondaryProjects.map((project) => {
-                const Card = (
-                  <div className={`h-full overflow-hidden transition-colors hover:border-accent ${cardSurface}`}>
-                    {project.image && (
-                      <img
-                        src={project.image}
-                        alt=""
-                        aria-hidden="true"
-                        loading="lazy"
-                        className="aspect-[5/3] w-full object-cover"
-                      />
-                    )}
-                    <div className="p-5">
-                      <h4 className="font-display text-lg text-ink">{project.name}</h4>
-                      <p className="mt-2 text-sm text-ink-dim">{project.tagline}</p>
-                      <p className="mt-3 font-mono text-[10px] tracking-widest text-ink-dim">
-                        {project.stack.join(' · ')}
-                      </p>
-                    </div>
+                <div className="mt-[2cqh] flex flex-wrap items-baseline gap-x-[2cqw] gap-y-[1.5cqh]">
+                  <div className="font-mono text-[clamp(9px,4.2cqh,14px)] tracking-widest text-ink-dim">
+                    {role.start} – {role.end}
                   </div>
-                );
-
-                return project.href ? (
-                  <motion.a
-                    key={project.id}
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    variants={staggerItem}
-                    whileHover={cardHover}
-                    transition={cardHoverTransition}
-                    className="block"
-                  >
-                    {Card}
-                  </motion.a>
-                ) : (
-                  <motion.div
-                    key={project.id}
-                    variants={staggerItem}
-                    whileHover={cardHover}
-                    transition={cardHoverTransition}
-                  >
-                    {Card}
-                  </motion.div>
-                );
-              })}
-            </Stagger>
+                  <div className="font-display text-[clamp(14px,8cqh,26px)] font-semibold text-ink">
+                    {role.role} · {role.company}
+                  </div>
+                  <div className="font-mono text-[clamp(8px,3.6cqh,13px)] tracking-widest text-ink-dim">
+                    {role.location.toUpperCase()}
+                  </div>
+                </div>
+                <div className="mt-[3cqh] grid grid-cols-2 gap-x-[3cqw] gap-y-[1.6cqh] text-[clamp(10px,4.2cqh,15px)] leading-snug text-ink">
+                  {role.highlights.map((line, i) => (
+                    <div
+                      key={line}
+                      className="flex gap-2.5"
+                      style={{
+                        opacity: `calc((var(--pr, 0) - ${(i * 0.08).toFixed(2)}) * 3.4)`,
+                        transform: 'translateY(calc((1 - var(--pr, 0)) * 12px))',
+                      }}
+                    >
+                      <span className="pt-0.5 font-mono text-[clamp(8px,3.4cqh,12px)] text-accent-text">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span>{line}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
-          <p className="mt-12 font-mono text-xs tracking-widest text-ink-dim">
-            {education.program}, {education.school} · {education.graduation}
-          </p>
+          {mode === 'tap' && (
+            <button
+              type="button"
+              onClick={onTap}
+              className="mx-auto mt-6 block rounded border border-amber-signal px-5 py-3 font-mono text-[11px] tracking-widest text-amber-signal"
+            >
+              {open ? 'TAP TO CLOSE CUTAWAY' : 'TAP TO OPEN CUTAWAY'}
+            </button>
+          )}
         </div>
-      </Reveal>
+
+        <div className="absolute bottom-8 left-8 right-8 flex justify-between font-mono text-[9px] tracking-widest text-ink-dim">
+          <span>
+            {education.program}, {education.school} · {education.graduation}
+          </span>
+          <span>SHEET 01 / REV —</span>
+        </div>
+      </div>
     </section>
   );
 }
