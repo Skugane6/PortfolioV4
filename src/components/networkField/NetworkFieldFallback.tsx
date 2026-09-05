@@ -56,7 +56,7 @@ export function NetworkFieldFallback() {
             y1={nodes[a].y}
             x2={nodes[b].x}
             y2={nodes[b].y}
-            stroke="#2f6fdb"
+            stroke="#2f6ad4"
             strokeOpacity={0.35}
             strokeWidth={1}
           />
@@ -67,7 +67,7 @@ export function NetworkFieldFallback() {
             cx={node.x}
             cy={node.y}
             r={i % HUB_STRIDE === 0 ? 3.5 : 2}
-            fill={i % HUB_STRIDE === 0 ? '#8fc4ff' : '#4c8dff'}
+            fill={i % HUB_STRIDE === 0 ? '#bcd4f5' : '#5b8ff0'}
             fillOpacity={i % HUB_STRIDE === 0 ? 0.8 : 0.65}
           />
         ))}

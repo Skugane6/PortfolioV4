@@ -106,7 +106,7 @@ function DataPackets({ nodePositions, edges }: { nodePositions: Float32Array; ed
     <Points ref={pointsRef} positions={positions.current} stride={3}>
       <PointMaterial
         transparent
-        color="#dceaff"
+        color="#eaf1ff"
         size={5}
         sizeAttenuation={false}
         depthWrite={false}
@@ -141,18 +141,18 @@ function Network() {
             itemSize={3}
           />
         </bufferGeometry>
-        <lineBasicMaterial color="#2f6fdb" transparent opacity={0.22} depthWrite={false} />
+        <lineBasicMaterial color="#2f6ad4" transparent opacity={0.22} depthWrite={false} />
       </lineSegments>
 
       <Points positions={network.nodePositions} stride={3}>
-        <PointMaterial transparent color="#4c8dff" size={3} sizeAttenuation={false} depthWrite={false} opacity={0.75} />
+        <PointMaterial transparent color="#5b8ff0" size={3} sizeAttenuation={false} depthWrite={false} opacity={0.75} />
       </Points>
 
       {network.hubPositions.length > 0 && (
         <Points positions={network.hubPositions} stride={3}>
           <PointMaterial
             transparent
-            color="#8fc4ff"
+            color="#bcd4f5"
             size={7}
             sizeAttenuation={false}
             depthWrite={false}
