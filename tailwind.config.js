@@ -13,7 +13,6 @@ export default {
         'accent-hover': 'var(--color-accent-hover)',
         'accent-text': 'var(--color-accent-text)',
         'accent-wash': 'var(--color-accent-wash)',
-        navy: 'var(--color-navy)',
         'amber-signal': 'var(--color-amber)',
       },
       fontFamily: {

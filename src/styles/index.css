@@ -21,10 +21,6 @@
   --color-accent-text: #5b8ff0;
   --color-accent-wash: rgba(79, 122, 208, 0.14);
 
-  /* Secondary muted accent — reserved for the footer band only. Never used
-     anywhere the primary blue would otherwise appear. */
-  --color-navy: #2f4a66;
-
   /* Amber — scoped to the Experience cutaway's status/progress accents only. */
   --color-amber: #f0a02a;
 }
