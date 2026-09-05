@@ -24,9 +24,9 @@ describe('Experience', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders the initial cutaway phase and progress readout', () => {
+  it('renders the initial phase and progress readout', () => {
     render(<Experience />);
-    expect(screen.getByText('HULL CLOSED')).toBeInTheDocument();
+    expect(screen.getByText('ON APPROACH')).toBeInTheDocument();
     expect(screen.getByText('00%')).toBeInTheDocument();
   });
 });

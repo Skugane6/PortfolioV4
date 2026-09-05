@@ -29,15 +29,15 @@ describe('smoothstep', () => {
 describe('computeCutawayValues', () => {
   it('is fully closed at p=0 in scroll mode', () => {
     const values = computeCutawayValues(0, 'scroll');
-    expect(values).toEqual({ p: 0, pi: 0, po: 0, pr: 0 });
+    expect(values).toEqual({ p: 0, pi: 0, pp: 0, pr: 0 });
   });
 
   it('finishes the intro fade by p=0.13 in scroll mode', () => {
     expect(computeCutawayValues(0.13, 'scroll').pi).toBeCloseTo(1, 5);
   });
 
-  it('fully opens the bay by p=0.55 in scroll mode', () => {
-    expect(computeCutawayValues(0.55, 'scroll').po).toBeCloseTo(1, 5);
+  it('fully slides the panel into view by p=0.55 in scroll mode', () => {
+    expect(computeCutawayValues(0.55, 'scroll').pp).toBeCloseTo(1, 5);
   });
 
   it('fully reveals content by p=0.76 in scroll mode', () => {
@@ -56,24 +56,24 @@ describe('computeCutawayValues', () => {
 });
 
 describe('phaseLabel', () => {
-  it('reads HULL CLOSED below 0.12', () => {
-    expect(phaseLabel(0)).toBe('HULL CLOSED');
-    expect(phaseLabel(0.11)).toBe('HULL CLOSED');
+  it('reads ON APPROACH below 0.12', () => {
+    expect(phaseLabel(0)).toBe('ON APPROACH');
+    expect(phaseLabel(0.11)).toBe('ON APPROACH');
   });
 
-  it('reads LATCHES RELEASED between 0.12 and 0.3', () => {
-    expect(phaseLabel(0.12)).toBe('LATCHES RELEASED');
-    expect(phaseLabel(0.29)).toBe('LATCHES RELEASED');
+  it('reads PANEL RELEASED between 0.12 and 0.3', () => {
+    expect(phaseLabel(0.12)).toBe('PANEL RELEASED');
+    expect(phaseLabel(0.29)).toBe('PANEL RELEASED');
   });
 
-  it('reads CROWN LIFT · BELLY DROP between 0.3 and 0.55', () => {
-    expect(phaseLabel(0.3)).toBe('CROWN LIFT · BELLY DROP');
-    expect(phaseLabel(0.54)).toBe('CROWN LIFT · BELLY DROP');
+  it('reads PANEL EXTENDING between 0.3 and 0.55', () => {
+    expect(phaseLabel(0.3)).toBe('PANEL EXTENDING');
+    expect(phaseLabel(0.54)).toBe('PANEL EXTENDING');
   });
 
-  it('reads BAY 02 EXPOSED between 0.55 and 0.9', () => {
-    expect(phaseLabel(0.55)).toBe('BAY 02 EXPOSED');
-    expect(phaseLabel(0.89)).toBe('BAY 02 EXPOSED');
+  it('reads RECORD ON DISPLAY between 0.55 and 0.9', () => {
+    expect(phaseLabel(0.55)).toBe('RECORD ON DISPLAY');
+    expect(phaseLabel(0.89)).toBe('RECORD ON DISPLAY');
   });
 
   it('reads SEQUENCE COMPLETE at 0.9 and above', () => {

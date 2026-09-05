@@ -12,23 +12,23 @@ export function smoothstep(x: number): number {
 export interface CutawayValues {
   p: number;
   pi: number;
-  po: number;
+  pp: number;
   pr: number;
 }
 
 export function computeCutawayValues(rawP: number, mode: CutawayMode): CutawayValues {
   const p = clamp(rawP);
-  const po = smoothstep(clamp((p - 0.13) / 0.42));
+  const pp = smoothstep(clamp((p - 0.13) / 0.42));
   const pr = clamp((p - 0.48) / 0.28);
   const pi = mode === 'scroll' ? clamp(p / 0.13) : 1;
-  return { p, pi, po, pr };
+  return { p, pi, pp, pr };
 }
 
 export function phaseLabel(p: number): string {
-  if (p < 0.12) return 'HULL CLOSED';
-  if (p < 0.3) return 'LATCHES RELEASED';
-  if (p < 0.55) return 'CROWN LIFT · BELLY DROP';
-  if (p < 0.9) return 'BAY 02 EXPOSED';
+  if (p < 0.12) return 'ON APPROACH';
+  if (p < 0.3) return 'PANEL RELEASED';
+  if (p < 0.55) return 'PANEL EXTENDING';
+  if (p < 0.9) return 'RECORD ON DISPLAY';
   return 'SEQUENCE COMPLETE';
 }
 

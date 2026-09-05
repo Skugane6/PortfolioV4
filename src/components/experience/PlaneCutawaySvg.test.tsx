@@ -3,10 +3,11 @@ import { render, screen } from '@testing-library/react';
 import { PlaneCutawaySvg } from './PlaneCutawaySvg';
 
 describe('PlaneCutawaySvg', () => {
-  it('renders the cargo and avionics bay labels', () => {
+  it('renders the structural callout labels', () => {
     render(<PlaneCutawaySvg />);
-    expect(screen.getByText('CARGO')).toBeInTheDocument();
-    expect(screen.getByText('AVIONICS')).toBeInTheDocument();
+    expect(screen.getByText('PASSENGER DOOR (L1)')).toBeInTheDocument();
+    expect(screen.getByText('T-TAIL')).toBeInTheDocument();
+    expect(screen.getByText('ENGINE · GE CF34-8C5')).toBeInTheDocument();
   });
 
   it('renders the wingspan dimension callout', () => {

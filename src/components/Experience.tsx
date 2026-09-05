@@ -6,6 +6,15 @@ import { computeCutawayValues, phaseLabel, progressFromRect } from './experience
 
 const role = experience[0];
 
+const SPECS = [
+  { label: 'LENGTH', value: '36.40 m' },
+  { label: 'WINGSPAN', value: '24.85 m' },
+  { label: 'HEIGHT', value: '7.49 m' },
+  { label: 'ENGINES', value: 'GE CF34-8C5' },
+  { label: 'THRUST', value: '14,510 lbf ×2' },
+  { label: 'RANGE', value: '2,956 km' },
+];
+
 export function Experience() {
   const mode = useCutawayMode();
   const sectionRef = useRef<HTMLElement>(null);
@@ -18,9 +27,9 @@ export function Experience() {
   const applyP = (rawP: number) => {
     const el = trackRef.current;
     if (!el) return;
-    const { p, pi, po, pr } = computeCutawayValues(rawP, mode);
+    const { p, pi, pp, pr } = computeCutawayValues(rawP, mode);
     el.style.setProperty('--pi', pi.toFixed(4));
-    el.style.setProperty('--po', po.toFixed(4));
+    el.style.setProperty('--pp', pp.toFixed(4));
     el.style.setProperty('--pr', pr.toFixed(4));
     const nextReadout = Math.round(p * 100);
     setReadout((prev) => (prev === nextReadout ? prev : nextReadout));
@@ -83,12 +92,12 @@ export function Experience() {
   const trackHeight = mode === 'scroll' ? '360vh' : '110vh';
   const hint =
     mode === 'static'
-      ? 'CUTAWAY SHOWN OPEN — REDUCED MOTION'
+      ? 'ROLE DETAILS SHOWN — REDUCED MOTION'
       : mode === 'tap'
         ? open
-          ? 'TAP TO CLOSE'
-          : 'TAP TO OPEN'
-        : 'SCROLL TO OPEN';
+          ? 'TAP TO HIDE ROLE DETAILS'
+          : 'TAP TO SHOW ROLE DETAILS'
+        : 'SCROLL FOR ROLE DETAILS ↓';
 
   return (
     <section
@@ -106,11 +115,20 @@ export function Experience() {
         <div className="absolute left-8 right-8 top-8 flex items-start justify-between gap-5 font-mono text-[10px] tracking-widest text-ink-dim">
           <div>
             <div className="text-accent-text">§ 01 · EXPERIENCE</div>
-            <div className="mt-2">CRJ-900 · SIDE ELEVATION · CUTAWAY SEQUENCE</div>
+            <div className="mt-2 font-display text-lg tracking-normal text-ink">CRJ-900</div>
+            <div className="mt-1">MHIRJ · MITSUBISHI HEAVY INDUSTRIES</div>
             <div className="mt-2 motion-safe:animate-pulse text-amber-signal">{hint}</div>
           </div>
-          <div className="text-right">
-            <div>{phase}</div>
+          <div className="hidden text-right sm:block">
+            <div className="flex flex-wrap justify-end gap-x-4 gap-y-1">
+              {SPECS.map((spec) => (
+                <div key={spec.label} className="whitespace-nowrap">
+                  <span>{spec.label} </span>
+                  <span className="text-ink">{spec.value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3">{phase}</div>
             <div className="mt-2 flex items-center justify-end gap-2.5">
               <div className="h-0.5 w-[120px] overflow-hidden bg-border">
                 <div
@@ -123,32 +141,32 @@ export function Experience() {
           </div>
         </div>
 
-        <div className="relative w-[min(1560px,96vw)]">
+        <div className="relative flex w-[min(1560px,96vw)] flex-col items-center" style={{ height: '74vh', containerType: 'size' }}>
           <div
             className="relative w-full"
             style={{
-              aspectRatio: '1600 / 420',
-              containerType: 'size',
-              transform: 'scale(calc(0.955 + var(--pi, 0) * 0.045))',
+              height: '54cqh',
+              aspectRatio: '1600 / 500',
+              transform: 'scale(calc(0.965 + var(--pi, 0) * 0.035))',
               opacity: 'calc(0.15 + var(--pi, 0) * 0.85)',
             }}
           >
             <PlaneCutawaySvg />
+          </div>
 
+          <div
+            className="w-full overflow-hidden"
+            style={{ height: 'calc(var(--pp, 0) * 38cqh)' }}
+          >
             <div
-              className="absolute overflow-x-hidden overflow-y-auto"
+              className="h-full overflow-y-auto rounded-b-lg border-x border-b border-[rgba(120,140,170,0.22)]"
               style={{
-                left: '20.8%',
-                right: '29.2%',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                height: 'calc(var(--po, 0) * 101%)',
                 background: 'linear-gradient(180deg, rgba(9,13,20,0.94), rgba(11,17,27,0.97))',
-                borderTop: '1px solid rgba(120,140,170,0.22)',
-                borderBottom: '1px solid rgba(120,140,170,0.22)',
+                transform: 'translateY(calc((1 - var(--pp, 0)) * 28px))',
+                opacity: 'var(--pp, 0)',
               }}
             >
-              <div style={{ padding: '5cqh 3cqw', opacity: 'calc(var(--pr, 0) * 1.4)' }}>
+              <div style={{ padding: '4cqh 3cqw' }}>
                 <div className="flex items-baseline justify-between gap-4 border-b border-[rgba(120,140,170,0.16)] pb-[2.5cqh] font-mono text-[clamp(9px,4cqh,14px)] tracking-widest text-ink-dim">
                   <span>STA 210 · CABIN BAY 02 · EXPERIENCE</span>
                   <span className="text-amber-signal">● OPEN</span>
@@ -191,7 +209,7 @@ export function Experience() {
               onClick={onTap}
               className="mx-auto mt-6 block rounded border border-amber-signal px-5 py-3 font-mono text-[11px] tracking-widest text-amber-signal"
             >
-              {open ? 'TAP TO CLOSE CUTAWAY' : 'TAP TO OPEN CUTAWAY'}
+              {open ? 'TAP TO HIDE ROLE DETAILS' : 'TAP TO SHOW ROLE DETAILS'}
             </button>
           )}
         </div>
@@ -200,7 +218,7 @@ export function Experience() {
           <span>
             {education.program}, {education.school} · {education.graduation}
           </span>
-          <span>SHEET 01 / REV —</span>
+          <span>SHEET 01 / REV B</span>
         </div>
       </div>
     </section>
