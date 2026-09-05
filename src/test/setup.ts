@@ -25,6 +25,18 @@ if (!('IntersectionObserver' in globalThis)) {
   globalThis.IntersectionObserver = DefaultIntersectionObserver;
 }
 
+class DefaultResizeObserver implements ResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+if (!('ResizeObserver' in globalThis)) {
+  // jsdom has no runtime ResizeObserver either — same rationale as the
+  // IntersectionObserver stub above.
+  globalThis.ResizeObserver = DefaultResizeObserver;
+}
+
 if (!window.matchMedia) {
   // jsdom has no matchMedia; framer-motion's useReducedMotion and useCanRender3D both
   // call it. Default to "no preference" so components render their normal (non-reduced)
