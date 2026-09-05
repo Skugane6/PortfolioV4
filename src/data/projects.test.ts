@@ -8,12 +8,15 @@ describe('projects data', () => {
     expect(featuredProject.stack).toEqual(['React 19', 'TypeScript', 'FastAPI', 'PostgreSQL']);
     expect(featuredProject.screenshot.src).toBe('/crafttraq.png');
     expect(featuredProject.screenshot.webp).toBe('/crafttraq.webp');
-    expect(featuredProject.callouts.length).toBeGreaterThan(0);
   });
 
-  it('lists the two secondary projects from the resume', () => {
+  it('lists the secondary projects', () => {
     const names = secondaryProjects.map((project) => project.name);
-    expect(names).toEqual(['Portfolio Risk Dashboard', 'Multi-Model Text Classification Pipeline']);
+    expect(names).toEqual([
+      'Portfolio Risk Dashboard',
+      'Multi-Model Text Classification Pipeline',
+      'Eye-Mouse',
+    ]);
     secondaryProjects.forEach((project) => expect(project.featured).toBe(false));
   });
 });

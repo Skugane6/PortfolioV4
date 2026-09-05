@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { ParticleFieldFallback } from './ParticleFieldFallback';
+import { NetworkFieldFallback } from './NetworkFieldFallback';
 
-describe('ParticleFieldFallback', () => {
+describe('NetworkFieldFallback', () => {
   it('renders a decorative, aria-hidden element', () => {
-    render(<ParticleFieldFallback />);
-    const el = screen.getByTestId('particle-field-fallback');
+    render(<NetworkFieldFallback />);
+    const el = screen.getByTestId('network-field-fallback');
     expect(el).toHaveAttribute('aria-hidden', 'true');
   });
 });

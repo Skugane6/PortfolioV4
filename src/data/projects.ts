@@ -7,15 +7,15 @@ export const featuredProject: FeaturedCaseStudy = {
   stack: ['React 19', 'TypeScript', 'FastAPI', 'PostgreSQL'],
   featured: true,
   problem:
-    'Trade contractors run jobs across paper quotes, group texts, and spreadsheets — nothing tracks a single job from quote through crew assignment to invoice and payment.',
+    'Jobs tracked across paper quotes, texts, and spreadsheets; nothing follows one from quote to payment.',
   approach: [
-    'Built end-to-end job lifecycle management: shareable client quotes that auto-convert into jobs, drag-and-drop crew scheduling, and status-tracked job records.',
-    'Built invoicing, time tracking, and inventory management across 28+ tables with a PDF generation pipeline.',
+    'End-to-end job lifecycle: shareable quotes that auto-convert into jobs, drag-and-drop crew scheduling, status-tracked records.',
+    'Invoicing, time tracking, and inventory across 28+ tables, with PDF generation.',
   ],
   decision: {
     title: 'Immutable task-assignment snapshots',
     body:
-      "A job's scheduled crew assignment is preserved as a point-in-time snapshot even as the crew roster changes later, then reconciled against live crew membership — so a schedule never silently drifts out of sync with who's actually on the crew.",
+      'Crew assignments snapshot at schedule time, then reconcile against the live roster, so a schedule never silently drifts from who\'s actually on the crew.',
   },
   scope: [
     'Tiered Stripe billing',
@@ -30,28 +30,33 @@ export const featuredProject: FeaturedCaseStudy = {
     webp: '/crafttraq.webp',
     alt: "CraftTraq's Field Ops Console showing a job board with columns for Created, In Progress, Complete, and Approved jobs, each card listing a job ID, title, client, and assigned crew initials.",
   },
-  callouts: [
-    { label: 'STATUS-TRACKED JOB RECORDS', top: '18%', left: '46%' },
-    { label: 'CREW AVATARS', top: '32%', left: '78%' },
-    { label: 'OVERDUE FLAGGING', top: '58%', left: '20%' },
-  ],
 };
 
 export const secondaryProjects: ProjectEntry[] = [
   {
     id: 'portfolio-risk-dashboard',
     name: 'Portfolio Risk Dashboard',
-    tagline:
-      'Full-stack financial analytics app for Modern Portfolio Theory and Value-at-Risk analysis, with a Flask backend pulling live market data via yfinance and NumPy/Pandas/SciPy for efficient-frontier and risk-metric calculations.',
+    tagline: 'MPT & Value-at-Risk analytics on live market data, with efficient-frontier optimization.',
     stack: ['React', 'Vite', 'Flask', 'MongoDB', 'NumPy', 'Pandas', 'SciPy'],
     featured: false,
+    image: '/placeholder-risk.svg',
+    href: 'https://github.com/Skugane6/Portfolio-Risk-Dashboard',
   },
   {
     id: 'text-classification-pipeline',
     name: 'Multi-Model Text Classification Pipeline',
-    tagline:
-      'Ensemble system combining BERT embeddings with CNN and BiLSTM architectures, MLflow experiment tracking, and a back-translation/synonym-replacement data augmentation pipeline.',
+    tagline: 'BERT + CNN/BiLSTM ensemble for text classification, with MLflow tracking and data augmentation.',
     stack: ['Python', 'TensorFlow', 'BERT', 'scikit-learn', 'PostgreSQL', 'MLflow'],
     featured: false,
+    image: '/placeholder-text.svg',
+  },
+  {
+    id: 'eye-mouse',
+    name: 'Eye-Mouse',
+    tagline: 'Hands-free cursor control via webcam eye tracking.',
+    stack: ['Python', 'OpenCV', 'MediaPipe', 'PyAutoGUI'],
+    featured: false,
+    image: '/placeholder-eye.svg',
+    href: 'https://github.com/Skugane6/eye-mouse',
   },
 ];

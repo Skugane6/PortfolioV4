@@ -28,7 +28,7 @@ describe('Experience', () => {
   it('renders the education line', () => {
     render(<Experience />);
     expect(
-      screen.getByText(`${education.program}, ${education.school} — ${education.graduation}`)
+      screen.getByText(`${education.program}, ${education.school} · ${education.graduation}`)
     ).toBeInTheDocument();
   });
 });

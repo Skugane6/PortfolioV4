@@ -3,18 +3,31 @@ import { contrastRatio } from './contrast';
 
 describe('contrastRatio', () => {
   it('returns 1 for identical colors', () => {
-    expect(contrastRatio('#0a0a0c', '#0a0a0c')).toBeCloseTo(1, 5);
+    expect(contrastRatio('#f7f8fa', '#f7f8fa')).toBeCloseTo(1, 5);
   });
 
   it('returns 21 for pure black against pure white', () => {
     expect(contrastRatio('#000000', '#ffffff')).toBeCloseTo(21, 1);
   });
 
-  it('meets WCAG AA (>=4.5) for accent-text on the void background', () => {
-    expect(contrastRatio('#ffb27a', '#0a0a0c')).toBeGreaterThanOrEqual(4.5);
-  });
+  // The site is dark-only — these are the actual tokens from index.css.
+  describe('the site palette', () => {
+    it('meets WCAG AA (>=4.5) for ink on the page background', () => {
+      expect(contrastRatio('#e7eaee', '#0b0e13')).toBeGreaterThanOrEqual(4.5);
+    });
 
-  it('meets WCAG AA (>=4.5) for primary ink on the void background', () => {
-    expect(contrastRatio('#f5f4f0', '#0a0a0c')).toBeGreaterThanOrEqual(4.5);
+    it('meets WCAG AA (>=4.5) for muted ink-dim text on the page background', () => {
+      expect(contrastRatio('#8b94a3', '#0b0e13')).toBeGreaterThanOrEqual(4.5);
+    });
+
+    it('meets WCAG AA (>=4.5) for accent text/links on the page background', () => {
+      // Deliberately brighter than the raw accent fill (#2563eb, which falls
+      // to ~3.7:1 here) — this is the token text/links actually use.
+      expect(contrastRatio('#4c8dff', '#0b0e13')).toBeGreaterThanOrEqual(4.5);
+    });
+
+    it('meets WCAG AA (>=4.5) for white button text on the accent fill', () => {
+      expect(contrastRatio('#ffffff', '#2563eb')).toBeGreaterThanOrEqual(4.5);
+    });
   });
 });

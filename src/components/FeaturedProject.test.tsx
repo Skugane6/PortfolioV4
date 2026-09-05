@@ -17,13 +17,6 @@ describe('FeaturedProject', () => {
     expect(img).toHaveAttribute('loading', 'lazy');
   });
 
-  it('renders one callout per data entry', () => {
-    render(<FeaturedProject />);
-    featuredProject.callouts.forEach((callout) => {
-      expect(screen.getByText(callout.label)).toBeInTheDocument();
-    });
-  });
-
   it('renders the immutable-snapshot engineering decision', () => {
     render(<FeaturedProject />);
     expect(screen.getByText(featuredProject.decision.body)).toBeInTheDocument();

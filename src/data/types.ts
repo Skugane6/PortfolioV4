@@ -5,6 +5,8 @@ export interface ExperienceEntry {
   start: string;
   end: string;
   highlights: string[];
+  /** Path to the company/division logo, shown as a small badge next to the role. */
+  logo?: string;
 }
 
 export interface Education {
@@ -20,12 +22,8 @@ export interface ProjectEntry {
   tagline: string;
   stack: string[];
   featured: boolean;
-}
-
-export interface ScreenshotCalloutData {
-  label: string;
-  top: string;
-  left: string;
+  image?: string;
+  href?: string;
 }
 
 export interface FeaturedCaseStudy extends ProjectEntry {
@@ -35,7 +33,6 @@ export interface FeaturedCaseStudy extends ProjectEntry {
   scope: string[];
   outcome: string;
   screenshot: { src: string; webp: string; alt: string };
-  callouts: ScreenshotCalloutData[];
 }
 
 export interface SkillGroup {

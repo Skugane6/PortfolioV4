@@ -2,12 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Blueprint / technical-manual theme tokens. Dark only, by design — no
+   light palette, no prefers-color-scheme branch, no toggle. */
 :root {
   color-scheme: dark;
+
+  --color-bg: #0b0e13;
+  --color-surface: #151a21;
+  --color-ink: #e7eaee;
+  --color-ink-dim: #8b94a3;
+  --color-border: #232a35;
+
+  /* accent: solid fill for buttons/chips/borders. accent-text: the tint used
+     for text/links — brightened past the raw accent so it still clears
+     4.5:1 against the dark background (see contrast.test.ts). */
+  --color-accent: #2563eb;
+  --color-accent-hover: #3b82f6;
+  --color-accent-text: #4c8dff;
+  --color-accent-wash: rgba(76, 141, 255, 0.14);
+
+  /* Secondary muted accent — reserved for the footer band only. Never used
+     anywhere the primary blue would otherwise appear. */
+  --color-navy: #2f4a66;
 }
 
 body {
-  @apply bg-void text-ink antialiased;
+  @apply bg-bg font-sans text-ink antialiased;
 }
 
 a:focus-visible,
