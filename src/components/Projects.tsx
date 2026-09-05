@@ -9,6 +9,10 @@ type Slide = FeaturedCaseStudy | ProjectEntry;
 
 const slides: Slide[] = [featuredProject, ...secondaryProjects];
 
+// Matches the rail's `gap-6` (24px) so the translateX offset lands the active
+// slide exactly in the viewport instead of drifting right by the accumulated gap.
+const RAIL_GAP = 24;
+
 function isFeatured(slide: Slide): slide is FeaturedCaseStudy {
   return slide.id === featuredProject.id;
 }
@@ -18,7 +22,7 @@ export function Projects() {
   const [slideWidth, setSlideWidth] = useState(0);
   const viewportRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const dragX = useRef<number | null>(null);
+  const dragStart = useRef<{ x: number; y: number } | null>(null);
   const reduceMotion = useReducedMotion();
 
   const goTo = (next: number) => {
@@ -36,6 +40,10 @@ export function Projects() {
   }, []);
 
   useEffect(() => {
+    if (viewportRef.current) viewportRef.current.scrollLeft = 0;
+  }, [index]);
+
+  useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
       const el = sectionRef.current;
@@ -51,14 +59,15 @@ export function Projects() {
   }, [index]);
 
   const onPointerDown = (e: PointerEvent<HTMLDivElement>) => {
-    dragX.current = e.clientX;
+    dragStart.current = { x: e.clientX, y: e.clientY };
   };
 
   const onPointerUp = (e: PointerEvent<HTMLDivElement>) => {
-    if (dragX.current === null) return;
-    const dx = e.clientX - dragX.current;
-    dragX.current = null;
-    if (Math.abs(dx) > 48) goTo(index + (dx < 0 ? 1 : -1));
+    if (dragStart.current === null) return;
+    const dx = e.clientX - dragStart.current.x;
+    const dy = e.clientY - dragStart.current.y;
+    dragStart.current = null;
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) goTo(index + (dx < 0 ? 1 : -1));
   };
 
   return (
@@ -104,7 +113,7 @@ export function Projects() {
             <div
               className="flex items-start gap-6"
               style={{
-                transform: `translateX(-${index * slideWidth}px)`,
+                transform: `translateX(-${index * (slideWidth + RAIL_GAP)}px)`,
                 transition: reduceMotion ? 'none' : 'transform 0.6s cubic-bezier(.22,.61,.36,1)',
               }}
             >
@@ -115,6 +124,8 @@ export function Projects() {
                   className={`${cardSurface} p-6 transition-opacity duration-300 ${
                     i === index ? 'opacity-100' : 'opacity-30'
                   }`}
+                  aria-hidden={i !== index ? true : undefined}
+                  {...(i !== index ? ({ inert: '' } as unknown as Record<string, unknown>) : {})}
                 >
                   {isFeatured(slide) ? (
                     <>
@@ -191,6 +202,7 @@ export function Projects() {
                           href={slide.href}
                           target="_blank"
                           rel="noreferrer"
+                          tabIndex={i !== index ? -1 : undefined}
                           className="mt-6 inline-block font-mono text-xs tracking-widest text-accent-text"
                         >
                           View on GitHub ↗

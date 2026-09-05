@@ -8,6 +8,7 @@ const role = experience[0];
 
 export function Experience() {
   const mode = useCutawayMode();
+  const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>();
   const [open, setOpen] = useState(mode === 'static');
@@ -37,7 +38,7 @@ export function Experience() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const el = trackRef.current;
+        const el = sectionRef.current;
         if (el) {
           const rect = el.getBoundingClientRect();
           applyP(progressFromRect(rect.top, rect.height, window.innerHeight));
@@ -90,7 +91,12 @@ export function Experience() {
         : 'SCROLL TO OPEN';
 
   return (
-    <section id="experience" className="relative bg-[#07090d]" style={{ height: trackHeight }}>
+    <section
+      id="experience"
+      ref={sectionRef}
+      className="relative bg-[#07090d]"
+      style={{ height: trackHeight }}
+    >
       <div ref={trackRef} className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
         <div
           aria-hidden="true"
@@ -101,7 +107,7 @@ export function Experience() {
           <div>
             <div className="text-accent-text">§ 01 · EXPERIENCE</div>
             <div className="mt-2">CRJ-900 · SIDE ELEVATION · CUTAWAY SEQUENCE</div>
-            <div className="mt-2 animate-pulse text-amber-signal">{hint}</div>
+            <div className="mt-2 motion-safe:animate-pulse text-amber-signal">{hint}</div>
           </div>
           <div className="text-right">
             <div>{phase}</div>
@@ -130,7 +136,7 @@ export function Experience() {
             <PlaneCutawaySvg />
 
             <div
-              className="absolute overflow-hidden"
+              className="absolute overflow-x-hidden overflow-y-auto"
               style={{
                 left: '20.8%',
                 right: '29.2%',
