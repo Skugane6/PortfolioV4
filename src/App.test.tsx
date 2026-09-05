@@ -8,7 +8,7 @@ describe('App', () => {
   it('renders every section in order with the correct anchor ids', () => {
     const { container } = render(<App />);
     const ids = Array.from(container.querySelectorAll('section')).map((el) => el.id);
-    expect(ids).toEqual(['hero', 'work', 'experience', 'skills', 'contact']);
+    expect(ids).toEqual(['hero', 'experience', 'projects', 'skills', 'contact']);
   });
 
   it('renders the nav rail', () => {

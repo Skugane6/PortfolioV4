@@ -1,8 +1,8 @@
 import { MotionConfig } from 'framer-motion';
 import { NavRail } from './components/NavRail';
 import { Hero } from './components/Hero';
-import { FeaturedProject } from './components/FeaturedProject';
 import { Experience } from './components/Experience';
+import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -17,8 +17,8 @@ export function App() {
         <NavRail />
         <main>
           <Hero />
-          <FeaturedProject />
           <Experience />
+          <Projects />
           <Skills />
           <Contact />
         </main>
