@@ -3,8 +3,8 @@ import { useActiveSection } from '../hooks/useActiveSection';
 import { underlineLink } from '../styles/shared';
 
 const SECTIONS = [
-  { id: 'work', label: '01 WORK' },
-  { id: 'experience', label: '02 EXPERIENCE' },
+  { id: 'experience', label: '01 EXPERIENCE' },
+  { id: 'projects', label: '02 PROJECTS' },
   { id: 'skills', label: '03 SKILLS' },
   { id: 'contact', label: '04 CONTACT' },
 ];
