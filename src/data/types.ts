@@ -1,10 +1,24 @@
+export interface ExperienceCallout {
+  /** Structural station reference shown in the card header, e.g. "STA 145 · FWD". */
+  station: string;
+  title: string;
+  description: string;
+  tags: string[];
+  /** 'metric' highlights a standout stat (e.g. a % improvement) in amber instead of the default accent blue. */
+  tagVariant?: 'accent' | 'metric';
+  /** One-line summary printed in the card's footer strip, drawing-annotation style. */
+  caption: string;
+  /** Glyph shown in the card's header badge. */
+  icon: 'tracker' | 'chart' | 'plane' | 'schedule';
+}
+
 export interface ExperienceEntry {
   company: string;
   role: string;
   location: string;
   start: string;
   end: string;
-  highlights: string[];
+  callouts: ExperienceCallout[];
   /** Path to the company/division logo, shown as a small badge next to the role. */
   logo?: string;
 }

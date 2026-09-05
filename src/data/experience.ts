@@ -8,13 +8,44 @@ export const experience: ExperienceEntry[] = [
     start: '05/2024',
     end: '08/2025',
     logo: '/MHIRJ_Logo.png',
-    highlights: [
-      'Component tracking system (React, Flask REST API) for 2,000+ aircraft across 100+ operators, with D3.js/Chart.js visualizations.',
-      'Fleet prediction platform: 400,000+ monthly records from SQL Server/Oracle, via pandas/NumPy ETL pipelines.',
-      'scikit-learn regression models for utilization forecasting across 50+ operators and 6 regional markets.',
-      'Automated utilization and reliability reporting, cutting manual processing time by 85%.',
-      'Oracle database architecture and a scheduling engine coordinating maintenance across 2,000+ entities.',
-      'pytest/Jest suites at 85% coverage, with CI/CD for production deployments.',
+    callouts: [
+      {
+        station: 'STA 145 · FWD',
+        title: 'Component Tracker',
+        description:
+          'Led cross-functional requirements gathering with reliability engineers and analysts to deliver a full-stack Component Tracker application (React, Python/Flask) supporting 2,000+ aircraft across 100+ operators.',
+        tags: ['React', 'Python / Flask', '2,000+ aircraft'],
+        caption: 'Component lifecycle visibility',
+        icon: 'tracker',
+      },
+      {
+        station: 'STA 410 · WING BOX',
+        title: 'Aircraft Utilization Forecasting',
+        description:
+          'Managed the end-to-end monthly Aircraft Utilization (AU) forecasting and reporting process, partnering with business and customer-facing teams on deliverables that directly shaped business decisions and customer relationships, and automated reporting to cut turnaround time by 85%.',
+        tags: ['85% faster turnaround'],
+        tagVariant: 'metric',
+        caption: 'Data-driven operational efficiency',
+        icon: 'chart',
+      },
+      {
+        station: 'STA 760 · AFT',
+        title: '10-Year Fleet Prediction Model',
+        description:
+          'Drove requirements definition and stakeholder alignment, translating evolving retirement, operator-transfer, and maintenance-scheduling rules from reliability and business stakeholders into a system spanning CRJ700/900 fleets and 50+ operators.',
+        tags: ['CRJ700 / 900', '50+ operators'],
+        caption: 'Long-term fleet planning',
+        icon: 'plane',
+      },
+      {
+        station: 'STA 940 · EMPENNAGE',
+        title: 'Maintenance Scheduling Engine',
+        description:
+          'Designed the Oracle database architecture underneath it — indexing and query performance tuning included — then built a scheduling optimization engine coordinating maintenance workflows across 2,000+ entities.',
+        tags: ['Oracle', 'Query tuning', '2,000+ entities'],
+        caption: 'Coordinated maintenance workflows',
+        icon: 'schedule',
+      },
     ],
   },
 ];
