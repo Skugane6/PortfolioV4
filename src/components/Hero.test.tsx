@@ -1,46 +1,37 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Hero } from './Hero';
-import { useCanRender3D } from '../hooks/useCanRender3D';
-
-vi.mock('../hooks/useCanRender3D', () => ({ useCanRender3D: vi.fn() }));
-vi.mock('./networkField/NetworkField', () => ({
-  NetworkField: () => <div data-testid="network-field-canvas" />,
-}));
 
 describe('Hero', () => {
-  it('renders the name and positioning line', () => {
-    vi.mocked(useCanRender3D).mockReturnValue(false);
+  it('renders the headline', () => {
     render(<Hero />);
-    expect(screen.getByText('Searan Kuganesan')).toBeInTheDocument();
-    expect(
-      screen.getByText(/I build the systems operators run their business on/)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/I build/)).toBeInTheDocument();
+    expect(screen.getByText('scalable systems')).toBeInTheDocument();
+    expect(screen.getByText(/that create real/)).toBeInTheDocument();
   });
 
-  it('renders the static fallback when 3D is disabled', () => {
-    vi.mocked(useCanRender3D).mockReturnValue(false);
+  it('renders the name and role in the decorative lockup', () => {
     render(<Hero />);
-    expect(screen.getByTestId('network-field-fallback')).toBeInTheDocument();
+    expect(screen.getByText('SEARAN KUGANESAN')).toBeInTheDocument();
+    expect(screen.getByText('SOFTWARE ENGINEER')).toBeInTheDocument();
   });
 
-  it('renders the network canvas when 3D is enabled', async () => {
-    vi.mocked(useCanRender3D).mockReturnValue(true);
+  it('links the primary CTA to the projects section', () => {
     render(<Hero />);
-    expect(await screen.findByTestId('network-field-canvas')).toBeInTheDocument();
-  });
-
-  it('gives the headshot real alt text', () => {
-    vi.mocked(useCanRender3D).mockReturnValue(false);
-    render(<Hero />);
-    expect(screen.getByAltText('Searan Kuganesan')).toBeInTheDocument();
+    const link = screen.getByRole('link', { name: /See My Work/i });
+    expect(link).toHaveAttribute('href', '#projects');
   });
 
   it('links the résumé button at a downloadable PDF', () => {
-    vi.mocked(useCanRender3D).mockReturnValue(false);
     render(<Hero />);
     const link = screen.getByRole('link', { name: /Download Résumé/i });
     expect(link).toHaveAttribute('href', '/skuganesan_resume.pdf');
     expect(link).toHaveAttribute('download');
+  });
+
+  it('hides the decorative panel composition from assistive tech', () => {
+    const { container } = render(<Hero />);
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => expect(img).toHaveAttribute('alt', ''));
   });
 });

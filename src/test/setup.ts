@@ -38,9 +38,10 @@ if (!('ResizeObserver' in globalThis)) {
 }
 
 if (!window.matchMedia) {
-  // jsdom has no matchMedia; framer-motion's useReducedMotion and useCanRender3D both
-  // call it. Default to "no preference" so components render their normal (non-reduced)
-  // branch in tests unless a specific test overrides window.matchMedia itself.
+  // jsdom has no matchMedia; framer-motion's useReducedMotion calls it (and so does
+  // Hero's own reduced-motion check for the panel parallax). Default to "no preference"
+  // so components render their normal (non-reduced) branch in tests unless a specific
+  // test overrides window.matchMedia itself.
   window.matchMedia = ((query: string) => ({
     matches: false,
     media: query,

@@ -3,10 +3,11 @@ import { useActiveSection } from '../hooks/useActiveSection';
 import { underlineLink } from '../styles/shared';
 
 const SECTIONS = [
-  { id: 'experience', label: '01 EXPERIENCE' },
-  { id: 'projects', label: '02 PROJECTS' },
-  { id: 'skills', label: '03 SKILLS' },
-  { id: 'contact', label: '04 CONTACT' },
+  { id: 'hero', label: '01 HOME' },
+  { id: 'experience', label: '02 EXPERIENCE' },
+  { id: 'projects', label: '03 PROJECTS' },
+  { id: 'skills', label: '04 SKILLS' },
+  { id: 'contact', label: '05 CONTACT' },
 ];
 
 export function NavRail() {

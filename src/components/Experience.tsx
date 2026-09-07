@@ -67,21 +67,8 @@ const PARALLAX_MAX_SCALE = 1.06;
 // would print over the tail, so it only appears when the airframe clears it.
 const SPEC_BLOCK_BOTTOM = 196;
 
-// Used only for the drafting-furniture fade below — the callout reveal
-// itself used to ramp through this too, but a ramp tied 1:1 to raw scroll
-// pixels always has *some* scroll speed slow enough to sit and watch it
-// happen. Callouts now commit in one spring hop instead (see apply).
-function ease(t: number) {
-  const c = Math.max(0, Math.min(1, t));
-  return c < 0.5 ? 2 * c * c : 1 - Math.pow(-2 * c + 2, 2) / 2;
-}
-
 // Per-callout reveal alphas, written on the stage as custom properties.
 const ALPHAS = ['--a1', '--a2', '--a3', '--a4'];
-
-// The drafting furniture clears as the survey starts: full strength while the
-// sheet is at rest, gone by the time the second callout is on its way in.
-const ANNOTATION_FADE = [0.02, 0.28];
 
 const WIDE_STARTS = [0.08, 0.26, 0.44, 0.62];
 const WIDE_SPAN = 0.18;
@@ -358,9 +345,6 @@ export function Experience() {
     // whatever the spring has reached rather than being folded into it.
     const as = cardAlphaRef.current.map((a) => a * (1 - clear));
     as.forEach((a, i) => s.setProperty(`--a${i + 1}`, a.toFixed(4)));
-
-    const [fadeFrom, fadeTo] = ANNOTATION_FADE;
-    s.setProperty('--ann', (1 - ease((survey - fadeFrom) / (fadeTo - fadeFrom))).toFixed(4));
 
     wakeRef.current?.pump(thrust);
 

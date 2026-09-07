@@ -4,9 +4,11 @@
  * elevation carries.
  *
  * All of it is deliberately quieter than the callout cards — a light steel
- * ink at low alpha — and every piece rides the shared `--ann` alpha, which
- * Experience drives to zero as the first callouts arrive. It is the sheet's
- * resting state, not competition for the cards.
+ * ink at low alpha — and every piece rides the shared `--sheet` alpha, the
+ * same one the title block and education line use: full strength through the
+ * whole survey, so the flight-direction note, the aircraft's build tagline
+ * and the CRJ spec stay on screen alongside the callouts as they arrive, and
+ * only clear once the cards themselves do, at the start of the departure.
  */
 
 // How much of the sheet the viewport can carry. The reference drawing is a
@@ -85,7 +87,7 @@ export function AirframeNotes({ detail }: { detail: SheetDetail }) {
   const dense = detail !== 'compact';
 
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ opacity: 'var(--ann, 1)' }}>
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ opacity: 'var(--sheet, 1)' }}>
       {/* Overall length. The airframe fills the plate top to bottom, so the
           only clear run is the sky above the fuselage; the rule crosses the
           fin on its way to the tail, which is what a dimension line does on a
@@ -184,7 +186,10 @@ export function SheetMarks({ detail }: { detail: SheetDetail }) {
   if (detail === 'compact') return null;
 
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ opacity: 'var(--ann, 1)' }}>
+    // No opacity of its own — the caller already wraps this in the --sheet
+    // fade (see Experience), and doubling it here would fade it out twice
+    // as fast as the rest of the sheet furniture.
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0">
       <RegMark position="left-3 top-3" />
       <RegMark position="right-3 top-3" />
       <RegMark position="left-3 bottom-3" />
@@ -228,7 +233,7 @@ export function SheetMarks({ detail }: { detail: SheetDetail }) {
  */
 export function SpecBlock() {
   return (
-    <div aria-hidden="true" className="mt-5 w-[148px]" style={{ opacity: 'var(--ann, 1)' }}>
+    <div aria-hidden="true" className="mt-5 w-[148px]" style={{ opacity: 'var(--sheet, 1)' }}>
       <div className={note} style={{ color: TEXT }}>
         {AIRCRAFT.model}
       </div>

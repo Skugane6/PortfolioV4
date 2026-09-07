@@ -1,8 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import { App } from './App';
-
-vi.mock('./hooks/useCanRender3D', () => ({ useCanRender3D: () => false }));
 
 describe('App', () => {
   it('renders every section in order with the correct anchor ids', () => {
