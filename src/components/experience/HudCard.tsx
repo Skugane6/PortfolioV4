@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { motion, type Variants } from 'framer-motion';
 import type { ExperienceCallout } from '../../data/types';
 
 // The panel's 45° corner cut, and the offset outline that repeats it. Both are
@@ -110,13 +111,30 @@ function Glyph({ name, size = 17 }: { name: ExperienceCallout['icon']; size?: nu
 interface HudCardProps {
   callout: ExperienceCallout;
   index: number;
+  // Whether the card has committed to fully shown (see Experience's apply).
+  // The card shell itself fades and slides via --a{i}, driven independently
+  // for performance; this only staggers the text inside it in behind that,
+  // so the content reads as arriving in sequence rather than as one block.
+  revealed: boolean;
 }
+
+// Cascades the header, title, description, and tags in, each a beat behind
+// the last. delayChildren gives the shell's own fade a head start so text
+// doesn't appear to outrun the panel it's printed on.
+const contentVariants: Variants = {
+  hidden: {},
+  shown: { transition: { staggerChildren: 0.07, delayChildren: 0.05 } },
+};
+const lineVariants: Variants = {
+  hidden: { opacity: 0, y: 8 },
+  shown: { opacity: 1, y: 0, transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] } },
+};
 
 /**
  * A callout panel in the language of the airframe drawing behind it: chamfered
  * plate, offset outline, station header, and a footer annotation strip.
  */
-export function HudCard({ callout, index }: HudCardProps) {
+export function HudCard({ callout, index, revealed }: HudCardProps) {
   const metric = callout.tagVariant === 'metric';
 
   return (
@@ -167,8 +185,13 @@ export function HudCard({ callout, index }: HudCardProps) {
             }}
           />
 
-          <div className="px-[18px] pt-[12px]">
-            <div className="flex items-center gap-3">
+          <motion.div
+            className="px-[18px] pt-[12px]"
+            variants={contentVariants}
+            initial="hidden"
+            animate={revealed ? 'shown' : 'hidden'}
+          >
+            <motion.div variants={lineVariants} className="flex items-center gap-3">
               <span
                 className="font-mono text-[17px] font-bold leading-none text-[#5fa8ff]"
                 style={{ textShadow: '0 0 14px rgba(80,160,255,0.55)' }}
@@ -181,9 +204,9 @@ export function HudCard({ callout, index }: HudCardProps) {
               <span className="ml-auto">
                 <Hatch count={7} height={10} />
               </span>
-            </div>
+            </motion.div>
 
-            <div className="mt-[9px] flex items-start justify-between gap-4">
+            <motion.div variants={lineVariants} className="mt-[9px] flex items-start justify-between gap-4">
               <h3 className="font-sans text-[22px] font-semibold leading-[1.16] tracking-[-0.012em] text-white">
                 {callout.title}
               </h3>
@@ -194,13 +217,17 @@ export function HudCard({ callout, index }: HudCardProps) {
               >
                 <Glyph name={callout.icon} size={22} />
               </span>
-            </div>
+            </motion.div>
 
-            <p className="mt-[9px] text-[13px] leading-[1.5] text-[#c6d6ea]" style={{ textWrap: 'pretty' }}>
+            <motion.p
+              variants={lineVariants}
+              className="mt-[9px] text-[13px] leading-[1.5] text-[#c6d6ea]"
+              style={{ textWrap: 'pretty' }}
+            >
               {callout.description}
-            </p>
+            </motion.p>
 
-            <div className="mt-[12px] flex flex-wrap gap-2">
+            <motion.div variants={lineVariants} className="mt-[12px] flex flex-wrap gap-2">
               {callout.tags.map((tag) => (
                 <span
                   key={tag}
@@ -214,8 +241,8 @@ export function HudCard({ callout, index }: HudCardProps) {
                   {tag}
                 </span>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div className="mx-[18px] mt-[11px] flex items-center gap-3 border-t border-[rgba(96,160,235,0.35)] py-[9px]">
             <Hatch count={4} height={8} />
