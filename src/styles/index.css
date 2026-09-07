@@ -33,3 +33,40 @@ a:focus-visible,
 button:focus-visible {
   @apply outline outline-2 outline-offset-2 outline-accent-text;
 }
+
+/* ── Hero stage animations ─────────────────────────────────────────────
+   The hero's 3D stage is built from CSS and inline SVG rather than
+   framer-motion, so App.tsx's <MotionConfig reducedMotion="user"> never
+   reaches any of it — that config only rewrites motion.* components. The
+   guard at the bottom of this block is what honours prefers-reduced-motion
+   here instead: every animated element in the hero carries `hero-anim`
+   alongside its inline `animation` shorthand, and the one rule below turns
+   the whole scene static. Entrance animations (rise/fade/bar-grow) all
+   animate *from* a hidden state into the element's natural styles, so
+   cancelling them leaves the content visible rather than stuck at zero.
+
+   Names are hero-prefixed to keep them obviously section-scoped. */
+@keyframes hero-dash-flow { to { stroke-dashoffset: -240; } }
+@keyframes hero-pulse-travel { to { stroke-dashoffset: -900; } }
+@keyframes hero-node-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+@keyframes hero-grid-drift { to { background-position: 400px 400px, 400px 400px, 0 0; } }
+@keyframes hero-float-a { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -9px, 0); } }
+@keyframes hero-float-b { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, 7px, 0); } }
+@keyframes hero-scan-sweep {
+  0% { transform: translateY(-20px); opacity: 0; }
+  12% { opacity: 0.9; }
+  88% { opacity: 0.9; }
+  100% { transform: translateY(300px); opacity: 0; }
+}
+@keyframes hero-caret-blink { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } }
+@keyframes hero-rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hero-bar-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes hero-scroll-tick { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+@keyframes hero-glow-breathe { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.7; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim {
+    animation: none !important;
+  }
+}
