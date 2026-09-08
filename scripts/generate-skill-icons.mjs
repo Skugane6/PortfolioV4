@@ -1,8 +1,8 @@
-// Bakes the brand marks used by the Skills section into a single static module
-// (src/data/skillIcons.ts). The three icon packages this reads are devDeps and
+// Bakes the brand marks used by the Skills and Contact sections into two static
+// modules (src/data/skillIcons.ts, src/data/contactIcons.ts). The three icon packages this reads are devDeps and
 // never reach the bundle — only the handful of <path d=""> strings below do,
 // which keeps ~30 logos at a couple of kB instead of pulling a 3,000-icon
-// index through the tree-shaker.  Re-run after editing MARKS:
+// index through the tree-shaker.  Re-run after editing MARKS or CONTACT_MARKS:
 //   node scripts/generate-skill-icons.mjs
 //
 // Every mark is normalised to the same shape: a viewBox plus an inner-SVG body
@@ -61,6 +61,47 @@ const MARKS = {
   azuredevops: ['cib', 'azure-devops', '#0078D7'],
   docker: ['si', 'Docker'],
   git: ['si', 'Git'],
+};
+
+// The Contact section's channel marks, in the same [source, name, hex] shape so
+// they run through the identical normalise + contrast pipeline below. Three are
+// real brands; `email` is the exception, standing in for a channel rather than a
+// company, and it carries the site accent because a mailbox has no brand hue of
+// its own to preserve.
+//
+// Both brands come from cib rather than Simple Icons: LinkedIn is one of the
+// marks Simple Icons drops over redistribution terms, and GitHub's official
+// #181717 is a near-black the lifter below can only take to a dead mid-grey —
+// dimmer than the blueprint tint it is supposed to bloom out of — so it carries
+// GitHub's own dark-mode foreground instead.
+// CraftTraq ships no mark in any of the icon sets above, and the site already
+// carries its logo at public/mini_logo.png. This is that PNG traced back into
+// geometry — the clipboard body and clip are rounded rectangles, the clip's
+// bump and stud are circles, and the monogram is straight edges plus three
+// arcs — measured off the bitmap rather than eyeballed, then kept at the
+// original 512 box so the proportions survive. It goes through onDark() with
+// the sampled brand orange like every other mark here.
+const RAW_MARKS = {
+  crafttraq: {
+    viewBox: '0 0 512 512',
+    // The board is one outline rather than a ring: the clip's interior bites
+    // clean through the top stroke, which splits the ring into a single
+    // simply-connected shape. The clip itself is the one path that does need
+    // evenodd — its bump and body share an outline, and its hole is a subpath.
+    body:
+      '<path fill="currentColor" d="M193 73H137a60 60 0 0 0-60 60v311a60 60 0 0 0 60 60h236a60 60 0 0 0 60-60V133a60 60 0 0 0-60-60h-56v24h56a36 36 0 0 1 36 36v311a36 36 0 0 1-36 36H137a36 36 0 0 1-36-36V133a36 36 0 0 1 36-36h56z"/>' +
+      '<path fill="currentColor" fill-rule="evenodd" d="M194 45h10.7a52 52 0 0 1 100.6 0H316a24 24 0 0 1 24 24v42a24 24 0 0 1-24 24H194a24 24 0 0 1-24-24V69a24 24 0 0 1 24-24zM199 69h30.25a28 28 0 1 1 51.5 0H311a6 6 0 0 1 6 6v31a6 6 0 0 1-6 6H199a6 6 0 0 1-6-6V75a6 6 0 0 1 6-6z"/>' +
+      '<path fill="currentColor" d="M255 47a16 16 0 1 0 .1 0z"/>' +
+      '<path fill="currentColor" d="M220 205h123v35h-55v89h-34v-89h-80a48 48 0 0 1 46-35z"/>' +
+      '<path fill="currentColor" d="M170 272h37v55a39 39 0 0 0 39 39h64v38h-64a76 76 0 0 1-76-76z"/>',
+  },
+};
+
+const CONTACT_MARKS = {
+  email: ['mdi', 'email-outline', '#5B8FF0'],
+  github: ['cib', 'github', '#E6EDF3'],
+  linkedin: ['cib', 'linkedin', '#0A66C2'],
+  crafttraq: ['raw', 'crafttraq', '#FC5B00'],
 };
 
 // A handful of official brand hexes are all but invisible on this site's dark
@@ -133,32 +174,50 @@ const onDark = (hex) => {
   return hslToHex(h, saturation, MAX_LIGHTNESS);
 };
 
-const marks = {};
-for (const [slug, [source, name, hex]] of Object.entries(MARKS)) {
-  if (source === 'si') {
-    const icon = simpleIcons['si' + name];
-    if (!icon) throw new Error(`simple-icons has no icon "si${name}" (for "${slug}")`);
-    marks[slug] = {
-      viewBox: '0 0 24 24',
-      body: `<path fill="currentColor" d="${icon.path}"/>`,
-      hex: onDark(`#${icon.hex}`),
-    };
-  } else {
-    const set = sets[source];
-    const icon = set.icons[name];
-    if (!icon) throw new Error(`@iconify-json/${source} has no icon "${name}" (for "${slug}")`);
-    const w = icon.width ?? set.width;
-    const h = icon.height ?? set.height;
-    marks[slug] = { viewBox: `0 0 ${w} ${h}`, body: icon.body, hex: onDark(hex) };
+const build = (table) => {
+  const built = {};
+  for (const [slug, [source, name, hex]] of Object.entries(table)) {
+    if (source === 'raw') {
+      const mark = RAW_MARKS[name];
+      if (!mark) throw new Error(`RAW_MARKS has no mark "${name}" (for "${slug}")`);
+      built[slug] = { viewBox: mark.viewBox, body: mark.body, hex: onDark(hex) };
+    } else if (source === 'si') {
+      const icon = simpleIcons['si' + name];
+      if (!icon) throw new Error(`simple-icons has no icon "si${name}" (for "${slug}")`);
+      built[slug] = {
+        viewBox: '0 0 24 24',
+        body: `<path fill="currentColor" d="${icon.path}"/>`,
+        hex: onDark(`#${icon.hex}`),
+      };
+    } else {
+      const set = sets[source];
+      const icon = set.icons[name];
+      if (!icon) throw new Error(`@iconify-json/${source} has no icon "${name}" (for "${slug}")`);
+      const w = icon.width ?? set.width;
+      const h = icon.height ?? set.height;
+      built[slug] = { viewBox: `0 0 ${w} ${h}`, body: icon.body, hex: onDark(hex) };
+    }
   }
-}
+  return built;
+};
 
-const entries = Object.entries(marks)
-  .map(
-    ([slug, m]) =>
-      `  ${slug}: {\n    viewBox: '${m.viewBox}',\n    hex: '${m.hex}',\n    body:\n      '${m.body.replace(/'/g, "\'")}',\n  },`,
-  )
-  .join('\n');
+const marks = build(MARKS);
+const contactMarks = build(CONTACT_MARKS);
+
+const serialise = (built) =>
+  Object.entries(built)
+    .map(
+      ([slug, m]) =>
+        `  ${slug}: {\n    viewBox: '${m.viewBox}',\n    hex: '${m.hex}',\n    body:\n      '${m.body.replace(/'/g, "\'")}',\n  },`,
+    )
+    .join('\n');
+
+const union = (built) =>
+  Object.keys(built)
+    .map((slug) => `'${slug}'`)
+    .join(' | ');
+
+const entries = serialise(marks);
 
 const out = `// GENERATED FILE — do not edit by hand.
 // Run \`node scripts/generate-skill-icons.mjs\` to regenerate; the slug list and
@@ -179,9 +238,7 @@ export interface SkillMark {
   body: string;
 }
 
-export type SkillMarkSlug = ${Object.keys(marks)
-  .map((s) => `'${s}'`)
-  .join(' | ')};
+export type SkillMarkSlug = ${union(marks)};
 
 export const skillMarks: Record<SkillMarkSlug, SkillMark> = {
 ${entries}
@@ -191,3 +248,25 @@ ${entries}
 const dest = path.join(root, 'src', 'data', 'skillIcons.ts');
 fs.writeFileSync(dest, out);
 console.log(`Wrote ${dest} — ${Object.keys(marks).length} marks, ${(out.length / 1024).toFixed(1)} kB`);
+
+const contactOut = `// GENERATED FILE — do not edit by hand.
+// Run \`node scripts/generate-skill-icons.mjs\` to regenerate; the slug list and
+// the reasoning behind each source live in that script.
+//
+// Same normalised shape as the Skills marks next door — a viewBox plus inner SVG
+// painted with \`currentColor\` — so the Contact cards can hold every mark at the
+// blueprint tint at rest and bloom one to \`hex\` on hover or focus.
+import type { SkillMark } from './skillIcons';
+
+export type ContactMarkSlug = ${union(contactMarks)};
+
+export const contactMarks: Record<ContactMarkSlug, SkillMark> = {
+${serialise(contactMarks)}
+};
+`;
+
+const contactDest = path.join(root, 'src', 'data', 'contactIcons.ts');
+fs.writeFileSync(contactDest, contactOut);
+console.log(
+  `Wrote ${contactDest} — ${Object.keys(contactMarks).length} marks, ${(contactOut.length / 1024).toFixed(1)} kB`,
+);

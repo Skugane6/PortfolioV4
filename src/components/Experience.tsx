@@ -799,6 +799,45 @@ export function Experience() {
           <div className="absolute inset-x-0 h-px" style={{ top: '190px', background: 'repeating-linear-gradient(90deg, rgba(96,128,180,0.14) 0 3px, transparent 3px 12px)' }} />
         </div>
 
+        {/* Oversized outline word, the same device the Projects and Skills
+            headers use, so all three sections are titled the same way. It sits
+            behind the airframe (earlier in the DOM than the plate group) and
+            only holds the sheet while it is otherwise empty: any callout
+            opening takes it back out, so it never competes with a card for the
+            reader's eye, and --sheet carries it off with the rest of the
+            drafting furniture rather than letting it flare back as the
+            clear-out closes the cards. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 flex justify-center"
+          style={{
+            // Stacked, the airframe rides high in the stage and the room is
+            // all underneath it; wide, the airframe is centred and the room is
+            // the band above. Either way the word takes the empty half rather
+            // than sitting behind the aircraft, where the fuselage would eat
+            // the middle of every letter.
+            top: stacked ? '30vh' : 'clamp(76px, 16vh, 190px)',
+            opacity:
+              'calc((1 - max(var(--a1, 0), var(--a2, 0), var(--a3, 0), var(--a4, 0))) * var(--sheet, 1))',
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(44px, 11vw, 170px)',
+              lineHeight: 0.9,
+              letterSpacing: '.02em',
+              whiteSpace: 'nowrap',
+              color: 'transparent',
+              WebkitTextStroke: '1px rgba(140, 176, 255, .17)',
+              userSelect: 'none',
+            }}
+          >
+            EXPERIENCE
+          </div>
+        </div>
+
         {/* Before the plate group in the DOM, so the wake renders behind the
             airframe and appears to stream out from under it. */}
         {!reduced && <WakeField ref={wakeRef} planeRef={planeRef} />}

@@ -97,6 +97,24 @@ describe('Experience', () => {
     ).toBe(false);
   });
 
+  it('titles the sheet with the outline word without dropping the corner label', () => {
+    const { container } = render(<Experience />);
+    const section = container.querySelector('#experience') as HTMLElement;
+    const word = screen.getByText('EXPERIENCE');
+    expect(word).not.toBeNull();
+    // The corner label is the sheet's own title block and stays regardless.
+    expect(screen.getByText('§ 01 · Experience')).not.toBeNull();
+
+    // Same NaN-opacity tell as the clear-out test above: the word has to be
+    // on a scroll-driven fade, not painted at a fixed opacity, or it would
+    // sit behind the callouts once the survey starts opening them.
+    let driven = false;
+    for (let n: Element | null = word; n && n !== section; n = n.parentElement) {
+      if (/opacity\s*:\s*NaN/.test(n.getAttribute('style') ?? '')) driven = true;
+    }
+    expect(driven).toBe(true);
+  });
+
   it('renders the departure wake canvas', () => {
     const { container } = render(<Experience />);
     expect(container.querySelector('canvas')).not.toBeNull();

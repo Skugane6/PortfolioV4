@@ -192,3 +192,97 @@ button:focus-visible {
     color: var(--brand);
   }
 }
+
+/* ── Contact channels ──────────────────────────────────────────────────
+   Same arrangement as the Skills plate above, and for the same reason: each
+   card sets --brand (its channel's real hex, floored for this ground by
+   scripts/generate-skill-icons.mjs) and --brand-soft, the mark rests as
+   drafted blue-grey, and the card blooms to the brand colour under a pointer.
+   Two differences from the Skills rules. The states key off `:focus-within`
+   as well as `:hover`, because these cards *are* the links — a keyboard user
+   tabbing onto one should get the same confirmation a mouse user gets from
+   hovering it. And under `@media (hover: none)` the whole resting state moves
+   to brand colour rather than just the mark, since a touch device will never
+   fire either event. */
+.contact-card {
+  transition: border-color 300ms ease, background-color 300ms ease;
+}
+
+.contact-mark,
+.contact-ticks,
+.contact-handle,
+.contact-bloom,
+.contact-arrow {
+  transition: color 350ms ease, opacity 350ms ease, transform 300ms ease;
+}
+
+.contact-mark {
+  color: rgba(150, 178, 215, 0.72);
+}
+
+.contact-ticks {
+  color: rgba(120, 160, 225, 0.34);
+}
+
+.contact-handle {
+  color: var(--color-ink-dim);
+}
+
+.contact-bloom {
+  opacity: 0;
+}
+
+.contact-arrow {
+  color: rgba(139, 148, 163, 0.8);
+}
+
+.contact-card:hover,
+.contact-card:focus-within {
+  border-color: var(--brand-soft);
+  background-color: rgba(16, 23, 36, 0.78);
+}
+
+.contact-card:hover .contact-mark,
+.contact-card:focus-within .contact-mark,
+.contact-card:hover .contact-ticks,
+.contact-card:focus-within .contact-ticks,
+.contact-card:hover .contact-arrow,
+.contact-card:focus-within .contact-arrow {
+  color: var(--brand);
+}
+
+.contact-card:hover .contact-arrow,
+.contact-card:focus-within .contact-arrow {
+  transform: translate(2px, -2px);
+}
+
+.contact-card:hover .contact-handle,
+.contact-card:focus-within .contact-handle {
+  color: rgba(190, 209, 236, 0.9);
+}
+
+.contact-card:hover .contact-bloom,
+.contact-card:focus-within .contact-bloom {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .contact-mark {
+    color: var(--brand);
+  }
+
+  .contact-ticks {
+    color: var(--brand-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-arrow {
+    transition: color 350ms ease;
+  }
+
+  .contact-card:hover .contact-arrow,
+  .contact-card:focus-within .contact-arrow {
+    transform: none;
+  }
+}

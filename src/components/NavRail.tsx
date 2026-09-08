@@ -1,5 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useActiveSection } from '../hooks/useActiveSection';
+import { animateScrollTo, type ScrollAnimation } from '../utils/smoothScroll';
 import { underlineLink } from '../styles/shared';
 
 const SECTIONS = [
@@ -10,8 +12,45 @@ const SECTIONS = [
   { id: 'contact', label: '05 CONTACT' },
 ];
 
+const SECTION_IDS = SECTIONS.map((section) => section.id);
+
 export function NavRail() {
-  const activeId = useActiveSection(SECTIONS.map((section) => section.id));
+  const observedId = useActiveSection(SECTION_IDS);
+  // While an animated jump is in flight the rail shows its destination rather
+  // than whatever it is flying over — otherwise a hero -> contact trip strobes
+  // through all five labels on the way down.
+  const [pendingId, setPendingId] = useState<string | null>(null);
+  const animationRef = useRef<ScrollAnimation | null>(null);
+  const activeId = pendingId ?? observedId;
+
+  useEffect(() => () => animationRef.current?.cancel(), []);
+
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    // Leave modified clicks (new tab/window) and non-primary buttons alone.
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return;
+    }
+    const target = document.getElementById(id);
+    if (!target) return; // no element to reach: let the browser do its default thing
+
+    event.preventDefault();
+    animationRef.current?.cancel();
+
+    setPendingId(id);
+    // replaceState, not the default hash jump: it keeps the URL shareable
+    // without the browser teleporting the viewport out from under the tween,
+    // and without stacking a history entry per rail click.
+    history.replaceState(null, '', `#${id}`);
+
+    const animation = animateScrollTo(target.getBoundingClientRect().top + window.scrollY);
+    animationRef.current = animation;
+    animation.finished.then(() => {
+      if (animationRef.current === animation) {
+        animationRef.current = null;
+        setPendingId(null); // hand the highlight back to the observer
+      }
+    });
+  };
 
   return (
     // Vertical rail, right edge, from lg up; collapses to a fixed bottom bar
@@ -36,21 +75,27 @@ export function NavRail() {
           <motion.a
             key={section.id}
             href={`#${section.id}`}
+            onClick={(event) => handleClick(event, section.id)}
             aria-current={isActive ? 'true' : undefined}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-            className={`inline-flex items-center transition-colors ${underlineLink} ${
+            className={`relative inline-flex items-center transition-colors ${underlineLink} ${
               isActive ? 'text-accent-text' : 'text-ink-dim hover:text-ink'
             }`}
           >
-            <motion.span
-              aria-hidden="true"
-              initial={false}
-              animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1 : 0 }}
-              transition={{ duration: 0.2 }}
-              className="mr-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-accent-text"
-            />
+            {/* One shared dot with a layoutId, not five that fade in and out:
+                framer-motion then animates the single marker *between* items, so
+                the rail reads as one indicator travelling down the list. */}
+            <span aria-hidden="true" className="relative mr-1.5 inline-block h-1 w-1 shrink-0">
+              {isActive && (
+                <motion.span
+                  layoutId="nav-rail-marker"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  className="absolute inset-0 rounded-full bg-accent-text"
+                />
+              )}
+            </span>
             {section.label}
           </motion.a>
         );
