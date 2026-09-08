@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type CSSProperties } from 're
 import { motion } from 'framer-motion';
 import { contactMarks, type ContactMarkSlug } from '../data/contactIcons';
 import { Reveal, Stagger, staggerItem } from './Reveal';
+import { SectionHeading } from './SectionHeading';
 
 const EMAIL = 'searan.kuganesan4@gmail.com';
 // Split for the <wbr> in the card below. An address is one unbreakable token to
@@ -252,54 +253,13 @@ export function Contact() {
       />
 
       <Reveal>
-        <div className="relative mx-auto max-w-[980px]">
-          {/* ── Section header ──────────────────────────────────────────
-              Identical construction to the Projects and Skills headers —
-              outline word behind, mirrored rules either side of the § label. */}
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                top: 'clamp(-34px, -3vw, -10px)',
-                left: 0,
-                right: 0,
-                textAlign: 'center',
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: 'clamp(74px, 13vw, 190px)',
-                lineHeight: 0.9,
-                letterSpacing: '.02em',
-                color: 'transparent',
-                WebkitTextStroke: '1px rgba(140, 176, 255, .17)',
-                pointerEvents: 'none',
-                userSelect: 'none',
-              }}
-            >
-              CONTACT
-            </div>
-
-            <div className="relative flex items-center justify-center gap-4 sm:gap-5">
-              <span
-                aria-hidden="true"
-                className="block h-px w-full max-w-[110px] shrink"
-                style={{ background: 'linear-gradient(90deg,transparent,#2f6ad4)' }}
-              />
-              <h2 className="whitespace-nowrap font-mono text-[15px] tracking-[.26em] text-accent-text sm:text-[18px] sm:tracking-[.3em]">
-                § 04 · CONTACT
-              </h2>
-              <span
-                aria-hidden="true"
-                className="block h-px w-full max-w-[110px] shrink"
-                style={{ background: 'linear-gradient(90deg,#2f6ad4,transparent)' }}
-              />
-            </div>
-          </div>
-
+        <div className="relative mx-auto max-w-[1120px]">
           {/* Route count is derived, so adding a channel updates the strip. */}
-          <p className="mt-7 text-center font-mono text-[10px] tracking-[.22em] text-ink-dim sm:mt-8 sm:text-[11px]">
-            OPEN CHANNELS · {String(CHANNELS.length + 1).padStart(2, '0')} ROUTES
-          </p>
+          <SectionHeading
+            word="CONTACT"
+            label="§ 04 · CONTACT"
+            caption={`OPEN CHANNELS · ${String(CHANNELS.length + 1).padStart(2, '0')} ROUTES`}
+          />
 
           <Stagger className="mt-9 sm:mt-11">
             {/* ── CH 01 · email ────────────────────────────────────────

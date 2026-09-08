@@ -23,6 +23,23 @@
 
   /* Amber — scoped to the Experience cutaway's status/progress accents only. */
   --color-amber: #f0a02a;
+
+  /* Blueprint micro-labels: station numbers, spec rows, figure captions, tab
+     sub-labels. These used to be ten hand-picked blues scattered across four
+     components (#33507e, #3f6098, #4a5f80, #4a6790, #3a5580 …), every one of
+     them landing between 2.4:1 and 3.4:1 — under AA at the 9–10px sizes they
+     are set at. Two tokens replace the lot, both measured against the darker
+     of the two grounds they appear on:
+
+       annotation      5.5:1 on --color-bg, 5.1:1 on --color-surface
+       annotation-dim  4.6:1 on --color-bg, 4.3:1 on --color-surface
+
+     The pair still reads as a hierarchy (primary label vs. secondary tick
+     caption) — it just does it inside AA instead of below it. Anything purely
+     structural (rules, ticks, hairlines) keeps its own low-alpha value; these
+     two are for text. */
+  --color-annotation: #6e8ab4;
+  --color-annotation-dim: #647fa8;
 }
 
 body {

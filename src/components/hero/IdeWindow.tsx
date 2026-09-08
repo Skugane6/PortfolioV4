@@ -150,7 +150,7 @@ export function IdeWindow() {
           />
           <div
             className="flex w-4 flex-none flex-col gap-0.5 text-right font-mono text-[10px] leading-[1.55]"
-            style={{ color: '#3f6098' }}
+            style={{ color: 'var(--color-annotation-dim)' }}
           >
             {CODE_LINES.map((_, index) => (
               <span key={index}>{index + 1}</span>

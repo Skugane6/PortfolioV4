@@ -336,7 +336,7 @@ export function HeroStage() {
             —
           </span>
         </div>
-        <div className="font-mono text-[7px] tracking-[0.22em]" style={{ color: '#3f6098' }}>
+        <div className="font-mono text-[7px] tracking-[0.22em]" style={{ color: 'var(--color-annotation-dim)' }}>
           USERS · SYSTEMS · UPTIME · SPEED
         </div>
         <div
@@ -360,7 +360,7 @@ export function HeroStage() {
         </div>
         <div
           className="flex justify-between font-mono text-[7px] tracking-[0.18em]"
-          style={{ color: '#3f6098' }}
+          style={{ color: 'var(--color-annotation-dim)' }}
         >
           <span>Q1</span>
           <span>Q2</span>
@@ -401,7 +401,7 @@ export function HeroStage() {
         </div>
         <div
           className="mt-auto flex items-center justify-between font-mono text-[8px] tracking-[0.22em]"
-          style={{ color: '#3f6098' }}
+          style={{ color: 'var(--color-annotation-dim)' }}
         >
           <span>//// BUILT TO SCALE</span>
           <span style={{ color: '#6f9dee' }}>+</span>

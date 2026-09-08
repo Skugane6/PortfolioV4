@@ -18,7 +18,7 @@ const DIM = '#93a9ca';
 // tick marks, registration crosses — and are allowed to sit near the floor.
 const MICRO = '#7fa3dd';
 const LINE = '#5b86cc';
-const MARK = '#3f6098';
+const MARK = 'var(--color-annotation-dim)';
 
 // Headline is split into four lines so each can rise in on its own beat.
 // The line breaks are the design's, not a consequence of wrapping — they
@@ -298,10 +298,17 @@ export function Hero() {
           >
             <a
               href="#projects"
-              className="inline-flex flex-1 items-center justify-center gap-2.5 whitespace-nowrap px-5 py-[15px] font-mono text-[11px] tracking-[0.18em] transition-[background,box-shadow] duration-200 hover:bg-[#4a86f2] hover:shadow-[0_14px_42px_rgba(50,120,245,.55),inset_0_0_0_1px_rgba(190,220,255,.6)] sm:flex-none sm:justify-start sm:px-5 sm:tracking-[0.22em] lg:px-4 xl:px-[26px]"
+              className="inline-flex flex-1 items-center justify-center gap-2.5 whitespace-nowrap px-5 py-[15px] font-mono text-[11px] tracking-[0.18em] transition-[background,box-shadow] duration-200 hover:bg-[#3570e2] hover:shadow-[0_14px_42px_rgba(50,120,245,.55),inset_0_0_0_1px_rgba(190,220,255,.6)] sm:flex-none sm:justify-start sm:px-5 sm:tracking-[0.22em] lg:px-4 xl:px-[26px]"
+              // The page's one primary CTA, so its label has to clear AA in
+              // both states. It did not: #f2f7ff on #2f6fe0 is 4.37:1 at rest
+              // and the old #4a86f2 hover dropped it to 3.26:1 — the button
+              // got *less* legible the moment you pointed at it. Deepening the
+              // rest fill and promoting the old rest colour to the hover fill
+              // keeps the same blue and the same "brightens on hover" read,
+              // at 5.6:1 and 4.6:1 against pure white.
               style={{
-                background: '#2f6fe0',
-                color: '#f2f7ff',
+                background: '#2a63cf',
+                color: '#ffffff',
                 boxShadow: '0 10px 34px rgba(30,90,215,.4), inset 0 0 0 1px rgba(160,200,255,.35)',
               }}
             >
@@ -524,7 +531,7 @@ export function Hero() {
       <div
         aria-hidden="true"
         className="absolute left-[34px] top-1/2 z-[6] hidden -translate-y-1/2 flex-col gap-[7px] font-mono text-[9px] tracking-[0.3em] xl:flex"
-        style={{ color: '#33507e' }}
+        style={{ color: 'var(--color-annotation-dim)' }}
       >
         <span>BUILD</span>
         <span>SOLVE</span>

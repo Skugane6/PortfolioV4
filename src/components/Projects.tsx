@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type ComponentType, type PointerEvent } from 'react';
+import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import { Reveal } from './Reveal';
+import { SectionHeading } from './SectionHeading';
 import { CraftTraqVisual } from './projects/CraftTraqVisual';
 import { RiskVisual } from './projects/RiskVisual';
 import { NlpVisual } from './projects/NlpVisual';
@@ -103,54 +105,7 @@ export function Projects() {
 
       <Reveal>
         <div className="relative mx-auto max-w-[1280px]">
-          {/* ── Section header ──────────────────────────────────────────
-              The label is the section's heading now that the display h2 is
-              gone, so it carries the h2 and a size to match. Centred between
-              two mirrored rules; the rules shrink rather than hold a fixed
-              width, which is what keeps the row inside 320px. */}
-          <div className="relative">
-            {/* Oversized outline word sitting behind the label. Decorative
-                only — aria-hidden, and the section's overflow-hidden is what
-                clips it where it outgrows a narrow viewport. */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                top: 'clamp(-34px, -3vw, -10px)',
-                left: 0,
-                right: 0,
-                textAlign: 'center',
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: 'clamp(74px, 13vw, 190px)',
-                lineHeight: 0.9,
-                letterSpacing: '.02em',
-                color: 'transparent',
-                WebkitTextStroke: '1px rgba(140, 176, 255, .17)',
-                pointerEvents: 'none',
-                userSelect: 'none',
-              }}
-            >
-              PROJECTS
-            </div>
-
-            {/* relative so the label row stacks above the outline */}
-            <div className="relative flex items-center justify-center gap-4 sm:gap-5">
-              <span
-                aria-hidden="true"
-                className="block h-px w-full max-w-[110px] shrink"
-                style={{ background: 'linear-gradient(90deg,transparent,#2f6ad4)' }}
-              />
-              <h2 className="whitespace-nowrap font-mono text-[15px] tracking-[.26em] text-accent-text sm:text-[18px] sm:tracking-[.3em]">
-                § 02 · PROJECTS
-              </h2>
-              <span
-                aria-hidden="true"
-                className="block h-px w-full max-w-[110px] shrink"
-                style={{ background: 'linear-gradient(90deg,#2f6ad4,transparent)' }}
-              />
-            </div>
-          </div>
+          <SectionHeading word="PROJECTS" label="§ 02 · PROJECTS" />
 
           {/* The panel is not a live region, so without this nothing tells a
               screen reader that an arrow key or a swipe changed anything.
@@ -194,7 +149,7 @@ export function Projects() {
                   type="button"
                   aria-current={isActive ? 'true' : undefined}
                   onClick={() => go(i)}
-                  className={`group relative flex cursor-pointer flex-col items-start gap-2 overflow-hidden rounded-xl border px-3 py-3 text-left transition-[transform,border-color] duration-500 ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-0.5 hover:border-accent-text/45 sm:gap-2.5 sm:rounded-2xl sm:px-4 sm:py-[15px] ${
+                  className={`group relative flex cursor-pointer flex-col items-start gap-2 rounded-xl border px-3 py-3 text-left transition-[transform,border-color] duration-500 ease-[cubic-bezier(.2,.8,.2,1)] hover:-translate-y-0.5 hover:border-accent-text/45 sm:gap-2.5 sm:rounded-2xl sm:px-4 sm:py-[15px] ${
                     isActive ? 'border-accent-text/55' : 'border-[rgba(90,130,200,.16)]'
                   }`}
                   style={{
@@ -229,7 +184,7 @@ export function Projects() {
                     </span>
                     <span
                       className={`whitespace-nowrap font-mono text-[9.5px] tracking-[.18em] transition-colors duration-300 sm:text-[10px] sm:tracking-[.2em] ${
-                        isActive ? 'text-accent-text' : 'text-[#4a5f80]'
+                        isActive ? 'text-accent-text' : 'text-annotation-dim'
                       }`}
                     >
                       {pad(i + 1)} · {entry.live ? 'LIVE' : 'BUILD'}
@@ -253,16 +208,29 @@ export function Projects() {
                     {entry.name}
                   </span>
 
-                  {/* Selection reads as an underline filling in rather than the
-                      card lifting: a raised active card left the row ragged
-                      against its neighbours. */}
-                  <span
-                    aria-hidden="true"
-                    className={`absolute inset-x-0 bottom-0 h-[2px] origin-left transition-transform duration-[600ms] ease-[cubic-bezier(.2,.8,.2,1)] ${
-                      isActive ? 'scale-x-100' : 'scale-x-0'
-                    }`}
-                    style={{ background: 'linear-gradient(90deg,#5b8ff0,rgba(91,143,240,0))' }}
-                  />
+                  {/* Selection reads as an underline rather than the card
+                      lifting: a raised active card left the row ragged against
+                      its neighbours.
+
+                      One underline shared across all four tabs via layoutId,
+                      not four that scale themselves in and out. Framer-motion
+                      then animates the single bar *between* tabs, so picking
+                      project 04 from project 01 slides the marker across the
+                      row instead of dimming one end and lighting the other —
+                      the tabs read as positions on one rail, which is the
+                      whole point of the station-numbering motif. */}
+                  {isActive && (
+                    <motion.span
+                      aria-hidden="true"
+                      layoutId="project-tab-marker"
+                      transition={{ type: 'spring', stiffness: 420, damping: 38 }}
+                      className="absolute inset-x-0 bottom-0 h-[2px]"
+                      style={{
+                        background: 'linear-gradient(90deg,#5b8ff0,rgba(91,143,240,0))',
+                        willChange: 'transform',
+                      }}
+                    />
+                  )}
                 </button>
               );
             })}
@@ -327,13 +295,13 @@ export function Projects() {
                 >
                   <span
                     className="truncate font-mono text-[9px] tracking-[.2em] sm:text-[9.5px]"
-                    style={{ color: '#4a6790' }}
+                    style={{ color: 'var(--color-annotation)' }}
                   >
                     {project.station}
                   </span>
                   <span
                     className="shrink-0 font-mono text-[9px] tracking-[.2em] sm:text-[9.5px]"
-                    style={{ color: '#3a5580' }}
+                    style={{ color: 'var(--color-annotation-dim)' }}
                   >
                     FIG. {pad(active + 1)}
                   </span>
@@ -395,7 +363,7 @@ export function Projects() {
                     className="proj-anim mb-3 flex items-center gap-2.5"
                     style={{ animation: 'proj-fade .6s both .16s' }}
                   >
-                    <span className="font-mono text-[9px] tracking-[.22em]" style={{ color: '#4a5f80' }}>
+                    <span className="font-mono text-[9px] tracking-[.22em]" style={{ color: 'var(--color-annotation-dim)' }}>
                       STACK
                     </span>
                     <span aria-hidden="true" className="h-px min-w-0 flex-1" style={{ background: HAIRLINE }} />

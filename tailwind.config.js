@@ -14,6 +14,8 @@ export default {
         'accent-text': 'var(--color-accent-text)',
         'accent-wash': 'var(--color-accent-wash)',
         'amber-signal': 'var(--color-amber)',
+        annotation: 'var(--color-annotation)',
+        'annotation-dim': 'var(--color-annotation-dim)',
       },
       fontFamily: {
         sans: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],

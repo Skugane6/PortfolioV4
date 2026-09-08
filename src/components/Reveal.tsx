@@ -1,15 +1,31 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
+
+// Hoisted rather than rebuilt inside the components below: these are static
+// objects, and a fresh identity on every render makes framer-motion re-read
+// the target each time for no gain. willChange is set on the way in and
+// dropped on arrival (onAnimationComplete) — leaving it on permanently would
+// hand every revealed block its own compositor layer for the rest of the
+// session, which on a page with four sections of them is a real cost.
+const HIDDEN = { opacity: 0, y: 24 };
+const SHOWN = { opacity: 1, y: 0 };
+const VIEWPORT = { once: true, margin: '-10% 0px' } as const;
+const TRANSITION = { duration: 0.6, ease: [0.16, 1, 0.3, 1] } as const;
+const LIFT = { willChange: 'transform, opacity' };
+const SETTLED = { willChange: 'auto' };
 
 export function Reveal({ children }: { children: ReactNode }) {
   const shouldReduceMotion = useReducedMotion();
+  const [settled, setSettled] = useState(false);
 
   return (
     <motion.div
-      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 24 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-10% 0px' }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      initial={shouldReduceMotion ? undefined : HIDDEN}
+      whileInView={shouldReduceMotion ? undefined : SHOWN}
+      viewport={VIEWPORT}
+      transition={TRANSITION}
+      style={shouldReduceMotion || settled ? SETTLED : LIFT}
+      onAnimationComplete={() => setSettled(true)}
     >
       {children}
     </motion.div>

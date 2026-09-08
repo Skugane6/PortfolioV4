@@ -1,6 +1,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { skills } from '../data/skills';
 import { Reveal } from './Reveal';
+import { SectionHeading } from './SectionHeading';
 import { SkillTile } from './skills/SkillTile';
 
 // The grid itself doesn't move — it only meters its children, so the 28 tiles
@@ -38,56 +39,13 @@ export function Skills() {
 
       <Reveal>
         <div className="relative mx-auto max-w-[1120px]">
-          {/* ── Section header ──────────────────────────────────────────
-              Deliberately identical in construction to the Projects header —
-              outline word behind, mirrored rules either side of the § label —
-              so the two mid-page sections read as consecutive sheets from one
-              drawing set rather than two different designs. */}
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                top: 'clamp(-34px, -3vw, -10px)',
-                left: 0,
-                right: 0,
-                textAlign: 'center',
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: 'clamp(74px, 13vw, 190px)',
-                lineHeight: 0.9,
-                letterSpacing: '.02em',
-                color: 'transparent',
-                WebkitTextStroke: '1px rgba(140, 176, 255, .17)',
-                pointerEvents: 'none',
-                userSelect: 'none',
-              }}
-            >
-              SKILLS
-            </div>
-
-            <div className="relative flex items-center justify-center gap-4 sm:gap-5">
-              <span
-                aria-hidden="true"
-                className="block h-px w-full max-w-[110px] shrink"
-                style={{ background: 'linear-gradient(90deg,transparent,#2f6ad4)' }}
-              />
-              <h2 className="whitespace-nowrap font-mono text-[15px] tracking-[.26em] text-accent-text sm:text-[18px] sm:tracking-[.3em]">
-                § 03 · SKILLS
-              </h2>
-              <span
-                aria-hidden="true"
-                className="block h-px w-full max-w-[110px] shrink"
-                style={{ background: 'linear-gradient(90deg,#2f6ad4,transparent)' }}
-              />
-            </div>
-          </div>
-
-          {/* Parts-list strip. The count is derived, so adding a skill to the
-              data updates the header without anyone remembering to. */}
-          <p className="mt-7 text-center font-mono text-[10px] tracking-[.22em] text-ink-dim sm:mt-8 sm:text-[11px]">
-            MATERIALS LIST · {skills.length} ITEMS
-          </p>
+          {/* The count is derived, so adding a skill to the data updates the
+              header without anyone remembering to. */}
+          <SectionHeading
+            word="SKILLS"
+            label="§ 03 · SKILLS"
+            caption={`MATERIALS LIST · ${skills.length} ITEMS`}
+          />
 
           {/* Column counts are picked so the list divides evenly and no row is
               left with a stranded tile: 28 is 4 × 7 and 7 × 4. Only the

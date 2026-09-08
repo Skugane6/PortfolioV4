@@ -1,5 +1,6 @@
 import { MotionConfig } from 'framer-motion';
 import { Cursor } from './components/Cursor';
+import { Pet } from './components/Pet';
 import { NavRail } from './components/NavRail';
 import { Hero } from './components/Hero';
 import { Experience } from './components/Experience';
@@ -18,6 +19,8 @@ export function App() {
         {/* Outside <main> and aria-hidden: it is a replacement for the native
             cursor, not content. Renders nothing without a fine pointer. */}
         <Cursor />
+        {/* Pixel cat that wanders the page. Purely decorative. */}
+        <Pet />
         <NavRail />
         <main>
           <Hero />

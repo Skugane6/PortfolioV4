@@ -18,8 +18,14 @@ export type SheetDetail = 'full' | 'mid' | 'compact';
 
 const RULE = 'rgba(122,160,216,0.34)';
 const RULE_SOFT = 'rgba(122,160,216,0.22)';
-const TEXT = 'rgba(158,192,232,0.62)';
-const TEXT_SOFT = 'rgba(158,192,232,0.4)';
+// Two text weights, both alpha-composited over the near-black page ground.
+// TEXT_SOFT used to sit at 0.4, which lands at 2.5:1 — these are 9px labels
+// carrying real content (the spec rows, the station callouts, the dates), not
+// texture, so it read as a drafting-pen flourish at the cost of anyone
+// actually being able to read it. The pair is now 6.7:1 / 4.7:1: the same
+// two-step hierarchy, both steps inside AA.
+const TEXT = 'rgba(158,192,232,0.8)';
+const TEXT_SOFT = 'rgba(158,192,232,0.64)';
 
 export const AIRCRAFT = {
   model: 'CRJ700 / 900',
