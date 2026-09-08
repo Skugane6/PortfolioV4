@@ -14,9 +14,11 @@ export function NavRail() {
   const activeId = useActiveSection(SECTIONS.map((section) => section.id));
 
   return (
-    // Vertical rail, right edge, on desktop; collapses to a fixed bottom bar on
-    // mobile instead of disappearing — narrow viewports still need a way to jump
-    // sections without hand-scrolling past the whole page.
+    // Vertical rail, right edge, from lg up; collapses to a fixed bottom bar
+    // below that instead of disappearing — narrow viewports still need a way to
+    // jump sections without hand-scrolling past the whole page. The switch is at
+    // lg, not md: the hero only clears a right gutter for the rail at lg, so at
+    // md the floating column landed on top of the hero's own content.
     // Only opacity animates here (not y/x) — the desktop layout centers this
     // rail with a `-translate-y-1/2` class, and a motion-driven transform would
     // clobber that inline once framer-motion takes ownership of `transform`.
@@ -25,7 +27,7 @@ export function NavRail() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="fixed inset-x-0 bottom-0 z-20 flex justify-around border-t border-border bg-bg/90 px-4 py-3 font-mono text-[10px] tracking-widest backdrop-blur-sm md:inset-x-auto md:inset-y-1/2 md:bottom-auto md:right-6 md:top-1/2 md:flex-col md:justify-start md:gap-4 md:border-t-0 md:bg-transparent md:px-0 md:py-0 md:text-xs md:backdrop-blur-none md:-translate-y-1/2"
+      className="fixed inset-x-0 bottom-0 z-20 flex justify-around border-t border-border bg-bg/90 px-4 py-3 font-mono text-[10px] tracking-widest backdrop-blur-sm lg:inset-x-auto lg:inset-y-1/2 lg:bottom-auto lg:right-6 lg:top-1/2 lg:flex-col lg:justify-start lg:gap-4 lg:border-t-0 lg:bg-transparent lg:px-0 lg:py-0 lg:text-xs lg:backdrop-blur-none lg:-translate-y-1/2"
     >
       {SECTIONS.map((section) => {
         const isActive = activeId === section.id;

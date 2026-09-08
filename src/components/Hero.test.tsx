@@ -38,12 +38,15 @@ describe('Hero', () => {
     expect(link).toHaveAttribute('download');
   });
 
-  it('shows the portrait, and builds the rest of the scene without images', () => {
+  it('shows the portrait and the one institutional mark, and nothing else', () => {
     const { container } = render(<Hero />);
-    // The stage is drawn entirely in CSS and SVG, so the portrait should be
-    // the only <img> in the section — a second one means panel artwork has
-    // crept back in.
-    expect(container.querySelectorAll('img')).toHaveLength(1);
+    // The stage is drawn entirely in CSS and SVG, so these two are the only
+    // <img> elements the section is allowed — a third means panel artwork has
+    // crept back in. The Western mark carries an empty alt on purpose: the
+    // term beside it already names it, so an alt would say it twice.
+    const images = [...container.querySelectorAll('img')];
+    expect(images.map((img) => img.getAttribute('alt'))).toEqual(['Searan Kuganesan', '']);
+    expect(images[1]).toHaveAttribute('src', '/western-mark.png');
     expect(screen.getByRole('img', { name: 'Searan Kuganesan' })).toBeInTheDocument();
   });
 
@@ -55,6 +58,63 @@ describe('Hero', () => {
     for (const text of ['SCALABLE SOLUTIONS', 'REAL-WORLD IMPACT', 'DEPLOY']) {
       expect(screen.getByText(text).closest('[aria-hidden="true"]')).not.toBeNull();
     }
+  });
+
+  it('backs the impact claim with a spec sheet, not an employer', () => {
+    render(<Hero />);
+    // The headline promises "real impact" and the old hero showed none until
+    // you scrolled. These are facts about the engineer and the software —
+    // what he ships, what he ships it in, and the credential.
+    for (const [value, label] of [
+      ['10', 'PROJECTS SHIPPED'],
+      ['2026', 'B.E.SC SOFTWARE ENG'],
+    ]) {
+      const term = screen.getByText(label);
+      expect(term.closest('div')).toHaveTextContent(value);
+    }
+    // The Western cell prints no caption — the lockup says "Western" itself.
+    // Its term is hidden with opacity rather than sr-only so that it still
+    // holds the label row open under the mark, and still reaches AT.
+    const term = screen.getByText('WESTERN UNIVERSITY');
+    expect(term).toHaveClass('opacity-0');
+    const cell = term.closest('div');
+    expect(cell).not.toBeNull();
+    expect(cell).toContainElement(cell!.querySelector('img'));
+  });
+
+  it('keeps the employer out of the hero', () => {
+    render(<Hero />);
+    // The strip used to carry a "MITSUBISHI HEAVY INDUSTRIES · CRAFTTRAQ"
+    // attribution rule. The Experience section is where that belongs.
+    expect(screen.queryByText(/mitsubishi/i)).not.toBeInTheDocument();
+  });
+
+  it('links the live-product metric at the product', () => {
+    render(<Hero />);
+    const link = screen.getByRole('link', { name: /CRAFTTRAQ SAAS/i });
+    expect(link).toHaveAttribute('href', 'https://crafttraq.com');
+    expect(link).toHaveAttribute('rel', 'noreferrer');
+  });
+
+  it('offers the three contact routes with labelled icon-only links', () => {
+    render(<Hero />);
+    // The glyphs are decorative SVG with no text, so the aria-label is the
+    // whole accessible name — losing it leaves three unnamed links.
+    for (const [label, href] of [
+      ['GitHub', 'https://github.com/skugane6'],
+      ['LinkedIn', 'https://linkedin.com/in/searan-kuganesan'],
+      ['Email', 'mailto:searan.kuganesan4@gmail.com'],
+    ]) {
+      expect(screen.getByRole('link', { name: label })).toHaveAttribute('href', href);
+    }
+  });
+
+  it('states the role once, not once per lockup', () => {
+    render(<Hero />);
+    // The header lockup owns the job title. The eyebrow beside the portrait
+    // used to repeat it verbatim; getByText throws on a second exact match,
+    // so this fails the moment it comes back.
+    expect(screen.getByText('SOFTWARE ENGINEER')).toBeInTheDocument();
   });
 
   it('does not duplicate the section nav that NavRail already renders', () => {

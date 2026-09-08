@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
-import { IdeWindow } from './IdeWindow';
+import { IdeFrame } from './IdeFrame';
 
 // The scene is authored against a fixed 900x760 coordinate space and scaled
 // to fit by useStageTilt, so every offset here is a plain pixel number that
@@ -15,7 +15,7 @@ const CONNECTORS = [
   { points: '120,210 120,265 230,265', pulse: '4.2s linear infinite' },
   { points: '555,175 555,200 620,200 620,225', pulse: '5.4s linear infinite 1.1s' },
   { points: '95,380 95,305 230,305', pulse: '4.8s linear infinite 2.2s' },
-  { points: '520,580 520,608 400,608 400,555', pulse: '5.8s linear infinite .6s' },
+  { points: '532,594 532,620 400,620 400,555', pulse: '5.8s linear infinite .6s' },
   // No pulse on this one — it runs behind the IDE for most of its length.
   { points: '190,505 250,505 250,672 372,672', pulse: null },
 ];
@@ -25,7 +25,7 @@ const TERMINALS = [
   { x: 120, y: 210 },
   { x: 555, y: 175 },
   { x: 95, y: 380 },
-  { x: 520, y: 580 },
+  { x: 532, y: 594 },
   { x: 372, y: 672 },
 ];
 
@@ -192,23 +192,30 @@ export function HeroStage() {
           ))}
         </g>
 
-        {/* The one warm annotation in the scene — a runtime callout. */}
+        {/* The one warm annotation in the scene — a runtime callout. Its
+            elbow starts at x=724 rather than x=700: the IDEAS panel's right
+            edge is at 700 and carries its own parallax, so an elbow flush
+            against it slid under the panel on half the pointer positions and
+            took the RUNTIME OK label with it. */}
         <g stroke="#e08a3c" strokeWidth="1.1" fill="none" opacity=".8">
-          <path d="M700,300 L760,300 L760,262" />
-          <circle cx="700" cy="300" r="3.4" fill="#e08a3c" stroke="none" />
+          <path d="M724,318 L784,318 L784,280" />
+          <circle cx="724" cy="318" r="3.4" fill="#e08a3c" stroke="none" />
         </g>
 
-        {/* Dimension line under the IDE */}
+        {/* Dimension line under the IDE. It stops at x=420 rather than
+            running the IDE's full width: past that it passed underneath the
+            SCALABLE SOLUTIONS panel, and the rotation pulls the two layers
+            apart enough for the rule and its label to read as a collision. */}
         <g stroke="#2f4c78" strokeWidth="1" fill="none">
-          <path d="M230,700 L700,700" />
-          <path d="M230,694 L230,706 M700,694 L700,706" />
+          <path d="M230,700 L420,700" />
+          <path d="M230,694 L230,706 M420,694 L420,706" />
         </g>
 
         <g fill="#5f86c8" fontFamily="'JetBrains Mono', monospace" fontSize="11" letterSpacing="2.4">
-          <text x="404" y="690">
+          <text x="243" y="690">
             IDE · 470 × 330
           </text>
-          <text x="766" y="258">
+          <text x="790" y="276">
             RUNTIME OK
           </text>
           <text x="16" y="600" opacity=".7">
@@ -365,7 +372,7 @@ export function HeroStage() {
 
       {/* Scalable solutions */}
       <StagePanel
-        position={{ left: 440, top: 580, width: 260, height: 170 }}
+        position={{ left: 452, top: 594, width: 260, height: 170 }}
         depth={{ x: -12, y: -8, z: -10 }}
         float="hero-float-a 12s ease-in-out infinite .8s"
         surface={{
@@ -413,27 +420,7 @@ export function HeroStage() {
             'translate3d(calc(var(--mx, 0) * 10px), calc(var(--my, 0) * 6px), 40px)',
         }}
       >
-        <div
-          className="absolute rounded-[10px]"
-          style={{ inset: -14, border: '1px solid rgba(96,150,245,.16)' }}
-        />
-        <div
-          className="absolute h-3.5 w-3.5"
-          style={{ left: -22, top: -22, borderLeft: '1px solid #6f9dee', borderTop: '1px solid #6f9dee' }}
-        />
-        <div
-          className="absolute h-3.5 w-3.5"
-          style={{ right: -22, top: -22, borderRight: '1px solid #6f9dee', borderTop: '1px solid #6f9dee' }}
-        />
-        <div
-          className="absolute h-3.5 w-3.5"
-          style={{ left: -22, bottom: -22, borderLeft: '1px solid #6f9dee', borderBottom: '1px solid #6f9dee' }}
-        />
-        <div
-          className="absolute h-3.5 w-3.5"
-          style={{ right: -22, bottom: -22, borderRight: '1px solid #6f9dee', borderBottom: '1px solid #6f9dee' }}
-        />
-        <IdeWindow />
+        <IdeFrame />
       </div>
     </div>
   );
