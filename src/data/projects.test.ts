@@ -1,22 +1,36 @@
 import { describe, it, expect } from 'vitest';
-import { featuredProject, secondaryProjects } from './projects';
+import { projects } from './projects';
 
 describe('projects data', () => {
-  it('describes CraftTraq as the featured case study with its real stack', () => {
-    expect(featuredProject.name).toBe('CraftTraq');
-    expect(featuredProject.featured).toBe(true);
-    expect(featuredProject.stack).toEqual(['React 19', 'TypeScript', 'FastAPI', 'PostgreSQL']);
-    expect(featuredProject.screenshot.src).toBe('/crafttraq.png');
-    expect(featuredProject.screenshot.webp).toBe('/crafttraq.webp');
+  it('leads with CraftTraq as the live featured build, with its real stack', () => {
+    const [featured] = projects;
+    expect(featured.name).toBe('CraftTraq');
+    expect(featured.live).toBe(true);
+    expect(featured.visual).toBe('crafttraq');
+    expect(featured.stack).toEqual([
+      'React 19',
+      'TypeScript',
+      'FastAPI',
+      'PostgreSQL',
+      'Stripe',
+      'Supabase',
+    ]);
+    expect(featured.links).toEqual([{ label: 'VISIT LIVE SITE', href: 'https://crafttraq.com' }]);
   });
 
-  it('lists the secondary projects', () => {
-    const names = secondaryProjects.map((project) => project.name);
-    expect(names).toEqual([
+  it('lists four projects in flight-line order, with CraftTraq the only live one', () => {
+    expect(projects.map((project) => project.name)).toEqual([
+      'CraftTraq',
       'Portfolio Risk Dashboard',
-      'Multi-Model Text Classification Pipeline',
-      'Eye-Mouse',
+      'Text Classification Pipeline',
+      'Eye Tracking Mouse',
     ]);
-    secondaryProjects.forEach((project) => expect(project.featured).toBe(false));
+    expect(projects.filter((project) => project.live)).toHaveLength(1);
+  });
+
+  it('gives every project its own visual panel and a station reference', () => {
+    const visuals = projects.map((project) => project.visual);
+    expect(new Set(visuals).size).toBe(projects.length);
+    projects.forEach((project) => expect(project.station).toMatch(/^STA \d{3} · /));
   });
 });

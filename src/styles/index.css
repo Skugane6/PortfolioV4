@@ -70,3 +70,71 @@ button:focus-visible {
     animation: none !important;
   }
 }
+
+/* ── Projects carousel animations ──────────────────────────────────────
+   Same arrangement as the hero block above, and for the same reason: the
+   projects panels are built from CSS and inline SVG rather than motion.*
+   components, so <MotionConfig reducedMotion="user"> never reaches them.
+   Every animated element carries `proj-anim` next to its inline `animation`
+   shorthand, and the guard at the bottom flattens the whole section.
+
+   Entrance keyframes (rise/fade/draw/grow/track) all animate *from* a hidden
+   state into the element's natural styles, so cancelling them leaves the
+   content visible rather than stuck invisible. */
+@keyframes proj-rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes proj-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes proj-drift { from { background-position: 0 0, 0 0; } to { background-position: 64px 64px, 64px 64px; } }
+@keyframes proj-glide {
+  0% { left: -14%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { left: 104%; opacity: 0; }
+}
+@keyframes proj-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+@keyframes proj-ring { 0% { transform: scale(0.5); opacity: 0.85; } 100% { transform: scale(3.2); opacity: 0; } }
+@keyframes proj-sheen { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes proj-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes proj-scan {
+  0% { transform: translateX(-30%); opacity: 0; }
+  10% { opacity: 0.75; }
+  90% { opacity: 0.75; }
+  100% { transform: translateX(340%); opacity: 0; }
+}
+
+/* Risk dashboard. proj-draw carries its own `from` rather than relying on a
+   stroke-dashoffset attribute on the element: an attribute would survive the
+   reduced-motion cancel below and leave the lines permanently undrawn. */
+@keyframes proj-draw { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
+@keyframes proj-grow { from { transform: scaleY(0.1); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
+@keyframes proj-vscan { from { left: 2%; } to { left: 98%; } }
+
+/* Ensemble network */
+@keyframes proj-dash { to { stroke-dashoffset: -240; } }
+@keyframes proj-offset { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes proj-track { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Gaze pointer */
+@keyframes proj-cursor {
+  0% { transform: translate(16%, 20%); }
+  22% { transform: translate(74%, 18%); }
+  44% { transform: translate(82%, 64%); }
+  68% { transform: translate(52%, 76%); }
+  88% { transform: translate(48%, 42%); }
+  100% { transform: translate(16%, 20%); }
+}
+@keyframes proj-click {
+  0%, 86%, 100% { transform: scale(0); opacity: 0; }
+  90% { transform: scale(1); opacity: 0.9; }
+  99% { transform: scale(2.6); opacity: 0; }
+}
+@keyframes proj-blink { 0%, 90%, 100% { transform: scaleY(0.02); } 94% { transform: scaleY(1); } }
+@keyframes proj-tilehit {
+  0%, 12%, 100% { border-color: rgba(91, 143, 240, 0.2); background: rgba(91, 143, 240, 0.02); }
+  4% { border-color: rgba(91, 143, 240, 0.85); background: rgba(91, 143, 240, 0.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-anim {
+    animation: none !important;
+  }
+}

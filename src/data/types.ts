@@ -30,23 +30,28 @@ export interface Education {
   graduation: string;
 }
 
+/** Which visual panel the projects carousel renders on the right-hand side. */
+export type ProjectVisual = 'crafttraq' | 'risk' | 'nlp' | 'eye';
+
+export interface ProjectLink {
+  /** Rendered as-is, so already upper-cased: "VISIT LIVE SITE". */
+  label: string;
+  href: string;
+}
+
 export interface ProjectEntry {
   id: string;
+  /** Panel eyebrow, e.g. "01 · FEATURED". */
+  tag: string;
+  /** Station reference stamped in the visual panel's top-left corner. */
+  station: string;
   name: string;
   tagline: string;
   stack: string[];
-  featured: boolean;
-  image?: string;
-  href?: string;
-}
-
-export interface FeaturedCaseStudy extends ProjectEntry {
-  problem: string;
-  approach: string[];
-  decision: { title: string; body: string };
-  scope: string[];
-  outcome: string;
-  screenshot: { src: string; webp: string; alt: string };
+  links: ProjectLink[];
+  /** Shows the pulsing LIVE badge in the panel header. */
+  live: boolean;
+  visual: ProjectVisual;
 }
 
 export interface SkillGroup {
