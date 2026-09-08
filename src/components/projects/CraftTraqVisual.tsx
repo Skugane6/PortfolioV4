@@ -78,9 +78,14 @@ export function CraftTraqVisual() {
       {/* ── Phone, overlapping the laptop's right edge ───────────────── */}
       <div
         className="proj-anim relative z-[3] mb-3.5 flex-none"
+        // Sized as a share of the mockup row, not of the viewport: against a
+        // vw the phone kept its full height while the laptop shrank with the
+        // panel, so on a phone-width screen it towered over the machine it is
+        // meant to sit beside. A percentage keeps the two in proportion at
+        // every width; the clamp stops it collapsing or outgrowing the lid.
         style={{
-          width: 'clamp(84px,9.5vw,126px)',
-          marginLeft: -16,
+          width: 'clamp(56px,19%,126px)',
+          marginLeft: '-2.5%',
           animation: 'proj-rise 1s cubic-bezier(.2,.8,.2,1) both .28s',
         }}
       >
