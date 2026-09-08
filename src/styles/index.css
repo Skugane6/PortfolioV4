@@ -138,3 +138,57 @@ button:focus-visible {
     animation: none !important;
   }
 }
+
+/* ── Skills plate ──────────────────────────────────────────────────────
+   The logo grid's colour states are CSS rather than framer-motion, and the
+   `@media (hover: none)` block at the bottom is the reason. Every chip sets
+   --brand (its real brand hex, floored in lightness by
+   scripts/generate-skill-icons.mjs so it survives this near-black ground) and
+   --brand-soft. On a pointer device the mark rests as drafted blue-grey and
+   blooms to its brand colour under the cursor; on a touchscreen no hover event
+   will ever fire, so the same rules simply make the brand colour the resting
+   state instead of stranding every phone on a grid of grey marks.
+
+   Motion still owns everything CSS does badly here — the staggered entrance,
+   the pointer tilt, the bloom and light sweep — see SkillTile.tsx. */
+.skill-chip {
+  transition: border-color 300ms ease, background-color 300ms ease;
+}
+
+.skill-mark,
+.skill-ticks,
+.skill-note {
+  transition: color 350ms ease;
+}
+
+.skill-mark {
+  color: rgba(150, 178, 215, 0.72);
+}
+
+.skill-ticks {
+  color: rgba(120, 160, 225, 0.38);
+}
+
+.skill-note {
+  color: var(--color-ink-dim);
+}
+
+.skill-tile:hover .skill-chip {
+  border-color: var(--brand-soft);
+  background-color: rgba(16, 23, 36, 0.75);
+}
+
+.skill-tile:hover .skill-mark,
+.skill-tile:hover .skill-ticks {
+  color: var(--brand);
+}
+
+.skill-tile:hover .skill-note {
+  color: rgba(190, 209, 236, 0.9);
+}
+
+@media (hover: none) {
+  .skill-mark {
+    color: var(--brand);
+  }
+}

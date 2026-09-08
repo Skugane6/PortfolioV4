@@ -1,3 +1,5 @@
+import type { SkillMarkSlug } from './skillIcons';
+
 export interface ExperienceCallout {
   /** Structural station reference shown in the card header, e.g. "STA 145 · FWD". */
   station: string;
@@ -54,8 +56,15 @@ export interface ProjectEntry {
   visual: ProjectVisual;
 }
 
-export interface SkillGroup {
-  id: string;
-  title: string;
-  skills: string[];
+export interface Skill {
+  /** Short display name — the logo carries the recognition, so this stays terse. */
+  name: string;
+  /** Which mark in skillIcons.ts to draw. */
+  icon: SkillMarkSlug;
+  /**
+   * The specifics that used to be crammed into the name ("QuickBooks OAuth2",
+   * "AWS (S3, Lambda, Transcribe)"). Shown as a second line on the tile so the
+   * grid reads as logos at a glance without losing what was actually used.
+   */
+  note?: string;
 }

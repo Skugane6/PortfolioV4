@@ -1,34 +1,109 @@
-import { motion } from 'framer-motion';
-import { skillGroups } from '../data/skills';
-import { Reveal, Stagger, staggerItem } from './Reveal';
-import { chipWash } from '../styles/shared';
+import { motion, type Variants } from 'framer-motion';
+import { skills } from '../data/skills';
+import { Reveal } from './Reveal';
+import { SkillTile } from './skills/SkillTile';
+
+// The grid itself doesn't move — it only meters its children, so the 28 tiles
+// sweep in left-to-right, top-to-bottom rather than landing as one slab. 0.03s
+// keeps the whole pass under a second even at this count.
+const gridVariants: Variants = {
+  hidden: {},
+  visible: { transition: { delayChildren: 0.08, staggerChildren: 0.03 } },
+};
 
 export function Skills() {
   return (
-    <section id="skills" className="bg-surface px-6 py-section">
+    <section
+      id="skills"
+      className="relative overflow-hidden bg-surface px-5 py-24 sm:px-6 sm:py-28 lg:px-40 lg:py-section"
+    >
+      {/* Same drifting blueprint grid and corner wash the Projects section
+          uses, at a lower opacity — this section sits on --color-surface rather
+          than the page ground, so the grid needs less to register. */}
+      <div
+        aria-hidden="true"
+        className="proj-anim pointer-events-none absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(91,143,240,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(91,143,240,.05) 1px, transparent 1px)',
+          backgroundSize: '64px 64px, 64px 64px',
+          animation: 'proj-drift 38s linear infinite',
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[220px] -top-32 h-[560px] w-[560px] rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(43,92,168,.16), transparent 68%)' }}
+      />
+
       <Reveal>
-        <div className="mx-auto max-w-4xl">
-          <p className="font-mono text-xs tracking-widest text-accent-text">§ 03 · SKILLS</p>
-          <Stagger className="mt-8 grid gap-10 md:grid-cols-2">
-            {skillGroups.map((group) => (
-              <motion.div key={group.id} variants={staggerItem}>
-                <h3 className="font-display text-xl text-ink">{group.title}</h3>
-                <Stagger className="mt-3 flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <motion.span
-                      key={skill}
-                      variants={staggerItem}
-                      whileHover={{ scale: 1.08, y: -2 }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                      className={chipWash}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </Stagger>
-              </motion.div>
+        <div className="relative mx-auto max-w-[1120px]">
+          {/* ── Section header ──────────────────────────────────────────
+              Deliberately identical in construction to the Projects header —
+              outline word behind, mirrored rules either side of the § label —
+              so the two mid-page sections read as consecutive sheets from one
+              drawing set rather than two different designs. */}
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                top: 'clamp(-34px, -3vw, -10px)',
+                left: 0,
+                right: 0,
+                textAlign: 'center',
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: 'clamp(74px, 13vw, 190px)',
+                lineHeight: 0.9,
+                letterSpacing: '.02em',
+                color: 'transparent',
+                WebkitTextStroke: '1px rgba(140, 176, 255, .17)',
+                pointerEvents: 'none',
+                userSelect: 'none',
+              }}
+            >
+              SKILLS
+            </div>
+
+            <div className="relative flex items-center justify-center gap-4 sm:gap-5">
+              <span
+                aria-hidden="true"
+                className="block h-px w-full max-w-[110px] shrink"
+                style={{ background: 'linear-gradient(90deg,transparent,#2f6ad4)' }}
+              />
+              <h2 className="whitespace-nowrap font-mono text-[15px] tracking-[.26em] text-accent-text sm:text-[18px] sm:tracking-[.3em]">
+                § 03 · SKILLS
+              </h2>
+              <span
+                aria-hidden="true"
+                className="block h-px w-full max-w-[110px] shrink"
+                style={{ background: 'linear-gradient(90deg,#2f6ad4,transparent)' }}
+              />
+            </div>
+          </div>
+
+          {/* Parts-list strip. The count is derived, so adding a skill to the
+              data updates the header without anyone remembering to. */}
+          <p className="mt-7 text-center font-mono text-[10px] tracking-[.22em] text-ink-dim sm:mt-8 sm:text-[11px]">
+            MATERIALS LIST · {skills.length} ITEMS
+          </p>
+
+          {/* Column counts are picked so the list divides evenly and no row is
+              left with a stranded tile: 28 is 4 × 7 and 7 × 4. Only the
+              3-column phone layout leaves a remainder, and there the tile
+              staying legible matters more than the tidy bottom edge. */}
+          <motion.ul
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-8% 0px' }}
+            variants={gridVariants}
+            className="mt-9 grid grid-cols-3 gap-2 sm:mt-11 sm:grid-cols-4 sm:gap-2.5 lg:grid-cols-7"
+          >
+            {skills.map((skill) => (
+              <SkillTile key={skill.name} skill={skill} />
             ))}
-          </Stagger>
+          </motion.ul>
         </div>
       </Reveal>
     </section>
