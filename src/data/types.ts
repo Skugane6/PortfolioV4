@@ -56,11 +56,21 @@ export interface ProjectEntry {
   visual: ProjectVisual;
 }
 
+/**
+ * Which run of the parts list a skill belongs to. The grid deliberately draws
+ * no lines between these — the key exists so the side detail panel can name
+ * what a tile *is* ("DATA & MODELS") and tally the list, not so the layout can
+ * break the plate into four smaller plates.
+ */
+export type SkillGroup = 'build' | 'platform' | 'data' | 'verify';
+
 export interface Skill {
   /** Short display name — the logo carries the recognition, so this stays terse. */
   name: string;
   /** Which mark in skillIcons.ts to draw. */
   icon: SkillMarkSlug;
+  /** Run of the list this belongs to; read by the detail panel, not the grid. */
+  group: SkillGroup;
   /**
    * The specifics that used to be crammed into the name ("QuickBooks OAuth2",
    * "AWS (S3, Lambda, Transcribe)"). Shown as a second line on the tile so the

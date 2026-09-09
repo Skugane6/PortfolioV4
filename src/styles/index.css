@@ -156,30 +156,38 @@ button:focus-visible {
   }
 }
 
-/* ── Skills plate ──────────────────────────────────────────────────────
-   The logo grid's colour states are CSS rather than framer-motion, and the
-   `@media (hover: none)` block at the bottom is the reason. Every chip sets
-   --brand (its real brand hex, floored in lightness by
-   scripts/generate-skill-icons.mjs so it survives this near-black ground) and
-   --brand-soft. On a pointer device the mark rests as drafted blue-grey and
-   blooms to its brand colour under the cursor; on a touchscreen no hover event
-   will ever fire, so the same rules simply make the brand colour the resting
-   state instead of stranding every phone on a grid of grey marks.
+/* ── Skills plate ──────────────────────────────────────────
+   Every logo wears its own brand colour, at rest, on every device. The marks
+   used to sit drafted blue-grey until a cursor found them, which read as a
+   plate of grey squares to anyone who never hovered — and as *nothing at all*
+   on a touchscreen, where a `@media (hover: none)` fallback was the only thing
+   painting them at all. The colour is the point of the section, so it is
+   now the resting state and hover is what intensifies it: a brand-tinted
+   border, a glow under the mark, and the corner ticks picking up the same hue.
 
-   Motion still owns everything CSS does badly here — the staggered entrance,
-   the pointer tilt, the bloom and light sweep — see SkillTile.tsx. */
+   Each chip sets four weights of its one hex in SkillTile.tsx — --brand (the
+   mark), --brand-soft (hover border, glow), --brand-line (resting border) and
+   --brand-wash (the faint plate tint). All four are floored in lightness by
+   scripts/generate-skill-icons.mjs so they survive this near-black ground.
+
+   These states are CSS rather than framer-motion so one rule covers pointer,
+   touch and reduced-motion alike. Motion still owns what CSS does badly — the
+   staggered entrance, the pointer tilt, the bloom and light sweep. */
 .skill-chip {
-  transition: border-color 300ms ease, background-color 300ms ease;
+  border-color: var(--brand-line);
+  background-color: rgba(12, 17, 26, 0.55);
+  background-image: linear-gradient(158deg, var(--brand-wash), transparent 64%);
+  transition: border-color 300ms ease, background-color 300ms ease, box-shadow 300ms ease;
 }
 
 .skill-mark,
 .skill-ticks,
 .skill-note {
-  transition: color 350ms ease;
+  transition: color 350ms ease, filter 350ms ease;
 }
 
 .skill-mark {
-  color: rgba(150, 178, 215, 0.72);
+  color: var(--brand);
 }
 
 .skill-ticks {
@@ -193,9 +201,15 @@ button:focus-visible {
 .skill-tile:hover .skill-chip {
   border-color: var(--brand-soft);
   background-color: rgba(16, 23, 36, 0.75);
+  box-shadow: 0 10px 30px -16px var(--brand);
 }
 
-.skill-tile:hover .skill-mark,
+/* The mark is already brand-coloured, so hover has to say something else:
+   the glow is that something. */
+.skill-tile:hover .skill-mark {
+  filter: drop-shadow(0 0 9px var(--brand-soft));
+}
+
 .skill-tile:hover .skill-ticks {
   color: var(--brand);
 }
@@ -204,10 +218,31 @@ button:focus-visible {
   color: rgba(190, 209, 236, 0.9);
 }
 
-@media (hover: none) {
-  .skill-mark {
-    color: var(--brand);
-  }
+/* ── Skills detail panel ─────────────────────────────────────
+   The margin callout inherits the same four custom properties from whichever
+   tile the pointer is on — set on the <aside> in SkillDetail.tsx, so the whole
+   panel transitions from one part's colour to the next's rather than cutting.
+   The transitions are long here (400ms against the grid's 300ms) because this
+   is a single large element changing colour, not a 90px chip. */
+.skill-detail-plate {
+  border-color: var(--brand-line);
+  background-color: rgba(10, 14, 21, 0.55);
+  transition: border-color 400ms ease;
+}
+
+.skill-detail-ticks {
+  color: var(--brand-soft);
+  transition: color 400ms ease;
+}
+
+.skill-detail-mark {
+  color: var(--brand);
+  filter: drop-shadow(0 0 14px var(--brand-soft));
+  transition: color 400ms ease, filter 400ms ease;
+}
+
+.skill-detail-name {
+  color: var(--color-ink);
 }
 
 /* ── Contact channels ──────────────────────────────────────────────────

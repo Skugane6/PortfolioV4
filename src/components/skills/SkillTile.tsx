@@ -35,17 +35,27 @@ const tickVariants: Variants = {
 
 const CORNERS = ['M2 12V2h10', 'M88 2h10v10', 'M98 88v10H88', 'M12 98H2V88'];
 
+interface SkillTileProps {
+  skill: Skill;
+  /**
+   * Told when the pointer enters or leaves the tile, so the section's side
+   * detail panel can read out this part. Passing the skill rather than an
+   * index keeps the tile ignorant of where it sits in the list.
+   */
+  onActivate?: (skill: Skill | null) => void;
+}
+
 /**
  * One logo chip.
  *
- * The brand colour is deliberately *not* animated here: it's a CSS transition
- * on `.skill-mark` driven by the three custom properties set below, because
- * that's the only way the same rule can make the brand colour the *resting*
- * state under `@media (hover: none)`. A JS hover tint would leave every phone
- * looking at a grid of grey marks. Framer Motion owns what CSS does badly —
- * the staggered entrance, the pointer tilt, and the bloom/sweep on hover.
+ * Every logo wears its own brand colour at rest — that's a CSS transition on
+ * `.skill-mark` driven by the custom properties set below, not a Motion
+ * animation, so the same rule paints the resting state, the hover state, and
+ * the touch-device state (which never fires a hover event at all). Framer
+ * Motion owns what CSS does badly: the staggered entrance, the pointer tilt,
+ * and the bloom/sweep on hover.
  */
-export function SkillTile({ skill }: { skill: Skill }) {
+export function SkillTile({ skill, onActivate }: SkillTileProps) {
   const mark = skillMarks[skill.icon];
   const shouldReduceMotion = useReducedMotion();
   const [lit, setLit] = useState(false);
@@ -72,19 +82,29 @@ export function SkillTile({ skill }: { skill: Skill }) {
     setLit(false);
   }, [tiltX, tiltY]);
 
-  // An alpha suffix on the hex gives the tint a weaker weight for the border
-  // and the corner ticks without needing a second colour in the data.
+  // Alpha suffixes on the one hex in the data give the same colour four
+  // weights — full strength for the mark, a mid weight for the hover border
+  // and corner ticks, and two faint ones for the resting border and the plate
+  // wash that stops the grid reading as 28 grey squares.
   const brandVars = {
     '--brand': mark.hex,
     '--brand-soft': `${mark.hex}66`,
+    '--brand-line': `${mark.hex}30`,
+    '--brand-wash': `${mark.hex}12`,
   } as CSSProperties;
 
   return (
     <motion.li
       variants={tileVariants}
       onPointerMove={shouldReduceMotion ? undefined : onPointerMove}
-      onHoverStart={() => setLit(true)}
-      onHoverEnd={rest}
+      onHoverStart={() => {
+        setLit(true);
+        onActivate?.(skill);
+      }}
+      onHoverEnd={() => {
+        rest();
+        onActivate?.(null);
+      }}
       style={
         shouldReduceMotion
           ? brandVars
@@ -92,7 +112,7 @@ export function SkillTile({ skill }: { skill: Skill }) {
       }
       className="skill-tile relative list-none"
     >
-      <div className="skill-chip relative flex h-full flex-col items-center gap-1 overflow-hidden rounded-xl border border-[rgba(90,130,200,.16)] bg-[rgba(12,17,26,.55)] px-2 pb-2.5 pt-3 text-center">
+      <div className="skill-chip relative flex h-full flex-col items-center gap-1 overflow-hidden rounded-xl border px-2 pb-2.5 pt-3 text-center">
         {/* Brand-tinted bloom behind the mark. Scaled, not resized, so it stays
             on the compositor. */}
         <motion.span

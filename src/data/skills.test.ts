@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { skills } from './skills';
+import { skillGroupOrder, skillGroups, skills } from './skills';
 import { skillMarks } from './skillIcons';
 
 describe('skills data', () => {
@@ -15,6 +15,16 @@ describe('skills data', () => {
 
   it('lists each skill once', () => {
     expect(new Set(skills.map((skill) => skill.name)).size).toBe(skills.length);
+  });
+
+  it('files every skill under a run the detail panel can name', () => {
+    skills.forEach((skill) => {
+      expect(skillGroups[skill.group], skill.name).toBeDefined();
+    });
+    // Every run has to be represented, or the tally renders an empty bar.
+    skillGroupOrder.forEach((group) => {
+      expect(skills.some((skill) => skill.group === group), group).toBe(true);
+    });
   });
 
   it('keeps the detail that used to live in the skill name', () => {
