@@ -6,7 +6,7 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion';
  *
  * This markup used to be copy-pasted three times (Projects, Skills, Contact),
  * byte-identical apart from the word and the label, which is how the three
- * copies stayed in sync — by nobody touching them. It also carried a defect in
+ * copies stayed in sync, by nobody touching them. It also carried a defect in
  * triplicate: the outline word ran straight *through* the label at full
  * strength, so "§ 02 · PROJECTS" was read against a lattice of 190px letter
  * strokes and both halves came out muddy. See MASK below for the fix.
@@ -15,7 +15,7 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion';
 // Punches a soft hole in the middle of the outline word, exactly where the
 // label row lands. The letters stay legible as a word at the edges and fade to
 // nothing behind the text, so the label reads off clean ground instead of off
-// a stroke — without needing an opaque plate behind it, which would have shown
+// a stroke, without needing an opaque plate behind it, which would have shown
 // as a rectangle against the section's drifting grid.
 const MASK = 'radial-gradient(58% 66% at 50% 54%, transparent 34%, #000 88%)';
 
@@ -43,7 +43,7 @@ const captionVariants: Variants = {
 };
 
 interface SectionHeadingProps {
-  /** The oversized outline word behind the label. Decorative — aria-hidden. */
+  /** The oversized outline word behind the label. Decorative, aria-hidden. */
   word: string;
   /** The visible heading, e.g. "§ 02 · PROJECTS". Rendered as the section h2. */
   label: string;
@@ -54,7 +54,7 @@ interface SectionHeadingProps {
 export function SectionHeading({ word, label, caption }: SectionHeadingProps) {
   // MotionConfig(reducedMotion="user") in App strips the transform half of a
   // variant but keeps the opacity half, which is the right default nearly
-  // everywhere — except for the two rules here, whose entire animation *is* a
+  // everywhere, except for the two rules here, whose entire animation *is* a
   // transform (scaleX 0 -> 1). Rather than depend on how the config resolves a
   // transform-only variant, this drops the whole animation explicitly, the
   // same way Reveal does. Static header, fully visible.
@@ -66,7 +66,7 @@ export function SectionHeading({ word, label, caption }: SectionHeadingProps) {
   return (
     <motion.div {...animate} viewport={{ once: true, margin: '-12% 0px' }}>
       <div className="relative">
-        {/* Decorative only — aria-hidden, and each section's own
+        {/* Decorative only, aria-hidden, and each section's own
             overflow-hidden is what clips it on a narrow viewport. */}
         <motion.div
           aria-hidden="true"

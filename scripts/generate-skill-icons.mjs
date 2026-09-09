@@ -1,6 +1,6 @@
 // Bakes the brand marks used by the Skills and Contact sections into two static
 // modules (src/data/skillIcons.ts, src/data/contactIcons.ts). The three icon packages this reads are devDeps and
-// never reach the bundle — only the handful of <path d=""> strings below do,
+// never reach the bundle: only the handful of <path d=""> strings below do,
 // which keeps ~30 logos at a couple of kB instead of pulling a 3,000-icon
 // index through the tree-shaker.  Re-run after editing MARKS or CONTACT_MARKS:
 //   node scripts/generate-skill-icons.mjs
@@ -26,7 +26,7 @@ const sets = { cib: iconify('cib'), mdi: iconify('mdi') };
 // slug -> [source, name, brand hex]. Simple Icons ships the official hex with
 // the mark; the Iconify sets don't, so those carry a hand-checked brand colour.
 // The Iconify entries exist because Simple Icons drops marks whose owners
-// disallow redistribution (AWS, Twilio, Oracle, Azure, Microsoft) — cib is the
+// disallow redistribution (AWS, Twilio, Oracle, Azure, Microsoft). cib is the
 // monochrome stand-in, and `mdi:infinity` is the generic devops loop for the
 // one entry that is a practice rather than a product.
 const MARKS = {
@@ -71,14 +71,14 @@ const MARKS = {
 //
 // Both brands come from cib rather than Simple Icons: LinkedIn is one of the
 // marks Simple Icons drops over redistribution terms, and GitHub's official
-// #181717 is a near-black the lifter below can only take to a dead mid-grey —
-// dimmer than the blueprint tint it is supposed to bloom out of — so it carries
+// #181717 is a near-black the lifter below can only take to a dead mid-grey,
+// dimmer than the blueprint tint it is supposed to bloom out of, so it carries
 // GitHub's own dark-mode foreground instead.
 // CraftTraq ships no mark in any of the icon sets above, and the site already
 // carries its logo at public/mini_logo.png. This is that PNG traced back into
-// geometry — the clipboard body and clip are rounded rectangles, the clip's
+// geometry: the clipboard body and clip are rounded rectangles, the clip's
 // bump and stud are circles, and the monogram is straight edges plus three
-// arcs — measured off the bitmap rather than eyeballed, then kept at the
+// arcs, measured off the bitmap rather than eyeballed, then kept at the
 // original 512 box so the proportions survive. It goes through onDark() with
 // the sampled brand orange like every other mark here.
 const RAW_MARKS = {
@@ -87,7 +87,7 @@ const RAW_MARKS = {
     // The board is one outline rather than a ring: the clip's interior bites
     // clean through the top stroke, which splits the ring into a single
     // simply-connected shape. The clip itself is the one path that does need
-    // evenodd — its bump and body share an outline, and its hole is a subpath.
+    // evenodd: its bump and body share an outline, and its hole is a subpath.
     body:
       '<path fill="currentColor" d="M193 73H137a60 60 0 0 0-60 60v311a60 60 0 0 0 60 60h236a60 60 0 0 0 60-60V133a60 60 0 0 0-60-60h-56v24h56a36 36 0 0 1 36 36v311a36 36 0 0 1-36 36H137a36 36 0 0 1-36-36V133a36 36 0 0 1 36-36h56z"/>' +
       '<path fill="currentColor" fill-rule="evenodd" d="M194 45h10.7a52 52 0 0 1 100.6 0H316a24 24 0 0 1 24 24v42a24 24 0 0 1-24 24H194a24 24 0 0 1-24-24V69a24 24 0 0 1 24-24zM199 69h30.25a28 28 0 1 1 51.5 0H311a6 6 0 0 1 6 6v31a6 6 0 0 1-6 6H199a6 6 0 0 1-6-6V75a6 6 0 0 1 6-6z"/>' +
@@ -105,7 +105,7 @@ const CONTACT_MARKS = {
 };
 
 // A handful of official brand hexes are all but invisible on this site's dark
-// plates — pandas is #150458, NumPy is #013243. Storing the raw hex would leave
+// plates: pandas is #150458, NumPy is #013243. Storing the raw hex would leave
 // those two tiles looking broken on hover while every other one blooms.
 //
 // The floor is a *contrast ratio against the plate*, not a lightness value:
@@ -113,12 +113,12 @@ const CONTACT_MARKS = {
 // yellow at the same L clears it easily. Each colour is pushed through HSL and
 // its lightness stepped up only until it reaches WCAG 1.4.11's 3:1 for non-text
 // graphics, so a colour that already passes is left exactly as its owner ships
-// it. Hue — the part that actually reads as "that's pandas" — is never touched.
+// it. Hue, the part that actually reads as "that's pandas", is never touched.
 const PLATE_BG = '#12161f';
 const MIN_CONTRAST = 3.2;
 // Lifting a fully-saturated dark colour such as FastAPI's #009688 to a usable
 // lightness turns it neon, which reads as a different brand rather than a
-// brighter one — so anything that needs lifting also gets its saturation capped.
+// brighter one, so anything that needs lifting also gets its saturation capped.
 const MIN_SATURATION = 0.42;
 const MAX_SATURATION = 0.82;
 const MAX_LIGHTNESS = 0.82;
@@ -164,7 +164,7 @@ const onDark = (hex) => {
 
   const [h, s, l] = rgbToHsl(toRgb(hex));
   // A greyscale mark has no hue to preserve, so saturating it would invent a
-  // colour the brand doesn't have — lift only its lightness.
+  // colour the brand doesn't have, so lift only its lightness.
   const saturation = s === 0 ? 0 : Math.min(Math.max(s, MIN_SATURATION), MAX_SATURATION);
 
   for (let lifted = l; lifted <= MAX_LIGHTNESS; lifted += 0.01) {
@@ -219,12 +219,12 @@ const union = (built) =>
 
 const entries = serialise(marks);
 
-const out = `// GENERATED FILE — do not edit by hand.
+const out = `// GENERATED FILE. Do not edit by hand.
 // Run \`node scripts/generate-skill-icons.mjs\` to regenerate; the slug list and
 // the reasoning behind each source live in that script.
 //
-// Each mark is normalised to one shape — a viewBox plus inner SVG painted with
-// \`currentColor\` — so the Skills grid can tint every logo blueprint-blue at
+// Each mark is normalised to one shape, a viewBox plus inner SVG painted with
+// \`currentColor\`, so the Skills grid can tint every logo blueprint-blue at
 // rest and bloom a single tile to \`hex\` on hover.
 
 export interface SkillMark {
@@ -247,14 +247,14 @@ ${entries}
 
 const dest = path.join(root, 'src', 'data', 'skillIcons.ts');
 fs.writeFileSync(dest, out);
-console.log(`Wrote ${dest} — ${Object.keys(marks).length} marks, ${(out.length / 1024).toFixed(1)} kB`);
+console.log(`Wrote ${dest}: ${Object.keys(marks).length} marks, ${(out.length / 1024).toFixed(1)} kB`);
 
-const contactOut = `// GENERATED FILE — do not edit by hand.
+const contactOut = `// GENERATED FILE. Do not edit by hand.
 // Run \`node scripts/generate-skill-icons.mjs\` to regenerate; the slug list and
 // the reasoning behind each source live in that script.
 //
-// Same normalised shape as the Skills marks next door — a viewBox plus inner SVG
-// painted with \`currentColor\` — so the Contact cards can hold every mark at the
+// Same normalised shape as the Skills marks next door: a viewBox plus inner SVG
+// painted with \`currentColor\`, so the Contact cards can hold every mark at the
 // blueprint tint at rest and bloom one to \`hex\` on hover or focus.
 import type { SkillMark } from './skillIcons';
 
@@ -268,5 +268,5 @@ ${serialise(contactMarks)}
 const contactDest = path.join(root, 'src', 'data', 'contactIcons.ts');
 fs.writeFileSync(contactDest, contactOut);
 console.log(
-  `Wrote ${contactDest} — ${Object.keys(contactMarks).length} marks, ${(contactOut.length / 1024).toFixed(1)} kB`,
+  `Wrote ${contactDest}: ${Object.keys(contactMarks).length} marks, ${(contactOut.length / 1024).toFixed(1)} kB`,
 );

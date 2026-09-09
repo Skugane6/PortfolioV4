@@ -2,7 +2,7 @@
 // two production screenshots dropped into a laptop and a phone shell. Both
 // screens use their screenshot's native aspect ratio (not the tidy 16/10 and
 // 9/19 a mockup would normally take) so `object-cover` never has anything to
-// crop — the job board keeps its fourth column and the calendar keeps its week.
+// crop: the job board keeps its fourth column and the calendar keeps its week.
 const LAPTOP_RATIO = '1902 / 938';
 const PHONE_RATIO = '375 / 835';
 

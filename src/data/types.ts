@@ -58,14 +58,14 @@ export interface ProjectEntry {
 
 /**
  * Which run of the parts list a skill belongs to. The grid deliberately draws
- * no lines between these — the key exists so the side detail panel can name
+ * no lines between these. The key exists so the side detail panel can name
  * what a tile *is* ("DATA & MODELS") and tally the list, not so the layout can
  * break the plate into four smaller plates.
  */
 export type SkillGroup = 'build' | 'platform' | 'data' | 'verify';
 
 export interface Skill {
-  /** Short display name — the logo carries the recognition, so this stays terse. */
+  /** Short display name. The logo carries the recognition, so this stays terse. */
   name: string;
   /** Which mark in skillIcons.ts to draw. */
   icon: SkillMarkSlug;

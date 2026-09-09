@@ -77,7 +77,7 @@ export const MOVING_MESSAGES = [
   "stalking the cursor like it's prey",
   "tiny hunter, big ambitions",
   "tail up, confidence higher",
-  "pat pat pat — stealth engaged",
+  "pat pat pat, stealth engaged",
   "whiskers first, questions later",
   "almost caught it... almost",
   "following my favorite hooman",
@@ -86,7 +86,7 @@ export const MOVING_MESSAGES = [
   "ear twitch: target acquired",
   "main character energy, four paws",
   "excuse me, I'm busy chasing vibes",
-  "the dot moved, I moved — it's science",
+  "the dot moved, I moved. it's science",
   "low crouch, high drama",
   "slink mode: activated",
   "padding along with purpose",
@@ -305,7 +305,7 @@ export const KONAMI_SEQUENCE = [
 ];
 export const KONAMI_TARGET = KONAMI_SEQUENCE.join(",");
 
-// Direction table — module-level so it's not re-allocated every frame
+// Direction table, module-level so it's not re-allocated every frame
 export const DIRECTION_RANGES = [
   { min: -22.5, max: 22.5, dir: "E" },
   { min: 22.5, max: 67.5, dir: "SE" },

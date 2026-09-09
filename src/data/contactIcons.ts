@@ -1,9 +1,9 @@
-// GENERATED FILE — do not edit by hand.
+// GENERATED FILE. Do not edit by hand.
 // Run `node scripts/generate-skill-icons.mjs` to regenerate; the slug list and
 // the reasoning behind each source live in that script.
 //
-// Same normalised shape as the Skills marks next door — a viewBox plus inner SVG
-// painted with `currentColor` — so the Contact cards can hold every mark at the
+// Same normalised shape as the Skills marks next door: a viewBox plus inner SVG
+// painted with `currentColor`, so the Contact cards can hold every mark at the
 // blueprint tint at rest and bloom one to `hex` on hover or focus.
 import type { SkillMark } from './skillIcons';
 

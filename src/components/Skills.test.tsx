@@ -21,8 +21,8 @@ describe('Skills', () => {
 
   it('puts every skill in one grid rather than separate group panels', () => {
     const { container } = render(<Skills />);
-    // The tally lists are lists too, so counting <ul>s no longer says anything
-    // — what matters is that every tile hangs off a single one of them.
+    // The tally lists are lists too, so counting <ul>s no longer says anything;
+    // what matters is that every tile hangs off a single one of them.
     const owners = new Set(
       Array.from(container.querySelectorAll('.skill-tile')).map((tile) => tile.parentElement),
     );
@@ -41,7 +41,7 @@ describe('Skills', () => {
   });
 
   it('gives each tile the faint weights the resting plate tint is drawn from', () => {
-    // Without these the chip has no border and no wash — the brand colour would
+    // Without these the chip has no border and no wash: the brand colour would
     // stop at the mark and the grid would go back to reading as grey squares.
     const { container } = render(<Skills />);
     const tile = container.querySelector<HTMLElement>('.skill-tile');
@@ -54,7 +54,7 @@ describe('Skills', () => {
     render(<Skills />);
     skillGroupOrder.forEach((group) => {
       const count = skills.filter((skill) => skill.group === group).length;
-      // One label per layout — the side panel and the row under the grid.
+      // One label per layout: the side panel and the row under the grid.
       expect(screen.getAllByText(skillGroups[group].label).length).toBeGreaterThan(0);
       expect(count).toBeGreaterThan(0);
     });
@@ -63,7 +63,7 @@ describe('Skills', () => {
   it('holds a resting readout in the detail panel until a tile is hovered', () => {
     render(<Skills />);
     expect(screen.getByText('Materials list')).toBeInTheDocument();
-    expect(screen.getByText(`— / ${skills.length}`)).toBeInTheDocument();
+    expect(screen.getByText(`·· / ${skills.length}`)).toBeInTheDocument();
   });
 
   it('counts the parts list from the data rather than a hardcoded number', () => {

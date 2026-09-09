@@ -7,7 +7,7 @@ import type { ExperienceCallout } from '../../data/types';
 // card stops being square, and these cards change aspect ratio with their text.
 const CHAMFER = 22;
 // Gap between the panel edge and the offset outline, drafting-style. The card
-// element owns this as padding so the outline is inside its measured box —
+// element owns this as padding so the outline is inside its measured box:
 // Experience's fit() sizes the whole assembly off those boxes.
 export const RING_INSET = 9;
 // Edge weight of the plate. The plate is two clipped layers, and this is how
@@ -37,8 +37,8 @@ function Hatch({ count, height }: { count: number; height: number }) {
   );
 }
 
-// The offset outline. Drawn as eight positioned rules — four edges plus four
-// rotated diagonals — rather than a clip-path ring, because CSS has no way to
+// The offset outline. Drawn as eight positioned rules (four edges plus four
+// rotated diagonals) rather than a clip-path ring, because CSS has no way to
 // punch a chamfered hole through a chamfered box, and the gap band has to stay
 // transparent so the blueprint grid and leader lines read through it.
 function OffsetOutline() {
@@ -148,7 +148,7 @@ export function HudCard({ callout, index, revealed }: HudCardProps) {
         style={{
           clipPath: octagon(CHAMFER),
           padding: EDGE,
-          // Lit from the upper left, so the far edges — right and bottom —
+          // Lit from the upper left, so the far edges (right and bottom)
           // take the highlight, as on the airframe render behind it.
           background:
             'linear-gradient(135deg, rgba(142,198,250,0.8) 0%, rgba(186,230,255,0.95) 38%, rgba(242,251,255,1) 74%, rgba(202,238,255,1) 100%)',

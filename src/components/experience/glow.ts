@@ -8,7 +8,7 @@
  * that is still carrying alpha when it meets an edge is chopped off there, and
  * the step shows up as a seam down the side of the screen.
  *
- * The original gradient got this right vertically and wrong horizontally — a
+ * The original gradient got this right vertically and wrong horizontally: a
  * 120%-wide ellipse whose transparent stop sat at 62% of the ray reached the
  * left and right edges at a third of full strength.
  */
@@ -19,7 +19,7 @@ const cx = 0.5;
 const cy = 0.42;
 
 // Ellipse radii, as fractions of the stage's width and height. Both are capped
-// by the reach test below rather than chosen freely — see glowReach.
+// by the reach test below rather than chosen freely (see glowReach).
 const rx = 0.52;
 const ry = 0.43;
 

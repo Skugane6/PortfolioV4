@@ -4,7 +4,7 @@ import { useState, type ReactNode } from 'react';
 // Hoisted rather than rebuilt inside the components below: these are static
 // objects, and a fresh identity on every render makes framer-motion re-read
 // the target each time for no gain. willChange is set on the way in and
-// dropped on arrival (onAnimationComplete) — leaving it on permanently would
+// dropped on arrival (onAnimationComplete). Leaving it on permanently would
 // hand every revealed block its own compositor layer for the rest of the
 // session, which on a page with four sections of them is a real cost.
 const HIDDEN = { opacity: 0, y: 24 };

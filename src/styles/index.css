@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Blueprint / technical-manual theme tokens. Dark only, by design — no
+/* Blueprint / technical-manual theme tokens. Dark only, by design: no
    light palette, no prefers-color-scheme branch, no toggle. */
 :root {
   color-scheme: dark;
@@ -14,20 +14,20 @@
   --color-border: #232b3a;
 
   /* accent: solid fill for buttons/chips/borders. accent-text: the tint used
-     for text/links — brightened past the raw accent so it still clears
+     for text/links, brightened past the raw accent so it still clears
      4.5:1 against the dark background (see contrast.test.ts). */
   --color-accent: #2f6ad4;
   --color-accent-hover: #4f7ad0;
   --color-accent-text: #5b8ff0;
   --color-accent-wash: rgba(79, 122, 208, 0.14);
 
-  /* Amber — scoped to the Experience cutaway's status/progress accents only. */
+  /* Amber, scoped to the Experience cutaway's status/progress accents only. */
   --color-amber: #f0a02a;
 
   /* Blueprint micro-labels: station numbers, spec rows, figure captions, tab
      sub-labels. These used to be ten hand-picked blues scattered across four
      components (#33507e, #3f6098, #4a5f80, #4a6790, #3a5580 …), every one of
-     them landing between 2.4:1 and 3.4:1 — under AA at the 9–10px sizes they
+     them landing between 2.4:1 and 3.4:1, under AA at the 9–10px sizes they
      are set at. Two tokens replace the lot, both measured against the darker
      of the two grounds they appear on:
 
@@ -35,7 +35,7 @@
        annotation-dim  4.6:1 on --color-bg, 4.3:1 on --color-surface
 
      The pair still reads as a hierarchy (primary label vs. secondary tick
-     caption) — it just does it inside AA instead of below it. Anything purely
+     caption); it just does it inside AA instead of below it. Anything purely
      structural (rules, ticks, hairlines) keeps its own low-alpha value; these
      two are for text. */
   --color-annotation: #6e8ab4;
@@ -54,7 +54,7 @@ button:focus-visible {
 /* ── Hero stage animations ─────────────────────────────────────────────
    The hero's 3D stage is built from CSS and inline SVG rather than
    framer-motion, so App.tsx's <MotionConfig reducedMotion="user"> never
-   reaches any of it — that config only rewrites motion.* components. The
+   reaches any of it: that config only rewrites motion.* components. The
    guard at the bottom of this block is what honours prefers-reduced-motion
    here instead: every animated element in the hero carries `hero-anim`
    alongside its inline `animation` shorthand, and the one rule below turns
@@ -159,19 +159,19 @@ button:focus-visible {
 /* ── Skills plate ──────────────────────────────────────────
    Every logo wears its own brand colour, at rest, on every device. The marks
    used to sit drafted blue-grey until a cursor found them, which read as a
-   plate of grey squares to anyone who never hovered — and as *nothing at all*
+   plate of grey squares to anyone who never hovered, and as *nothing at all*
    on a touchscreen, where a `@media (hover: none)` fallback was the only thing
    painting them at all. The colour is the point of the section, so it is
    now the resting state and hover is what intensifies it: a brand-tinted
    border, a glow under the mark, and the corner ticks picking up the same hue.
 
-   Each chip sets four weights of its one hex in SkillTile.tsx — --brand (the
+   Each chip sets four weights of its one hex in SkillTile.tsx: --brand (the
    mark), --brand-soft (hover border, glow), --brand-line (resting border) and
    --brand-wash (the faint plate tint). All four are floored in lightness by
    scripts/generate-skill-icons.mjs so they survive this near-black ground.
 
    These states are CSS rather than framer-motion so one rule covers pointer,
-   touch and reduced-motion alike. Motion still owns what CSS does badly — the
+   touch and reduced-motion alike. Motion still owns what CSS does badly: the
    staggered entrance, the pointer tilt, the bloom and light sweep. */
 .skill-chip {
   border-color: var(--brand-line);
@@ -220,7 +220,7 @@ button:focus-visible {
 
 /* ── Skills detail panel ─────────────────────────────────────
    The margin callout inherits the same four custom properties from whichever
-   tile the pointer is on — set on the <aside> in SkillDetail.tsx, so the whole
+   tile the pointer is on, set on the <aside> in SkillDetail.tsx, so the whole
    panel transitions from one part's colour to the next's rather than cutting.
    The transitions are long here (400ms against the grid's 300ms) because this
    is a single large element changing colour, not a 90px chip. */
@@ -251,7 +251,7 @@ button:focus-visible {
    scripts/generate-skill-icons.mjs) and --brand-soft, the mark rests as
    drafted blue-grey, and the card blooms to the brand colour under a pointer.
    Two differences from the Skills rules. The states key off `:focus-within`
-   as well as `:hover`, because these cards *are* the links — a keyboard user
+   as well as `:hover`, because these cards *are* the links: a keyboard user
    tabbing onto one should get the same confirmation a mouse user gets from
    hovering it. And under `@media (hover: none)` the whole resting state moves
    to brand colour rather than just the mark, since a touch device will never

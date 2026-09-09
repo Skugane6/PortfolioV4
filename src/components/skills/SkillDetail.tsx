@@ -6,7 +6,7 @@ import type { Skill, SkillGroup } from '../../data/types';
 
 /**
  * One hue per run of the parts list. These are the section's own colours, not
- * anybody's brand — they exist so the tally reads as four measured quantities
+ * anybody's brand. They exist so the tally reads as four measured quantities
  * at a glance instead of four numbers, and so the panel keeps some colour in
  * it while no tile is under the pointer. All four clear 4.5:1 on the plate.
  */
@@ -26,12 +26,12 @@ const TALLY_MAX = Math.max(...TALLY.map((row) => row.count));
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-// The readout swaps by *remounting* on a changed key — deliberately not
+// The readout swaps by *remounting* on a changed key, deliberately not
 // <AnimatePresence mode="wait">, which was the first thing tried here and which
 // wedges: sweep a pointer across the grid fast enough and a new key arrives
 // mid-exit, after which the panel stops updating entirely and holds whatever
 // part it was showing. Dropping the exit half removes the failure mode and
-// costs nothing visible — the outgoing part is behind the incoming one either
+// costs nothing visible: the outgoing part is behind the incoming one either
 // way, and a 180ms rise reads as a swap without it.
 const swapVariants: Variants = {
   hidden: { opacity: 0, y: 6 },
@@ -43,7 +43,7 @@ const CORNERS = ['M1 11V1h10', 'M89 1h10v10', 'M99 89v10H89', 'M11 99H1V89'];
 /**
  * `swatch` paints the colour rather than the text. The brand hexes are floored
  * to 3:1 for graphics, not the 4.5:1 body text wants, so setting the FINISH row
- * *in* its own colour would put half the list under AA — the chip carries the
+ * *in* its own colour would put half the list under AA. The chip carries the
  * colour and the value stays ink.
  */
 function SpecRow({ label, value, swatch }: { label: string; value: string; swatch?: string }) {
@@ -68,14 +68,14 @@ function SpecRow({ label, value, swatch }: { label: string; value: string; swatc
  * The tally of the four runs, as labelled bars.
  *
  * Rendered twice: down the side panel from xl up, and as a wrapped row under
- * the grid below that — the counts are the one piece of the readout that says
+ * the grid below that: the counts are the one piece of the readout that says
  * something a tile can't, so they shouldn't vanish on a laptop or a phone just
  * because there is no margin to park a panel in.
  */
 export function SkillTally({ layout }: { layout: 'column' | 'row' }) {
   const column = layout === 'column';
   // The bar's whole animation is a scaleX, and <MotionConfig reducedMotion>
-  // strips transforms rather than finishing them — same trap SectionHeading
+  // strips transforms rather than finishing them, the same trap SectionHeading
   // documents. Drawn at full length instead, so the tally still reads.
   const shouldReduceMotion = useReducedMotion();
 
@@ -132,14 +132,14 @@ export function SkillTally({ layout }: { layout: 'column' | 'row' }) {
 
 /**
  * The drawing's detail callout: the margin panel that reads out whichever tile
- * the pointer is on — its mark at full size in its own brand colour, which run
+ * the pointer is on: its mark at full size in its own brand colour, which run
  * of the list it belongs to, the colour it is painted in, and its number in the
  * parts list. With nothing under the pointer it holds a resting state rather
  * than collapsing, so the column never changes height as the cursor moves.
  *
  * xl and up only. Below that there is no margin to put it in without taking
- * width off the grid, and the tile itself already prints the name and note —
- * only the tally moves down under the grid (see SkillTally).
+ * width off the grid, and the tile itself already prints the name and note.
+ * Only the tally moves down under the grid (see SkillTally).
  */
 export function SkillDetail({ skill }: { skill: Skill | null }) {
   const mark = skill ? skillMarks[skill.icon] : null;
@@ -242,11 +242,11 @@ export function SkillDetail({ skill }: { skill: Skill | null }) {
           </p>
 
           <div className="mt-3">
-            <SpecRow label="RUN" value={skill ? skillGroups[skill.group].label : '—'} />
-            <SpecRow label="FINISH" value={mark ? mark.hex : '—'} swatch={mark?.hex} />
+            <SpecRow label="RUN" value={skill ? skillGroups[skill.group].label : '··'} />
+            <SpecRow label="FINISH" value={mark ? mark.hex : '··'} swatch={mark?.hex} />
             <SpecRow
               label="ITEM"
-              value={skill ? `${pad(index)} / ${skills.length}` : `— / ${skills.length}`}
+              value={skill ? `${pad(index)} / ${skills.length}` : `·· / ${skills.length}`}
             />
           </div>
         </motion.div>

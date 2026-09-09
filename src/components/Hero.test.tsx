@@ -31,7 +31,7 @@ describe('Hero', () => {
 
   it('links the résumé button at a downloadable PDF', () => {
     render(<Hero />);
-    // The imported design pointed this at a #resume placeholder — the real
+    // The imported design pointed this at a #resume placeholder. The real
     // PDF is what has to survive any future re-import.
     const link = screen.getByRole('link', { name: /Download Résumé/i });
     expect(link).toHaveAttribute('href', '/skuganesan_resume.pdf');
@@ -41,7 +41,7 @@ describe('Hero', () => {
   it('shows the portrait and the one institutional mark, and nothing else', () => {
     const { container } = render(<Hero />);
     // The stage is drawn entirely in CSS and SVG, so these two are the only
-    // <img> elements the section is allowed — a third means panel artwork has
+    // <img> elements the section is allowed; a third means panel artwork has
     // crept back in. The Western mark carries an empty alt on purpose: the
     // term beside it already names it, so an alt would say it twice.
     const images = [...container.querySelectorAll('img')];
@@ -63,7 +63,7 @@ describe('Hero', () => {
   it('backs the impact claim with a spec sheet, not an employer', () => {
     render(<Hero />);
     // The headline promises "real impact" and the old hero showed none until
-    // you scrolled. These are facts about the engineer and the software —
+    // you scrolled. These are facts about the engineer and the software:
     // what he ships, what he ships it in, and the credential.
     for (const [value, label] of [
       ['10', 'PROJECTS SHIPPED'],
@@ -72,7 +72,7 @@ describe('Hero', () => {
       const term = screen.getByText(label);
       expect(term.closest('div')).toHaveTextContent(value);
     }
-    // The Western cell prints no caption — the lockup says "Western" itself.
+    // The Western cell prints no caption, since the lockup says "Western" itself.
     // Its term is hidden with opacity rather than sr-only so that it still
     // holds the label row open under the mark, and still reaches AT.
     const term = screen.getByText('WESTERN UNIVERSITY');
@@ -99,7 +99,7 @@ describe('Hero', () => {
   it('offers the three contact routes with labelled icon-only links', () => {
     render(<Hero />);
     // The glyphs are decorative SVG with no text, so the aria-label is the
-    // whole accessible name — losing it leaves three unnamed links.
+    // whole accessible name, and losing it leaves three unnamed links.
     for (const [label, href] of [
       ['GitHub', 'https://github.com/skugane6'],
       ['LinkedIn', 'https://linkedin.com/in/searan-kuganesan'],

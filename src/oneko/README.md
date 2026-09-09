@@ -1,6 +1,6 @@
 # oneko (vendored)
 
-The pixel cat in the hero. Vendored source, not an npm dependency — it ships as a
+The pixel cat in the hero. Vendored source, not an npm dependency: it ships as a
 shadcn registry component, and this project is not a shadcn project, so the files
 were installed by hand from `https://oneko.dhrv.pw/r/oneko.json` and the `@/`
 imports rewritten to paths relative to this directory. It has no runtime
@@ -14,23 +14,23 @@ touching to change how the cat behaves.
 The upstream component follows the cursor. This one does not, so a few things
 were added or changed:
 
-- **`lib/oneko/roam.ts`** (new) — roam mode. The cat lives at a handful of pivot
+- **`lib/oneko/roam.ts`** (new): roam mode. The cat lives at a handful of pivot
   points inside one region of the page, sleeps at each until it is clicked, and
   hops to another. Also relocates itself if content scrolls underneath it, or if
   it ends up wedged somewhere it cannot walk out of.
-- **`lib/oneko/pathfinding.ts`** — obstacles now include the rendered line boxes
+- **`lib/oneko/pathfinding.ts`**: obstacles now include the rendered line boxes
   of visible text, via a `TreeWalker` plus `Range.getClientRects()`. Upstream
-  matched a list of tags, which misses any copy inside a `span` or a `div` — most
+  matched a list of tags, which misses any copy inside a `span` or a `div`, most
   of it on a typical page. `buildGrid` also takes the clearance radius as an
   argument so a scaled-up cat gets a correspondingly wider berth.
-- **`lib/oneko/constants.ts`** — `SPRITE_RADIUS` is half the sprite rather than a
+- **`lib/oneko/constants.ts`**: `SPRITE_RADIUS` is half the sprite rather than a
   quarter, so a walkable cell is one the whole cat fits inside.
-- **`lib/oneko/animation/idle.ts`** — in nudge mode the cat curls up as soon as it
+- **`lib/oneko/animation/idle.ts`**: in nudge mode the cat curls up as soon as it
   settles instead of taking a detour through the other idle animations.
-- **`lib/oneko/dom.ts`**, **`start-cat-animation.ts`**, **`teardown.ts`** — the cat
+- **`lib/oneko/dom.ts`**, **`start-cat-animation.ts`**, **`teardown.ts`**: the cat
   is clickable in roam mode, and its own DOM is tagged `data-oneko-ui` so it never
   counts as an obstacle to itself.
-- **`lib/oneko/skin-sheets.json`** — trimmed from the upstream 24 coats to the six
+- **`lib/oneko/skin-sheets.json`**: trimmed from the upstream 24 coats to the six
   this site can use, which cut the lazy-loaded chunk from 576KB to 135KB gzipped.
 
 `src/oneko/lib/oneko/roam.test.ts` covers the behaviour that is ours.

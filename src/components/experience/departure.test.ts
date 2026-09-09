@@ -11,7 +11,7 @@ describe('sectionProgress', () => {
   });
 
   // Both the survey and the clear-out belong to the pin, so the sheet is
-  // already empty at the instant the stage lets go — there is no pinned tail
+  // already empty at the instant the stage lets go, so there is no pinned tail
   // where the callouts are done and nothing is happening yet.
   it('empties the sheet exactly as the section unpins', () => {
     expect(sectionProgress(pinned, pinned, depart)).toBeCloseTo(CLEAR_END, 6);

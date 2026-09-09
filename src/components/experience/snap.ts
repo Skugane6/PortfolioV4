@@ -14,7 +14,7 @@ export function wideStagePoints(starts: readonly number[], span: number): number
 
 // Stacked layout reuses one slot per card, held fully revealed between
 // [riseEnd, fallStart] (see Experience's `win`). The middle of that hold is
-// the calmest point to settle on — as far as possible from both the rise
+// the calmest point to settle on, as far as possible from both the rise
 // and the next card's fall. `surveyEnd` converts the window's survey-progress
 // units back to the raw progress the rest of Experience is driven by.
 export function stackedStagePoints(
@@ -26,7 +26,7 @@ export function stackedStagePoints(
 
 // Simple nearest-neighbour pick. `stages` is always non-empty (both
 // functions above always emit the leading 0), so there's always a fallback.
-// Used only as pickSnapTarget's no-direction fallback below — plain nearest-
+// Used only as pickSnapTarget's no-direction fallback below. Plain nearest-
 // neighbour is what made snapping revert on an ordinary scroll that hadn't
 // reached the next stage yet (see pickSnapTarget).
 export function nearestStage(p: number, stages: readonly number[]): number {
@@ -41,20 +41,20 @@ export function nearestStage(p: number, stages: readonly number[]): number {
 const DEFAULT_COMMIT_FRACTION = 0.18;
 
 /**
- * Chooses where to settle given the direction the user was just scrolling —
+ * Chooses where to settle given the direction the user was just scrolling,
  * and, critically, never chooses the stage *behind* that direction once the
  * user has meaningfully committed to it. Ordinary wheel/trackpad input
  * arrives in short bursts with brief pauses between them, so nearest-
  * neighbour picking (ignoring direction) reverts to the stage just left on
  * almost every one of those pauses, before the gesture has actually
- * finished — that reads as the page fighting the scroll.
+ * finished, which reads as the page fighting the scroll.
  *
  * Scrolling down resolves to the next stage ahead once travel past the
  * stage behind clears `commitFraction` of the gap, and to the stage behind
  * otherwise (a fraction this small makes that a rest of only a few percent
- * of the gap — in practice noise, not a reversal of real forward scroll);
+ * of the gap, in practice noise, not a reversal of real forward scroll);
  * scrolling up mirrors both ends of that. This always resolves to one stage
- * or the other — never lingers between them — so a callout's reveal (and the
+ * or the other, never lingering between them, so a callout's reveal (and the
  * scroll position itself) never rests at a partial, undecided state.
  *
  * `stages` must be sorted ascending (true of both point functions above).
@@ -71,7 +71,7 @@ export function pickSnapTarget(
   let upper = stages[stages.length - 1];
   for (const stage of stages) if (stage <= p) lower = stage;
   for (let i = stages.length - 1; i >= 0; i--) if (stages[i] >= p) upper = stages[i];
-  // p is at or past every stage (or before all of them) — nothing to bracket.
+  // p is at or past every stage (or before all of them): nothing to bracket.
   if (upper <= lower) return lower;
 
   const within = (p - lower) / (upper - lower);

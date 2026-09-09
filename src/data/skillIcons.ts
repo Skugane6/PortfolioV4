@@ -1,9 +1,9 @@
-// GENERATED FILE — do not edit by hand.
+// GENERATED FILE. Do not edit by hand.
 // Run `node scripts/generate-skill-icons.mjs` to regenerate; the slug list and
 // the reasoning behind each source live in that script.
 //
-// Each mark is normalised to one shape — a viewBox plus inner SVG painted with
-// `currentColor` — so the Skills grid can tint every logo blueprint-blue at
+// Each mark is normalised to one shape, a viewBox plus inner SVG painted with
+// `currentColor`, so the Skills grid can tint every logo blueprint-blue at
 // rest and bloom a single tile to `hex` on hover.
 
 export interface SkillMark {

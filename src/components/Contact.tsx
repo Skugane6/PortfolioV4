@@ -97,7 +97,7 @@ function MarkPlate({ slug, size = 'md' }: { slug: ContactMarkSlug; size?: 'md' |
         ))}
       </svg>
       {/* Static path data generated at build time by
-          scripts/generate-skill-icons.mjs from vendored icon packages —
+          scripts/generate-skill-icons.mjs from vendored icon packages;
           nothing here originates from user input. */}
       <svg
         viewBox={mark.viewBox}
@@ -185,8 +185,8 @@ function SendGlyph({ className = '' }: { className?: string }) {
 /**
  * Copy-to-clipboard control for the address.
  *
- * The address stays visible and selectable next to it — this is a shortcut, not
- * the only way to get the text — so a browser that refuses clipboard access
+ * The address stays visible and selectable next to it. This is a shortcut, not
+ * the only way to get the text, so a browser that refuses clipboard access
  * (no permission, or no secure context) costs the visitor nothing. That case
  * silently leaves the label alone rather than raising an error state for a
  * failure the visitor cannot act on.
@@ -266,7 +266,7 @@ export function Contact() {
                 The primary card is wider and taller than the three below it
                 because it is the one channel worth a decision: everything else
                 on this page is a profile to look at, this is the way to start a
-                conversation. It is a plain div rather than a link — it holds
+                conversation. It is a plain div rather than a link: it holds
                 two controls, and nesting them inside an anchor would make the
                 whole card a single ambiguous target. */}
             <motion.div
@@ -276,7 +276,7 @@ export function Contact() {
             >
               {/* Side by side only from xl. The two controls and a 27-character
                   address need about 800px between them, and this section keeps
-                  a 160px gutter for the nav rail from lg up — so the row is
+                  a 160px gutter for the nav rail from lg up, so the row is
                   actually *tightest* just after lg, not on a phone. Below xl the
                   address takes the full width and the controls sit under it. */}
               <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-6">
@@ -314,8 +314,8 @@ export function Contact() {
             </motion.div>
 
             {/* ── CH 02–04 · profiles ──────────────────────────────────
-                One row layout at every width — mark, then name over handle,
-                then the departure arrow — so the three read as a set instead
+                One row layout at every width (mark, then name over handle,
+                then the departure arrow) so the three read as a set instead
                 of reflowing into a different card at each breakpoint. Only the
                 column count changes, and it changes at xl rather than md for
                 the reason the email card above splits there: from lg this

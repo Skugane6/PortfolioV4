@@ -31,7 +31,7 @@ describe('skill marks', () => {
 
   it('clears 3:1 against the plate, per WCAG 1.4.11 for non-text graphics', () => {
     // pandas (#150458) and NumPy (#013243) are why the generator lifts colours
-    // at all — at their official hex they are all but invisible here.
+    // at all: at their official hex they are all but invisible here.
     Object.entries(skillMarks).forEach(([slug, mark]) => {
       expect(mark.hex, slug).toMatch(/^#[0-9A-F]{6}$/);
       expect(contrast(mark.hex, PLATE_BG), slug).toBeGreaterThanOrEqual(3);

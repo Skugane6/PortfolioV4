@@ -1,7 +1,7 @@
 // A loop of the thing the project actually does: gaze drives the crosshair
 // around four targets, each tile lights as the cursor lands on it, and the
 // face-mesh inset blinks in time with the click ring. Every element runs off
-// the same 11s cycle — the tile and blink delays are negative offsets into
+// the same 11s cycle: the tile and blink delays are negative offsets into
 // `proj-cursor`, so they stay in sync with the pointer without any JS.
 const CYCLE = '11s';
 
@@ -223,7 +223,7 @@ export function EyeVisual() {
                       style={{ boxShadow: '0 0 10px rgba(91,143,240,.8)' }}
                     />
                     <span className="absolute h-[5px] w-[5px] rounded-full" style={{ background: '#0a0f18' }} />
-                    {/* Eyelid — one blink per cycle, timed to the click ring. */}
+                    {/* Eyelid, one blink per cycle, timed to the click ring. */}
                     <span
                       className="proj-anim absolute inset-0 origin-top rounded-[50%]"
                       style={{

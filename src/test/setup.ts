@@ -21,7 +21,7 @@ class DefaultIntersectionObserver implements IntersectionObserver {
 
 if (!('IntersectionObserver' in globalThis)) {
   // jsdom has no runtime IntersectionObserver (the DOM lib types declare it, but nothing
-  // implements it here) — this is a minimal test-env stub.
+  // implements it here): this is a minimal test-env stub.
   globalThis.IntersectionObserver = DefaultIntersectionObserver;
 }
 
@@ -32,7 +32,7 @@ class DefaultResizeObserver implements ResizeObserver {
 }
 
 if (!('ResizeObserver' in globalThis)) {
-  // jsdom has no runtime ResizeObserver either — same rationale as the
+  // jsdom has no runtime ResizeObserver either, same rationale as the
   // IntersectionObserver stub above.
   globalThis.ResizeObserver = DefaultResizeObserver;
 }

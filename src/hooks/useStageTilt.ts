@@ -4,7 +4,7 @@ import { computeParallaxOffset } from '../utils/parallax';
 // The stage is authored at a fixed 900x760 and then scaled to fit whatever
 // box it lands in, so every coordinate inside it (SVG connectors, panel
 // offsets) can stay a plain number instead of a percentage. The fit divisor
-// is deliberately larger than the stage itself — the panels overhang their
+// is deliberately larger than the stage itself: the panels overhang their
 // container and the extra margin keeps that overhang from being clipped.
 const FIT_WIDTH = 940;
 const FIT_HEIGHT = 800;
@@ -23,7 +23,7 @@ const EASE = 0.07;
  * Wires up the hero's 3D stage: a pointer-following tilt and an
  * auto-fit scale.
  *
- * Returns three refs the caller must attach — `section` is the pointer
+ * Returns three refs the caller must attach. `section` is the pointer
  * surface (the tilt tracks across the whole hero, not just the stage),
  * `box` is the element that gets `--fit`, and `stage` is the transformed
  * element that gets `--mx` / `--my`.
@@ -37,7 +37,7 @@ export function useStageTilt() {
   const boxRef = useRef<HTMLDivElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
 
-  // Fit is a layout concern, not motion — it stays on under
+  // Fit is a layout concern, not motion, so it stays on under
   // prefers-reduced-motion, or the scene would overflow on small screens.
   useEffect(() => {
     const box = boxRef.current;

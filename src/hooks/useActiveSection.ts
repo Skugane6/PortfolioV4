@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // Fraction of the viewport, top and bottom, excluded from the "active" band.
-// What is left is the middle 20% — the strip a reader's eye actually sits on.
+// What is left is the middle 20%, the strip a reader's eye actually sits on.
 const BAND_MARGIN = '-40% 0px -40% 0px';
 
 export function useActiveSection(sectionIds: string[]): string {
@@ -23,7 +23,7 @@ export function useActiveSection(sectionIds: string[]): string {
     // never win: it loses the batch it arrived in (the section above is
     // topmost), and the section above then leaves in an exit-only batch that
     // contains no intersecting entry at all. That stranded both Projects and
-    // Contact — neither could be highlighted by scrolling.
+// Contact: neither could be highlighted by scrolling.
     const band = new Map<string, number>();
 
     const observer = new IntersectionObserver(
@@ -63,7 +63,7 @@ export function useActiveSection(sectionIds: string[]): string {
     // The last section is shorter than the gap the band leaves at the end of
     // the document, so scrolling to the very bottom leaves it only a sliver of
     // travel in which it is topmost. Once you cannot scroll any further, the
-    // final section is what you are looking at — say so.
+    // final section is what you are looking at, so say so.
     const lastId = ids[ids.length - 1];
     const onScroll = () => {
       const doc = document.documentElement;

@@ -78,7 +78,7 @@ describe('Contact', () => {
       await waitFor(() => expect(writeText).toHaveBeenCalled());
 
       // The address is still on screen to select by hand, so a refusal needs no
-      // error state — the button just never claims success.
+      // error state: the button just never claims success.
       expect(screen.getByText(EMAIL)).toBeInTheDocument();
       expect(screen.queryByRole('button', { name: /copied/i })).toBeNull();
     });

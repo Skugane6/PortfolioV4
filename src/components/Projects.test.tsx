@@ -14,7 +14,7 @@ const activeName = () => screen.getByRole('heading', { level: 3 }).textContent;
 /**
  * The arrow-key handler ignores keys unless the section owns the viewport, so
  * every keyboard test needs the section to measure as on-screen. Stubbed for
- * the whole suite and restored after each test — left in place it leaks into
+ * the whole suite and restored after each test; left in place it leaks into
  * whatever runs next.
  */
 const IN_VIEW = {
@@ -31,7 +31,7 @@ const IN_VIEW = {
 
 const measure = Element.prototype.getBoundingClientRect;
 
-/** Steps the carousel the way a keyboard user does — there are no arrow buttons. */
+/** Steps the carousel the way a keyboard user does, since there are no arrow buttons. */
 const press = (key: 'ArrowLeft' | 'ArrowRight') => fireEvent.keyDown(window, { key });
 
 describe('Projects', () => {
@@ -100,7 +100,7 @@ describe('Projects', () => {
     expect(station(craftTraq.name)).toHaveAttribute('aria-current', 'true');
   });
 
-  it('offers no arrow buttons — the station cards and the keys are the controls', () => {
+  it('offers no arrow buttons: the station cards and the keys are the controls', () => {
     render(<Projects />);
     expect(screen.queryByRole('button', { name: /next project/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /previous project/i })).not.toBeInTheDocument();

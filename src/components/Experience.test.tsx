@@ -67,15 +67,15 @@ describe('Experience', () => {
     expect((SURVEY_END / CLEAR_END) * (SECTION_VH - 100)).toBeCloseTo(SURVEY_TRAVEL_VH, 4);
   });
 
-  // The title block and the education line name who the work belonged to —
-  // they are the substance of the section, not drafting furniture, so they
+  // The title block and the education line name who the work belonged to.
+  // They are the substance of the section, not drafting furniture, so they
   // ride the departure out rather than clearing with the sheet. Asserted
   // structurally because jsdom cannot resolve the custom property itself.
   it('keeps the title block and education line out of the sheet clear-out', () => {
     const { container } = render(<Experience />);
     const section = container.querySelector('#experience') as HTMLElement;
     // jsdom cannot evaluate custom properties, so it rewrites any
-    // `opacity: var(...)` or `opacity: calc(...)` to `opacity: NaN` — which
+    // `opacity: var(...)` or `opacity: calc(...)` to `opacity: NaN`, which
     // is exactly the signal wanted here. A NaN opacity is a scroll-driven
     // fade; a plain number is a static one, like the 0.88 that flattens the
     // company mark into the sheet's ink. Only the former is disqualifying.

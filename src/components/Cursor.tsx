@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 // Diameter of the soft light itself, and of the square that carries the
 // revealed grid. The grid window is much the smaller of the two, so its lines
-// fade out well inside the glow rather than ending on an edge of their own —
+// fade out well inside the glow rather than ending on an edge of their own,
 // and so the pattern stays a tight pool under the pointer instead of washing
 // across half a section.
 const GLOW = 360;
@@ -13,13 +13,13 @@ const GRID = 240;
 // over it.
 const CELL = 40;
 
-// What makes the light bloom. Not a lock and not a snap — the light never
+// What makes the light bloom. Not a lock and not a snap: the light never
 // leaves the pointer, it only opens up over something worth clicking.
 const INTERACTIVE = 'a, button, [role="button"], summary';
 
 // Raster surfaces the grid must not be drawn across. A screenshot with
 // blueprint lines ruled over it reads as a rendering fault, not as an effect,
-// so the pattern drops away over these and only the light stays — dimmed,
+// so the pattern drops away over these and only the light stays, dimmed,
 // because `screen` over a bright photograph washes it out.
 //
 // Inline <svg> is deliberately absent: the hero's connectors and the social
@@ -34,7 +34,7 @@ const SCALE = { idle: 1, hover: 1.22, press: 0.9 };
  * inside it a window onto blueprint grid that is not otherwise drawn. The
  * page reads as a technical drawing being examined under a lamp.
  *
- * The light sits exactly on the pointer — nothing eases its position, so it
+ * The light sits exactly on the pointer, so nothing eases its position and it
  * never trails the arrow. Only its size responds, blooming over links and
  * pressing in on click.
  *
@@ -149,7 +149,7 @@ export function Cursor() {
           className="relative motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out"
           style={{ transform: 'scale(var(--torch-scale, 1))' }}
         >
-          {/* The lamp. `screen` means it can only ever add light — it lifts the
+          {/* The lamp. `screen` means it can only ever add light: it lifts the
               near-black ground and leaves type where it is, whereas a plain
               translucent fill would have veiled everything it crossed. */}
           <div
@@ -169,7 +169,7 @@ export function Cursor() {
 
           {/* Grid that exists only where the light falls. Its background
               position is pulled back by the pointer's own offset, which pins
-              the pattern to the viewport — without that the grid would ride
+              the pattern to the viewport. Without that the grid would ride
               along inside the moving window and its lines would never line up
               with the hero's. Masked to a circle so it has no edge either. */}
           <div

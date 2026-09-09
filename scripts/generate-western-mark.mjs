@@ -4,7 +4,7 @@ import path from 'node:path';
 
 // Western ships its horizontal lockup as white artwork burned onto a solid
 // purple plate. The hero is a monochrome scene on near-black, where a purple
-// rectangle is the only saturated block on the page — so this lifts the
+// rectangle is the only saturated block on the page, so this lifts the
 // artwork off its plate and keeps just the white, on transparency.
 //
 // A colour-key would leave purple fringing on every antialiased edge. Instead
@@ -39,7 +39,7 @@ for (let i = 0; i < data.length; i += 4) {
 
 await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
   .png()
-  // Trim the plate's generous margin so the mark's own box is its artwork —
+  // Trim the plate's generous margin so the mark's own box is its artwork,
   // otherwise every consumer has to compensate for the padding by hand.
   .trim()
   .toFile(output);

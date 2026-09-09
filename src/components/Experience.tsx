@@ -28,14 +28,14 @@ const role = experience[0];
 // 100vh of this is the sticky stage; the remaining 330vh is pinned travel,
 // which carries the 300vh survey the callouts were tuned against plus the
 // ~30vh clear-out that empties the sheet before the stage lets go. The takeoff
-// run itself adds no height — it runs on the scroll *past* this section (see
+// run itself adds no height: it runs on the scroll *past* this section (see
 // DEPART_VH), which is the same scroll that brings Projects up.
 export const SECTION_VH = 430;
 
 // Below this rendered plate width the two-up card row can no longer hold a
 // readable column, so the callouts switch to a single slot shown one at a
 // time. Measured against the width the plate *would* take in the wide layout
-// (78vw, capped) rather than its current width — the stacked plate is capped
+// (78vw, capped) rather than its current width. The stacked plate is capped
 // well below this, so reading the live width would make the switch one-way.
 const STACK_BREAKPOINT = 850;
 // The four-up layout also needs vertical room: on a short viewport fit() has
@@ -48,7 +48,7 @@ const SHORT_VIEWPORT = 700;
 const WIDE_GAP = 22;
 const STACK_GAP = 30;
 
-// Stacked cards are sized off the stage, not the plate — the plate is a
+// Stacked cards are sized off the stage, not the plate, because the plate is a
 // 5:1 letterbox, so matching it makes for either 90-character lines on a
 // tablet or a needlessly pinched column on a phone.
 const STACK_CARD_MAX = 500;
@@ -81,7 +81,7 @@ const STACKED_WINDOWS: Array<[number, number, number, number]> = [
 
 // The final stage past the survey: cards closed, airframe fully departed.
 // Scrolling a little past the last callout commits to this the same way as
-// any other stage — it just plays out over a bigger, slower motion (see
+// any other stage. It just plays out over a bigger, slower motion (see
 // DEPARTURE_SPRING) since it's closing four cards and flying the airframe
 // off, not settling onto the next one.
 const DEPARTED_STAGE = 1;
@@ -90,7 +90,7 @@ const DEPARTED_STAGE = 1;
 // frame): the datum, then each callout once it's fully revealed. Built from
 // the reveal schedules above so they can't drift out of sync with what's
 // actually on screen. Deliberately stops at the last callout rather than
-// including DEPARTED_STAGE — past it, pickSnapTarget's bracket naturally
+// including DEPARTED_STAGE. Past it, pickSnapTarget's bracket naturally
 // clamps to that last entry, so a callout's own alpha spring stays parked at
 // fully revealed and never fights the *continuous*, scroll-tied clear-out
 // fade already applied below. Committing all the way to departed is a
@@ -101,7 +101,7 @@ const WIDE_SURVEY_STAGES = wideStagePoints(WIDE_STARTS, WIDE_SPAN);
 const STACKED_SURVEY_STAGES = stackedStagePoints(STACKED_WINDOWS, SURVEY_END);
 
 // Where the *page* settles once the user stops scrolling (trySnap): the same
-// callout stages above, plus the fully-departed endpoint — scrolling a
+// callout stages above, plus the fully-departed endpoint. Scrolling a
 // little past the last callout eases through the whole close-and-depart
 // sequence in one motion (see DEPARTURE_SPRING).
 const WIDE_STAGE_POINTS = [...WIDE_SURVEY_STAGES, DEPARTED_STAGE];
@@ -109,41 +109,41 @@ const STACKED_STAGE_POINTS = [...STACKED_SURVEY_STAGES, DEPARTED_STAGE];
 
 // Share of the gap to the next stage that has to be crossed, in the
 // direction just scrolled, before that stage counts as reached (see
-// snap.ts's pickSnapTarget). Small on purpose — both a callout's own reveal
+// snap.ts's pickSnapTarget). Small on purpose: both a callout's own reveal
 // and the page settling onto it should commit almost as soon as the scroll
 // is clearly headed that way, not once it's mostly there.
 const SNAP_COMMIT_FRACTION = 0.18;
 
 // How long the scroll has to sit still before the *page* eases onto a stage.
 // Ordinary wheel and trackpad input arrives in short bursts with brief gaps
-// between them — this has to clear those gaps, or a snap fires mid-gesture,
+// between them, so this has to clear those gaps, or a snap fires mid-gesture,
 // between two notches the user hasn't finished making yet. The callouts
-// themselves don't wait on this — see CARD_SPRING below.
+// themselves don't wait on this: see CARD_SPRING below.
 const SNAP_IDLE_MS = 200;
 // Critically damped: settles onto the stage without any bounce or overshoot,
 // which reads as smoother than a fixed-duration ease for a distance that
 // varies with how far off the stage the scroll happened to stop.
 const SNAP_SPRING = { type: 'spring', stiffness: 320, damping: 36, restDelta: 0.5, restSpeed: 0.5 } as const;
-// Ignore a rest that's already this close to a stage — otherwise floating-
+// Ignore a rest that's already this close to a stage: otherwise floating-
 // point noise in the scroll math can retrigger a no-op animation loop.
 const SNAP_EPSILON = 0.004;
 
 // Drives each callout's own reveal alpha: a quick, critically damped pop
 // rather than a ramp tied to scroll pixels, so there is no scroll speed slow
-// enough to watch a card sit half-lit. Stiffer than SNAP_SPRING — the page
+// enough to watch a card sit half-lit. Stiffer than SNAP_SPRING: the page
 // easing into place is a large, visible motion that should stay gentle;
 // a callout committing is a small one that should read as decisive.
 const CARD_SPRING = { type: 'spring', stiffness: 520, damping: 44, restDelta: 0.004, restSpeed: 0.004 } as const;
 
 // Carries the whole close-and-depart sequence once it's committed to (see
-// trySnap): softer and slower than SNAP_SPRING, on purpose — this scroll
+// trySnap): softer and slower than SNAP_SPRING, on purpose. This scroll
 // covers the clear-out *and* the takeoff run, and the wake, roll, and climb
 // all read as a rushed cut rather than a departure if they're compressed
 // into the same ~350ms a single-stage settle uses.
 const DEPARTURE_SPRING = { type: 'spring', stiffness: 100, damping: 20, restDelta: 0.5, restSpeed: 0.5 } as const;
 
 // Per-callout dot placement. `above` is a wide-layout property only: cards 0
-// and 3 sit above the airframe there, and drop below it — like the others —
+// and 3 sit above the airframe there, and drop below it, like the others,
 // once stacked.
 const CARD_META = [
   { dotLeft: 11.4, dotTop: 66, slide: { x: -30, y: 16 }, above: true },
@@ -185,8 +185,8 @@ function toPhaseLabel(station: string) {
 
 // Shared by the image, its leader-line/dot overlay, and the callout cards so
 // all four ride together as one rigid sheet. Applying this to some layers
-// and not others is what let the lines drift away from their cards as p grew
-// — the image can shift ~45px at the scroll extremes, and anything not
+// and not others is what let the lines drift away from their cards as p grew:
+// the image can shift ~45px at the scroll extremes, and anything not
 // sharing this transform stays put while it does.
 // --kx gates the sideways drift alone. Stacked cards are sized against the
 // screen rather than the plate, so a ±12px sideways ride would push them
@@ -206,8 +206,8 @@ const DEPARTURE_TRANSFORM =
   'translateY(var(--shift, 0px)) scale(var(--fit, 1))';
 
 // Each card box is its plate plus the RING_INSET band the offset outline lives
-// in, so every anchor below backs off by that band to leave the plate — and
-// therefore the leader line meeting its corner — exactly where it was.
+// in, so every anchor below backs off by that band to leave the plate, and
+// therefore the leader line meeting its corner, exactly where it was.
 const R = `${RING_INSET}px`;
 const pad = (v: string) => `calc(${v} - ${R})`;
 const grow = (v: string) => `calc(${v} + ${RING_INSET * 2}px)`;
@@ -227,7 +227,7 @@ function cardPositionStyle(index: number, stacked: boolean): CSSProperties {
   if (index === 0) return { left: pad('1%'), bottom: pad(clear), width: grow('min(440px, 37vw)') };
   // Card 1's dot sits at 42.4% of the plate. Anchoring from the left at 1.5%
   // (like the original reference) never reaches that far right at any
-  // desktop width — the card's own width (min(404px, 31vw)) tops out at
+  // desktop width: the card's own width (min(404px, 31vw)) tops out at
   // 34-40% of the plate depending on viewport, so the dot always lands past
   // its right edge and the leader line misses the card entirely. Anchoring
   // further right at 10% keeps the dot inside the card at every width.
@@ -268,7 +268,7 @@ export function Experience() {
   // without going through React (see apply).
   const cardAlphaRef = useRef([0, 0, 0, 0]);
   const cardAlphaControlsRef = useRef<Array<AnimationPlaybackControls | null>>([null, null, null, null]);
-  // Last committed reveal per callout — compared against each frame's fresh
+  // Last committed reveal per callout, compared against each frame's fresh
   // pick so a spring only (re)starts on an actual change, not every frame.
   const revealedRef = useRef([false, false, false, false]);
   const detailRef = useRef<SheetDetail>('full');
@@ -282,7 +282,7 @@ export function Experience() {
   const [showSpec, setShowSpec] = useState(false);
   const [readout, setReadout] = useState(0);
   const [phase, setPhase] = useState('Datum');
-  // Which callouts are currently committed to shown — only for the text
+  // Which callouts are currently committed to shown, only for the text
   // stagger inside HudCard; the card's own fade/slide reads cardAlphaRef
   // directly via --a{i} and never waits on a re-render.
   const [cardRevealed, setCardRevealed] = useState([false, false, false, false]);
@@ -301,18 +301,18 @@ export function Experience() {
     s.setProperty('--sp', survey.toFixed(4));
     s.setProperty('--run', run.toFixed(4));
     s.setProperty('--clear', clear.toFixed(4));
-    // Everything that belongs to the sheet rather than to the aircraft —
-    // drafting furniture, title block, education line — rides this out.
+    // Everything that belongs to the sheet rather than to the aircraft
+    // (drafting furniture, title block, education line) rides this out.
     s.setProperty('--sheet', (1 - clear).toFixed(4));
 
     // Which callout the survey currently counts as committed to, using the
     // same direction-aware rule the page's own scroll-snap settles on (see
-    // pickSnapTarget) — evaluated every frame rather than debounced, so a
+    // pickSnapTarget), evaluated every frame rather than debounced, so a
     // callout's reveal never waits on the page's slower, deliberately-idle
     // snap to decide it's arrived. Index 0 is the datum (nothing revealed
     // yet); i+1 is callout i. `pickSnapTarget` always returns one of
     // `stages`' own values, so indexOf is exact, never a near-miss. Uses the
-    // survey-only stages (see their definition above) — past the last one,
+    // survey-only stages (see their definition above). Past the last one,
     // its bracket clamps to that entry, so every callout stays fully
     // revealed and the clear-out below is the only thing that closes them.
     const stages = stackedRef.current ? STACKED_SURVEY_STAGES : WIDE_SURVEY_STAGES;
@@ -323,7 +323,7 @@ export function Experience() {
     const nextRevealed = CARD_META.map((_, i) => (stackedRef.current ? committed === i + 1 : committed >= i + 1));
 
     // A callout's alpha now hops in one spring rather than riding the raw
-    // scroll continuously, so (re)start it only on an actual change — not
+    // scroll continuously, so (re)start it only on an actual change, not
     // every frame, and not away from wherever it currently sits mid-hop.
     let revealChanged = false;
     nextRevealed.forEach((isRevealed, i) => {
@@ -340,8 +340,8 @@ export function Experience() {
     });
     if (revealChanged) setCardRevealed([...revealedRef.current]);
 
-    // The clear-out still rides the raw scroll continuously — it's the
-    // departure beginning, not another stage to commit to — so it multiplies
+    // The clear-out still rides the raw scroll continuously: it's the
+    // departure beginning, not another stage to commit to, so it multiplies
     // whatever the spring has reached rather than being folded into it.
     const as = cardAlphaRef.current.map((a) => a * (1 - clear));
     as.forEach((a, i) => s.setProperty(`--a${i + 1}`, a.toFixed(4)));
@@ -349,7 +349,7 @@ export function Experience() {
     wakeRef.current?.pump(thrust);
 
     // Against CLEAR_END, not the section: the readout tracks the survey, and
-    // the survey is finished — sheet empty — at the moment the stage unpins.
+    // the survey is finished (sheet empty) at the moment the stage unpins.
     // Measuring it against the whole section would leave the bar stuck at 88%
     // for the only part of the departure the HUD is still on screen for.
     const pct = Math.min(100, Math.round((p / CLEAR_END) * 100));
@@ -370,7 +370,7 @@ export function Experience() {
     // The two departure states outrank the survey labels: once the sheet is
     // packing up there is no station left to name. "Departing" is keyed to the
     // clear-out rather than to the run, because the run happens on scroll past
-    // the release — by which point this HUD has been carried off the top of
+    // the release, by which point this HUD has been carried off the top of
     // the screen and nobody would ever read it.
     if (run > 0 || clear > 0.45) nextPhase = 'Departing';
     else if (clear > 0 || (lit === role.callouts.length - 1 && survey >= 0.92))
@@ -423,7 +423,7 @@ export function Experience() {
   // Fires once scroll has sat still for SNAP_IDLE_MS: measures fresh (the
   // stage may have resized or flipped layout since the last frame) and eases
   // the page onto whichever stage it's committed to in the direction just
-  // scrolled — the same call apply() makes every frame for the callouts
+  // scrolled: the same call apply() makes every frame for the callouts
   // themselves, just acted on after the scroll actually stops rather than
   // continuously. See pickSnapTarget for why this never moves the user
   // backward relative to their own scroll. Covers the takeoff run too, past
@@ -436,8 +436,8 @@ export function Experience() {
     const pinnedTravel = Math.max(1, r.height - window.innerHeight);
     const departTravel = window.innerHeight * (DEPART_VH / 100);
     const scrolled = -r.top;
-    // Outside the section's whole scroll range entirely — nothing to settle
-    // onto (the far end being Projects fully in view, past even the run —
+    // Outside the section's whole scroll range entirely, nothing to settle
+    // onto (the far end being Projects fully in view, past even the run;
     // see targetY below).
     if (scrolled <= 0 || scrolled >= r.height) return;
     const p = sectionProgress(scrolled, pinnedTravel, departTravel);
@@ -445,8 +445,8 @@ export function Experience() {
     const target = pickSnapTarget(p, stages, scrollDirRef.current, SNAP_COMMIT_FRACTION);
     if (Math.abs(target - p) < SNAP_EPSILON) return;
 
-    // The takeoff run itself only needs DEPART_VH of scroll to finish — the
-    // airframe is off-frame well before Projects is — but stopping there
+    // The takeoff run itself only needs DEPART_VH of scroll to finish (the
+    // airframe is off-frame well before Projects is), but stopping there
     // leaves the reader in an empty stretch of the (now-unpinned) stage with
     // more manual scrolling ahead of them before Projects actually arrives.
     // Once departure is committed to, carry the scroll the rest of the way.
@@ -472,16 +472,16 @@ export function Experience() {
   // Debounces trySnap behind real scroll events (rather than the rAF loop
   // above, which runs every frame regardless of whether scroll actually
   // moved) so it only fires once the user has actually stopped. Also keeps
-  // scrollDirRef current, from real scrolls only — see below.
+  // scrollDirRef current, from real scrolls only: see below.
   const onScrollForSnap = () => {
     const y = window.scrollY;
     // The snap's own scrollTo calls fire this same listener. Recognise those
     // by comparing against the position we just set, rather than a flag that
-    // covers the whole animation — a flag that broad would also swallow a
+    // covers the whole animation: a flag that broad would also swallow a
     // real scroll the user makes *while* a snap is still easing in, and the
     // animation would keep steamrolling their input instead of yielding.
     const selfCaused = lastSnapYRef.current !== null && Math.abs(y - lastSnapYRef.current) <= 2;
-    // Direction only ever comes from the user's own scrolling — folding the
+    // Direction only ever comes from the user's own scrolling. Folding the
     // snap animation's own motion in here would make every snap "confirm"
     // whichever direction it happened to travel in.
     if (!selfCaused) {
@@ -513,9 +513,9 @@ export function Experience() {
     lastSnapYRef.current = null;
   };
 
-  // Cancels any in-flight callout reveal springs — otherwise they'd keep
+  // Cancels any in-flight callout reveal springs: otherwise they'd keep
   // running (framer-motion drives them off their own rAF, independent of
-  // this component's) after the section leaves view or unmounts — and jumps
+  // this component's) after the section leaves view or unmounts, and jumps
   // straight to whichever end each was headed for, rather than leaving it
   // stranded mid-hop for the rare case that catches one still running (a fast
   // enough fling to clear the section, plus its 120px margin, inside the
@@ -553,7 +553,7 @@ export function Experience() {
 
       // Measure with every callout pinned to its revealed position. Unrevealed
       // cards are still offset by their slide vectors, which pulls the top and
-      // bottom of the assembly ~16px in on each side — enough for the fit to
+      // bottom of the assembly ~16px in on each side, enough for the fit to
       // come out at 1 on a layout that overruns once the cards land.
       const revealed = ALPHAS.map((v) => s.getPropertyValue(v));
       ALPHAS.forEach((v) => s.setProperty(v, '1'));
@@ -582,8 +582,8 @@ export function Experience() {
       // The HUD title block and footer own fixed bands at the top and bottom
       // of the stage; the plate assembly gets what's left, centred in that
       // band rather than in the whole stage. Only the top-right progress
-      // readout stays put — the title block and footer fade as the survey
-      // starts — so the assembly may use nearly the whole stage.
+      // readout stays put (the title block and footer fade as the survey
+      // starts), so the assembly may use nearly the whole stage.
       const sr = stage.getBoundingClientRect();
       const GAP = 18;
       const hr = hudRef.current?.getBoundingClientRect();
@@ -620,7 +620,7 @@ export function Experience() {
       s.setProperty('--planey', planey.toFixed(1) + 'px');
 
       // The survey parks the airframe off-centre to leave room for the callout
-      // cards — badly so on a phone, where the single stacked card takes most
+      // cards, badly so on a phone, where the single stacked card takes most
       // of the stage and the plate ends up in the top third. Once the cards
       // clear there is nothing left to make room for, so the departure takes
       // this much extra Y to settle the airframe onto the stage's midline. On
@@ -631,8 +631,8 @@ export function Experience() {
     const sync = () => {
       // A resize can land mid-departure, when the plate group is most of a
       // screen to the left, rolled, and settled onto the stage midline.
-      // Everything below measures live rects — and --recentre is derived from
-      // a rect that --clear itself moves — so park the airframe on station for
+      // Everything below measures live rects, and --recentre is derived from
+      // a rect that --clear itself moves, so park the airframe on station for
       // the duration and restore both at the end.
       const runWas = stage.style.getPropertyValue('--run');
       const clearWas = stage.style.getPropertyValue('--clear');
@@ -670,8 +670,8 @@ export function Experience() {
       fit();
 
       // fit() has just placed the assembly, so this reads where the airframe
-      // actually landed. The spec block's own presence does not move it —
-      // the band is measured from the HUD's top edge — so this can't oscillate.
+      // actually landed. The spec block's own presence does not move it
+      // (the band is measured from the HUD's top edge), so this can't oscillate.
       const clearance = plate.getBoundingClientRect().top - stage.getBoundingClientRect().top;
       setShowSpec(nextDetail !== 'compact' && clearance > SPEC_BLOCK_BOTTOM);
 
@@ -759,7 +759,7 @@ export function Experience() {
           aria-hidden="true"
           className="pointer-events-none absolute -inset-[10%] bg-[linear-gradient(to_right,rgba(96,128,180,0.075)_1px,transparent_1px),linear-gradient(to_bottom,rgba(96,128,180,0.075)_1px,transparent_1px)] bg-[length:32px_32px] will-change-transform"
           // The grid shears left with the departure at a fraction of the
-          // airframe's rate — enough to register as the sheet being pulled
+          // airframe's rate, enough to register as the sheet being pulled
           // past, not so much that the whole page appears to slide.
           style={{
             transform:
@@ -772,12 +772,12 @@ export function Experience() {
           className="pointer-events-none absolute inset-0 will-change-transform"
           style={{
             // Sized so the falloff reaches zero inside the stage on every
-            // axis — the stage clips its children, so a ramp still carrying
+            // axis: the stage clips its children, so a ramp still carrying
             // alpha at an edge is cut off there and shows as a seam. See
             // glow.ts, which owns that constraint and tests it.
             background: glowGradient(),
             // The glow is the pool of light the airframe sits in, so it goes
-            // with it — at the same rate, or it detaches on the way out.
+            // with it, at the same rate, or it detaches on the way out.
             transform:
               'translate3d(calc(var(--run, 0) * -60vw * var(--kd, 1)), calc(var(--sp, 0) * -40px * var(--k, 1)), 0)',
             opacity: 'calc(1 - var(--run, 0) * 0.85)',
@@ -847,7 +847,7 @@ export function Experience() {
           style={{
             transform: DEPARTURE_TRANSFORM,
             transformOrigin: 'center center',
-            // Zero under full motion — the airframe leaves the frame rather
+            // Zero under full motion: the airframe leaves the frame rather
             // than dissolving in place. Reduced motion flips --fade to 1.
             opacity: 'calc(1 - var(--run, 0) * var(--fade, 0))',
           }}
@@ -964,7 +964,7 @@ export function Experience() {
             rather than crushing each other.
 
             Deliberately outside the --sheet clear-out. The two halves that are
-            scroll prompts — the dates line and "scroll to survey" — fade on
+            scroll prompts (the dates line and "scroll to survey") fade on
             their own against --sp long before the departure; what is left is
             the title block and the education line, which name whose work this
             was. Those are the section's content, not drafting furniture, so

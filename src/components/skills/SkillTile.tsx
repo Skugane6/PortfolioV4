@@ -21,7 +21,7 @@ const tileVariants: Variants = {
   },
 };
 
-// The four corner brackets are drawn on rather than faded in — pathLength is
+// The four corner brackets are drawn on rather than faded in: pathLength is
 // the one property that gives a mark the look of being struck by a pen, which
 // is the whole conceit of the section.
 const tickVariants: Variants = {
@@ -48,7 +48,7 @@ interface SkillTileProps {
 /**
  * One logo chip.
  *
- * Every logo wears its own brand colour at rest — that's a CSS transition on
+ * Every logo wears its own brand colour at rest. That's a CSS transition on
  * `.skill-mark` driven by the custom properties set below, not a Motion
  * animation, so the same rule paints the resting state, the hover state, and
  * the touch-device state (which never fires a hover event at all). Framer
@@ -83,7 +83,7 @@ export function SkillTile({ skill, onActivate }: SkillTileProps) {
   }, [tiltX, tiltY]);
 
   // Alpha suffixes on the one hex in the data give the same colour four
-  // weights — full strength for the mark, a mid weight for the hover border
+  // weights: full strength for the mark, a mid weight for the hover border
   // and corner ticks, and two faint ones for the resting border and the plate
   // wash that stops the grid reading as 28 grey squares.
   const brandVars = {
@@ -169,7 +169,7 @@ export function SkillTile({ skill, onActivate }: SkillTileProps) {
           className="skill-mark relative block h-7 w-7 sm:h-9 sm:w-9"
         >
           {/* Static path data generated at build time by
-              scripts/generate-skill-icons.mjs from vendored icon packages —
+              scripts/generate-skill-icons.mjs from vendored icon packages;
               nothing here originates from user input. */}
           <svg
             viewBox={mark.viewBox}

@@ -51,8 +51,8 @@ describe('EMITTERS', () => {
 });
 
 describe('createParticle', () => {
-  // The plane travels left, so wake left behind it drifts aft — to the right
-  // — in stage coordinates. This is what makes it read as a wake rather than
+  // The plane travels left, so wake left behind it drifts aft (to the right)
+  // in stage coordinates. This is what makes it read as a wake rather than
   // as ambient dust.
   it('trails exhaust aft of the departing airframe', () => {
     const p = createParticle(emitterOfKind('exhaust'), 100, 50, 900, half);

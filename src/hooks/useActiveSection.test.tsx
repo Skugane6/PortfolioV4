@@ -20,7 +20,7 @@ class CapturingIntersectionObserver implements IntersectionObserver {
 }
 
 // IntersectionObserver reports a rect for every entry, intersecting or not, and
-// the hook has to be able to order an entry that is *not* in the current batch —
+// the hook has to be able to order an entry that is *not* in the current batch,
 // so the fixture carries a top for both states.
 function entry(id: string, isIntersecting: boolean, top: number): IntersectionObserverEntry {
   return {
@@ -68,7 +68,7 @@ describe('useActiveSection', () => {
     // outgoing one is still in the band (so the outgoing one is topmost and
     // wins), and the outgoing one then leaves *alone* in its own batch. The
     // incoming section's state never changes again, so it is absent from that
-    // second batch — the hook must remember it is still intersecting.
+    // second batch: the hook must remember it is still intersecting.
     render(<TestHost ids={['hero', 'work', 'projects']} />);
     fire(entry('work', true, 100), entry('projects', true, 800));
     expect(active()).toBe('work');

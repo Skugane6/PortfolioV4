@@ -14,14 +14,14 @@ const DIM = '#93a9ca';
 
 // Three tiers of blue-grey, split by what the text actually has to do.
 // MICRO carries real information at 9-11px, so it is the only one held to a
-// readable ratio against #050b16 (6.7:1); LINE and MARK are chrome — rules,
-// tick marks, registration crosses — and are allowed to sit near the floor.
+// readable ratio against #050b16 (6.7:1); LINE and MARK are chrome (rules,
+// tick marks, registration crosses) and are allowed to sit near the floor.
 const MICRO = '#7fa3dd';
 const LINE = '#5b86cc';
 const MARK = 'var(--color-annotation-dim)';
 
 // Headline is split into four lines so each can rise in on its own beat.
-// The line breaks are the design's, not a consequence of wrapping — they
+// The line breaks are the design's, not a consequence of wrapping: they
 // are what puts "scalable" and "systems" on separate accented lines.
 // Each line carries a trailing space: the spans are block-level, so it
 // collapses visually, but without it the h1's textContent (and its
@@ -52,7 +52,7 @@ const HEADLINE_LINES = [
 // A spec sheet for the engineer, not for an employer: what he ships, what he
 // ships it in, the credential, and the one thing running in production.
 //
-// Deliberately not a count of implementation details — table counts and
+// Deliberately not a count of implementation details. Table counts and
 // integration counts measure how big a thing is, not whether it was worth
 // building, and they read as filler in a hero. Values stay short: the strip
 // works as an instrument readout only while the figure is a single glance.
@@ -67,11 +67,11 @@ interface Metric {
 
 const METRICS: Metric[] = [
   // Total shipped, which is more than the four case studies projects.ts
-  // chooses to write up — so this figure is Searan's, not derived.
+  // chooses to write up, so this figure is Searan's, not derived.
   { value: '10', label: 'PROJECTS SHIPPED' },
   // The mark is the whole readout here: the lockup already says "Western", so
   // printing a caption under it would be the school's name twice. `label` is
-  // still carried — it becomes the term a screen reader hears, since the
+  // still carried: it becomes the term a screen reader hears, since the
   // image itself is then decorative.
   {
     logo: { src: '/western-mark.png', alt: '', width: 1025, height: 243 },
@@ -135,7 +135,7 @@ export function Hero() {
         }}
       />
       {/* Below lg the stage is not rendered, so the glow moves off the empty
-          right column and sits behind the copy instead — otherwise the one
+          right column and sits behind the copy instead, otherwise the one
           light source in the scene ends up lighting nothing. */}
       <div
         aria-hidden="true"
@@ -163,7 +163,7 @@ export function Hero() {
           corner chrome anchored to the content it frames rather than to the
           monitor. Below the cap this is inert. */}
       <div className="relative z-[5] mx-auto flex w-full max-w-[1720px] flex-1 flex-col">
-      {/* Decorative lockup only — NavRail (fixed, rendered from App) remains
+      {/* Decorative lockup only. NavRail (fixed, rendered from App) remains
           the one real section nav, so the imported design's own right-edge
           nav is deliberately not reproduced here. */}
       <header className="relative z-[6] flex items-start justify-between gap-4 px-6 pt-[26px] md:px-[34px] [@media(max-height:520px)]:pt-3">
@@ -188,7 +188,7 @@ export function Hero() {
           </div>
         </div>
         {/* Availability is the one piece of status worth reading first, so it
-            takes the slot the old BUILD/SOLVE/IMPROVE triad held — that triad
+            takes the slot the old BUILD/SOLVE/IMPROVE triad held; that triad
             already runs down the left edge on lg, and printing it twice on a
             wide screen was the duplication, not a motif. */}
         <div
@@ -208,7 +208,7 @@ export function Hero() {
       </header>
 
       {/* Columns stretch rather than centre so the stage's box inherits the
-          copy column's height — that height is what --fit is measured
+          copy column's height, since that height is what --fit is measured
           against, and centring would leave it at its bare minimum. */}
       <div className="relative grid flex-1 gap-5 px-6 pt-4 [@media(max-height:520px)]:pt-2 md:px-[34px] lg:grid-cols-2 lg:pl-[40px] lg:pr-[150px] lg:pt-6 xl:pl-[108px] xl:pr-[160px]">
         <div className="relative max-w-[640px] self-center pl-[22px]">
@@ -225,7 +225,7 @@ export function Hero() {
             style={{ animation: 'hero-fade-in .8s ease both' }}
           >
             {/* The only photograph on the page, and the only element in the
-                hero that is not either type or drawn chrome — hence the ring
+                hero that is not either type or drawn chrome, hence the ring
                 and glow, which borrow the SK lockup's treatment so it reads
                 as part of the same technical vocabulary. */}
             <img
@@ -301,7 +301,7 @@ export function Hero() {
               className="inline-flex flex-1 items-center justify-center gap-2.5 whitespace-nowrap px-5 py-[15px] font-mono text-[11px] tracking-[0.18em] transition-[background,box-shadow] duration-200 hover:bg-[#3570e2] hover:shadow-[0_14px_42px_rgba(50,120,245,.55),inset_0_0_0_1px_rgba(190,220,255,.6)] sm:flex-none sm:justify-start sm:px-5 sm:tracking-[0.22em] lg:px-4 xl:px-[26px]"
               // The page's one primary CTA, so its label has to clear AA in
               // both states. It did not: #f2f7ff on #2f6fe0 is 4.37:1 at rest
-              // and the old #4a86f2 hover dropped it to 3.26:1 — the button
+              // and the old #4a86f2 hover dropped it to 3.26:1: the button
               // got *less* legible the moment you pointed at it. Deepening the
               // rest fill and promoting the old rest colour to the hover fill
               // keeps the same blue and the same "brightens on hover" read,
@@ -376,14 +376,14 @@ export function Hero() {
         {/* Stand-in for the stage from 768 to 1279. The full scene is authored
             at 900x760 and auto-fits to a 0.40 floor, so below xl it arrived
             either as a weedy thumbnail (two columns at 1024) or with nowhere
-            to go at all (one column at 768) — and leaving the slot empty gave
+            to go at all (one column at 768), and leaving the slot empty gave
             the widest single-column case a 180px void under the CTAs. The IDE
             is the part of the scene that survives being lifted out of the 3D
             stack: it is fluid, it keeps its chrome, and it holds up at a size
             these viewports can actually give it.
 
             Two queries, because the two layouts it serves have different
-            vertical budgets — stacked under the copy it has to earn its
+            vertical budgets. Stacked under the copy it has to earn its
             height, beside the copy it costs none. Both fold the width bounds
             into the media query rather than pairing a `hidden` with an
             `xl:hidden`, so there is no specificity race to lose. The height
@@ -404,7 +404,7 @@ export function Hero() {
 
             Not rendered below lg at all. The stage is authored at 900x760 and
             the auto-fit floor is 0.4, so on a phone it arrived as a 360px
-            smear of 4px type that also pushed the hero to ~1.4 screens — the
+            smear of 4px type that also pushed the hero to ~1.4 screens. The
             copy and the proof strip are the mobile hero. */}
         <div
           ref={boxRef}
@@ -464,7 +464,7 @@ export function Hero() {
                 style={{ borderColor: 'rgba(96,150,245,.3)' }}
               >
                 {/* A logo cell prints no caption, but its term still has to
-                    occupy the label row — remove it from the flow and the
+                    occupy the label row. Remove it from the flow and the
                     mark drops to where the other three print their labels,
                     ten pixels below their figures. opacity-0 rather than
                     sr-only for exactly that reason: it keeps the box, and
@@ -485,7 +485,7 @@ export function Hero() {
                   // still shares their optical centre instead of shifting the
                   // whole cell.
                   <dd className="flex h-[clamp(19px,2.1vw,26px)] items-center">
-                    {/* White artwork on transparency, straight onto the navy —
+                    {/* White artwork on transparency, straight onto the navy;
                         see scripts/generate-western-mark.mjs, which lifts it
                         off the purple plate Western ships it on. That plate
                         would be the only saturated block on the page; reversed
@@ -539,7 +539,7 @@ export function Hero() {
         <span>REPEAT</span>
       </div>
 
-      {/* pb-24 clears NavRail's fixed bottom bar, which now holds until lg —
+      {/* pb-24 clears NavRail's fixed bottom bar, which now holds until lg:
           that rail only becomes a right-edge column at lg, so the old md
           breakpoint here was uncovering the bar from 768 to 1023. */}
       <footer
@@ -548,7 +548,7 @@ export function Hero() {
       >
         {/* Availability lives in the header pill from sm up. Below that the
             pill has no room next to the lockup, so the status folds down here
-            and the coordinates — the most expendable line in the hero — give
+            and the coordinates (the most expendable line in the hero) give
             up their slot for it. Exactly one green dot is on screen either
             way. */}
         <div className="flex items-center gap-3">
@@ -590,7 +590,7 @@ export function Hero() {
   );
 }
 
-/** 16px stroked glyph for the CTA buttons — sized to sit on the mono cap height. */
+/** 16px stroked glyph for the CTA buttons, sized to sit on the mono cap height. */
 function Icon({ path }: { path: string }) {
   return (
     <svg

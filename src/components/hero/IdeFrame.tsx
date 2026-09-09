@@ -4,7 +4,7 @@ import { IdeWindow } from './IdeWindow';
  * The IDE plus the scene's registration chrome: an inset hairline box and
  * four corner brackets.
  *
- * Size-agnostic — it fills whatever box the caller establishes, so the same
+ * Size-agnostic: it fills whatever box the caller establishes, so the same
  * treatment serves the 470x330 slot inside HeroStage's fixed coordinate
  * space and the fluid tablet slot in Hero. The caller must be positioned
  * (the frame and brackets are absolute against it) and must leave ~22px of

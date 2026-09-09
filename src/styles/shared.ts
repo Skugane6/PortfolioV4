@@ -20,13 +20,13 @@ export const blueprintGrid =
   'bg-[linear-gradient(to_right,rgba(96,128,180,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(96,128,180,0.07)_1px,transparent_1px)] ' +
   'bg-[size:32px_32px]';
 
-// Stamped status/category chip: solid flat fill, white text, no gradient —
+// Stamped status/category chip: solid flat fill, white text, no gradient,
 // reserved for the one deliberate use (the CraftTraq "live" badge) rather
 // than scattered across every tag.
 export const chipStamped =
   'inline-flex items-center rounded font-mono text-[10px] tracking-widest text-white bg-accent px-2 py-1 uppercase';
 
-// Lighter wash chip for the skills tag list — reads as a tag, not a badge.
+// Lighter wash chip for the skills tag list: reads as a tag, not a badge.
 export const chipWash =
   'rounded font-mono text-xs tracking-wide text-accent-text bg-accent-wash px-2 py-1';
 

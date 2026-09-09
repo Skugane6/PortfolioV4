@@ -1,5 +1,5 @@
 // The centrepiece of the hero stage: a mock editor showing the smallest
-// FastAPI app that still looks like real work. Purely decorative — the
+// FastAPI app that still looks like real work. Purely decorative: the
 // stage that hosts it is aria-hidden, so none of this text is announced
 // and none of the glyphs need accessible names.
 
@@ -19,7 +19,7 @@ interface Token {
   color: string;
 }
 
-// One entry per rendered line, blanks included — the line-number gutter
+// One entry per rendered line, blanks included, because the line-number gutter
 // counts these, so an omitted blank would desynchronise the two columns.
 const CODE_LINES: Token[][] = [
   [
@@ -116,7 +116,7 @@ export function IdeWindow() {
         </div>
         <div className="flex-1" />
         <div className="flex gap-3.5 font-mono text-[11px]" style={{ color: '#6f9dee' }}>
-          <span>—</span>
+          <span>–</span>
           <span>□</span>
           <span>×</span>
         </div>

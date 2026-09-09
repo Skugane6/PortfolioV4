@@ -64,7 +64,7 @@ describe('nearestStage', () => {
 describe('pickSnapTarget', () => {
   const stages = [0, 0.26, 0.44, 0.62, 0.8];
 
-  // Always resolves to one stage or the other — the earlier "hold, undecided"
+  // Always resolves to one stage or the other. The earlier "hold, undecided"
   // branch was itself the bug: it let a slow scroll rest indefinitely at a
   // partial reveal instead of committing anywhere (see Experience's apply).
   it('never returns null', () => {
@@ -74,8 +74,8 @@ describe('pickSnapTarget', () => {
     }
   });
 
-  // The commit fraction is small on purpose: a real forward scroll — even a
-  // short one — should commit to the next stage almost immediately, not
+  // The commit fraction is small on purpose: a real forward scroll, even a
+  // short one, should commit to the next stage almost immediately, not
   // require crossing most of the gap first.
   it('commits to the next stage down after a small but real scroll', () => {
     expect(pickSnapTarget(0.06, stages, 1)).toBe(0.26); // 0.06/0.26 ≈ 0.23 > 0.18

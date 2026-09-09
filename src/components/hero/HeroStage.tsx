@@ -4,7 +4,7 @@ import { IdeFrame } from './IdeFrame';
 // The scene is authored against a fixed 900x760 coordinate space and scaled
 // to fit by useStageTilt, so every offset here is a plain pixel number that
 // lines up with the SVG connectors drawn in the same space. Moving a panel
-// means moving its polyline to match — the two are deliberately in one
+// means moving its polyline to match: the two are deliberately in one
 // coordinate system rather than one being a percentage of the other.
 const STAGE_WIDTH = 900;
 const STAGE_HEIGHT = 760;
@@ -16,7 +16,7 @@ const CONNECTORS = [
   { points: '555,175 555,200 620,200 620,225', pulse: '5.4s linear infinite 1.1s' },
   { points: '95,380 95,305 230,305', pulse: '4.8s linear infinite 2.2s' },
   { points: '532,594 532,620 400,620 400,555', pulse: '5.8s linear infinite .6s' },
-  // No pulse on this one — it runs behind the IDE for most of its length.
+  // No pulse on this one, since it runs behind the IDE for most of its length.
   { points: '190,505 250,505 250,672 372,672', pulse: null },
 ];
 
@@ -192,7 +192,7 @@ export function HeroStage() {
           ))}
         </g>
 
-        {/* The one warm annotation in the scene — a runtime callout. Its
+        {/* The one warm annotation in the scene, a runtime callout. Its
             elbow starts at x=724 rather than x=700: the IDEAS panel's right
             edge is at 700 and carries its own parallax, so an elbow flush
             against it slid under the panel on half the pointer positions and
@@ -240,7 +240,7 @@ export function HeroStage() {
         </g>
       </svg>
 
-      {/* Deploy checklist — the frontmost panel */}
+      {/* Deploy checklist, the frontmost panel */}
       <StagePanel
         position={{ left: 20, top: 60, width: 200, height: 150 }}
         depth={{ x: 20, y: 12, z: 160 }}
@@ -252,7 +252,7 @@ export function HeroStage() {
           style={{ color: '#9dc0f2' }}
         >
           <span>DEPLOY</span>
-          <span style={{ color: '#5b86cc' }}>—</span>
+          <span style={{ color: '#5b86cc' }}>··</span>
         </div>
         <div className="flex flex-col gap-[11px]">
           <DeployStep label="Build" />
@@ -261,7 +261,7 @@ export function HeroStage() {
         </div>
       </StagePanel>
 
-      {/* Ideas to impact ladder — sits behind the stage plane */}
+      {/* Ideas to impact ladder, sitting behind the stage plane */}
       <StagePanel
         position={{ left: 500, top: 25, width: 200, height: 150 }}
         depth={{ x: -8, y: -6, z: -30 }}
@@ -333,7 +333,7 @@ export function HeroStage() {
             </span>
           </div>
           <span className="text-[10px]" style={{ color: '#5b86cc' }}>
-            —
+            ··
           </span>
         </div>
         <div className="font-mono text-[7px] tracking-[0.22em]" style={{ color: 'var(--color-annotation-dim)' }}>

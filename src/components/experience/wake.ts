@@ -1,12 +1,12 @@
 /**
- * Particle maths for the departure wake — the wingtip vortices and engine
+ * Particle maths for the departure wake: the wingtip vortices and engine
  * exhaust the airframe leaves behind as it runs off the left of the sheet.
  *
  * Kept free of canvas and DOM so the behaviour that matters (where wake goes,
  * how long it lives, how much of it there is) is testable on its own.
  *
  * Coordinates are stage pixels. The airframe travels left, so wake released
- * into the stage is left behind and drifts *aft* — to the right — relative to
+ * into the stage is left behind and drifts *aft* (to the right) relative to
  * the aircraft.
  */
 
@@ -27,20 +27,20 @@ export interface Emitter {
  * the wing trailing edge around the middle, the aft-fuselage nacelle behind
  * it, and the T-tail stabiliser tip at the very top of the fin.
  *
- * Tuned against the rendered plate rather than the source art — the image is
+ * Tuned against the rendered plate rather than the source art. The image is
  * an x-ray with a lot of transparent margin, so nominal airframe stations do
  * not land where the ink is.
  */
 export const EMITTERS: Emitter[] = [
   // Winglet tip, and its trailing edge just below. Sweep and dihedral put the
-  // tip high and well aft of the wing root in a side elevation — nowhere near
+  // tip high and well aft of the wing root in a side elevation, nowhere near
   // the 46% "main wing" station the sheet's own notes call out, which is the
   // fuselage frame the wing box attaches to. The pair counter-rotates, which
   // is what a tip vortex sheet actually does and stops the two reading as one
   // smear.
   { x: 0.645, y: 0.657, kind: 'vortex', curl: -1 },
   { x: 0.632, y: 0.697, kind: 'vortex', curl: 1 },
-  // Exhaust nozzle on the aft-fuselage nacelle — the CRJ is rear-engined, so
+  // Exhaust nozzle on the aft-fuselage nacelle. The CRJ is rear-engined, so
   // this is well behind the wing and high on the fuselage. Two points across
   // the nozzle annulus rather than one, which both fills the plume and weights
   // emission toward the engine, where most of the wake belongs.
@@ -66,14 +66,14 @@ export interface Particle {
 
 // Particles per second at full departure speed. The takeoff run is under a
 // second of scrolling, and lifetimes are around a second, so in practice the
-// budget in particleCap is what is on screen — this rate just has to reach it
+// budget in particleCap is what is on screen; this rate just has to reach it
 // quickly enough that the plume is dense from the first frame.
 const PEAK_RATE = 420;
 
 // How much of the airframe's own speed the wake keeps once released, in the
 // stage's frame. Jet exhaust leaves the nozzle faster than the aircraft is
 // travelling, so it genuinely moves aft in world terms; a tip vortex is left
-// hanging in the air and barely translates at all — it rolls instead (see
+// hanging in the air and barely translates at all. It rolls instead (see
 // CURL_ACCEL).
 const EXHAUST_CARRY = 0.5;
 const VORTEX_CARRY = 0.34;

@@ -7,7 +7,7 @@ export const MIN_DURATION_MS = 500;
 export const MAX_DURATION_MS = 1000;
 
 // Ease in, ease out, symmetric. Slow departure and a long settle at the end
-// read as "travelling" rather than "cut" — the whole point of the exercise.
+// read as "travelling" rather than "cut", which is the whole point of the exercise.
 export function easeInOutCubic(t: number): number {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
@@ -36,7 +36,7 @@ export interface ScrollAnimation {
 
 /**
  * Tween the window to `targetY`. Resolves when it arrives, or as soon as the
- * user takes the scroll back — a tween that fights the wheel is worse than no
+ * user takes the scroll back. A tween that fights the wheel is worse than no
  * tween at all, so any wheel/touch/key input cancels it immediately.
  */
 export function animateScrollTo(targetY: number): ScrollAnimation {

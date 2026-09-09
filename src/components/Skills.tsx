@@ -7,7 +7,7 @@ import { SectionHeading } from './SectionHeading';
 import { SkillDetail, SkillTally } from './skills/SkillDetail';
 import { SkillTile } from './skills/SkillTile';
 
-// The grid itself doesn't move — it only meters its children, so the 28 tiles
+// The grid itself doesn't move. It only meters its children, so the 28 tiles
 // sweep in left-to-right, top-to-bottom rather than landing as one slab. 0.03s
 // keeps the whole pass under a second even at this count.
 const gridVariants: Variants = {
@@ -32,7 +32,7 @@ export function Skills() {
       className="relative overflow-hidden bg-surface px-5 py-24 sm:px-6 sm:py-28 lg:py-section lg:pl-40 lg:pr-[184px]"
     >
       {/* Same drifting blueprint grid and corner wash the Projects section
-          uses, at a lower opacity — this section sits on --color-surface rather
+          uses, at a lower opacity. This section sits on --color-surface rather
           than the page ground, so the grid needs less to register. */}
       <div
         aria-hidden="true"
@@ -48,7 +48,7 @@ export function Skills() {
           colours now, so a single blue corner glow left the plate reading cold
           against it; the amber and green lobes pick up the warm and the mint
           ends of the logo set and keep the ground in the same family as the
-          thing sitting on it. All well under 20% alpha — this is ambient
+          thing sitting on it. All well under 20% alpha: this is ambient
           light, not a gradient anyone should be able to name. */}
       <div
         aria-hidden="true"

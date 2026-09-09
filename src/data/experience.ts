@@ -41,7 +41,7 @@ export const experience: ExperienceEntry[] = [
         station: 'STA 940 · EMPENNAGE',
         title: 'Maintenance Scheduling Engine',
         description:
-          'Designed the Oracle database architecture underneath it — indexing and query performance tuning included — then built a scheduling optimization engine coordinating maintenance workflows across 2,000+ entities.',
+          'Designed the Oracle database architecture underneath it, indexing and query performance tuning included, then built a scheduling optimization engine coordinating maintenance workflows across 2,000+ entities.',
         tags: ['Oracle', 'Query tuning', '2,000+ entities'],
         caption: 'Coordinated maintenance workflows',
         icon: 'schedule',

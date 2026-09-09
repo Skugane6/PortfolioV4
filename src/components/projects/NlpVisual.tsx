@@ -1,4 +1,4 @@
-// Shares the teal accent with RiskVisual — see the note there.
+// Shares the teal accent with RiskVisual (see the note there).
 const TEAL = '#2dd4bf';
 
 // The ensemble as a graph: tokens fan out to the three encoders, those pool

@@ -3,8 +3,8 @@
  * dimension, station notes, datum stamp and registration marks a real side
  * elevation carries.
  *
- * All of it is deliberately quieter than the callout cards — a light steel
- * ink at low alpha — and every piece rides the shared `--sheet` alpha, the
+ * All of it is deliberately quieter than the callout cards, a light steel
+ * ink at low alpha, and every piece rides the shared `--sheet` alpha, the
  * same one the title block and education line use: full strength through the
  * whole survey, so the flight-direction note, the aircraft's build tagline
  * and the CRJ spec stay on screen alongside the callouts as they arrive, and
@@ -19,7 +19,7 @@ export type SheetDetail = 'full' | 'mid' | 'compact';
 const RULE = 'rgba(122,160,216,0.34)';
 const RULE_SOFT = 'rgba(122,160,216,0.22)';
 // Two text weights, both alpha-composited over the near-black page ground.
-// TEXT_SOFT used to sit at 0.4, which lands at 2.5:1 — these are 9px labels
+// TEXT_SOFT used to sit at 0.4, which lands at 2.5:1. These are 9px labels
 // carrying real content (the spec rows, the station callouts, the dates), not
 // texture, so it read as a drafting-pen flourish at the cost of anyone
 // actually being able to read it. The pair is now 6.7:1 / 4.7:1: the same
@@ -36,7 +36,7 @@ export const AIRCRAFT = {
     ['Height', '7.5 m'],
   ],
   overall: '32.5 m (106.6 ft)',
-  // Toronto Pearson — the field the fleet this work covered flies out of, and
+  // Toronto Pearson, the field the fleet this work covered flies out of, and
   // the closest airport to the office the role was based in.
   datum: 'CYYZ  N 43.6777°  W 79.6248°',
   stations: [
@@ -97,7 +97,7 @@ export function AirframeNotes({ detail }: { detail: SheetDetail }) {
       {/* Overall length. The airframe fills the plate top to bottom, so the
           only clear run is the sky above the fuselage; the rule crosses the
           fin on its way to the tail, which is what a dimension line does on a
-          real drawing. The label breaks the rule rather than sitting over it —
+          real drawing. The label breaks the rule rather than sitting over it:
           that band is only a few px tall once the plate is phone-sized.
 
           On a phone the sheet is short enough that the assembly rides up under
@@ -185,14 +185,14 @@ export function AirframeNotes({ detail }: { detail: SheetDetail }) {
 /**
  * Furniture that belongs to the sheet rather than the airframe: registration
  * marks at the corners, the flight-direction note, and the colophon. Render
- * at stage level, outside the parallax — these define the sheet, so they are
+ * at stage level, outside the parallax. These define the sheet, so they are
  * the one thing that should not drift.
  */
 export function SheetMarks({ detail }: { detail: SheetDetail }) {
   if (detail === 'compact') return null;
 
   return (
-    // No opacity of its own — the caller already wraps this in the --sheet
+    // No opacity of its own: the caller already wraps this in the --sheet
     // fade (see Experience), and doubling it here would fade it out twice
     // as fast as the rest of the sheet furniture.
     <div aria-hidden="true" className="pointer-events-none absolute inset-0">

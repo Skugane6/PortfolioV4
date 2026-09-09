@@ -20,8 +20,8 @@ const VISUALS: Record<ProjectVisual, ComponentType> = {
 // clear the slop of a tap on a touchscreen without demanding a full fling.
 const SWIPE_THRESHOLD = 48;
 
-// The one hairline value used for every internal division in this section — the
-// panel's column split, the rail segments, the chip borders — so they all read
+// The one hairline value used for every internal division in this section (the
+// panel's column split, the rail segments, the chip borders) so they all read
 // as the same drawn line rather than four near-misses.
 const HAIRLINE = 'rgba(90,130,200,.16)';
 
@@ -43,7 +43,7 @@ export function Projects() {
       const el = sectionRef.current;
       if (!el) return;
       // Only steal the arrow keys while this section actually owns the
-      // viewport — otherwise they'd hijack scrolling everywhere else.
+      // viewport, otherwise they'd hijack scrolling everywhere else.
       const rect = el.getBoundingClientRect();
       if (rect.bottom < window.innerHeight * 0.35 || rect.top > window.innerHeight * 0.65) return;
       e.preventDefault();
@@ -109,7 +109,7 @@ export function Projects() {
 
           {/* The panel is not a live region, so without this nothing tells a
               screen reader that an arrow key or a swipe changed anything.
-              Announced, not shown — the visible counter is gone by design. */}
+              Announced, not shown: the visible counter is gone by design. */}
           <p aria-live="polite" className="sr-only">
             Project {active + 1} of {projects.length}: {project.name}
           </p>
@@ -216,8 +216,8 @@ export function Projects() {
                       not four that scale themselves in and out. Framer-motion
                       then animates the single bar *between* tabs, so picking
                       project 04 from project 01 slides the marker across the
-                      row instead of dimming one end and lighting the other —
-                      the tabs read as positions on one rail, which is the
+                      row instead of dimming one end and lighting the other,
+                      so the tabs read as positions on one rail, which is the
                       whole point of the station-numbering motif. */}
                   {isActive && (
                     <motion.span
@@ -255,7 +255,7 @@ export function Projects() {
             />
 
             {/* Keyed on the active project so every CSS entrance animation
-                inside replays on each change — the panel is remounted, not
+                inside replays on each change: the panel is remounted, not
                 diffed. Two declared columns from lg up rather than flex-basis
                 wrapping, which used to collapse at unpredictable widths. The
                 min-height holds the panel steady as taller and shorter
@@ -266,7 +266,7 @@ export function Projects() {
               onPointerDown={onPointerDown}
               onPointerUp={onPointerUp}
             >
-              {/* Visual leads on narrow screens — the product shot is the hook,
+              {/* Visual leads on narrow screens: the product shot is the hook,
                   and stacking the whole text column above it buried it. */}
               <div
                 className="relative order-1 flex flex-col border-b xl:order-2 xl:border-b-0 xl:border-l"
@@ -355,7 +355,7 @@ export function Projects() {
                   {project.tagline}
                 </p>
 
-                {/* Labelled block rather than a loose chip cloud — the caption
+                {/* Labelled block rather than a loose chip cloud. The caption
                     gives the row a reason to be there and lines it up with the
                     drawing labels on the other side of the split. */}
                 <div>

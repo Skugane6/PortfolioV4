@@ -1,5 +1,5 @@
 /**
- * Installable React component — the classic “cat follows the cursor” idea comes from
+ * Installable React component. The classic “cat follows the cursor” idea comes from
  * oneko.js (MIT): https://github.com/adryd325/oneko.js/
  */
 

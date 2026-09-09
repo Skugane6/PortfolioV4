@@ -37,7 +37,7 @@ describe('Cursor', () => {
     usePointer('fine');
     const { container } = render(<Cursor />);
     // The torch travels with the OS pointer rather than standing in for it,
-    // so nothing here may set `cursor: none` — not on the root, not on the
+    // so nothing here may set `cursor: none`: not on the root, not on the
     // body, not on the overlay. An earlier revision hid it; this is the guard
     // against that coming back.
     expect(document.documentElement.className).not.toMatch(/cursor/);

@@ -2,7 +2,7 @@ import type { Skill, SkillGroup } from './types';
 
 /**
  * The four runs of the parts list, in the order a colleague would hear them
- * described — what the product is built with, what it plugs into, what it
+ * described: what the product is built with, what it plugs into, what it
  * computes, what keeps it honest.
  *
  * These label the tiles in the side detail panel and drive its tally. The grid
@@ -15,7 +15,7 @@ export const skillGroups: Record<SkillGroup, { label: string; caption: string }>
   verify: { label: 'QUALITY & DELIVERY', caption: 'What keeps it honest' },
 };
 
-/** Render order for the panel's tally — matches the order of the list below. */
+/** Render order for the panel's tally, matching the order of the list below. */
 export const skillGroupOrder: SkillGroup[] = ['build', 'platform', 'data', 'verify'];
 
 // One flat parts list, rendered as a single grid.
