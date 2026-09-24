@@ -15,7 +15,7 @@ test.describe('cover sheet', () => {
 
   test('the résumé link serves the PDF', async ({ page, request }) => {
     await gotoHome(page);
-    const href = await page.getByRole('link', { name: /Résumé/ }).getAttribute('href');
+    const href = await page.locator('#cover').getByRole('link', { name: /Résumé/ }).getAttribute('href');
     const res = await request.get(href!);
     expect(res.status()).toBe(200);
     expect(res.headers()['content-type']).toContain('application/pdf');
@@ -23,7 +23,7 @@ test.describe('cover sheet', () => {
 
   test('availability shows a HOLD until the role type is supplied', async ({ page }) => {
     await gotoHome(page);
-    const block = page.getByRole('definition').filter({ hasText: 'Open to opportunities' });
+    const block = page.locator('#cover').getByRole('definition').filter({ hasText: 'Open to opportunities' });
     await expect(block).toContainText('Hold');
     await expect(block).toContainText('role type, start date to be confirmed');
   });

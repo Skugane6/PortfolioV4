@@ -1,9 +1,10 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { m } from 'motion/react';
 import { projects } from '../../content/projects';
 import { sheetById } from '../../content/sheets';
 import type { Project } from '../../content/types';
 import { useReducedMotionPref } from '../../lib/motion';
+import { useUi } from '../../lib/ui';
 import { useHydrated } from '../../lib/useMedia';
 import { SheetFrame } from '../shell/SheetFrame';
 import { CaseStudyDialog } from './CaseStudyDialog';
@@ -37,6 +38,13 @@ export function Projects() {
     returnFocus.current = null;
     target?.focus({ preventScroll: false });
   };
+
+  // The command palette asks for a sheet through the UI store.
+  const request = useUi((s) => s.projectRequest);
+  useEffect(() => {
+    if (request) onOpen(request.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [request?.seq]);
 
   const [feature, ...rest] = projects;
 

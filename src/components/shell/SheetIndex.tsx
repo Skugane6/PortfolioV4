@@ -2,6 +2,7 @@ import { useEffect, useRef, type MouseEvent } from 'react';
 import { pad2, sheets } from '../../content/sheets';
 import { useReducedMotionPref } from '../../lib/motion';
 import { goToSheet, useActiveSheet } from '../../lib/useActiveSheet';
+import { PaletteButton } from './CommandPalette';
 
 const IDS = sheets.map((s) => s.id);
 
@@ -108,6 +109,7 @@ export function SheetIndex() {
           );
         })}
       </ol>
+      <PaletteButton className="mt-8 hidden xl:flex" />
     </nav>
   );
 }

@@ -9,6 +9,7 @@ import { Dimension } from '../drawing/Dimension';
 import { EXTENT } from '../drawing/airframeGeometry';
 import { SheetFrame } from '../shell/SheetFrame';
 import { TitleBlock, type TitleBlockRow } from '../shell/TitleBlock';
+import { Cat } from '../companion/Cat';
 import { LocalTime } from './LocalTime';
 import { ProofRefs } from './ProofRefs';
 
@@ -142,6 +143,8 @@ function CoverTitleBlock() {
   ];
   return (
     <div className="relative px-4 pb-6 sm:px-8 lg:pl-16 lg:pr-12">
+      {/* The cat's strip: it lives on the title block's top rule. */}
+      <Cat />
       <TitleBlock label="Cover sheet title block" rows={rows} columns={6} />
     </div>
   );
