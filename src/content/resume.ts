@@ -1,8 +1,10 @@
 /**
  * Lines from the résumé (public/skuganesan_resume.pdf, August 2026), quoted
  * verbatim. The bill of materials cites them as evidence of where a part was
- * used when nothing else on the site shows it. They are the owner's own
- * statements; nothing here is paraphrased.
+ * used when nothing else on the site shows it, so bullets the site already
+ * carries as an Experience callout (the component tracker) are left out to
+ * avoid counting the same work twice. The owner's own statements; nothing
+ * here is paraphrased.
  */
 export interface ResumeLine {
   id: string;
@@ -12,11 +14,6 @@ export interface ResumeLine {
 }
 
 export const resumeLines: ResumeLine[] = [
-  {
-    id: 'mhi-component-tracking',
-    context: 'Mitsubishi Heavy Industries',
-    text: 'Engineered full-stack component tracking system leveraging React.js frontend and Python/Flask RESTful API backend serving 2,000+ aircraft across 100+ operators with interactive D3.js/Chart.js data visualizations',
-  },
   {
     id: 'mhi-fleet-etl',
     context: 'Mitsubishi Heavy Industries',
