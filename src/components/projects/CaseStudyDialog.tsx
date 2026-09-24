@@ -9,6 +9,7 @@ import { DeviceFrames } from './DeviceFrames';
 const DEMOS: Partial<Record<DemoKind, LazyExoticComponent<ComponentType>>> = {
   risk: lazy(() => import('../demos/RiskDemo')),
   text: lazy(() => import('../demos/TextDemo')),
+  eye: lazy(() => import('../demos/EyeDemo')),
 };
 
 const DEMO_TITLES: Record<DemoKind, string> = {

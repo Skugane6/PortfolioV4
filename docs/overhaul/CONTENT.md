@@ -141,7 +141,7 @@ Detail-sheet headings: **What it does · How it's built · Architecture · Where
 
 - **Tagline** (unchanged): "Hands-free cursor control from a webcam. Look to move, blink to click."
 - **How it's built** (from the stated stack only): Python with OpenCV and MediaPipe for face and iris landmarks, NumPy for smoothing, and PyAutoGUI to move and click the system cursor.
-- **Demo disclosure** (new): "Runs Google's MediaPipe Face Landmarker in your browser. The video never leaves your device. About 16 MB downloads the first time you start it." Fallback: "Camera unavailable, so this is a simulation of the same pipeline."
+- **Demo disclosure** (new, shown before opt-in): "Runs Google's MediaPipe Face Landmarker in your browser. The video never leaves your device. About 7 MB downloads the first time you start it (16 MB uncompressed)." Plus: "The runtime comes from jsDelivr and the face model from Google. MediaPipe also sends Google usage and performance metrics, never the video" with a link to MediaPipe's privacy notice (the library posts metrics to odml.pa.googleapis.com with no documented off switch; see NEEDS #19). Fallbacks name the reason: permission denied, no camera, camera busy, or the model failing to load, each followed by the simulation of the same pipeline.
 - **Links:** "Source on GitHub".
 
 ---
