@@ -3,6 +3,7 @@ import { LazyMotion, domMax } from 'motion/react';
 import { useState } from 'react';
 import { Airframe } from '../components/drawing/Airframe';
 import { roles } from '../content/experience';
+import { OgCard } from './OgCard';
 
 /**
  * Dev-only fixtures (never in the production bundle: main.tsx imports this
@@ -14,6 +15,7 @@ export function Fixtures({ name }: { name: string }) {
   const [active, setActive] = useState<string | null>('utilization-forecasting');
   const stations = roles[0].callouts.map((c) => ({ id: c.id, station: c.station, zone: c.zone, subject: c.title }));
 
+  if (name === 'og') return <OgCard />;
   if (name !== 'airframe') return <p>Unknown fixture “{name}”.</p>;
   return (
     <LazyMotion features={domMax}>

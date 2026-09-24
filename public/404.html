@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Sheet not found, Searan Kuganesan</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      @font-face {
+        font-family: 'Archivo';
+        src: url('/fonts/archivo-var.woff2') format('woff2');
+        font-weight: 400 700;
+        font-stretch: 62% 100%;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'B612 Mono';
+        src: url('/fonts/b612mono-400.woff2') format('woff2');
+        font-display: swap;
+      }
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        background-color: #0f2a4c;
+        background-image: linear-gradient(rgba(95, 134, 189, 0.13) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(95, 134, 189, 0.13) 1px, transparent 1px),
+          linear-gradient(rgba(95, 134, 189, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(95, 134, 189, 0.07) 1px, transparent 1px);
+        background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+        color: #eef3fa;
+        font: 17px/1.55 Archivo, Arial, sans-serif;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+      }
+      main {
+        width: min(640px, 100%);
+        border: 2px solid #5f86bd;
+        background: #0f2a4c;
+        padding: 32px;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(40px, 9vw, 72px);
+        font-weight: 700;
+        font-stretch: 68%;
+        line-height: 0.95;
+      }
+      p {
+        max-width: 50ch;
+      }
+      .lettering {
+        font: 13px/1.3 'B612 Mono', monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #a9c1e0;
+      }
+      a {
+        color: #eef3fa;
+        text-underline-offset: 0.22em;
+      }
+      a:hover {
+        text-decoration-color: #ff8c7a;
+      }
+      a:focus-visible {
+        outline: 2px solid #ffd23f;
+        outline-offset: 3px;
+      }
+      dl {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 32px 0 0;
+        border-top: 1px solid rgba(169, 193, 224, 0.7);
+        border-left: 1px solid rgba(169, 193, 224, 0.7);
+      }
+      dl div {
+        padding: 8px 10px;
+        border-right: 1px solid rgba(169, 193, 224, 0.7);
+        border-bottom: 1px solid rgba(169, 193, 224, 0.7);
+      }
+      dt {
+        font-size: 13px;
+        color: #a9c1e0;
+      }
+      dd {
+        margin: 4px 0 0;
+        font: 14px 'B612 Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="lettering">Error 404</p>
+      <h1>Sheet not found</h1>
+      <p>This drawing set has five sheets, and this address isn’t one of them.</p>
+      <p><a href="/">Back to the cover</a></p>
+      <dl>
+        <div><dt>Sheet</dt><dd>—</dd></div>
+        <div><dt>Set</dt><dd>01–05</dd></div>
+        <div><dt>Status</dt><dd>Void</dd></div>
+      </dl>
+    </main>
+  </body>
+</html>
