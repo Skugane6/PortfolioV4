@@ -28,6 +28,8 @@ interface AirframeProps {
   /** Click or Enter on a station button. */
   onStationSelect?: (id: string) => void;
   className?: string;
+  /** Print station numbers over the drawing. Off where they would collide (narrow sheets). */
+  labels?: boolean;
   /** Hide the drawing from assistive tech when a surrounding link already names it. */
   decorative?: boolean;
 }
@@ -59,6 +61,7 @@ export function Airframe({
   onStationSelect,
   className = '',
   decorative = false,
+  labels = true,
 }: AirframeProps) {
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -82,6 +85,7 @@ export function Airframe({
     <div className={`relative ${className}`}>
       <svg
         ref={svgRef}
+        data-airframe=""
         viewBox={`${VIEWBOX.x} ${VIEWBOX.y} ${VIEWBOX.w} ${VIEWBOX.h}`}
         role={decorative ? undefined : 'img'}
         aria-labelledby={decorative ? undefined : titleId}
@@ -126,6 +130,7 @@ export function Airframe({
         const aft = x > 0.8 * EXTENT_X;
         return (
           <div key={s.id}>
+            {labels && (
             <span
               aria-hidden="true"
               className={`lettering pointer-events-none absolute -translate-y-full whitespace-nowrap font-mono text-label transition-colors duration-quick ${
@@ -137,6 +142,7 @@ export function Airframe({
             >
               STA {s.station}
             </span>
+            )}
             <button
               type="button"
               aria-label={`Station ${s.station}, ${s.zone}: ${s.subject}`}
