@@ -8,6 +8,7 @@ import { DeviceFrames } from './DeviceFrames';
 // Each demo is its own chunk, fetched only when its detail sheet opens.
 const DEMOS: Partial<Record<DemoKind, LazyExoticComponent<ComponentType>>> = {
   risk: lazy(() => import('../demos/RiskDemo')),
+  text: lazy(() => import('../demos/TextDemo')),
 };
 
 const DEMO_TITLES: Record<DemoKind, string> = {

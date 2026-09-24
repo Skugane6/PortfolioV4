@@ -134,7 +134,7 @@ Detail-sheet headings: **What it does · How it's built · Architecture · Where
 - **Tagline** (unchanged): "BERT + CNN/BiLSTM ensemble for text classification, with MLflow tracking and data augmentation."
 - **How it's built** (résumé): an ensemble combining BERT embeddings with CNN and BiLSTM architectures for categorization. Experiment tracking with MLflow, logging model configurations and hyperparameter combinations. A data augmentation pipeline using back-translation and synonym replacement to expand the training set.
 - **Stack** (unchanged): Python, TensorFlow, BERT, scikit-learn, PostgreSQL, MLflow.
-- **Demo disclosure** (new): "This demo runs a small logistic-regression model trained for this page on public product reviews (Amazon Polarity, Apache-2.0), entirely in your browser. It shows the same pipeline stages, not the project's BERT ensemble. Held-out accuracy: <measured>%."
+- **Demo disclosure** (new): "This demo runs a small logistic-regression model trained for this page on public product reviews (Amazon Polarity, Apache-2.0), entirely in your browser. It shows the same pipeline stages, not the project's BERT ensemble. Held-out accuracy: 90.0% on 5,000 reviews." (Measured by scripts/train-classifier.mjs on the shipped model file; the page reads it from public/models/text-classifier.json, never hard-coded.) Example sentences in the demo are labelled as made-up reviews.
 - **Links:** none (no public repo; NEEDS #9).
 
 ### FIG. 4 Eye Tracking Mouse
