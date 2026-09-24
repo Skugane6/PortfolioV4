@@ -66,6 +66,14 @@
   .w-semi { font-stretch: 75%; }
   .w-narrow { font-stretch: 85%; }
 
+  /* Quantities, coordinates and times: Archivo with tabular lining figures.
+     (B612 Mono is kept for identifiers: stations, sheet and item numbers,
+     revisions, dates. A monospace cell makes 32.5 read as "32. 5".) */
+  .figures {
+    font-stretch: 85%;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
   /* Lettering on the drawing itself (station tags, title-block field names,
      zone letters, the stamp). The only uppercase on the site. */
   .lettering {
@@ -130,6 +138,35 @@
   }
   .tb-value {
     @apply mt-1 block text-small text-blueprint;
+  }
+
+  /* Actions. Square, as everything on a drawing is; 48px tall for thumbs.
+     The primary action is filled in redline (red means markup: the thing
+     to act on); the secondary is an outline. */
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 border-2 px-5 text-small font-medium;
+    transition: background-color var(--dur-quick) var(--ease-settle), border-color var(--dur-quick) var(--ease-settle),
+      color var(--dur-quick) var(--ease-settle), transform var(--dur-press) var(--ease-settle);
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    @apply btn border-redline bg-redline text-cyanotype;
+  }
+  .btn-primary:hover {
+    @apply border-blueprint bg-blueprint;
+  }
+  .btn-secondary {
+    @apply btn border-faded/70 bg-cyanotype text-blueprint;
+  }
+  .btn-secondary:hover {
+    @apply border-blueprint;
+  }
+
+  /* HOLD: the drafting mark for data not yet released. */
+  .hold {
+    @apply lettering inline-flex items-center border border-redline px-1.5 font-mono text-label leading-5 text-redline;
   }
 
   /* ── Line conventions (DESIGN.md §4.3) ────────────────────────────────

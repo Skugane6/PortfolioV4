@@ -28,6 +28,8 @@ interface AirframeProps {
   /** Click or Enter on a station button. */
   onStationSelect?: (id: string) => void;
   className?: string;
+  /** Hide the drawing from assistive tech when a surrounding link already names it. */
+  decorative?: boolean;
 }
 
 // Plot windows within `plot` (0→1): the outline first, details overlapping
@@ -56,6 +58,7 @@ export function Airframe({
   onStationActivate,
   onStationSelect,
   className = '',
+  decorative = false,
 }: AirframeProps) {
   const svgRef = useRef<SVGSVGElement>(null);
 
@@ -80,12 +83,13 @@ export function Airframe({
       <svg
         ref={svgRef}
         viewBox={`${VIEWBOX.x} ${VIEWBOX.y} ${VIEWBOX.w} ${VIEWBOX.h}`}
-        role="img"
-        aria-labelledby={titleId}
+        role={decorative ? undefined : 'img'}
+        aria-labelledby={decorative ? undefined : titleId}
+        aria-hidden={decorative || undefined}
         className="block h-auto w-full overflow-visible"
         style={{ ['--u' as string]: 2 } as CSSProperties}
       >
-        <title id={titleId}>{title}</title>
+        {!decorative && <title id={titleId}>{title}</title>}
         <Group className="airframe-construction" window={WINDOWS.construction} plot={plot} mode="fade">
           {full && <path className="line-center" d={CENTER.datum} />}
           {full && Object.values(HIDDEN).map((d) => <path key={d} className="line-hidden" d={d} />)}

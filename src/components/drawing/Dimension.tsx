@@ -30,8 +30,8 @@ export function Dimension({ label, value, from, to, className = '' }: DimensionP
       <span aria-hidden="true" className="absolute -top-2 bottom-[-8px] right-0 w-px bg-faded/70" />
       <Arrow />
       <span aria-hidden="true" className="h-px flex-1 bg-faded/70" />
-      <p className="ground mx-3 whitespace-nowrap font-mono text-label text-faded">
-        <span className="lettering">{label}</span> <span className="text-blueprint">{value}</span>
+      <p className="ground mx-3 whitespace-nowrap text-label text-faded">
+        <span className="lettering font-mono">{label}</span> <span className="figures text-small text-blueprint">{value}</span>
       </p>
       <span aria-hidden="true" className="h-px flex-1 bg-faded/70" />
       <Arrow flip />

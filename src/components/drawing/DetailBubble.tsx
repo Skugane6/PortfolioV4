@@ -14,11 +14,11 @@ interface DetailBubbleProps {
  * link around it carries the accessible name.
  */
 export function DetailBubble({ id, sheet, size = 'md', className = '' }: DetailBubbleProps) {
-  const box = size === 'sm' ? 'h-9 w-9' : 'h-11 w-11';
+  const box = size === 'sm' ? 'h-10 w-10' : 'h-12 w-12';
   return (
     <span
       aria-hidden="true"
-      className={`relative inline-flex shrink-0 flex-col items-center justify-center rounded-full border border-current font-mono leading-none ${box} ${className}`}
+      className={`inline-flex shrink-0 flex-col items-center justify-center rounded-full border border-current font-mono leading-none ${box} ${className}`}
     >
       {sheet ? (
         <>
