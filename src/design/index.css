@@ -132,6 +132,66 @@
     @apply mt-1 block text-small text-blueprint;
   }
 
+  /* ── Line conventions (DESIGN.md §4.3) ────────────────────────────────
+     Inside drawings whose <svg> sets --u (viewBox units per CSS px), every
+     weight and dash below is in screen pixels whatever the drawing's size. */
+  .line-object path,
+  path.line-object {
+    fill: none;
+    stroke: rgb(var(--c-blueprint));
+    stroke-width: calc(var(--u, 1) * 2px);
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  .line-thin path,
+  path.line-thin {
+    fill: none;
+    stroke: rgb(var(--c-faded));
+    stroke-width: calc(var(--u, 1) * 1.1px);
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  .line-hidden {
+    fill: none;
+    stroke: rgb(var(--c-construction));
+    stroke-width: calc(var(--u, 1) * 1px);
+    stroke-dasharray: calc(var(--u, 1) * 6px) calc(var(--u, 1) * 4px);
+  }
+  .line-center {
+    fill: none;
+    stroke: rgb(var(--c-construction));
+    stroke-width: calc(var(--u, 1) * 1px);
+    stroke-dasharray: calc(var(--u, 1) * 18px) calc(var(--u, 1) * 4px) calc(var(--u, 1) * 4px) calc(var(--u, 1) * 4px);
+  }
+  .line-panel {
+    fill: none;
+    stroke: rgb(var(--c-faded) / 0.35);
+    stroke-width: calc(var(--u, 1) * 1px);
+  }
+  .station-plane {
+    fill: none;
+    stroke: rgb(var(--c-faded) / 0.7);
+    stroke-width: calc(var(--u, 1) * 1px);
+    transition: stroke var(--dur-quick) var(--ease-settle);
+  }
+  .station-dot {
+    r: calc(var(--u, 1) * 5px);
+    fill: rgb(var(--c-cyanotype));
+    stroke: rgb(var(--c-faded));
+    stroke-width: calc(var(--u, 1) * 1.5px);
+    transition: fill var(--dur-quick) var(--ease-settle), stroke var(--dur-quick) var(--ease-settle);
+  }
+  /* The active station is the section being shown: a redline cutting plane. */
+  .station-active .station-plane {
+    stroke: rgb(var(--c-redline));
+    stroke-width: calc(var(--u, 1) * 2px);
+    stroke-dasharray: calc(var(--u, 1) * 12px) calc(var(--u, 1) * 4px);
+  }
+  .station-active .station-dot {
+    fill: rgb(var(--c-redline));
+    stroke: rgb(var(--c-redline));
+  }
+
   .skip-link {
     @apply lettering fixed left-3 top-3 z-50 -translate-y-24 border-2 border-checker bg-cyanotype px-3 py-2 text-label font-medium text-checker;
     transition: transform var(--dur-quick) var(--ease-settle);
