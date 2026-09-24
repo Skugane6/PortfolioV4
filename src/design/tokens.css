@@ -1,0 +1,112 @@
+/* Design tokens: DESIGN.md §4. Values mirror src/design/palette.ts. */
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-var.woff2') format('woff2');
+  font-weight: 400 700;
+  font-stretch: 62% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Arial resized to Archivo's box (scripts/build-fonts.py), so the swap from
+   fallback to web font does not move the name or the lede. */
+@font-face {
+  font-family: 'Archivo Fallback';
+  src: local('Arial'), local('ArialMT'), local('Helvetica');
+  size-adjust: 105.53%;
+  ascent-override: 83.2%;
+  descent-override: 19.9%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'B612 Mono';
+  src: url('/fonts/b612mono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'B612 Mono';
+  src: url('/fonts/b612mono-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'B612 Mono Fallback';
+  src: local('Arial'), local('ArialMT'), local('Helvetica');
+  size-adjust: 134.94%;
+  ascent-override: 71.51%;
+  descent-override: 18.53%;
+  line-gap-override: 0%;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Colour: RGB triplets so Tailwind can apply alpha (bg-cyanotype/70). */
+  --c-cyanotype: 15 42 76; /* #0f2a4c */
+  --c-blueprint: 238 243 250; /* #eef3fa */
+  --c-faded: 169 193 224; /* #a9c1e0 */
+  --c-construction: 95 134 189; /* #5f86bd */
+  --c-redline: 255 140 122; /* #ff8c7a */
+  --c-checker: 255 210 63; /* #ffd23f */
+
+  --font-sans: 'Archivo', 'Archivo Fallback', system-ui, sans-serif;
+  --font-mono: 'B612 Mono', 'B612 Mono Fallback', ui-monospace, monospace;
+
+  /* Line weights (§4.3). Dash arrays are in user units under
+     vector-effect: non-scaling-stroke, i.e. CSS px. */
+  --line-object: 2px;
+  --line-thin: 1px;
+  --dash-hidden: 6 4;
+  --dash-center: 18 4 4 4;
+  --dash-cut: 12 4;
+
+  /* Motion (§4.5). */
+  --dur-press: 80ms;
+  --dur-quick: 160ms;
+  --dur-base: 240ms;
+  --dur-sheet: 480ms;
+  --dur-plot: 900ms;
+  --ease-pen: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-settle: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* The drawing set's frame. The rail width is what the right margin
+     reserves so nothing ever sits under the sheet index (audit #9). */
+  --frame-inset: 8px;
+  --rail-w: 0px;
+  --strip-h: 0px;
+  --grid-minor: 24px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --frame-inset: 16px;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  :root {
+    /* Height of the mobile title strip, plus the home indicator. */
+    --strip-h: calc(52px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --frame-inset: 24px;
+    --rail-w: 64px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --rail-w: 168px;
+  }
+}

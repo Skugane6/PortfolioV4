@@ -208,7 +208,7 @@ const serialise = (built) =>
   Object.entries(built)
     .map(
       ([slug, m]) =>
-        `  ${slug}: {\n    viewBox: '${m.viewBox}',\n    hex: '${m.hex}',\n    body:\n      '${m.body.replace(/'/g, "\'")}',\n  },`,
+        `  ${slug}: {\n    viewBox: '${m.viewBox}',\n    hex: '${m.hex}',\n    body:\n      '${m.body.replace(/'/g, "\\'")}',\n  },`,
     )
     .join('\n');
 

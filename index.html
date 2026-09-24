@@ -1,45 +1,47 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0a0d13" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Saira+Condensed:wght@500;600;700&family=Newsreader:ital,wght@1,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0d13'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='700' fill='%232f6ad4' text-anchor='middle'%3E%C2%A7%3C/text%3E%3C/svg%3E"
-    />
-    <title>Searan Kuganesan · Software Engineer</title>
+    <meta name="theme-color" content="#0f2a4c" />
+    <title>Searan Kuganesan, software engineer</title>
     <meta
       name="description"
-      content="Searan Kuganesan builds full-stack systems and data platforms, from a fleet-tracking platform at Mitsubishi Heavy Industries to CraftTraq, a live SaaS product for trade contractors."
+      content="Software engineer (Western University, B.E.Sc. 2026). Built a component tracker supporting 2,000+ aircraft at Mitsubishi Heavy Industries and CraftTraq, a live SaaS for trade contractors."
     />
+    <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/b612mono-400.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // Before first paint: apply the visitor's saved motion preference so CSS
+      // and the app agree from the first frame (lib/motion.ts).
+      (function () {
+        var d = document.documentElement;
+        try {
+          var m = localStorage.getItem('motion');
+          if (m === 'reduce' || m === 'full') d.dataset.motion = m;
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
+    <div id="root"></div>
     <noscript>
-      <style>
-        .noscript-fallback { background: #0a0d13; color: #e7ecf3; }
-        .noscript-fallback a { color: #5b8ff0; }
-      </style>
-      <div class="noscript-fallback" style="padding:2rem;font-family:ui-monospace,monospace;min-height:100vh;">
+      <div style="padding: 24px; max-width: 68ch; font-family: Arial, sans-serif; color: #eef3fa; background: #0f2a4c">
         <h1>Searan Kuganesan</h1>
-        <p>I build the systems operators run their business on.</p>
         <p>
-          <a href="mailto:searan.kuganesan4@gmail.com">Email</a> ·
-          <a href="https://github.com/skugane6">GitHub</a> ·
-          <a href="https://linkedin.com/in/searan-kuganesan">LinkedIn</a> ·
-          <a href="https://crafttraq.com">CraftTraq</a>
+          I build the systems operators run on: a component tracker supporting 2,000+ aircraft across 100+ operators at
+          Mitsubishi Heavy Industries, and CraftTraq, a live SaaS for trade contractors.
+        </p>
+        <p>
+          <a style="color: #eef3fa" href="mailto:searan.kuganesan4@gmail.com">Email</a> ·
+          <a style="color: #eef3fa" href="/skuganesan_resume.pdf">Résumé (PDF)</a> ·
+          <a style="color: #eef3fa" href="https://github.com/skugane6">GitHub</a> ·
+          <a style="color: #eef3fa" href="https://linkedin.com/in/searan-kuganesan">LinkedIn</a> ·
+          <a style="color: #eef3fa" href="https://crafttraq.com">CraftTraq</a>
         </p>
       </div>
     </noscript>
-    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

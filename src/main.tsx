@@ -1,10 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { App } from './App';
-import './styles/index.css';
+import './design/index.css';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+const root = document.getElementById('root')!;
+const app = (
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );
+
+// The production build prerenders the page into #root (scripts/prerender.mjs),
+// so the name and lede paint before any script runs; hydrate that markup.
+// The dev server serves an empty root, so render from scratch there.
+if (root.hasChildNodes()) hydrateRoot(root, app);
+else createRoot(root).render(app);

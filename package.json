@@ -5,25 +5,35 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "e2e": "playwright test",
+    "build:fonts": "python scripts/build-fonts.py"
   },
   "dependencies": {
-    "framer-motion": "^11.11.0",
+    "motion": "^13.4.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "^9.39.5",
     "@iconify-json/cib": "^1.2.3",
     "@iconify-json/mdi": "^1.2.3",
+    "@playwright/test": "^1.63.0",
     "@testing-library/jest-dom": "^6.6.0",
     "@testing-library/react": "^16.0.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",
     "autoprefixer": "^10.4.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.12.0",
     "jsdom": "^25.0.0",
     "lighthouse": "^12.8.2",
     "playwright": "^1.63.0",
@@ -33,6 +43,7 @@
     "simple-icons": "^16.30.0",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.6.0",
+    "typescript-eslint": "^8.70.1",
     "vite": "^5.4.0",
     "vitest": "^2.1.0"
   }

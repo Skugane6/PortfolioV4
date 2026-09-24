@@ -1,0 +1,157 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: rgb(var(--c-cyanotype));
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 16px;
+    scroll-padding-bottom: calc(var(--strip-h) + 16px);
+  }
+
+  body {
+    @apply bg-cyanotype font-sans text-body text-blueprint antialiased;
+    font-stretch: 100%;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    min-height: 100svh;
+  }
+
+  ::selection {
+    background: rgb(var(--c-checker));
+    color: rgb(var(--c-cyanotype));
+  }
+
+  /* Yellow means checked: the focus indicator is the checker's highlighter
+     (DESIGN.md §4.3). Offset so it never sits on top of the thing it marks. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-checker));
+    outline-offset: 3px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 650;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+@layer components {
+  /* Width axis of Archivo: the condensed gothic of drawing titles vs the
+     normal width of reading text. */
+  .w-cond { font-stretch: 68%; }
+  .w-semi { font-stretch: 75%; }
+  .w-narrow { font-stretch: 85%; }
+
+  /* Lettering on the drawing itself (station tags, title-block field names,
+     zone letters, the stamp). The only uppercase on the site. */
+  .lettering {
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .link {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    text-decoration-color: rgb(var(--c-faded) / 0.6);
+    transition: text-decoration-color var(--dur-quick) var(--ease-settle), color var(--dur-quick) var(--ease-settle);
+  }
+  .link:hover {
+    text-decoration-color: rgb(var(--c-redline));
+  }
+
+  /* The continuous drawing set: one pair of border lines down the page,
+     inset from the viewport and clear of the sheet index rail. */
+  .drawing-set {
+    position: relative;
+    margin-left: var(--frame-inset);
+    margin-right: calc(var(--frame-inset) + var(--rail-w));
+    border-left: var(--line-object) solid rgb(var(--c-construction));
+    border-right: var(--line-object) solid rgb(var(--c-construction));
+    padding-bottom: var(--strip-h);
+    /* Construction grid: static, faint, two weights. */
+    background-image:
+      linear-gradient(rgb(var(--c-construction) / 0.13) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-construction) / 0.13) 1px, transparent 1px),
+      linear-gradient(rgb(var(--c-construction) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-construction) / 0.07) 1px, transparent 1px);
+    background-size:
+      calc(var(--grid-minor) * 5) calc(var(--grid-minor) * 5),
+      calc(var(--grid-minor) * 5) calc(var(--grid-minor) * 5),
+      var(--grid-minor) var(--grid-minor),
+      var(--grid-minor) var(--grid-minor);
+    background-position: -1px -1px;
+  }
+
+  /* Opaque ground behind text that sits on the grid. */
+  .ground {
+    background-color: rgb(var(--c-cyanotype));
+  }
+
+  /* Title block: a table of ruled cells, field name over value. */
+  .tb {
+    display: grid;
+    border-top: var(--line-thin) solid rgb(var(--c-faded) / 0.7);
+    border-left: var(--line-thin) solid rgb(var(--c-faded) / 0.7);
+    background-color: rgb(var(--c-cyanotype));
+  }
+  .tb-cell {
+    border-right: var(--line-thin) solid rgb(var(--c-faded) / 0.7);
+    border-bottom: var(--line-thin) solid rgb(var(--c-faded) / 0.7);
+    padding: 8px 10px 9px;
+    min-width: 0;
+  }
+  .tb-label {
+    @apply lettering w-narrow block text-label font-medium text-faded;
+  }
+  .tb-value {
+    @apply mt-1 block text-small text-blueprint;
+  }
+
+  .skip-link {
+    @apply lettering fixed left-3 top-3 z-50 -translate-y-24 border-2 border-checker bg-cyanotype px-3 py-2 text-label font-medium text-checker;
+    transition: transform var(--dur-quick) var(--ease-settle);
+  }
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
+
+  .sr-only-focusable:not(:focus):not(:focus-within) {
+    @apply sr-only;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

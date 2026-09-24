@@ -21,3 +21,6 @@ docs/overhaul/audit/perf/*.json.gz
 docs/overhaul/audit/perf/lh-*.json
 docs/overhaul/audit/perf/lh-*.html
 !docs/overhaul/audit/perf/lh-*.extract.json
+dist-ssr
+playwright-report
+test-results
