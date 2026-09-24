@@ -8,6 +8,7 @@ import { Experience } from './components/experience/Experience';
 import { Projects } from './components/projects/Projects';
 import { Skills } from './components/skills/Skills';
 import { Contact } from './components/contact/Contact';
+import { RevisionBlock } from './components/contact/RevisionBlock';
 
 // Motion's animation features load in their own chunk after first paint.
 // m.* components render their initial styles without them.
@@ -30,6 +31,7 @@ export function App() {
             <Skills />
             <Contact />
           </main>
+          <RevisionBlock />
         </div>
       </MotionConfig>
     </LazyMotion>
