@@ -94,11 +94,11 @@ export const projects: Project[] = [
       architecture: {
         caption: 'Components named in the project description and stack.',
         nodes: [
-          { id: 'ui', label: 'Dashboards', detail: 'React, Vite, recharts', col: 0, row: 0, inside: true },
-          { id: 'api', label: 'Analytics API', detail: 'Flask', col: 1, row: 0, inside: true },
-          { id: 'math', label: 'MPT, VaR, frontier', detail: 'NumPy, Pandas, SciPy', col: 1, row: 1, inside: true },
+          { id: 'ui', label: 'Dashboards', detail: 'React, Vite, recharts', col: 0, row: 1, inside: true },
+          { id: 'api', label: 'Analytics API', detail: 'Flask', col: 1, row: 1, inside: true },
+          { id: 'math', label: 'MPT, VaR, frontier', detail: 'NumPy, Pandas, SciPy', col: 1, row: 2, inside: true },
           { id: 'store', label: 'Storage', detail: 'MongoDB', col: 2, row: 1, inside: true },
-          { id: 'market', label: 'Market data', detail: 'yfinance', col: 2, row: 0, inside: false },
+          { id: 'market', label: 'Market data', detail: 'yfinance', col: 1, row: 0, inside: false },
         ],
         edges: [
           { from: 'ui', to: 'api' },
@@ -130,13 +130,13 @@ export const projects: Project[] = [
       architecture: {
         caption: 'Stages named in the project description. Storage is listed in the stack; its role is not described.',
         nodes: [
-          { id: 'data', label: 'Training text', detail: 'PostgreSQL in stack', col: 0, row: 0, inside: true },
-          { id: 'augment', label: 'Augmentation', detail: 'back-translation, synonyms', col: 1, row: 0, inside: true },
-          { id: 'bert', label: 'BERT embeddings', col: 2, row: 0, inside: true },
-          { id: 'cnn', label: 'CNN', col: 3, row: 0, inside: true },
-          { id: 'bilstm', label: 'BiLSTM', col: 3, row: 1, inside: true },
-          { id: 'ensemble', label: 'Ensemble', detail: 'category', col: 4, row: 0, inside: true },
-          { id: 'mlflow', label: 'MLflow', detail: 'configs, hyperparameters', col: 2, row: 1, inside: false },
+          { id: 'data', label: 'Training text', detail: 'PostgreSQL in stack', col: 0, row: 1, inside: true },
+          { id: 'augment', label: 'Augmentation', detail: 'back-translation, synonyms', col: 1, row: 1, inside: true },
+          { id: 'bert', label: 'BERT embeddings', col: 2, row: 1, inside: true },
+          { id: 'cnn', label: 'CNN', col: 3, row: 1, inside: true },
+          { id: 'bilstm', label: 'BiLSTM', col: 3, row: 2, inside: true },
+          { id: 'ensemble', label: 'Ensemble', detail: 'category', col: 4, row: 1, inside: true },
+          { id: 'mlflow', label: 'MLflow', detail: 'configs, hyperparameters', col: 2, row: 0, inside: false },
         ],
         edges: [
           { from: 'data', to: 'augment' },

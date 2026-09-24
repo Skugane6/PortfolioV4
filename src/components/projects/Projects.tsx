@@ -1,16 +1,177 @@
+import { useRef } from 'react';
+import { m } from 'motion/react';
+import { projects } from '../../content/projects';
 import { sheetById } from '../../content/sheets';
+import type { Project } from '../../content/types';
+import { useReducedMotionPref } from '../../lib/motion';
+import { useHydrated } from '../../lib/useMedia';
 import { SheetFrame } from '../shell/SheetFrame';
+import { CaseStudyDialog } from './CaseStudyDialog';
+import { DeviceFrames } from './DeviceFrames';
+import { FigureSketch } from './FigureSketch';
+import { useCaseStudyRoute } from './useCaseStudyRoute';
 
-// Stub: replaced by the full sheet in its own task (docs/overhaul/PLAN.md).
+const NEW_TAB = <span className="sr-only"> (opens in a new tab)</span>;
+
+/**
+ * Sheet 03, detail drawings. Every project is visible at once as a figure;
+ * each opens its full detail sheet (how it's built, architecture, and for
+ * three of them a working demo) in a dialog linked from the URL.
+ */
 export function Projects() {
-  const sheet = sheetById.projects;
+  const ids = projects.map((p) => p.id);
+  const { openId, open, close } = useCaseStudyRoute(ids);
+  const hydrated = useHydrated();
+  const reduced = useReducedMotionPref();
+  const returnFocus = useRef<HTMLElement | null>(null);
+  const openProject = projects.find((p) => p.id === openId) ?? null;
+
+  const onOpen = (id: string) => {
+    returnFocus.current = document.activeElement as HTMLElement | null;
+    open(id);
+  };
+  const onClosed = (p: Project) => {
+    const target = returnFocus.current?.isConnected
+      ? returnFocus.current
+      : document.querySelector<HTMLElement>(`#fig-${p.fig} [data-open]`);
+    returnFocus.current = null;
+    target?.focus({ preventScroll: false });
+  };
+
+  const [feature, ...rest] = projects;
+
   return (
-    <SheetFrame sheet={sheet}>
-      <div className="px-4 pb-24 pt-16 sm:px-6 lg:px-12">
-        <h2 id="projects-title" className="w-cond text-title">
-          {sheet.title}
+    <SheetFrame sheet={sheetById.projects}>
+      <div className="px-4 pb-12 pt-10 sm:px-8 lg:pl-16 lg:pr-12 lg:pt-16">
+        <h2 id="projects-title" className="w-cond text-title font-bold">
+          {sheetById.projects.title}
         </h2>
+        <p className="mt-3 max-w-[60ch] text-body text-faded">
+          Four projects, one figure each. Open a figure for how it’s built; three of them have a working demo inside.
+        </p>
+
+        <div className="mt-10 space-y-6">
+          <FeatureFigure project={feature} onOpen={onOpen} animated={hydrated && !reduced} />
+          <div className="grid gap-6 md:grid-cols-3">
+            {rest.map((p) => (
+              <FigureCard key={p.id} project={p} onOpen={onOpen} />
+            ))}
+          </div>
+        </div>
       </div>
+      <CaseStudyDialog project={openProject} onClose={close} onClosed={onClosed} />
     </SheetFrame>
+  );
+}
+
+interface FigureProps {
+  project: Project;
+  onOpen: (id: string) => void;
+}
+
+/** The frame a figure shares with its detail sheet, so the sheet can grow out of it. */
+function FigureFrame({ project }: { project: Project }) {
+  return <m.div layoutId={`fig-frame-${project.id}`} aria-hidden="true" className="pointer-events-none absolute inset-0 border border-faded/60" />;
+}
+
+function FigureMeta({ project }: { project: Project }) {
+  return (
+    <p className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-label">
+      <span className="lettering font-mono text-faded">Fig. {project.fig}</span>
+      {project.live ? (
+        <span className="flex items-center gap-2 text-blueprint">
+          <span aria-hidden="true" className="h-2 w-2 rounded-full bg-checker" />
+          Live in production
+        </span>
+      ) : project.demo ? (
+        <span className="text-faded">Demo inside</span>
+      ) : null}
+    </p>
+  );
+}
+
+function Stack({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-4 flex flex-wrap gap-2" aria-label="Stack">
+      {items.map((s) => (
+        <li key={s} className="border border-faded/50 px-2 py-0.5 text-label text-faded">
+          {s}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function OpenButton({ project, onOpen, primary = false }: FigureProps & { primary?: boolean }) {
+  return (
+    <button
+      type="button"
+      data-open
+      onClick={() => onOpen(project.id)}
+      className={primary ? 'btn-primary' : 'btn-secondary'}
+      aria-label={`Open the detail sheet: ${project.name}`}
+    >
+      Open detail
+    </button>
+  );
+}
+
+function FeatureFigure({ project, onOpen, animated }: FigureProps & { animated: boolean }) {
+  const titleId = `fig-${project.fig}-title`;
+  return (
+    <article id={`fig-${project.fig}`} aria-labelledby={titleId} className="ground relative scroll-mt-10 lg:grid lg:grid-cols-12">
+      <FigureFrame project={project} />
+      <div className="relative flex flex-col p-5 sm:p-8 lg:col-span-5">
+        <FigureMeta project={project} />
+        <h3 id={titleId} className="w-cond mt-4 text-title font-bold">
+          {project.name}
+        </h3>
+        <p className="mt-4 max-w-[52ch] text-body text-blueprint">{project.tagline}</p>
+        <Stack items={project.stack} />
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:mt-auto lg:pt-8">
+          <OpenButton project={project} onOpen={onOpen} primary />
+          {project.links.map((l) => (
+            <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="btn-secondary">
+              {l.label}
+              {NEW_TAB}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="relative border-t border-faded/40 p-5 sm:p-8 lg:col-span-7 lg:border-l lg:border-t-0">
+        {project.screens && <DeviceFrames screens={project.screens} animated={animated} url="crafttraq.com" />}
+      </div>
+    </article>
+  );
+}
+
+function FigureCard({ project, onOpen }: FigureProps) {
+  const titleId = `fig-${project.fig}-title`;
+  return (
+    <article id={`fig-${project.fig}`} aria-labelledby={titleId} className="ground relative flex scroll-mt-10 flex-col">
+      <FigureFrame project={project} />
+      {project.demo && (
+        <div className="relative aspect-[14/9] border-b border-faded/40 p-5">
+          <FigureSketch kind={project.demo} />
+        </div>
+      )}
+      <div className="relative flex flex-1 flex-col p-5">
+        <FigureMeta project={project} />
+        <h3 id={titleId} className="w-narrow mt-3 text-heading font-semibold">
+          {project.name}
+        </h3>
+        <p className="mt-2 text-small text-faded">{project.tagline}</p>
+        <Stack items={project.stack} />
+        <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-6">
+          <OpenButton project={project} onOpen={onOpen} />
+          {project.links.map((l) => (
+            <a key={l.href} className="link text-small" href={l.href} target="_blank" rel="noreferrer">
+              {l.label}
+              {NEW_TAB}
+            </a>
+          ))}
+        </div>
+      </div>
+    </article>
   );
 }

@@ -7,6 +7,7 @@
 @layer base {
   html {
     background: rgb(var(--c-cyanotype));
+    scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
     scroll-padding-top: 16px;
     scroll-padding-bottom: calc(var(--strip-h) + 16px);
@@ -56,6 +57,11 @@
 
   [hidden] {
     display: none !important;
+  }
+
+  /* A modal detail sheet is open: the page behind it stays put. */
+  html.modal-open {
+    overflow: hidden;
   }
 }
 
@@ -162,6 +168,14 @@
   }
   .btn-secondary:hover {
     @apply border-blueprint;
+  }
+
+  /* Range inputs: native (keyboard and screen-reader behaviour for free),
+     tinted to the markup colour, with a thumb-sized hit area. */
+  .range {
+    accent-color: rgb(var(--c-redline));
+    height: 28px;
+    cursor: pointer;
   }
 
   /* HOLD: the drafting mark for data not yet released. */
