@@ -1,0 +1,262 @@
+{
+  "local-mobile": {
+    "runs": [
+      {
+        "file": "lh-local-mobile-1.json",
+        "fetchTime": "2026-09-24T07:02:13.726Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 72,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 3650.33665,
+        "lcp": 4861.4303,
+        "tbt": 172.5,
+        "cls": 0,
+        "si": 3650.33665,
+        "tti": 4903.8549,
+        "lcpElement": {
+          "selector": "div.relative > div.relative > h1.mb-5 > span.hero-anim",
+          "snippet": "<span class=\"hero-anim block\" style=\"animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s 1 normal both running running…;\">",
+          "nodeLabel": "I build scalable"
+        },
+        "benchmarkIndex": 2307
+      },
+      {
+        "file": "lh-local-mobile-2.json",
+        "fetchTime": "2026-09-24T07:02:34.707Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 65,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 3757.06605,
+        "lcp": 4862.6688,
+        "tbt": 266.5,
+        "cls": 0,
+        "si": 5337.22474436525,
+        "tti": 4952.205250000001,
+        "lcpElement": {
+          "selector": "header.relative > div.flex > div.flex > div.font-mono",
+          "snippet": "<div class=\"font-mono text-xs tracking-[0.2em]\" style=\"color: rgb(219, 231, 251);\">",
+          "nodeLabel": "SEARAN KUGANESAN"
+        },
+        "benchmarkIndex": 1871
+      },
+      {
+        "file": "lh-local-mobile-3.json",
+        "fetchTime": "2026-09-24T07:02:52.878Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 74,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 3593.7380999999996,
+        "lcp": 4725.80445,
+        "tbt": 111,
+        "cls": 0,
+        "si": 3593.7380999999996,
+        "tti": 4765.578224999999,
+        "lcpElement": {
+          "selector": "div.relative > div.relative > h1.mb-5 > span.hero-anim",
+          "snippet": "<span class=\"hero-anim block\" style=\"animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s 1 normal both running running…;\">",
+          "nodeLabel": "I build scalable"
+        },
+        "benchmarkIndex": 2875.5
+      }
+    ],
+    "median": {
+      "fcp": 3650.33665,
+      "lcp": 4861.4303,
+      "tbt": 172.5,
+      "cls": 0,
+      "si": 3650.33665,
+      "tti": 4903.8549,
+      "scores": {
+        "performance": 72,
+        "accessibility": 90,
+        "best-practices": 100,
+        "seo": 100
+      }
+    },
+    "medianRun": "lh-local-mobile-1.json"
+  },
+  "local-desktop": {
+    "runs": [
+      {
+        "file": "lh-local-desktop-1.json",
+        "fetchTime": "2026-09-24T07:03:09.848Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 98,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 851.4575,
+        "lcp": 971.466625,
+        "tbt": 0,
+        "cls": 0.0011185484782953437,
+        "si": 926.3518911529345,
+        "tti": 978.2822625000001,
+        "lcpElement": {
+          "selector": "div.relative > div.relative > h1.mb-5 > span.hero-anim",
+          "snippet": "<span class=\"hero-anim block\" style=\"animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s 1 normal both running running…;\">",
+          "nodeLabel": "I build scalable"
+        },
+        "benchmarkIndex": 3235.5
+      },
+      {
+        "file": "lh-local-desktop-2.json",
+        "fetchTime": "2026-09-24T07:03:27.870Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 98,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 859.7487000000001,
+        "lcp": 1005.2997250000001,
+        "tbt": 0,
+        "cls": 0.0010728629222483738,
+        "si": 994.7448391023452,
+        "tti": 1012.4125725000001,
+        "lcpElement": {
+          "selector": "div.relative > div.relative > h1.mb-5 > span.hero-anim",
+          "snippet": "<span class=\"hero-anim block\" style=\"animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s 1 normal both running running…;\">",
+          "nodeLabel": "I build scalable"
+        },
+        "benchmarkIndex": 2152.5
+      },
+      {
+        "file": "lh-local-desktop-3.json",
+        "fetchTime": "2026-09-24T07:03:48.065Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 97,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 871.9449999999999,
+        "lcp": 1028.1370000000002,
+        "tbt": 0,
+        "cls": 0.0010985398701094228,
+        "si": 1045.7608436438516,
+        "tti": 1035.8158500000002,
+        "lcpElement": {
+          "selector": "div.relative > div.relative > h1.mb-5 > span.hero-anim",
+          "snippet": "<span class=\"hero-anim block\" style=\"animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s 1 normal both running running…;\">",
+          "nodeLabel": "I build scalable"
+        },
+        "benchmarkIndex": 2656.5
+      }
+    ],
+    "median": {
+      "fcp": 859.7487000000001,
+      "lcp": 1005.2997250000001,
+      "tbt": 0,
+      "cls": 0.0010985398701094228,
+      "si": 994.7448391023452,
+      "tti": 1012.4125725000001,
+      "scores": {
+        "performance": 98,
+        "accessibility": 90,
+        "best-practices": 100,
+        "seo": 100
+      }
+    },
+    "medianRun": "lh-local-desktop-1.json"
+  },
+  "prod-mobile": {
+    "runs": [
+      {
+        "file": "lh-prod-mobile-1.json",
+        "fetchTime": "2026-09-24T07:04:09.695Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 60,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 3741.7994999999996,
+        "lcp": 6583.897499999999,
+        "tbt": 284.30549999999994,
+        "cls": 0,
+        "si": 5308.794773943705,
+        "tti": 6826.18365,
+        "lcpElement": {
+          "selector": "header.relative > div.flex > div.flex > div.font-mono",
+          "snippet": "<div class=\"font-mono text-xs tracking-[0.2em]\" style=\"color: rgb(219, 231, 251);\">",
+          "nodeLabel": "SEARAN KUGANESAN"
+        },
+        "benchmarkIndex": 1965
+      }
+    ],
+    "median": {
+      "fcp": 3741.7994999999996,
+      "lcp": 6583.897499999999,
+      "tbt": 284.30549999999994,
+      "cls": 0,
+      "si": 5308.794773943705,
+      "tti": 6826.18365,
+      "scores": {
+        "performance": 60,
+        "accessibility": 90,
+        "best-practices": 100,
+        "seo": 100
+      }
+    },
+    "medianRun": "lh-prod-mobile-1.json"
+  },
+  "prod-desktop": {
+    "runs": [
+      {
+        "file": "lh-prod-desktop-1.json",
+        "fetchTime": "2026-09-24T07:04:30.535Z",
+        "runtimeError": null,
+        "scores": {
+          "performance": 97,
+          "accessibility": 90,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 964.4185,
+        "lcp": 1034.365,
+        "tbt": 0,
+        "cls": 0.0011046036700736927,
+        "si": 1149.5901760403372,
+        "tti": 1035.1650000000002,
+        "lcpElement": {
+          "selector": "div.relative > div.relative > h1.mb-5 > span.hero-anim",
+          "snippet": "<span class=\"hero-anim block\" style=\"animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.05s 1 normal both running running…;\">",
+          "nodeLabel": "I build scalable"
+        },
+        "benchmarkIndex": 2574
+      }
+    ],
+    "median": {
+      "fcp": 964.4185,
+      "lcp": 1034.365,
+      "tbt": 0,
+      "cls": 0.0011046036700736927,
+      "si": 1149.5901760403372,
+      "tti": 1035.1650000000002,
+      "scores": {
+        "performance": 97,
+        "accessibility": 90,
+        "best-practices": 100,
+        "seo": 100
+      }
+    },
+    "medianRun": "lh-prod-desktop-1.json"
+  }
+}

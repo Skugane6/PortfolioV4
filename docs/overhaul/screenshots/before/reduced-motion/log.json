@@ -1,0 +1,100 @@
+{
+  "baseUrl": "http://127.0.0.1:5199/",
+  "reduced": true,
+  "runs": [
+    {
+      "width": 375,
+      "height": 812,
+      "console": [
+        "warning: You have Reduced Motion enabled on your device. Animations may not appear as expected."
+      ],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 840,
+          "rawReadout": "00%",
+          "settledY": 840,
+          "settledReadout": "00%"
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1510,
+          "rawReadout": "25%",
+          "settledY": 1510,
+          "settledReadout": "25%"
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2180,
+          "rawReadout": "50%",
+          "settledY": 2180,
+          "settledReadout": "50%"
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 2850,
+          "rawReadout": "75%",
+          "settledY": 2850,
+          "settledReadout": "75%"
+        },
+        {
+          "progress": 1,
+          "requestedY": 3520,
+          "rawReadout": "100%",
+          "settledY": 3520,
+          "settledReadout": "100%"
+        }
+      ],
+      "docHeight": 7801
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "console": [
+        "warning: You have Reduced Motion enabled on your device. Animations may not appear as expected."
+      ],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 900,
+          "rawReadout": "00%",
+          "settledY": 900,
+          "settledReadout": "00%"
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1643,
+          "rawReadout": "25%",
+          "settledY": 1643,
+          "settledReadout": "25%"
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2385,
+          "rawReadout": "50%",
+          "settledY": 2385,
+          "settledReadout": "50%"
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 3128,
+          "rawReadout": "75%",
+          "settledY": 3128,
+          "settledReadout": "75%"
+        },
+        {
+          "progress": 1,
+          "requestedY": 3870,
+          "rawReadout": "100%",
+          "settledY": 3870,
+          "settledReadout": "100%"
+        }
+      ],
+      "docHeight": 7253
+    }
+  ]
+}

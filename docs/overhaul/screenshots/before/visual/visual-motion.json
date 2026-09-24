@@ -1,0 +1,90 @@
+{
+  "hero-load-1440": {
+    "frames": 5,
+    "sheet": "docs\\overhaul\\screenshots\\before\\visual\\motion-hero-load-1440-sheet.png"
+  },
+  "hero-load-375": {
+    "frames": 19,
+    "sheet": "docs\\overhaul\\screenshots\\before\\visual\\motion-hero-load-375-sheet.png"
+  },
+  "reveal-projects-1440": {
+    "frames": 7,
+    "sheet": "docs\\overhaul\\screenshots\\before\\visual\\motion-reveal-projects-1440-sheet.png"
+  },
+  "tab-switch-1440": {
+    "frames": 4,
+    "sheet": "docs\\overhaul\\screenshots\\before\\visual\\motion-tab-switch-1440-sheet.png",
+    "nameOffset": {
+      "nameTopInViewport": 281,
+      "tabsTop": 38,
+      "vh": 900
+    }
+  },
+  "tab-switch-375": {
+    "frames": 12,
+    "sheet": "docs\\overhaul\\screenshots\\before\\visual\\motion-tab-switch-375-sheet.png",
+    "nameOffset": {
+      "nameTopInViewport": 950,
+      "tabsTop": 114,
+      "vh": 812
+    }
+  },
+  "loops": {
+    "hero": {
+      "cssInfinite": {
+        "hero-grid-drift 60000ms": 1,
+        "hero-glow-breathe 9000ms": 1,
+        "hero-dash-flow 14000ms": 5,
+        "hero-pulse-travel 4200ms": 1,
+        "hero-pulse-travel 5400ms": 1,
+        "hero-pulse-travel 4800ms": 1,
+        "hero-pulse-travel 5800ms": 1,
+        "hero-node-pulse 3400ms": 4,
+        "hero-float-a 11000ms": 1,
+        "hero-float-b 13000ms": 1,
+        "hero-float-b 10000ms": 1,
+        "hero-float-a 12000ms": 1,
+        "hero-scan-sweep 7000ms": 1,
+        "hero-caret-blink 1100ms": 1,
+        "hero-scroll-tick 2400ms": 1
+      },
+      "total": 22,
+      "canvases": 0
+    },
+    "experience": {
+      "cssInfinite": {
+        "pulse 2000ms": 1
+      },
+      "total": 1,
+      "canvases": 1
+    },
+    "projects": {
+      "cssInfinite": {
+        "proj-drift 38000ms": 1,
+        "proj-glide 6500ms": 1,
+        "proj-ring 2400ms": 1,
+        "proj-sheen 5000ms": 1,
+        "proj-scan 7000ms": 1,
+        "proj-float 6500ms": 1,
+        "proj-pulse 1800ms": 1
+      },
+      "total": 7,
+      "canvases": 0
+    },
+    "skills": {
+      "cssInfinite": {
+        "proj-drift 38000ms": 1
+      },
+      "total": 1,
+      "canvases": 0
+    },
+    "contact": {
+      "cssInfinite": {
+        "proj-drift 38000ms": 1
+      },
+      "total": 1,
+      "canvases": 0
+    },
+    "page": 32
+  }
+}

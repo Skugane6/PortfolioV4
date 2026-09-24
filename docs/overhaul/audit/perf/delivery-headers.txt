@@ -1,0 +1,257 @@
+=== /
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Age: 6535
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline
+Content-Encoding: br
+Content-Type: text/html; charset=utf-8
+Date: Thu, 24 Sep 2026 07:03:04 GMT
+Etag: W/"203691cee377b77e5c27b0076e82c927"
+Last-Modified: Thu, 24 Sep 2026 05:14:08 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::vdsd6-1790233384626-d8052fc33e9b
+
+=== /assets/index-BjGi6dEE.js
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Age: 6535
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="index-BjGi6dEE.js"
+Content-Encoding: br
+Content-Type: application/javascript; charset=utf-8
+Date: Thu, 24 Sep 2026 07:03:04 GMT
+Etag: W/"9063d96baff6704292197e1c203798d8"
+Last-Modified: Thu, 24 Sep 2026 05:14:08 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::8z8b6-1790233384945-425521f1ccea
+
+=== /assets/index-Cp4pBOOS.css
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Age: 6536
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="index-Cp4pBOOS.css"
+Content-Encoding: br
+Content-Type: text/css; charset=utf-8
+Date: Thu, 24 Sep 2026 07:03:05 GMT
+Etag: W/"df42d5668d5460802a99a1b879f2412f"
+Last-Modified: Thu, 24 Sep 2026 05:14:09 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::kzq64-1790233385130-f701ffaef26d
+
+=== /crj-xray.png
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 6535
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="crj-xray.png"
+Content-Length: 947631
+Content-Type: image/png
+Date: Thu, 24 Sep 2026 07:03:05 GMT
+Etag: "91af14f964448b647b2f8c42280a987c"
+Last-Modified: Thu, 24 Sep 2026 05:14:09 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::bncbz-1790233385285-828ccd1f1592
+
+=== /crafttraq-board.webp
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 2384
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="crafttraq-board.webp"
+Content-Length: 87024
+Content-Type: image/webp
+Date: Thu, 24 Sep 2026 07:03:05 GMT
+Etag: "3d643e3dbcdf38ddc7399e185e2c1a4d"
+Last-Modified: Thu, 24 Sep 2026 06:23:21 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::rzm4t-1790233385476-7862de7d29c2
+
+=== /crafttraq-calendar.webp
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 2384
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="crafttraq-calendar.webp"
+Content-Length: 26720
+Content-Type: image/webp
+Date: Thu, 24 Sep 2026 07:03:05 GMT
+Etag: "a5ec6588340a69c13bf1f389b2fcd732"
+Last-Modified: Thu, 24 Sep 2026 06:23:21 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::9sbth-1790233385647-4b96d1df9d45
+
+=== /crafttraq.webp
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="crafttraq.webp"
+Content-Length: 84542
+Content-Type: image/webp
+Date: Thu, 24 Sep 2026 07:03:05 GMT
+Etag: "95eda118b2db52d28813ae66ca7f86d2"
+Last-Modified: Thu, 24 Sep 2026 07:03:05 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: MISS
+X-Vercel-Id: yul1::rnvmd-1790233385821-e70280d03e1b
+
+=== /crafttraq.png
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="crafttraq.png"
+Content-Length: 195610
+Content-Type: image/png
+Date: Thu, 24 Sep 2026 07:03:06 GMT
+Etag: "f6e4f667e88bc860bbc731cbbdc8bc38"
+Last-Modified: Thu, 24 Sep 2026 07:03:06 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: MISS
+X-Vercel-Id: yul1::f4qtm-1790233386094-208dffbc2cb4
+
+=== /western-mark.png
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 6536
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="western-mark.png"
+Content-Length: 25503
+Content-Type: image/png
+Date: Thu, 24 Sep 2026 07:03:06 GMT
+Etag: "7d2d667952a7f304fa6ef1836e1c37d2"
+Last-Modified: Thu, 24 Sep 2026 05:14:09 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::bncbz-1790233386424-546983670f54
+
+=== /Western2.png
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="Western2.png"
+Content-Length: 68567
+Content-Type: image/png
+Date: Thu, 24 Sep 2026 07:03:06 GMT
+Etag: "b20b78b0531f163b817fb68d5def24eb"
+Last-Modified: Thu, 24 Sep 2026 07:03:06 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: MISS
+X-Vercel-Id: yul1::ch2vn-1790233386586-dc40ec47ef79
+
+=== /MHIRJ_Logo.png
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 6537
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="MHIRJ_Logo.png"
+Content-Length: 4395
+Content-Type: image/png
+Date: Thu, 24 Sep 2026 07:03:06 GMT
+Etag: "8d1cc85ddf38b00def79ee8987355d11"
+Last-Modified: Thu, 24 Sep 2026 05:14:09 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: HIT
+X-Vercel-Id: yul1::rzm4t-1790233386853-7ecf331a4a94
+
+=== /mini_logo.png
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="mini_logo.png"
+Content-Length: 96164
+Content-Type: image/png
+Date: Thu, 24 Sep 2026 07:03:07 GMT
+Etag: "fc9729df0a12fcc6df3f1e1183dcbe85"
+Last-Modified: Thu, 24 Sep 2026 07:03:07 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: MISS
+X-Vercel-Id: yul1::kzq64-1790233387022-15d1e33767dc
+
+=== /skuganesan_resume.pdf
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="skuganesan_resume.pdf"
+Content-Length: 68095
+Content-Type: application/pdf
+Date: Thu, 24 Sep 2026 07:03:07 GMT
+Etag: "27d29fc01d0fecfe66da559c6e1eda2c"
+Last-Modified: Thu, 24 Sep 2026 07:03:07 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: MISS
+X-Vercel-Id: yul1::f4qtm-1790233387309-681a95269d06
+
+=== /robots.txt
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="robots.txt"
+Content-Length: 23
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 24 Sep 2026 07:03:07 GMT
+Etag: "5e0bd1c281a62a380d7a948085bfe2d1"
+Last-Modified: Thu, 24 Sep 2026 07:03:07 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Cache: MISS
+X-Vercel-Id: yul1::9sbth-1790233387565-fdd75f3c9c31
+
+=== /sitemap.xml
+HTTP/1.1 404 Not Found
+Cache-Control: public, max-age=0, must-revalidate
+Content-Length: 79
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 24 Sep 2026 07:03:07 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Error: NOT_FOUND
+X-Vercel-Id: yul1::ch2vn-1790233387891-d447637c056e
+
+=== /favicon.ico
+HTTP/1.1 404 Not Found
+Cache-Control: public, max-age=0, must-revalidate
+Content-Length: 79
+Content-Type: text/plain; charset=utf-8
+Date: Thu, 24 Sep 2026 07:03:08 GMT
+Server: Vercel
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+X-Vercel-Error: NOT_FOUND
+X-Vercel-Id: yul1::f4qtm-1790233388099-368117c2ff3c
+

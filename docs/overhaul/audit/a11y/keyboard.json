@@ -1,0 +1,2343 @@
+{
+  "baseUrl": "http://127.0.0.1:5199/",
+  "runs": [
+    {
+      "width": 1440,
+      "height": 900,
+      "focusOrder": [
+        {
+          "step": 1,
+          "tag": "a",
+          "href": "#hero",
+          "text": "0101 HOMEHOME",
+          "section": "nav",
+          "rect": [
+            1272,
+            372,
+            131,
+            28
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "01 HOME",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-01-01-home.webp"
+        },
+        {
+          "step": 2,
+          "tag": "a",
+          "href": "#experience",
+          "text": "0202 EXPERIENCEEXPERIENCE",
+          "section": "nav",
+          "rect": [
+            1272,
+            404,
+            131,
+            28
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "02 EXPERIENCE",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-02-02-experience.webp"
+        },
+        {
+          "step": 3,
+          "tag": "a",
+          "href": "#projects",
+          "text": "0303 PROJECTSPROJECTS",
+          "section": "nav",
+          "rect": [
+            1272,
+            436,
+            131,
+            28
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "03 PROJECTS",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-03-03-projects.webp"
+        },
+        {
+          "step": 4,
+          "tag": "a",
+          "href": "#skills",
+          "text": "0404 SKILLSSKILLS",
+          "section": "nav",
+          "rect": [
+            1272,
+            468,
+            131,
+            28
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "04 SKILLS",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-04-04-skills.webp"
+        },
+        {
+          "step": 5,
+          "tag": "a",
+          "href": "#contact",
+          "text": "0505 CONTACTCONTACT",
+          "section": "nav",
+          "rect": [
+            1272,
+            500,
+            131,
+            28
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "05 CONTACT",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-05-05-contact.webp"
+        },
+        {
+          "step": 6,
+          "tag": "a",
+          "href": "#projects",
+          "text": "SEE MY WORK",
+          "section": "hero",
+          "rect": [
+            130,
+            578,
+            177,
+            47
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "SEE MY WORK",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-06-see-my-work.webp"
+        },
+        {
+          "step": 7,
+          "tag": "a",
+          "href": "/skuganesan_resume.pdf",
+          "text": "DOWNLOAD RÉSUMÉ",
+          "section": "hero",
+          "rect": [
+            319,
+            577,
+            215,
+            49
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "DOWNLOAD RÉSUMÉ",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-07-download-r-sum.webp"
+        },
+        {
+          "step": 8,
+          "tag": "a",
+          "href": "https://github.com/skugane6",
+          "text": "",
+          "section": "hero",
+          "rect": [
+            118,
+            633,
+            44,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "GitHub",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-08-github.webp"
+        },
+        {
+          "step": 9,
+          "tag": "a",
+          "href": "https://linkedin.com/in/searan-kuganesan",
+          "text": "",
+          "section": "hero",
+          "rect": [
+            162,
+            633,
+            44,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "LinkedIn",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-09-linkedin.webp"
+        },
+        {
+          "step": 10,
+          "tag": "a",
+          "href": "mailto:searan.kuganesan4@gmail.com",
+          "text": "",
+          "section": "hero",
+          "rect": [
+            206,
+            633,
+            44,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "Email",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-10-email.webp"
+        },
+        {
+          "step": 11,
+          "tag": "a",
+          "href": "https://crafttraq.com",
+          "text": "CRAFTTRAQ SAASLIVE",
+          "section": "hero",
+          "rect": [
+            1005,
+            740,
+            275,
+            46
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "CRAFTTRAQ SAAS LIVE",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-11-crafttraq-saas-live.webp"
+        },
+        {
+          "step": 12,
+          "tag": "button",
+          "href": null,
+          "text": "01 · LIVECraftTraq",
+          "section": "projects",
+          "rect": [
+            160,
+            389,
+            271,
+            77
+          ],
+          "inView": true,
+          "opacity": 0.931,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4600,
+          "role": "button",
+          "name": "01 · LIVE CraftTraq",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-12-01-live-crafttraq.webp"
+        },
+        {
+          "step": 13,
+          "tag": "button",
+          "href": null,
+          "text": "02 · BUILDPortfolio Risk Dashboard",
+          "section": "projects",
+          "rect": [
+            443,
+            388,
+            271,
+            77
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4600,
+          "role": "button",
+          "name": "02 · BUILD Portfolio Risk Dashboard",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-13-02-build-portfolio-risk-dashboar.webp"
+        },
+        {
+          "step": 14,
+          "tag": "button",
+          "href": null,
+          "text": "03 · BUILDText Classification Pipeline",
+          "section": "projects",
+          "rect": [
+            726,
+            388,
+            271,
+            77
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4600,
+          "role": "button",
+          "name": "03 · BUILD Text Classification Pipeline",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-14-03-build-text-classification-pip.webp"
+        },
+        {
+          "step": 15,
+          "tag": "button",
+          "href": null,
+          "text": "04 · BUILDEye Tracking Mouse",
+          "section": "projects",
+          "rect": [
+            1009,
+            388,
+            271,
+            77
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            "nav",
+            null,
+            "nav"
+          ],
+          "scrollY": 4600,
+          "role": "button",
+          "name": "04 · BUILD Eye Tracking Mouse",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-15-04-build-eye-tracking-mouse.webp"
+        },
+        {
+          "step": 16,
+          "tag": "a",
+          "href": "https://crafttraq.com",
+          "text": "VISIT LIVE SITE↗",
+          "section": "projects",
+          "rect": [
+            197,
+            856,
+            186,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4626,
+          "role": "link",
+          "name": "VISIT LIVE SITE",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-16-visit-live-site.webp"
+        },
+        {
+          "step": 17,
+          "tag": "a",
+          "href": "mailto:searan.kuganesan4@gmail.com",
+          "text": "Send email",
+          "section": "contact",
+          "rect": [
+            954,
+            515,
+            141,
+            44
+          ],
+          "inView": true,
+          "opacity": 0.891,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6353,
+          "role": "link",
+          "name": "SEND EMAIL",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-17-send-email.webp"
+        },
+        {
+          "step": 18,
+          "tag": "button",
+          "href": null,
+          "text": "Copy address",
+          "section": "contact",
+          "rect": [
+            1105,
+            513,
+            150,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6353,
+          "role": "button",
+          "name": "COPY ADDRESS",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-18-copy-address.webp"
+        },
+        {
+          "step": 19,
+          "tag": "a",
+          "href": "https://github.com/skugane6",
+          "text": "CH 02GitHubskugane6",
+          "section": "contact",
+          "rect": [
+            160,
+            604,
+            363,
+            88
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "border",
+            "bg"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6353,
+          "role": "link",
+          "name": "CH 02 GitHub skugane6",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-19-ch-02-github-skugane6.webp"
+        },
+        {
+          "step": 20,
+          "tag": "a",
+          "href": "https://linkedin.com/in/searan-kuganesan",
+          "text": "CH 03LinkedInsearan-kuganesan",
+          "section": "contact",
+          "rect": [
+            539,
+            604,
+            363,
+            88
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "border",
+            "bg"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6353,
+          "role": "link",
+          "name": "CH 03 LinkedIn searan-kuganesan",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-20-ch-03-linkedin-searan-kuganesan.webp"
+        },
+        {
+          "step": 21,
+          "tag": "a",
+          "href": "https://crafttraq.com",
+          "text": "CH 04CraftTraqcrafttraq.com",
+          "section": "contact",
+          "rect": [
+            917,
+            604,
+            363,
+            88
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "border",
+            "bg"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6353,
+          "role": "link",
+          "name": "CH 04 CraftTraq crafttraq.com",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/1440-focus-21-ch-04-crafttraq-crafttraq-com.webp"
+        },
+        {
+          "step": 22,
+          "body": true,
+          "scrollY": 6353
+        }
+      ],
+      "experience": {
+        "PageDown": {
+          "presses": 4,
+          "steps": [
+            {
+              "press": 1,
+              "scrollY": 1778,
+              "secTop": -878,
+              "readout": "30%",
+              "alphas": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 2992
+            },
+            {
+              "press": 2,
+              "scrollY": 2992,
+              "secTop": -2092,
+              "readout": "70%",
+              "alphas": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "projectsTop": 1778
+            },
+            {
+              "press": 3,
+              "scrollY": 4739,
+              "secTop": -3839,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 31
+            },
+            {
+              "press": 4,
+              "scrollY": 5530,
+              "secTop": -4630,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": -760
+            }
+          ],
+          "maxAlphaPerCallout": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "final": {
+            "scrollY": 5530,
+            "secTop": -4630,
+            "readout": "100%",
+            "alphas": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "projectsTop": -760
+          }
+        },
+        "Space": {
+          "presses": 4,
+          "steps": [
+            {
+              "press": 1,
+              "scrollY": 1778,
+              "secTop": -878,
+              "readout": "30%",
+              "alphas": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 2992
+            },
+            {
+              "press": 2,
+              "scrollY": 2993,
+              "secTop": -2093,
+              "readout": "70%",
+              "alphas": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "projectsTop": 1777
+            },
+            {
+              "press": 3,
+              "scrollY": 4736,
+              "secTop": -3836,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 34
+            },
+            {
+              "press": 4,
+              "scrollY": 5552,
+              "secTop": -4652,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": -782
+            }
+          ],
+          "maxAlphaPerCallout": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "final": {
+            "scrollY": 5552,
+            "secTop": -4652,
+            "readout": "100%",
+            "alphas": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "projectsTop": -782
+          }
+        },
+        "ArrowDown": {
+          "presses": 103,
+          "steps": [
+            {
+              "press": 10,
+              "scrollY": 1086,
+              "secTop": -186,
+              "readout": "06%",
+              "alphas": [
+                0.21,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 3684
+            },
+            {
+              "press": 20,
+              "scrollY": 1482,
+              "secTop": -582,
+              "readout": "20%",
+              "alphas": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 3288
+            },
+            {
+              "press": 30,
+              "scrollY": 1877,
+              "secTop": -977,
+              "readout": "33%",
+              "alphas": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 2893
+            },
+            {
+              "press": 40,
+              "scrollY": 2275,
+              "secTop": -1375,
+              "readout": "46%",
+              "alphas": [
+                1,
+                1,
+                0,
+                0
+              ],
+              "projectsTop": 2495
+            },
+            {
+              "press": 50,
+              "scrollY": 2680,
+              "secTop": -1780,
+              "readout": "60%",
+              "alphas": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "projectsTop": 2090
+            },
+            {
+              "press": 60,
+              "scrollY": 3082,
+              "secTop": -2182,
+              "readout": "73%",
+              "alphas": [
+                1,
+                1,
+                1,
+                0
+              ],
+              "projectsTop": 1688
+            },
+            {
+              "press": 70,
+              "scrollY": 3481,
+              "secTop": -2581,
+              "readout": "87%",
+              "alphas": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "projectsTop": 1289
+            },
+            {
+              "press": 80,
+              "scrollY": 3875,
+              "secTop": -2975,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 895
+            },
+            {
+              "press": 90,
+              "scrollY": 4284,
+              "secTop": -3384,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 486
+            },
+            {
+              "press": 100,
+              "scrollY": 4684,
+              "secTop": -3784,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 86
+            }
+          ],
+          "maxAlphaPerCallout": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "final": {
+            "scrollY": 4820,
+            "secTop": -3920,
+            "readout": "100%",
+            "alphas": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "projectsTop": -50
+          }
+        }
+      },
+      "projects": {
+        "arrowTests": [
+          {
+            "case": "focus on panel link, ArrowRight",
+            "before": {
+              "tab": 0,
+              "focus": "a \"VISIT LIVE SITE↗\""
+            },
+            "after": {
+              "tab": 1,
+              "focus": "body",
+              "live": "Project 2 of 4: Portfolio Risk Dashboard"
+            }
+          },
+          {
+            "case": "focus on nav rail \"01 HOME\", ArrowRight",
+            "before": {
+              "tab": 1,
+              "focus": "a \"0101 HOMEHOME\""
+            },
+            "after": {
+              "tab": 2,
+              "focus": "a \"0101 HOMEHOME\"",
+              "live": "Project 3 of 4: Text Classification Pipeline"
+            }
+          },
+          {
+            "case": "focus on tab button 01, ArrowRight",
+            "before": {
+              "tab": 2,
+              "focus": "button \"01 · LIVECraftTraq\""
+            },
+            "after": {
+              "tab": 3,
+              "focus": "button \"01 · LIVECraftTraq\"",
+              "live": "Project 4 of 4: Eye Tracking Mouse"
+            }
+          },
+          {
+            "case": "no focus, Projects top at 60% of viewport, ArrowLeft",
+            "before": {
+              "tab": 3,
+              "focus": "body",
+              "sectionTopPx": 540
+            },
+            "after": {
+              "tab": 2,
+              "focus": "body"
+            }
+          },
+          {
+            "case": "Enter on tab button 04",
+            "after": {
+              "tab": 3,
+              "focus": "button \"04 · BUILDEye Tracking Mouse\""
+            }
+          },
+          {
+            "case": "Home on tab button 04",
+            "after": {
+              "tab": 3,
+              "focus": "button \"04 · BUILDEye Tracking Mouse\"",
+              "scrollY": 0
+            }
+          }
+        ]
+      },
+      "skills": {
+        "tabbableInSkills": 0,
+        "tiles": 28,
+        "tileTabIndex": [
+          -1,
+          -1,
+          -1
+        ],
+        "detailPanelHasLiveRegion": false,
+        "tileFocusAttempt": "not focusable"
+      },
+      "consoleErrors": [],
+      "tabbableCandidates": 36
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "focusOrder": [
+        {
+          "step": 1,
+          "tag": "a",
+          "href": "#hero",
+          "text": "0101 HOMEHOME",
+          "section": "nav",
+          "rect": [
+            4,
+            764,
+            73,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "01 HOME",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-01-01-home.webp"
+        },
+        {
+          "step": 2,
+          "tag": "a",
+          "href": "#experience",
+          "text": "0202 EXPERIENCEEXPERIENCE",
+          "section": "nav",
+          "rect": [
+            77,
+            764,
+            73,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "02 EXPERIENCE",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-02-02-experience.webp"
+        },
+        {
+          "step": 3,
+          "tag": "a",
+          "href": "#projects",
+          "text": "0303 PROJECTSPROJECTS",
+          "section": "nav",
+          "rect": [
+            151,
+            764,
+            73,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "03 PROJECTS",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-03-03-projects.webp"
+        },
+        {
+          "step": 4,
+          "tag": "a",
+          "href": "#skills",
+          "text": "0404 SKILLSSKILLS",
+          "section": "nav",
+          "rect": [
+            224,
+            764,
+            73,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "04 SKILLS",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-04-04-skills.webp"
+        },
+        {
+          "step": 5,
+          "tag": "a",
+          "href": "#contact",
+          "text": "0505 CONTACTCONTACT",
+          "section": "nav",
+          "rect": [
+            298,
+            764,
+            73,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "afterTransform"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "05 CONTACT",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-05-05-contact.webp"
+        },
+        {
+          "step": 6,
+          "tag": "a",
+          "href": "#projects",
+          "text": "SEE MY WORK",
+          "section": "hero",
+          "rect": [
+            46,
+            408,
+            305,
+            47
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "SEE MY WORK",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-06-see-my-work.webp"
+        },
+        {
+          "step": 7,
+          "tag": "a",
+          "href": "/skuganesan_resume.pdf",
+          "text": "DOWNLOAD RÉSUMÉ",
+          "section": "hero",
+          "rect": [
+            46,
+            466,
+            305,
+            49
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "DOWNLOAD RÉSUMÉ",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-07-download-r-sum.webp"
+        },
+        {
+          "step": 8,
+          "tag": "a",
+          "href": "https://github.com/skugane6",
+          "text": "",
+          "section": "hero",
+          "rect": [
+            34,
+            519,
+            44,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "GitHub",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-08-github.webp"
+        },
+        {
+          "step": 9,
+          "tag": "a",
+          "href": "https://linkedin.com/in/searan-kuganesan",
+          "text": "",
+          "section": "hero",
+          "rect": [
+            78,
+            519,
+            44,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "LinkedIn",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-09-linkedin.webp"
+        },
+        {
+          "step": 10,
+          "tag": "a",
+          "href": "mailto:searan.kuganesan4@gmail.com",
+          "text": "",
+          "section": "hero",
+          "rect": [
+            122,
+            519,
+            44,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "Email",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-10-email.webp"
+        },
+        {
+          "step": 11,
+          "tag": "a",
+          "href": "https://crafttraq.com",
+          "text": "CRAFTTRAQ SAASLIVE",
+          "section": "hero",
+          "rect": [
+            198,
+            671,
+            154,
+            39
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 0,
+          "role": "link",
+          "name": "CRAFTTRAQ SAAS LIVE",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-11-crafttraq-saas-live.webp"
+        },
+        {
+          "step": 12,
+          "tag": "button",
+          "href": null,
+          "text": "01 · LIVECraftTraq",
+          "section": "projects",
+          "rect": [
+            20,
+            342,
+            163,
+            83
+          ],
+          "inView": true,
+          "opacity": 0.943,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4164,
+          "role": "button",
+          "name": "01 · LIVE CraftTraq",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-12-01-live-crafttraq.webp"
+        },
+        {
+          "step": 13,
+          "tag": "button",
+          "href": null,
+          "text": "02 · BUILDPortfolio Risk Dashboard",
+          "section": "projects",
+          "rect": [
+            193,
+            341,
+            163,
+            83
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4164,
+          "role": "button",
+          "name": "02 · BUILD Portfolio Risk Dashboard",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-13-02-build-portfolio-risk-dashboar.webp"
+        },
+        {
+          "step": 14,
+          "tag": "button",
+          "href": null,
+          "text": "03 · BUILDText Classification Pipeline",
+          "section": "projects",
+          "rect": [
+            20,
+            434,
+            163,
+            83
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4164,
+          "role": "button",
+          "name": "03 · BUILD Text Classification Pipeline",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-14-03-build-text-classification-pip.webp"
+        },
+        {
+          "step": 15,
+          "tag": "button",
+          "href": null,
+          "text": "04 · BUILDEye Tracking Mouse",
+          "section": "projects",
+          "rect": [
+            193,
+            434,
+            163,
+            83
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4164,
+          "role": "button",
+          "name": "04 · BUILD Eye Tracking Mouse",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-15-04-build-eye-tracking-mouse.webp"
+        },
+        {
+          "step": 16,
+          "tag": "a",
+          "href": "https://crafttraq.com",
+          "text": "VISIT LIVE SITE↗",
+          "section": "projects",
+          "rect": [
+            41,
+            384,
+            186,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 4968,
+          "role": "link",
+          "name": "VISIT LIVE SITE",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-16-visit-live-site.webp"
+        },
+        {
+          "step": 17,
+          "tag": "a",
+          "href": "mailto:searan.kuganesan4@gmail.com",
+          "text": "Send email",
+          "section": "contact",
+          "rect": [
+            41,
+            346,
+            293,
+            44
+          ],
+          "inView": true,
+          "opacity": 0.883,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6862,
+          "role": "link",
+          "name": "SEND EMAIL",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-17-send-email.webp"
+        },
+        {
+          "step": 18,
+          "tag": "button",
+          "href": null,
+          "text": "Copy address",
+          "section": "contact",
+          "rect": [
+            41,
+            398,
+            293,
+            44
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6862,
+          "role": "button",
+          "name": "COPY ADDRESS",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-18-copy-address.webp"
+        },
+        {
+          "step": 19,
+          "tag": "a",
+          "href": "https://github.com/skugane6",
+          "text": "CH 02GitHubskugane6",
+          "section": "contact",
+          "rect": [
+            20,
+            475,
+            335,
+            88
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "border",
+            "bg"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6862,
+          "role": "link",
+          "name": "CH 02 GitHub skugane6",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-19-ch-02-github-skugane6.webp"
+        },
+        {
+          "step": 20,
+          "tag": "a",
+          "href": "https://linkedin.com/in/searan-kuganesan",
+          "text": "CH 03LinkedInsearan-kuganesan",
+          "section": "contact",
+          "rect": [
+            20,
+            575,
+            335,
+            88
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "border",
+            "bg"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "scrollY": 6862,
+          "role": "link",
+          "name": "CH 03 LinkedIn searan-kuganesan",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-20-ch-03-linkedin-searan-kuganesan.webp"
+        },
+        {
+          "step": 21,
+          "tag": "a",
+          "href": "https://crafttraq.com",
+          "text": "CH 04CraftTraqcrafttraq.com",
+          "section": "contact",
+          "rect": [
+            20,
+            675,
+            335,
+            88
+          ],
+          "inView": true,
+          "opacity": 1,
+          "visibility": "visible",
+          "ariaHiddenAncestor": false,
+          "focusVisibleMatch": true,
+          "outlineOn": true,
+          "outline": "solid 2px rgb(91, 143, 240)",
+          "changedOnFocus": [
+            "outline",
+            "border",
+            "bg"
+          ],
+          "clippedBy": null,
+          "cover": [
+            null,
+            null,
+            null,
+            "nav",
+            "nav"
+          ],
+          "scrollY": 6862,
+          "role": "link",
+          "name": "CH 04 CraftTraq crafttraq.com",
+          "opacityAfter700ms": 1,
+          "shot": "docs/overhaul/screenshots/before/keyboard/375-focus-21-ch-04-crafttraq-crafttraq-com.webp"
+        },
+        {
+          "step": 22,
+          "body": true,
+          "scrollY": 6862
+        }
+      ],
+      "experience": {
+        "PageDown": {
+          "presses": 5,
+          "steps": [
+            {
+              "press": 1,
+              "scrollY": 1400,
+              "secTop": -560,
+              "readout": "21%",
+              "alphas": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 2931
+            },
+            {
+              "press": 2,
+              "scrollY": 2569,
+              "secTop": -1729,
+              "readout": "65%",
+              "alphas": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "projectsTop": 1762
+            },
+            {
+              "press": 3,
+              "scrollY": 3166,
+              "secTop": -2326,
+              "readout": "87%",
+              "alphas": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "projectsTop": 1165
+            },
+            {
+              "press": 4,
+              "scrollY": 3876,
+              "secTop": -3036,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 455
+            },
+            {
+              "press": 5,
+              "scrollY": 4586,
+              "secTop": -3746,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": -255
+            }
+          ],
+          "maxAlphaPerCallout": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "final": {
+            "scrollY": 4586,
+            "secTop": -3746,
+            "readout": "100%",
+            "alphas": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "projectsTop": -255
+          }
+        },
+        "Space": {
+          "presses": 5,
+          "steps": [
+            {
+              "press": 1,
+              "scrollY": 1400,
+              "secTop": -560,
+              "readout": "21%",
+              "alphas": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 2931
+            },
+            {
+              "press": 2,
+              "scrollY": 2569,
+              "secTop": -1729,
+              "readout": "65%",
+              "alphas": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "projectsTop": 1762
+            },
+            {
+              "press": 3,
+              "scrollY": 3166,
+              "secTop": -2326,
+              "readout": "87%",
+              "alphas": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "projectsTop": 1165
+            },
+            {
+              "press": 4,
+              "scrollY": 3876,
+              "secTop": -3036,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 455
+            },
+            {
+              "press": 5,
+              "scrollY": 4586,
+              "secTop": -3746,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": -255
+            }
+          ],
+          "maxAlphaPerCallout": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "final": {
+            "scrollY": 4586,
+            "secTop": -3746,
+            "readout": "100%",
+            "alphas": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "projectsTop": -255
+          }
+        },
+        "ArrowDown": {
+          "presses": 93,
+          "steps": [
+            {
+              "press": 10,
+              "scrollY": 1008,
+              "secTop": -168,
+              "readout": "06%",
+              "alphas": [
+                0.95,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 3323
+            },
+            {
+              "press": 20,
+              "scrollY": 1425,
+              "secTop": -585,
+              "readout": "22%",
+              "alphas": [
+                1,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 2906
+            },
+            {
+              "press": 30,
+              "scrollY": 1825,
+              "secTop": -985,
+              "readout": "37%",
+              "alphas": [
+                0,
+                1,
+                0,
+                0
+              ],
+              "projectsTop": 2506
+            },
+            {
+              "press": 40,
+              "scrollY": 2213,
+              "secTop": -1373,
+              "readout": "51%",
+              "alphas": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "projectsTop": 2118
+            },
+            {
+              "press": 50,
+              "scrollY": 2624,
+              "secTop": -1784,
+              "readout": "67%",
+              "alphas": [
+                0,
+                0,
+                1,
+                0
+              ],
+              "projectsTop": 1707
+            },
+            {
+              "press": 60,
+              "scrollY": 3024,
+              "secTop": -2184,
+              "readout": "82%",
+              "alphas": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "projectsTop": 1307
+            },
+            {
+              "press": 70,
+              "scrollY": 3424,
+              "secTop": -2584,
+              "readout": "96%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0.39
+              ],
+              "projectsTop": 907
+            },
+            {
+              "press": 80,
+              "scrollY": 3830,
+              "secTop": -2990,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 501
+            },
+            {
+              "press": 90,
+              "scrollY": 4225,
+              "secTop": -3385,
+              "readout": "100%",
+              "alphas": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "projectsTop": 106
+            }
+          ],
+          "maxAlphaPerCallout": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "final": {
+            "scrollY": 4360,
+            "secTop": -3520,
+            "readout": "100%",
+            "alphas": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "projectsTop": -29
+          }
+        }
+      },
+      "projects": {
+        "arrowTests": [
+          {
+            "case": "focus on panel link, ArrowRight",
+            "before": {
+              "tab": 0,
+              "focus": "a \"VISIT LIVE SITE↗\""
+            },
+            "after": {
+              "tab": 1,
+              "focus": "body",
+              "live": "Project 2 of 4: Portfolio Risk Dashboard"
+            }
+          },
+          {
+            "case": "focus on nav rail \"01 HOME\", ArrowRight",
+            "before": {
+              "tab": 1,
+              "focus": "a \"0101 HOMEHOME\""
+            },
+            "after": {
+              "tab": 2,
+              "focus": "a \"0101 HOMEHOME\"",
+              "live": "Project 3 of 4: Text Classification Pipeline"
+            }
+          },
+          {
+            "case": "focus on tab button 01, ArrowRight",
+            "before": {
+              "tab": 2,
+              "focus": "button \"01 · LIVECraftTraq\""
+            },
+            "after": {
+              "tab": 3,
+              "focus": "button \"01 · LIVECraftTraq\"",
+              "live": "Project 4 of 4: Eye Tracking Mouse"
+            }
+          },
+          {
+            "case": "no focus, Projects top at 60% of viewport, ArrowLeft",
+            "before": {
+              "tab": 3,
+              "focus": "body",
+              "sectionTopPx": 487
+            },
+            "after": {
+              "tab": 2,
+              "focus": "body"
+            }
+          },
+          {
+            "case": "Enter on tab button 04",
+            "after": {
+              "tab": 3,
+              "focus": "button \"04 · BUILDEye Tracking Mouse\""
+            }
+          },
+          {
+            "case": "Home on tab button 04",
+            "after": {
+              "tab": 3,
+              "focus": "button \"04 · BUILDEye Tracking Mouse\"",
+              "scrollY": 0
+            }
+          }
+        ]
+      },
+      "skills": {
+        "tabbableInSkills": 0,
+        "tiles": 28,
+        "tileTabIndex": [
+          -1,
+          -1,
+          -1
+        ],
+        "detailPanelHasLiveRegion": false
+      },
+      "consoleErrors": [],
+      "tabbableCandidates": 36
+    }
+  ]
+}

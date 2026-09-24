@@ -1,0 +1,2762 @@
+{
+  "projects": {
+    "375": [
+      {
+        "i": 1,
+        "name": "CraftTraq",
+        "cols": [
+          {
+            "top": 761,
+            "h": 269,
+            "w": 333,
+            "contentTop": 775,
+            "contentBottom": 977,
+            "deadAbove": 14,
+            "deadBelow": 54
+          },
+          {
+            "top": 1031,
+            "h": 457,
+            "w": 333,
+            "contentTop": 1063,
+            "contentBottom": 1459,
+            "deadAbove": 32,
+            "deadBelow": 28
+          }
+        ],
+        "stage": {
+          "w": 333,
+          "h": 226
+        },
+        "visual": {
+          "w": 293,
+          "h": 162,
+          "padTop": 32,
+          "padBottom": 32
+        },
+        "imgs": [
+          {
+            "alt": "CraftTraq's Field Ops Console: a jobs board for Apex Plumbing with Created, In Progress, Complete, and Approved columns, each card showing a job ID, title, client, due date, and the initials of the assigned crew.",
+            "w": 224,
+            "h": 111,
+            "natural": "1902x938"
+          },
+          {
+            "alt": "The same platform on a phone: CraftTraq's week calendar for July 27 to August 2, listing each day's scheduled tasks as colour-coded time blocks.",
+            "w": 46,
+            "h": 102,
+            "natural": "375x835"
+          }
+        ],
+        "sectionH": 1190
+      },
+      {
+        "i": 2,
+        "name": "Portfolio Risk Dashboard",
+        "cols": [
+          {
+            "top": 2966,
+            "h": 579,
+            "w": 333,
+            "contentTop": 2980,
+            "contentBottom": 3513,
+            "deadAbove": 14,
+            "deadBelow": 33
+          },
+          {
+            "top": 3546,
+            "h": 402,
+            "w": 333,
+            "contentTop": 3574,
+            "contentBottom": 3919,
+            "deadAbove": 28,
+            "deadBelow": 28
+          }
+        ],
+        "stage": {
+          "w": 333,
+          "h": 536
+        },
+        "visual": {
+          "w": 293,
+          "h": 472,
+          "padTop": 32,
+          "padBottom": 32
+        },
+        "imgs": [],
+        "sectionH": 1445
+      },
+      {
+        "i": 3,
+        "name": "Text Classification Pipeline",
+        "cols": [
+          {
+            "top": 2966,
+            "h": 475,
+            "w": 333,
+            "contentTop": 2980,
+            "contentBottom": 3408,
+            "deadAbove": 14,
+            "deadBelow": 33
+          },
+          {
+            "top": 3441,
+            "h": 326,
+            "w": 333,
+            "contentTop": 3469,
+            "contentBottom": 3739,
+            "deadAbove": 28,
+            "deadBelow": 28
+          }
+        ],
+        "stage": {
+          "w": 333,
+          "h": 431
+        },
+        "visual": {
+          "w": 293,
+          "h": 367,
+          "padTop": 32,
+          "padBottom": 32
+        },
+        "imgs": [],
+        "sectionH": 1264
+      },
+      {
+        "i": 4,
+        "name": "Eye Tracking Mouse",
+        "cols": [
+          {
+            "top": 2966,
+            "h": 671,
+            "w": 333,
+            "contentTop": 2980,
+            "contentBottom": 3604,
+            "deadAbove": 14,
+            "deadBelow": 33
+          },
+          {
+            "top": 3637,
+            "h": 378,
+            "w": 333,
+            "contentTop": 3665,
+            "contentBottom": 3987,
+            "deadAbove": 28,
+            "deadBelow": 28
+          }
+        ],
+        "stage": {
+          "w": 333,
+          "h": 627
+        },
+        "visual": {
+          "w": 293,
+          "h": 563,
+          "padTop": 32,
+          "padBottom": 32
+        },
+        "imgs": [],
+        "sectionH": 1513
+      }
+    ],
+    "1440": [
+      {
+        "i": 1,
+        "name": "CraftTraq",
+        "cols": [
+          {
+            "top": 320,
+            "h": 481,
+            "w": 637,
+            "contentTop": 334,
+            "contentBottom": 697,
+            "deadAbove": 14,
+            "deadBelow": 103
+          },
+          {
+            "top": 320,
+            "h": 481,
+            "w": 481,
+            "contentTop": 368,
+            "contentBottom": 756,
+            "deadAbove": 48,
+            "deadBelow": 44
+          }
+        ],
+        "stage": {
+          "w": 636,
+          "h": 438
+        },
+        "visual": {
+          "w": 564,
+          "h": 273,
+          "padTop": 82,
+          "padBottom": 82
+        },
+        "imgs": [
+          {
+            "alt": "CraftTraq's Field Ops Console: a jobs board for Apex Plumbing with Created, In Progress, Complete, and Approved columns, each card showing a job ID, title, client, due date, and the initials of the assigned crew.",
+            "w": 451,
+            "h": 222,
+            "natural": "1902x938"
+          },
+          {
+            "alt": "The same platform on a phone: CraftTraq's week calendar for July 27 to August 2, listing each day's scheduled tasks as colour-coded time blocks.",
+            "w": 97,
+            "h": 216,
+            "natural": "375x835"
+          }
+        ],
+        "sectionH": 929
+      },
+      {
+        "i": 2,
+        "name": "Portfolio Risk Dashboard",
+        "cols": [
+          {
+            "top": 320,
+            "h": 550,
+            "w": 637,
+            "contentTop": 334,
+            "contentBottom": 821,
+            "deadAbove": 14,
+            "deadBelow": 48
+          },
+          {
+            "top": 320,
+            "h": 550,
+            "w": 481,
+            "contentTop": 426,
+            "contentBottom": 762,
+            "deadAbove": 106,
+            "deadBelow": 107
+          }
+        ],
+        "stage": {
+          "w": 636,
+          "h": 506
+        },
+        "visual": {
+          "w": 564,
+          "h": 410,
+          "padTop": 48,
+          "padBottom": 48
+        },
+        "imgs": [],
+        "sectionH": 998
+      },
+      {
+        "i": 3,
+        "name": "Text Classification Pipeline",
+        "cols": [
+          {
+            "top": 320,
+            "h": 532,
+            "w": 637,
+            "contentTop": 334,
+            "contentBottom": 804,
+            "deadAbove": 14,
+            "deadBelow": 48
+          },
+          {
+            "top": 320,
+            "h": 532,
+            "w": 481,
+            "contentTop": 456,
+            "contentBottom": 716,
+            "deadAbove": 136,
+            "deadBelow": 136
+          }
+        ],
+        "stage": {
+          "w": 636,
+          "h": 489
+        },
+        "visual": {
+          "w": 564,
+          "h": 393,
+          "padTop": 48,
+          "padBottom": 48
+        },
+        "imgs": [],
+        "sectionH": 981
+      },
+      {
+        "i": 4,
+        "name": "Eye Tracking Mouse",
+        "cols": [
+          {
+            "top": 320,
+            "h": 618,
+            "w": 637,
+            "contentTop": 334,
+            "contentBottom": 890,
+            "deadAbove": 14,
+            "deadBelow": 48
+          },
+          {
+            "top": 320,
+            "h": 618,
+            "w": 481,
+            "contentTop": 478,
+            "contentBottom": 779,
+            "deadAbove": 158,
+            "deadBelow": 159
+          }
+        ],
+        "stage": {
+          "w": 636,
+          "h": 575
+        },
+        "visual": {
+          "w": 564,
+          "h": 479,
+          "padTop": 48,
+          "padBottom": 48
+        },
+        "imgs": [],
+        "sectionH": 1067
+      }
+    ]
+  },
+  "skills": {
+    "375": {
+      "touch": true,
+      "before": "DETAIL · A–ANO PART SELECTEDMaterials listHover any tile for its detailRUN··FINISH··ITEM·· / 28SCHEDULEBUILD SURFACE06IN",
+      "after": {
+        "visible": false,
+        "text": "DETAIL · A–ANO PART SELECTEDMaterials listHover any tile for its detailRUN··FINISH··ITEM·· / 28SCHEDULEBUILD SURFACE06INTEGRATIONS07DATA & MODELS09QUALITY & DEL"
+      },
+      "band": {
+        "sectionH": 1385,
+        "gridBottomFromTop": 1205,
+        "lastContentFromTop": 1289,
+        "emptyBelow": 96
+      }
+    },
+    "768": {
+      "touch": true,
+      "before": "DETAIL · A–ANO PART SELECTEDMaterials listHover any tile for its detailRUN··FINISH··ITEM·· / 28SCHEDULEBUILD SURFACE06IN",
+      "after": {
+        "visible": false,
+        "text": "DETAIL · A–ANO PART SELECTEDMaterials listHover any tile for its detailRUN··FINISH··ITEM·· / 28SCHEDULEBUILD SURFACE06INTEGRATIONS07DATA & MODELS09QUALITY & DEL"
+      },
+      "band": {
+        "sectionH": 886,
+        "gridBottomFromTop": 712,
+        "lastContentFromTop": 774,
+        "emptyBelow": 112
+      }
+    },
+    "1280": {
+      "touch": false,
+      "before": "DETAIL · A–A NO PART SELECTED MATERIALS LIST Hover any tile for its detail RUN ·· FINISH ·· ITEM ·· / 28 SCHEDULE BUILD ",
+      "after": {
+        "visible": true,
+        "text": "DETAIL · A–A PYTHON Primary language RUN BUILD SURFACE FINISH #3776AB ITEM 03 / 28 SCHEDULE BUILD SURFACE 06 INTEGRATIONS 07 DATA & MODELS 09 QUALITY & DELIVERY"
+      },
+      "band": {
+        "sectionH": 889,
+        "gridBottomFromTop": 734,
+        "lastContentFromTop": 754,
+        "emptyBelow": 135
+      }
+    },
+    "1366": {
+      "touch": true,
+      "before": "DETAIL · A–A NO PART SELECTED MATERIALS LIST Hover any tile for its detail RUN ·· FINISH ·· ITEM ·· / 28 SCHEDULE BUILD ",
+      "after": {
+        "visible": true,
+        "text": "DETAIL · A–A NO PART SELECTED MATERIALS LIST Hover any tile for its detail RUN ·· FINISH ·· ITEM ·· / 28 SCHEDULE BUILD SURFACE 06 INTEGRATIONS 07 DATA & MODELS"
+      },
+      "band": {
+        "sectionH": 888,
+        "gridBottomFromTop": 734,
+        "lastContentFromTop": 753,
+        "emptyBelow": 135
+      }
+    },
+    "1440": {
+      "touch": false,
+      "before": "DETAIL · A–A NO PART SELECTED MATERIALS LIST Hover any tile for its detail RUN ·· FINISH ·· ITEM ·· / 28 SCHEDULE BUILD ",
+      "after": {
+        "visible": true,
+        "text": "DETAIL · A–A PYTHON Primary language RUN BUILD SURFACE FINISH #3776AB ITEM 03 / 28 SCHEDULE BUILD SURFACE 06 INTEGRATIONS 07 DATA & MODELS 09 QUALITY & DELIVERY"
+      },
+      "band": {
+        "sectionH": 889,
+        "gridBottomFromTop": 722,
+        "lastContentFromTop": 754,
+        "emptyBelow": 135
+      }
+    }
+  },
+  "bottom": {
+    "375": {
+      "viewportH": 812,
+      "contactContentBottom": 636,
+      "contactBottom": 732,
+      "emptyInContactBelowContent": 96,
+      "footerTop": 732,
+      "footerH": 80,
+      "footerText": "BUILT BY SEARAN KUGANESAN",
+      "footerFont": "10px \"JetBrains Mono\" rgb(139, 148, 163)",
+      "emptyFromContentToPageEnd": 176,
+      "emptyFractionOfLastScreen": 0.22
+    },
+    "768": {
+      "viewportH": 1024,
+      "contactContentBottom": 832,
+      "contactBottom": 944,
+      "emptyInContactBelowContent": 112,
+      "footerTop": 944,
+      "footerH": 80,
+      "footerText": "BUILT BY SEARAN KUGANESAN",
+      "footerFont": "10px \"JetBrains Mono\" rgb(139, 148, 163)",
+      "emptyFromContentToPageEnd": 192,
+      "emptyFractionOfLastScreen": 0.19
+    },
+    "1024": {
+      "viewportH": 768,
+      "contactContentBottom": 560,
+      "contactBottom": 688,
+      "emptyInContactBelowContent": 128,
+      "footerTop": 688,
+      "footerH": 80,
+      "footerText": "BUILT BY SEARAN KUGANESAN",
+      "footerFont": "10px \"JetBrains Mono\" rgb(139, 148, 163)",
+      "emptyFromContentToPageEnd": 208,
+      "emptyFractionOfLastScreen": 0.27
+    },
+    "1280": {
+      "viewportH": 800,
+      "contactContentBottom": 592,
+      "contactBottom": 720,
+      "emptyInContactBelowContent": 128,
+      "footerTop": 720,
+      "footerH": 80,
+      "footerText": "BUILT BY SEARAN KUGANESAN",
+      "footerFont": "10px \"JetBrains Mono\" rgb(139, 148, 163)",
+      "emptyFromContentToPageEnd": 208,
+      "emptyFractionOfLastScreen": 0.26
+    },
+    "1366": {
+      "viewportH": 768,
+      "contactContentBottom": 560,
+      "contactBottom": 688,
+      "emptyInContactBelowContent": 128,
+      "footerTop": 688,
+      "footerH": 80,
+      "footerText": "BUILT BY SEARAN KUGANESAN",
+      "footerFont": "10px \"JetBrains Mono\" rgb(139, 148, 163)",
+      "emptyFromContentToPageEnd": 208,
+      "emptyFractionOfLastScreen": 0.27
+    },
+    "1440": {
+      "viewportH": 900,
+      "contactContentBottom": 692,
+      "contactBottom": 820,
+      "emptyInContactBelowContent": 128,
+      "footerTop": 820,
+      "footerH": 80,
+      "footerText": "BUILT BY SEARAN KUGANESAN",
+      "footerFont": "10px \"JetBrains Mono\" rgb(139, 148, 163)",
+      "emptyFromContentToPageEnd": 208,
+      "emptyFractionOfLastScreen": 0.23
+    },
+    "1920": {
+      "viewportH": 1080,
+      "contactContentBottom": 872,
+      "contactBottom": 1000,
+      "emptyInContactBelowContent": 128,
+      "footerTop": 1000,
+      "footerH": 80,
+      "footerText": "BUILT BY SEARAN KUGANESAN",
+      "footerFont": "10px \"JetBrains Mono\" rgb(139, 148, 163)",
+      "emptyFromContentToPageEnd": 208,
+      "emptyFractionOfLastScreen": 0.19
+    }
+  },
+  "navrail": {
+    "1024": {
+      "hero": {
+        "nav": {
+          "x": 843,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div",
+            "kind": "box",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 45,
+            "oy": 186
+          },
+          {
+            "d": "div \"◆ app.py × – □ × ▤ ⌕ ⑂ ▷ ▧ 1 2 3 4 5 6 7 8 9 10 11\"",
+            "kind": "box",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 31,
+            "oy": 186
+          },
+          {
+            "d": "div \"▪ routes\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 4
+          },
+          {
+            "d": "div \"▪ models\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 14
+          },
+          {
+            "d": "div \"▪ services\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 14
+          },
+          {
+            "d": "div \"▪ utils\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 14
+          },
+          {
+            "d": "div \"▸ tests\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 14
+          },
+          {
+            "d": "div \"▫ .env\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 14
+          },
+          {
+            "d": "div \"▫ requirements.txt\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 14
+          },
+          {
+            "d": "div \"▫ README.md\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 20,
+            "oy": 14
+          }
+        ]
+      },
+      "exp-datum": {
+        "nav": {
+          "x": 843,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"EXPERIENCE\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 0,
+            "oy": 40
+          },
+          {
+            "d": "canvas",
+            "kind": "media",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 157,
+            "oy": 186
+          },
+          {
+            "d": "span \"AFT SECTIONSTA 760+\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 15,
+            "oy": 9
+          },
+          {
+            "d": "span \"STA 760+\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 16,
+            "oy": 12
+          }
+        ]
+      },
+      "projects": {
+        "nav": {
+          "x": 843,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "button \"02 · BUILD Portfolio Risk Dashboard\"",
+            "kind": "control",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 4
+          },
+          {
+            "d": "button \"04 · BUILD Eye Tracking Mouse\"",
+            "kind": "control",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 77
+          },
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 70
+          }
+        ]
+      },
+      "projects-mid": {
+        "nav": {
+          "x": 843,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 186
+          }
+        ]
+      },
+      "skills": {
+        "nav": {
+          "x": 843,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "skills-mid": {
+        "nav": {
+          "x": 843,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "contact": {
+        "nav": {
+          "x": 843,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"CH 01 · PRIMARY searan.kuganesan4@gmail.com SEND E\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 126
+          },
+          {
+            "d": "a \"CH 02 GitHub skugane6\"",
+            "kind": "control",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 44
+          },
+          {
+            "d": "svg",
+            "kind": "media",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 4,
+            "oy": 8
+          }
+        ]
+      }
+    },
+    "1280": {
+      "hero": {
+        "nav": {
+          "x": 1099,
+          "y": 307,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "exp-datum": {
+        "nav": {
+          "x": 1099,
+          "y": 307,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "canvas",
+            "kind": "media",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 157,
+            "oy": 186
+          }
+        ]
+      },
+      "projects": {
+        "nav": {
+          "x": 1099,
+          "y": 307,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 174
+          }
+        ]
+      },
+      "projects-mid": {
+        "nav": {
+          "x": 1099,
+          "y": 307,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 186
+          }
+        ]
+      },
+      "skills": {
+        "nav": {
+          "x": 1099,
+          "y": 307,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "skills-mid": {
+        "nav": {
+          "x": 1099,
+          "y": 307,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "contact": {
+        "nav": {
+          "x": 1099,
+          "y": 307,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"CONTACT\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 21,
+            "oy": 72
+          },
+          {
+            "d": "p \"OPEN CHANNELS · 04 ROUTES\"",
+            "kind": "text",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 17
+          },
+          {
+            "d": "div \"CH 01 · PRIMARY searan.kuganesan4@gmail.com SEND E\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 106
+          }
+        ]
+      }
+    },
+    "1366": {
+      "hero": {
+        "nav": {
+          "x": 1185,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "exp-datum": {
+        "nav": {
+          "x": 1185,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "canvas",
+            "kind": "media",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 157,
+            "oy": 186
+          }
+        ]
+      },
+      "projects": {
+        "nav": {
+          "x": 1185,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "button \"04 · BUILD Eye Tracking Mouse\"",
+            "kind": "control",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 22,
+            "oy": 4
+          },
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 159
+          }
+        ]
+      },
+      "projects-mid": {
+        "nav": {
+          "x": 1185,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 186
+          }
+        ]
+      },
+      "skills": {
+        "nav": {
+          "x": 1185,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "skills-mid": {
+        "nav": {
+          "x": 1185,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "contact": {
+        "nav": {
+          "x": 1185,
+          "y": 291,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"CONTACT\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 21,
+            "oy": 65
+          },
+          {
+            "d": "p \"OPEN CHANNELS · 04 ROUTES\"",
+            "kind": "text",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 15
+          },
+          {
+            "d": "div \"CH 01 · PRIMARY searan.kuganesan4@gmail.com SEND E\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 106
+          },
+          {
+            "d": "a \"CH 04 CraftTraq crafttraq.com\"",
+            "kind": "control",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 5
+          }
+        ]
+      }
+    },
+    "1440": {
+      "hero": {
+        "nav": {
+          "x": 1259,
+          "y": 357,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "exp-datum": {
+        "nav": {
+          "x": 1259,
+          "y": 357,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "canvas",
+            "kind": "media",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 157,
+            "oy": 186
+          }
+        ]
+      },
+      "projects": {
+        "nav": {
+          "x": 1259,
+          "y": 357,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 186
+          }
+        ]
+      },
+      "projects-mid": {
+        "nav": {
+          "x": 1259,
+          "y": 357,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"STA 000 · PRODUCTION FIG. 01 01 · FEATURED LIVE Cr\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 186
+          }
+        ]
+      },
+      "skills": {
+        "nav": {
+          "x": 1259,
+          "y": 357,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "skills-mid": {
+        "nav": {
+          "x": 1259,
+          "y": 357,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "contact": {
+        "nav": {
+          "x": 1259,
+          "y": 357,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "div \"CONTACT\"",
+            "kind": "text",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 21,
+            "oy": 139
+          },
+          {
+            "d": "p \"OPEN CHANNELS · 04 ROUTES\"",
+            "kind": "text",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 17
+          },
+          {
+            "d": "div \"CH 01 · PRIMARY searan.kuganesan4@gmail.com SEND E\"",
+            "kind": "box",
+            "ariaHidden": false,
+            "op": 1,
+            "ox": 21,
+            "oy": 61
+          }
+        ]
+      }
+    },
+    "1920": {
+      "hero": {
+        "nav": {
+          "x": 1739,
+          "y": 447,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "exp-datum": {
+        "nav": {
+          "x": 1739,
+          "y": 447,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": [
+          {
+            "d": "canvas",
+            "kind": "media",
+            "ariaHidden": true,
+            "op": 1,
+            "ox": 157,
+            "oy": 186
+          }
+        ]
+      },
+      "projects": {
+        "nav": {
+          "x": 1739,
+          "y": 447,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "projects-mid": {
+        "nav": {
+          "x": 1739,
+          "y": 447,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "skills": {
+        "nav": {
+          "x": 1739,
+          "y": 447,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "skills-mid": {
+        "nav": {
+          "x": 1739,
+          "y": 447,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      },
+      "contact": {
+        "nav": {
+          "x": 1739,
+          "y": 447,
+          "w": 157,
+          "h": 186
+        },
+        "overlaps": []
+      }
+    }
+  },
+  "fonts": {
+    "375": {
+      "totalTextEls": 183,
+      "byFamily": {
+        "JetBrains Mono": 124,
+        "IBM Plex Sans": 53,
+        "Space Grotesk": 4,
+        "Saira Condensed": 2
+      },
+      "bySize": {
+        "JetBrains Mono 9px": 41,
+        "IBM Plex Sans 11px": 28,
+        "JetBrains Mono 8.5px": 28,
+        "JetBrains Mono 10px": 16,
+        "JetBrains Mono 10.5px": 11,
+        "JetBrains Mono 11px": 7,
+        "JetBrains Mono 9.5px": 6,
+        "IBM Plex Sans 32px": 6,
+        "JetBrains Mono 17px": 4,
+        "IBM Plex Sans 22px": 4,
+        "IBM Plex Sans 13px": 4,
+        "IBM Plex Sans 13.5px": 4,
+        "JetBrains Mono 19px": 3,
+        "Space Grotesk 74px": 3,
+        "JetBrains Mono 15px": 3,
+        "IBM Plex Sans 14px": 3,
+        "JetBrains Mono 14px": 2,
+        "JetBrains Mono 8px": 2,
+        "JetBrains Mono 12px": 1,
+        "IBM Plex Sans 15px": 1,
+        "Space Grotesk 44px": 1,
+        "Saira Condensed 18px": 1,
+        "IBM Plex Sans 12.5px": 1,
+        "IBM Plex Sans 16px": 1,
+        "Saira Condensed 28px": 1,
+        "IBM Plex Sans 14.5px": 1
+      },
+      "distinctSizes": [
+        8,
+        8.5,
+        9,
+        9.5,
+        10,
+        10.5,
+        11,
+        12,
+        12.5,
+        13,
+        13.5,
+        14,
+        14.5,
+        15,
+        16,
+        17,
+        18,
+        19,
+        22,
+        28,
+        32,
+        44,
+        74
+      ],
+      "trackedCount": 48,
+      "trackedShare": 0.26,
+      "smallCount": 104,
+      "smallBySection": {
+        "nav": 10,
+        "hero": 7,
+        "footer": 2,
+        "experience": 26,
+        "projects": 17,
+        "skills": 37,
+        "contact": 5
+      },
+      "smallSamples": [
+        "nav | JetBrains Mono 9px ls0.12 rgb(91, 143, 240) | 01",
+        "nav | JetBrains Mono 9px ls0.12 rgb(91, 143, 240) | HOME",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | 02",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | EXPERIENCE",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | 03",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | PROJECTS",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | 04",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | SKILLS",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | 05",
+        "nav | JetBrains Mono 9px ls0.12 rgb(139, 148, 163) | CONTACT",
+        "hero | JetBrains Mono 9px ls0.28 rgb(91, 134, 204) | SOFTWARE ENGINEER",
+        "hero | JetBrains Mono 9.5px ls0.2 rgb(95, 146, 239) | // FULL-STACK & DATA SYSTEMS",
+        "hero | JetBrains Mono 9px ls0.26 rgb(127, 163, 221) | STA 000 · HOME",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | PROJECTS SHIPPED",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | WESTERN UNIVERSITY",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | B.E.SC SOFTWARE ENG",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | CRAFTTRAQ SAAS",
+        "footer | JetBrains Mono 9.5px ls0.24 rgb(127, 163, 221) | OPEN TO WORK · CANADA",
+        "experience | JetBrains Mono 8px ls0.14 rgba(158, 192, 232, 0.8) | Overall length",
+        "experience | JetBrains Mono 8px ls0.14 rgba(158, 192, 232, 0.64) | 32.5 m (106.6 ft)",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 145 · FWD",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | React",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | Python / Flask",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | 2,000+ aircraft",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Component lifecycle visibility",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 410 · WING BOX",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(240, 160, 42) | 85% faster turnaround",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Data-driven operational efficiency",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 760 · AFT",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | CRJ700 / 900",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | 50+ operators",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Long-term fleet planning",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 940 · EMPENNAGE",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | Oracle",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | Query tuning",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | 2,000+ entities",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Coordinated maintenance workflows",
+        "experience | JetBrains Mono 9px ls0.14 rgb(91, 143, 240) | § 01 · Experience",
+        "experience | JetBrains Mono 9px ls0.14 rgb(139, 148, 163) | Side elevation · sheet 01",
+        "experience | JetBrains Mono 9px ls0.14 rgb(231, 236, 243) | Datum",
+        "experience | JetBrains Mono 9px ls0.14 rgb(139, 148, 163) | 00%",
+        "experience | JetBrains Mono 10px ls0.2 rgb(139, 148, 163) | 05/2024 – 08/2025 · Mississauga, Canada",
+        "experience | JetBrains Mono 9px ls0.2 rgb(240, 160, 42) | ↓ scroll to survey",
+        "experience | JetBrains Mono 9px ls0.2 rgb(139, 148, 163) | B.E.Sc. Software Engineering, Western Un",
+        "projects | JetBrains Mono 9.5px ls0.18 rgb(91, 143, 240) | 01 · LIVE",
+        "projects | JetBrains Mono 9.5px ls0.18 rgb(100, 127, 168) | 02 · BUILD",
+        "projects | JetBrains Mono 9.5px ls0.18 rgb(100, 127, 168) | 03 · BUILD",
+        "projects | JetBrains Mono 9.5px ls0.18 rgb(100, 127, 168) | 04 · BUILD",
+        "projects | JetBrains Mono 9px ls0.2 rgb(110, 138, 180) | STA 000 · PRODUCTION",
+        "projects | JetBrains Mono 9px ls0.2 rgb(100, 127, 168) | FIG. 01",
+        "projects | JetBrains Mono 10px ls0.2 rgb(91, 143, 240) | 01 · FEATURED",
+        "projects | JetBrains Mono 9px ls0.2 rgb(167, 232, 191) | LIVE",
+        "projects | JetBrains Mono 9px ls0.22 rgb(100, 127, 168) | STACK",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | React 19",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | TypeScript",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | FastAPI",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | PostgreSQL",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | Stripe",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | Supabase",
+        "projects | JetBrains Mono 10.5px ls0.18 rgb(231, 236, 243) | VISIT LIVE SITE",
+        "projects | JetBrains Mono 10.5px ls0.18 rgb(231, 236, 243) | ↗",
+        "skills | JetBrains Mono 10px ls0.22 rgb(110, 138, 180) | MATERIALS LIST · 28 ITEMS",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Hooks · SPA",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Strict mode",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Primary language",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Async REST",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Services",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Design tokens",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Billing · webhooks",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | SMS · voice",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | OAuth2",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Realtime · auth",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | S3 · Lambda · Transcribe",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Run · storage",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | DNS · Workers",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Wrangling",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Vectorised math",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Stats · optimise",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Ensembles",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | BERT fine-tuning",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Schema · RLS",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | T-SQL · SSMS",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | PL/SQL",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Documents",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Fixtures",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Component tests",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Gated deploys",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Pipelines · boards",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Parity",
+        "skills | JetBrains Mono 8.5px ls0.025 rgb(139, 148, 163) | Trunk · review",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | BUILD SURFACE",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 06",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | INTEGRATIONS",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 07",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | DATA & MODELS",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 09",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | QUALITY & DELIVERY",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 06",
+        "contact | JetBrains Mono 10px ls0.22 rgb(110, 138, 180) | OPEN CHANNELS · 04 ROUTES",
+        "contact | JetBrains Mono 10px ls0.22 rgb(91, 143, 240) | CH 01 · PRIMARY",
+        "contact | JetBrains Mono 9px ls0.22 rgb(231, 236, 243) | CH 02",
+        "contact | JetBrains Mono 9px ls0.22 rgb(231, 236, 243) | CH 03",
+        "contact | JetBrains Mono 9px ls0.22 rgb(231, 236, 243) | CH 04",
+        "footer | JetBrains Mono 10px ls0.1 rgb(139, 148, 163) | BUILT BY SEARAN KUGANESAN"
+      ],
+      "samplesLarge": [
+        "hero | IBM Plex Sans 500 32px ls-0.028 | I build",
+        "hero | IBM Plex Sans 500 32px ls-0.028 | scalable",
+        "hero | IBM Plex Sans 500 32px ls-0.028 | that",
+        "hero | IBM Plex Sans 500 32px ls-0.028 | systems",
+        "hero | IBM Plex Sans 500 32px ls-0.028 | create real",
+        "hero | IBM Plex Sans 500 32px ls-0.028 | impact.",
+        "hero | JetBrains Mono 400 19px ls-0.01 | 10",
+        "hero | JetBrains Mono 400 19px ls-0.01 | 2026",
+        "hero | JetBrains Mono 400 19px ls-0.01 | LIVE",
+        "experience | Space Grotesk 700 44px ls0.02 | EXPERIENCE",
+        "experience | JetBrains Mono 700 17px ls0 | 01",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | Component Tracker",
+        "experience | JetBrains Mono 700 17px ls0 | 02",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | Aircraft Utilization Forecasting",
+        "experience | JetBrains Mono 700 17px ls0 | 03",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | 10-Year Fleet Prediction Model",
+        "experience | JetBrains Mono 700 17px ls0 | 04",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | Maintenance Scheduling Engine",
+        "experience | Saira Condensed 600 18px ls0 | Mitsubishi Heavy Industries",
+        "projects | Space Grotesk 700 74px ls0.02 | PROJECTS",
+        "projects | Saira Condensed 600 28px ls-0.025 | CraftTraq",
+        "skills | Space Grotesk 700 74px ls0.02 | SKILLS",
+        "contact | Space Grotesk 700 74px ls0.02 | CONTACT"
+      ],
+      "paras": [
+        {
+          "sec": "hero",
+          "text": "I design and develop web applications, s",
+          "size": "15px",
+          "lineHeight": "24.75px",
+          "width": 305,
+          "lines": 3,
+          "cpl": 40,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Led cross-functional requirements gather",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 268,
+          "lines": 5,
+          "cpl": 42,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Managed the end-to-end monthly Aircraft ",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 268,
+          "lines": 7,
+          "cpl": 40,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Drove requirements definition and stakeh",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 268,
+          "lines": 7,
+          "cpl": 35,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Designed the Oracle database architectur",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 268,
+          "lines": 6,
+          "cpl": 35,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "projects",
+          "text": "Multi-tenant SaaS platform for trade con",
+          "size": "14.5px",
+          "lineHeight": "23.49px",
+          "width": 293,
+          "lines": 5,
+          "cpl": 39,
+          "fam": "\"IBM Plex Sans\""
+        }
+      ]
+    },
+    "1440": {
+      "totalTextEls": 318,
+      "byFamily": {
+        "JetBrains Mono": 239,
+        "IBM Plex Sans": 72,
+        "Space Grotesk": 4,
+        "Saira Condensed": 3
+      },
+      "bySize": {
+        "JetBrains Mono 9px": 89,
+        "JetBrains Mono 10px": 65,
+        "IBM Plex Sans 12px": 36,
+        "JetBrains Mono 9.5px": 26,
+        "JetBrains Mono 11px": 13,
+        "JetBrains Mono 12px": 11,
+        "JetBrains Mono 10.5px": 11,
+        "IBM Plex Sans 13px": 7,
+        "IBM Plex Sans 66.24px": 6,
+        "JetBrains Mono 7px": 6,
+        "JetBrains Mono 8px": 5,
+        "IBM Plex Sans 15px": 5,
+        "IBM Plex Sans 9px": 4,
+        "JetBrains Mono 17px": 4,
+        "IBM Plex Sans 22px": 4,
+        "IBM Plex Sans 12.5px": 3,
+        "JetBrains Mono 26px": 3,
+        "Space Grotesk 187.2px": 3,
+        "JetBrains Mono 18px": 3,
+        "IBM Plex Sans 14px": 3,
+        "JetBrains Mono 14px": 1,
+        "IBM Plex Sans 15.5px": 1,
+        "IBM Plex Sans 8px": 1,
+        "IBM Plex Sans 10px": 1,
+        "Space Grotesk 158.4px": 1,
+        "Saira Condensed 26px": 1,
+        "IBM Plex Sans 16px": 1,
+        "Saira Condensed 40px": 1,
+        "JetBrains Mono 8.5px": 1,
+        "Saira Condensed 19px": 1,
+        "JetBrains Mono 16px": 1
+      },
+      "distinctSizes": [
+        7,
+        8,
+        8.5,
+        9,
+        9.5,
+        10,
+        10.5,
+        11,
+        12,
+        12.5,
+        13,
+        14,
+        15,
+        15.5,
+        16,
+        17,
+        18,
+        19,
+        22,
+        26,
+        40,
+        66.24,
+        158.4,
+        187.2
+      ],
+      "trackedCount": 104,
+      "trackedShare": 0.33,
+      "smallCount": 209,
+      "smallBySection": {
+        "hero": 89,
+        "footer": 6,
+        "experience": 47,
+        "projects": 17,
+        "skills": 46,
+        "contact": 4
+      },
+      "smallSamples": [
+        "hero | JetBrains Mono 9px ls0.28 rgb(91, 134, 204) | SOFTWARE ENGINEER",
+        "hero | JetBrains Mono 9px ls0.24 rgb(127, 163, 221) | OPEN TO OPPORTUNITIES",
+        "hero | JetBrains Mono 9px ls0.26 rgb(157, 192, 242) | DEPLOY",
+        "hero | JetBrains Mono 9px ls0.26 rgb(91, 134, 204) | ··",
+        "hero | IBM Plex Sans 9px ls0 rgb(127, 176, 255) | ✓",
+        "hero | IBM Plex Sans 9px ls0 rgb(127, 176, 255) | ✓",
+        "hero | IBM Plex Sans 9px ls0 rgb(127, 176, 255) | ✓",
+        "hero | IBM Plex Sans 8px ls0 rgb(127, 176, 255) | ▥",
+        "hero | JetBrains Mono 9px ls0.2 rgb(157, 192, 242) | REAL-WORLD IMPACT",
+        "hero | IBM Plex Sans 10px ls0 rgb(91, 134, 204) | ··",
+        "hero | JetBrains Mono 7px ls0.22 rgb(100, 127, 168) | USERS · SYSTEMS · UPTIME · SPEED",
+        "hero | JetBrains Mono 7px ls0.18 rgb(100, 127, 168) | Q1",
+        "hero | JetBrains Mono 7px ls0.18 rgb(100, 127, 168) | Q2",
+        "hero | JetBrains Mono 7px ls0.18 rgb(100, 127, 168) | Q3",
+        "hero | JetBrains Mono 7px ls0.18 rgb(100, 127, 168) | Q4",
+        "hero | JetBrains Mono 7px ls0.18 rgb(100, 127, 168) | NOW",
+        "hero | IBM Plex Sans 9px ls0 rgb(127, 176, 255) | ▦",
+        "hero | JetBrains Mono 8px ls0.22 rgb(100, 127, 168) | //// BUILT TO SCALE",
+        "hero | JetBrains Mono 8px ls0.22 rgb(111, 157, 238) | +",
+        "hero | JetBrains Mono 10px ls0.1 rgb(207, 223, 247) | app.py",
+        "hero | JetBrains Mono 10px ls0.1 rgb(127, 176, 255) | ◆",
+        "hero | JetBrains Mono 10px ls0.1 rgb(91, 134, 204) | ×",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 1",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 2",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 3",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 4",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 5",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 6",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 7",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 8",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 9",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 10",
+        "hero | JetBrains Mono 10px ls0 rgb(100, 127, 168) | 11",
+        "hero | JetBrains Mono 10px ls0 rgb(201, 138, 214) | from",
+        "hero | JetBrains Mono 10px ls0 rgb(157, 192, 242) | fastapi",
+        "hero | JetBrains Mono 10px ls0 rgb(201, 138, 214) | import",
+        "hero | JetBrains Mono 10px ls0 rgb(111, 214, 192) | FastAPI",
+        "hero | JetBrains Mono 10px ls0 rgb(201, 138, 214) | from",
+        "hero | JetBrains Mono 10px ls0 rgb(157, 192, 242) | models",
+        "hero | JetBrains Mono 10px ls0 rgb(201, 138, 214) | import",
+        "hero | JetBrains Mono 10px ls0 rgb(157, 192, 242) | router",
+        "hero | JetBrains Mono 10px ls0 rgb(157, 192, 242) | app =",
+        "hero | JetBrains Mono 10px ls0 rgb(111, 214, 192) | FastAPI",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | ()",
+        "hero | JetBrains Mono 10px ls0 rgb(220, 201, 138) | @app.get",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | (",
+        "hero | JetBrains Mono 10px ls0 rgb(214, 154, 114) | \"/\"",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | )",
+        "hero | JetBrains Mono 10px ls0 rgb(201, 138, 214) | def",
+        "hero | JetBrains Mono 10px ls0 rgb(220, 201, 138) | read_root",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | ():",
+        "hero | JetBrains Mono 10px ls0 rgb(201, 138, 214) | return",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | {",
+        "hero | JetBrains Mono 10px ls0 rgb(157, 192, 242) | \"message\"",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | :",
+        "hero | JetBrains Mono 10px ls0 rgb(214, 154, 114) | \"Build. Solve. Improve.\"",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | }",
+        "hero | JetBrains Mono 10px ls0 rgb(207, 223, 247) | )",
+        "hero | JetBrains Mono 9.5px ls0.2 rgb(91, 134, 204) | PROJECT",
+        "hero | JetBrains Mono 9.5px ls0 rgb(207, 223, 247) | app",
+        "hero | JetBrains Mono 9.5px ls0 rgb(111, 157, 238) | ▾",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | routes",
+        "hero | JetBrains Mono 9.5px ls0 rgb(111, 157, 238) | ▪",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | models",
+        "hero | JetBrains Mono 9.5px ls0 rgb(111, 157, 238) | ▪",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | services",
+        "hero | JetBrains Mono 9.5px ls0 rgb(111, 157, 238) | ▪",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | utils",
+        "hero | JetBrains Mono 9.5px ls0 rgb(111, 157, 238) | ▪",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | tests",
+        "hero | JetBrains Mono 9.5px ls0 rgb(111, 157, 238) | ▸",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | .env",
+        "hero | JetBrains Mono 9.5px ls0 rgb(79, 139, 240) | ▫",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | requirements.txt",
+        "hero | JetBrains Mono 9.5px ls0 rgb(79, 139, 240) | ▫",
+        "hero | JetBrains Mono 9.5px ls0 rgb(157, 192, 242) | README.md",
+        "hero | JetBrains Mono 9.5px ls0 rgb(79, 139, 240) | ▫",
+        "hero | JetBrains Mono 8px ls0.2 rgb(127, 176, 255) | ● UVICORN 127.0.0.1:8000",
+        "hero | JetBrains Mono 8px ls0.2 rgb(91, 134, 204) | PY 3.12",
+        "hero | JetBrains Mono 8px ls0.2 rgb(91, 134, 204) | LN 11 · COL 2",
+        "hero | JetBrains Mono 9px ls0.26 rgb(127, 163, 221) | STA 000 · HOME",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | PROJECTS SHIPPED",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | WESTERN UNIVERSITY",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | B.E.SC SOFTWARE ENG",
+        "hero | JetBrains Mono 9px ls0.2 rgb(127, 163, 221) | CRAFTTRAQ SAAS",
+        "hero | JetBrains Mono 9px ls0.3 rgb(100, 127, 168) | BUILD",
+        "hero | JetBrains Mono 9px ls0.3 rgb(100, 127, 168) | SOLVE",
+        "hero | JetBrains Mono 9px ls0.3 rgb(100, 127, 168) | IMPROVE",
+        "hero | JetBrains Mono 9px ls0.3 rgb(100, 127, 168) | REPEAT",
+        "footer | JetBrains Mono 9.5px ls0.24 rgb(127, 163, 221) | BASED IN CANADA",
+        "footer | JetBrains Mono 9.5px ls0.24 rgb(100, 127, 168) | ·",
+        "footer | JetBrains Mono 9.5px ls0.24 rgb(91, 134, 204) | CYYZ N 43.6777° W 79.6248°",
+        "footer | JetBrains Mono 9.5px ls0.24 rgb(100, 127, 168) | SCROLL",
+        "footer | JetBrains Mono 9.5px ls0.24 rgb(91, 134, 204) | TURNING COMPLEXITY INTO SIMPLE SOLUTIONS",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | Overall length",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | 32.5 m (106.6 ft)",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | CYYZ  N 43.6777°  W 79.6248°",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | Nose section",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | STA 0 – 145",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | Main wing",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | STA 410",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | Aft section",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | STA 760+",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 145 · FWD",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | React",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | Python / Flask",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | 2,000+ aircraft",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Component lifecycle visibility",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 410 · WING BOX",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(240, 160, 42) | 85% faster turnaround",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Data-driven operational efficiency",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 760 · AFT",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | CRJ700 / 900",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | 50+ operators",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Long-term fleet planning",
+        "experience | JetBrains Mono 10px ls0.22 rgb(147, 170, 200) | STA 940 · EMPENNAGE",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | Oracle",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | Query tuning",
+        "experience | JetBrains Mono 10.5px ls0.12 rgb(124, 192, 255) | 2,000+ entities",
+        "experience | JetBrains Mono 9px ls0.1 rgb(127, 151, 184) | Coordinated maintenance workflows",
+        "experience | JetBrains Mono 10px ls0.2 rgb(91, 143, 240) | § 01 · Experience",
+        "experience | JetBrains Mono 10px ls0.2 rgb(139, 148, 163) | Side elevation · sheet 01",
+        "experience | JetBrains Mono 10px ls0.2 rgb(231, 236, 243) | Datum",
+        "experience | JetBrains Mono 10px ls0.2 rgb(139, 148, 163) | 00%",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | CRJ700 / 900",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Regional jet",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Length",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | 32.5 m",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Wingspan",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | 24.9 m",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Height",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | 7.5 m",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | Flight",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.8) | Direction",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Aviation",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Data",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Builds",
+        "experience | JetBrains Mono 9px ls0.14 rgba(158, 192, 232, 0.64) | Tomorrow",
+        "experience | JetBrains Mono 10px ls0.2 rgb(139, 148, 163) | 05/2024 – 08/2025 · Mississauga, Canada",
+        "experience | JetBrains Mono 9px ls0.2 rgb(240, 160, 42) | ↓ scroll to survey",
+        "experience | JetBrains Mono 9px ls0.2 rgb(139, 148, 163) | B.E.Sc. Software Engineering, Western Un",
+        "projects | JetBrains Mono 10px ls0.2 rgb(91, 143, 240) | 01 · LIVE",
+        "projects | JetBrains Mono 10px ls0.2 rgb(100, 127, 168) | 02 · BUILD",
+        "projects | JetBrains Mono 10px ls0.2 rgb(100, 127, 168) | 03 · BUILD",
+        "projects | JetBrains Mono 10px ls0.2 rgb(100, 127, 168) | 04 · BUILD",
+        "projects | JetBrains Mono 9.5px ls0.2 rgb(110, 138, 180) | STA 000 · PRODUCTION",
+        "projects | JetBrains Mono 9.5px ls0.2 rgb(100, 127, 168) | FIG. 01",
+        "projects | JetBrains Mono 10px ls0.2 rgb(91, 143, 240) | 01 · FEATURED",
+        "projects | JetBrains Mono 9px ls0.2 rgb(167, 232, 191) | LIVE",
+        "projects | JetBrains Mono 9px ls0.22 rgb(100, 127, 168) | STACK",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | React 19",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | TypeScript",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | FastAPI",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | PostgreSQL",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | Stripe",
+        "projects | JetBrains Mono 10px ls0.08 rgb(157, 184, 222) | Supabase",
+        "projects | JetBrains Mono 10.5px ls0.18 rgb(231, 236, 243) | VISIT LIVE SITE",
+        "projects | JetBrains Mono 10.5px ls0.18 rgb(231, 236, 243) | ↗",
+        "skills | JetBrains Mono 9px ls0.24 rgb(110, 138, 180) | DETAIL · A–A",
+        "skills | JetBrains Mono 8.5px ls0.18 rgb(100, 127, 168) | NO PART SELECTED",
+        "skills | JetBrains Mono 10px ls0 rgb(139, 148, 163) | Hover any tile for its detail",
+        "skills | JetBrains Mono 9px ls0.18 rgb(100, 127, 168) | RUN",
+        "skills | JetBrains Mono 10px ls0.025 rgb(231, 236, 243) | ··",
+        "skills | JetBrains Mono 9px ls0.18 rgb(100, 127, 168) | FINISH",
+        "skills | JetBrains Mono 10px ls0.025 rgb(231, 236, 243) | ··",
+        "skills | JetBrains Mono 9px ls0.18 rgb(100, 127, 168) | ITEM",
+        "skills | JetBrains Mono 10px ls0.025 rgb(231, 236, 243) | ·· / 28",
+        "skills | JetBrains Mono 9px ls0.24 rgb(110, 138, 180) | SCHEDULE",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | BUILD SURFACE",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 06",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | INTEGRATIONS",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 07",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | DATA & MODELS",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 09",
+        "skills | JetBrains Mono 9px ls0.16 rgb(110, 138, 180) | QUALITY & DELIVERY",
+        "skills | JetBrains Mono 9px ls0.025 rgb(100, 127, 168) | 06",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Hooks · SPA",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Strict mode",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Primary language",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Async REST",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Services",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Design tokens",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Billing · webhooks",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | SMS · voice",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | OAuth2",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Realtime · auth",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | S3 · Lambda · Transcribe",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Run · storage",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | DNS · Workers",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Wrangling",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Vectorised math",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Stats · optimise",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Ensembles",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | BERT fine-tuning",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Schema · RLS",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | T-SQL · SSMS",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | PL/SQL",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Documents",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Fixtures",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Component tests",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Gated deploys",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Pipelines · boards",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Parity",
+        "skills | JetBrains Mono 9px ls0.025 rgb(139, 148, 163) | Trunk · review",
+        "contact | JetBrains Mono 10px ls0.22 rgb(91, 143, 240) | CH 01 · PRIMARY",
+        "contact | JetBrains Mono 9px ls0.22 rgb(231, 236, 243) | CH 02",
+        "contact | JetBrains Mono 9px ls0.22 rgb(231, 236, 243) | CH 03",
+        "contact | JetBrains Mono 9px ls0.22 rgb(231, 236, 243) | CH 04",
+        "footer | JetBrains Mono 10px ls0.1 rgb(139, 148, 163) | BUILT BY SEARAN KUGANESAN"
+      ],
+      "samplesLarge": [
+        "hero | IBM Plex Sans 500 66.24px ls-0.028 | I build",
+        "hero | IBM Plex Sans 500 66.24px ls-0.028 | scalable",
+        "hero | IBM Plex Sans 500 66.24px ls-0.028 | that",
+        "hero | IBM Plex Sans 500 66.24px ls-0.028 | systems",
+        "hero | IBM Plex Sans 500 66.24px ls-0.028 | create real",
+        "hero | IBM Plex Sans 500 66.24px ls-0.028 | impact.",
+        "hero | JetBrains Mono 400 26px ls-0.01 | 10",
+        "hero | JetBrains Mono 400 26px ls-0.01 | 2026",
+        "hero | JetBrains Mono 400 26px ls-0.01 | LIVE",
+        "experience | Space Grotesk 700 158.4px ls0.02 | EXPERIENCE",
+        "experience | JetBrains Mono 700 17px ls0 | 01",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | Component Tracker",
+        "experience | JetBrains Mono 700 17px ls0 | 02",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | Aircraft Utilization Forecasting",
+        "experience | JetBrains Mono 700 17px ls0 | 03",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | 10-Year Fleet Prediction Model",
+        "experience | JetBrains Mono 700 17px ls0 | 04",
+        "experience | IBM Plex Sans 600 22px ls-0.012 | Maintenance Scheduling Engine",
+        "experience | Saira Condensed 600 26px ls0 | Mitsubishi Heavy Industries",
+        "projects | Space Grotesk 700 187.2px ls0.02 | PROJECTS",
+        "projects | JetBrains Mono 400 18px ls0.3 | § 02 · PROJECTS",
+        "projects | Saira Condensed 600 40px ls-0.025 | CraftTraq",
+        "skills | Space Grotesk 700 187.2px ls0.02 | SKILLS",
+        "skills | JetBrains Mono 400 18px ls0.3 | § 03 · SKILLS",
+        "skills | Saira Condensed 400 19px ls0.025 | Materials list",
+        "contact | Space Grotesk 700 187.2px ls0.02 | CONTACT",
+        "contact | JetBrains Mono 400 18px ls0.3 | § 04 · CONTACT"
+      ],
+      "paras": [
+        {
+          "sec": "hero",
+          "text": "I design and develop web applications, s",
+          "size": "15.5px",
+          "lineHeight": "26.35px",
+          "width": 500,
+          "lines": 2,
+          "cpl": 61,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Led cross-functional requirements gather",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 348,
+          "lines": 3,
+          "cpl": 70,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Managed the end-to-end monthly Aircraft ",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 317,
+          "lines": 4,
+          "cpl": 70,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Drove requirements definition and stakeh",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 317,
+          "lines": 4,
+          "cpl": 61,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "experience",
+          "text": "Designed the Oracle database architectur",
+          "size": "13px",
+          "lineHeight": "19.5px",
+          "width": 317,
+          "lines": 3,
+          "cpl": 69,
+          "fam": "\"IBM Plex Sans\""
+        },
+        {
+          "sec": "projects",
+          "text": "Multi-tenant SaaS platform for trade con",
+          "size": "15px",
+          "lineHeight": "24.3px",
+          "width": 409,
+          "lines": 4,
+          "cpl": 49,
+          "fam": "\"IBM Plex Sans\""
+        }
+      ]
+    }
+  },
+  "bands": {
+    "375": {
+      "hero": {
+        "sectionH": 840,
+        "gaps": [
+          {
+            "from": 743,
+            "to": 840,
+            "px": 97
+          }
+        ],
+        "emptyTotal": 97
+      },
+      "experience": {
+        "sectionH": 812,
+        "gaps": [
+          {
+            "from": 188,
+            "to": 623,
+            "px": 435
+          }
+        ],
+        "emptyTotal": 435
+      },
+      "projects": {
+        "sectionH": 1190,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 95,
+            "px": 95
+          },
+          {
+            "from": 395,
+            "to": 466,
+            "px": 71
+          },
+          {
+            "from": 583,
+            "to": 668,
+            "px": 85
+          },
+          {
+            "from": 1065,
+            "to": 1191,
+            "px": 126
+          }
+        ],
+        "emptyTotal": 377
+      },
+      "skills": {
+        "sectionH": 1385,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 95,
+            "px": 95
+          },
+          {
+            "from": 162,
+            "to": 248,
+            "px": 86
+          },
+          {
+            "from": 278,
+            "to": 346,
+            "px": 68
+          },
+          {
+            "from": 376,
+            "to": 445,
+            "px": 69
+          },
+          {
+            "from": 484,
+            "to": 554,
+            "px": 70
+          },
+          {
+            "from": 593,
+            "to": 663,
+            "px": 70
+          },
+          {
+            "from": 692,
+            "to": 761,
+            "px": 69
+          },
+          {
+            "from": 791,
+            "to": 859,
+            "px": 68
+          },
+          {
+            "from": 889,
+            "to": 958,
+            "px": 69
+          },
+          {
+            "from": 988,
+            "to": 1056,
+            "px": 68
+          },
+          {
+            "from": 1096,
+            "to": 1165,
+            "px": 69
+          },
+          {
+            "from": 1290,
+            "to": 1386,
+            "px": 96
+          }
+        ],
+        "emptyTotal": 897
+      },
+      "contact": {
+        "sectionH": 815,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 96,
+            "px": 96
+          },
+          {
+            "from": 719,
+            "to": 815,
+            "px": 96
+          }
+        ],
+        "emptyTotal": 192
+      }
+    },
+    "768": {
+      "hero": {
+        "sectionH": 1033,
+        "gaps": [
+          {
+            "from": 497,
+            "to": 793,
+            "px": 296
+          },
+          {
+            "from": 916,
+            "to": 1034,
+            "px": 118
+          }
+        ],
+        "emptyTotal": 414
+      },
+      "experience": {
+        "sectionH": 1024,
+        "gaps": [
+          {
+            "from": 68,
+            "to": 235,
+            "px": 167
+          },
+          {
+            "from": 373,
+            "to": 879,
+            "px": 506
+          }
+        ],
+        "emptyTotal": 673
+      },
+      "projects": {
+        "sectionH": 1344,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 111,
+            "px": 111
+          },
+          {
+            "from": 420,
+            "to": 497,
+            "px": 77
+          },
+          {
+            "from": 769,
+            "to": 870,
+            "px": 101
+          },
+          {
+            "from": 1195,
+            "to": 1344,
+            "px": 149
+          }
+        ],
+        "emptyTotal": 438
+      },
+      "skills": {
+        "sectionH": 886,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 111,
+            "px": 111
+          },
+          {
+            "from": 188,
+            "to": 290,
+            "px": 102
+          },
+          {
+            "from": 334,
+            "to": 412,
+            "px": 78
+          },
+          {
+            "from": 456,
+            "to": 535,
+            "px": 79
+          },
+          {
+            "from": 579,
+            "to": 657,
+            "px": 78
+          },
+          {
+            "from": 775,
+            "to": 886,
+            "px": 111
+          }
+        ],
+        "emptyTotal": 559
+      },
+      "contact": {
+        "sectionH": 826,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 111,
+            "px": 111
+          },
+          {
+            "from": 188,
+            "to": 261,
+            "px": 73
+          },
+          {
+            "from": 714,
+            "to": 826,
+            "px": 112
+          }
+        ],
+        "emptyTotal": 296
+      }
+    },
+    "1024": {
+      "hero": {
+        "sectionH": 822,
+        "gaps": [],
+        "emptyTotal": 0
+      },
+      "experience": {
+        "sectionH": 768,
+        "gaps": [
+          {
+            "from": 69,
+            "to": 136,
+            "px": 67
+          },
+          {
+            "from": 291,
+            "to": 670,
+            "px": 379
+          }
+        ],
+        "emptyTotal": 446
+      },
+      "projects": {
+        "sectionH": 1374,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 127,
+            "px": 127
+          },
+          {
+            "from": 436,
+            "to": 513,
+            "px": 77
+          },
+          {
+            "from": 778,
+            "to": 879,
+            "px": 101
+          },
+          {
+            "from": 1209,
+            "to": 1375,
+            "px": 166
+          }
+        ],
+        "emptyTotal": 471
+      },
+      "skills": {
+        "sectionH": 918,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 127,
+            "px": 127
+          },
+          {
+            "from": 204,
+            "to": 306,
+            "px": 102
+          },
+          {
+            "from": 350,
+            "to": 428,
+            "px": 78
+          },
+          {
+            "from": 472,
+            "to": 551,
+            "px": 79
+          },
+          {
+            "from": 595,
+            "to": 673,
+            "px": 78
+          },
+          {
+            "from": 791,
+            "to": 918,
+            "px": 127
+          }
+        ],
+        "emptyTotal": 591
+      },
+      "contact": {
+        "sectionH": 858,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 127,
+            "px": 127
+          },
+          {
+            "from": 204,
+            "to": 277,
+            "px": 73
+          },
+          {
+            "from": 730,
+            "to": 858,
+            "px": 128
+          }
+        ],
+        "emptyTotal": 328
+      }
+    },
+    "1440": {
+      "hero": {
+        "sectionH": 900,
+        "gaps": [],
+        "emptyTotal": 0
+      },
+      "experience": {
+        "sectionH": 900,
+        "gaps": [
+          {
+            "from": 68,
+            "to": 325,
+            "px": 257
+          },
+          {
+            "from": 521,
+            "to": 802,
+            "px": 281
+          }
+        ],
+        "emptyTotal": 538
+      },
+      "projects": {
+        "sectionH": 929,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 128,
+            "px": 128
+          },
+          {
+            "from": 756,
+            "to": 930,
+            "px": 174
+          }
+        ],
+        "emptyTotal": 302
+      },
+      "skills": {
+        "sectionH": 888,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 127,
+            "px": 127
+          },
+          {
+            "from": 350,
+            "to": 430,
+            "px": 80
+          },
+          {
+            "from": 474,
+            "to": 555,
+            "px": 81
+          },
+          {
+            "from": 754,
+            "to": 888,
+            "px": 134
+          }
+        ],
+        "emptyTotal": 422
+      },
+      "contact": {
+        "sectionH": 586,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 127,
+            "px": 127
+          },
+          {
+            "from": 204,
+            "to": 277,
+            "px": 73
+          },
+          {
+            "from": 458,
+            "to": 586,
+            "px": 128
+          }
+        ],
+        "emptyTotal": 328
+      }
+    },
+    "1920": {
+      "hero": {
+        "sectionH": 1080,
+        "gaps": [
+          {
+            "from": 68,
+            "to": 179,
+            "px": 111
+          },
+          {
+            "from": 780,
+            "to": 891,
+            "px": 111
+          }
+        ],
+        "emptyTotal": 222
+      },
+      "experience": {
+        "sectionH": 1080,
+        "gaps": [
+          {
+            "from": 68,
+            "to": 393,
+            "px": 325
+          },
+          {
+            "from": 632,
+            "to": 982,
+            "px": 350
+          }
+        ],
+        "emptyTotal": 675
+      },
+      "projects": {
+        "sectionH": 909,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 128,
+            "px": 128
+          },
+          {
+            "from": 734,
+            "to": 909,
+            "px": 175
+          }
+        ],
+        "emptyTotal": 303
+      },
+      "skills": {
+        "sectionH": 888,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 128,
+            "px": 128
+          },
+          {
+            "from": 350,
+            "to": 431,
+            "px": 81
+          },
+          {
+            "from": 475,
+            "to": 555,
+            "px": 80
+          },
+          {
+            "from": 754,
+            "to": 888,
+            "px": 134
+          }
+        ],
+        "emptyTotal": 423
+      },
+      "contact": {
+        "sectionH": 586,
+        "gaps": [
+          {
+            "from": 0,
+            "to": 128,
+            "px": 128
+          },
+          {
+            "from": 205,
+            "to": 278,
+            "px": 73
+          },
+          {
+            "from": 458,
+            "to": 586,
+            "px": 128
+          }
+        ],
+        "emptyTotal": 329
+      }
+    }
+  },
+  "cat": {
+    "375": [
+      {
+        "x": 162,
+        "y": 380,
+        "w": 51,
+        "visible": true,
+        "hits": [
+          {
+            "d": "p \"I design and develop web applications, streamline \"",
+            "ox": 51,
+            "oy": 8
+          },
+          {
+            "d": "a \"SEE MY WORK\"",
+            "ox": 51,
+            "oy": 24
+          }
+        ],
+        "hopsAfterClicks": [
+          {
+            "x": 162,
+            "y": 380,
+            "hits": [
+              "p \"I design and develop web applications, streamline \"",
+              "a \"SEE MY WORK\""
+            ]
+          },
+          {
+            "x": 162,
+            "y": 380,
+            "hits": [
+              "p \"I design and develop web applications, streamline \"",
+              "a \"SEE MY WORK\""
+            ]
+          },
+          {
+            "x": 162,
+            "y": 380,
+            "hits": [
+              "p \"I design and develop web applications, streamline \"",
+              "a \"SEE MY WORK\""
+            ]
+          }
+        ],
+        "afterScroll60": {
+          "display": "block",
+          "opacity": "1",
+          "y": 282
+        }
+      },
+      {
+        "x": 162,
+        "y": 380,
+        "w": 51,
+        "visible": true,
+        "hits": [
+          {
+            "d": "p \"I design and develop web applications, streamline \"",
+            "ox": 51,
+            "oy": 8
+          },
+          {
+            "d": "a \"SEE MY WORK\"",
+            "ox": 51,
+            "oy": 24
+          }
+        ]
+      },
+      {
+        "x": 162,
+        "y": 380,
+        "w": 51,
+        "visible": true,
+        "hits": [
+          {
+            "d": "p \"I design and develop web applications, streamline \"",
+            "ox": 51,
+            "oy": 8
+          },
+          {
+            "d": "a \"SEE MY WORK\"",
+            "ox": 51,
+            "oy": 24
+          }
+        ]
+      },
+      {
+        "x": 162,
+        "y": 380,
+        "w": 51,
+        "visible": true,
+        "hits": [
+          {
+            "d": "p \"I design and develop web applications, streamline \"",
+            "ox": 51,
+            "oy": 8
+          },
+          {
+            "d": "a \"SEE MY WORK\"",
+            "ox": 51,
+            "oy": 24
+          }
+        ]
+      },
+      {
+        "x": 162,
+        "y": 380,
+        "w": 51,
+        "visible": true,
+        "hits": [
+          {
+            "d": "p \"I design and develop web applications, streamline \"",
+            "ox": 51,
+            "oy": 8
+          },
+          {
+            "d": "a \"SEE MY WORK\"",
+            "ox": 51,
+            "oy": 24
+          }
+        ]
+      },
+      {
+        "x": 162,
+        "y": 380,
+        "w": 51,
+        "visible": true,
+        "hits": [
+          {
+            "d": "p \"I design and develop web applications, streamline \"",
+            "ox": 51,
+            "oy": 8
+          },
+          {
+            "d": "a \"SEE MY WORK\"",
+            "ox": 51,
+            "oy": 24
+          }
+        ]
+      }
+    ],
+    "768": [
+      {
+        "x": 358,
+        "y": 486,
+        "w": 51,
+        "visible": true,
+        "hits": [],
+        "hopsAfterClicks": [
+          {
+            "x": 34,
+            "y": 555,
+            "hits": []
+          },
+          {
+            "x": 375,
+            "y": 544,
+            "hits": []
+          },
+          {
+            "x": 45,
+            "y": 572,
+            "hits": []
+          }
+        ],
+        "afterScroll60": {
+          "display": "block",
+          "opacity": "1",
+          "y": 297
+        }
+      },
+      {
+        "x": 358,
+        "y": 486,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 358,
+        "y": 486,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 358,
+        "y": 486,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 358,
+        "y": 486,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 358,
+        "y": 486,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      }
+    ],
+    "1024": [
+      {
+        "x": 592,
+        "y": 577,
+        "w": 51,
+        "visible": true,
+        "hits": [],
+        "hopsAfterClicks": [
+          {
+            "x": 656,
+            "y": 137,
+            "hits": []
+          },
+          {
+            "x": 494,
+            "y": 119,
+            "hits": []
+          },
+          {
+            "x": 786,
+            "y": 127,
+            "hits": []
+          }
+        ],
+        "afterScroll60": {
+          "display": "block",
+          "opacity": "1",
+          "y": 127
+        }
+      },
+      {
+        "x": 736,
+        "y": 564,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 668,
+        "y": 554,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 671,
+        "y": 568,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 542,
+        "y": 130,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 751,
+        "y": 169,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      }
+    ],
+    "1440": [
+      {
+        "x": 636,
+        "y": 706,
+        "w": 51,
+        "visible": true,
+        "hits": [],
+        "hopsAfterClicks": [
+          {
+            "x": 338,
+            "y": 702,
+            "hits": [
+              "dd \"10\""
+            ]
+          },
+          {
+            "x": 618,
+            "y": 615,
+            "hits": []
+          },
+          {
+            "x": 341,
+            "y": 705,
+            "hits": [
+              "dd \"10\""
+            ]
+          }
+        ],
+        "afterScroll60": {
+          "display": "block",
+          "opacity": "1",
+          "y": 235
+        }
+      },
+      {
+        "x": 481,
+        "y": 663,
+        "w": 63,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 604,
+        "y": 601,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 723,
+        "y": 683,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 616,
+        "y": 633,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 722,
+        "y": 682,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      }
+    ],
+    "1920": [
+      {
+        "x": 890,
+        "y": 821,
+        "w": 57,
+        "visible": true,
+        "hits": [],
+        "hopsAfterClicks": [
+          {
+            "x": 523,
+            "y": 827,
+            "hits": []
+          },
+          {
+            "x": 104,
+            "y": 728,
+            "hits": []
+          },
+          {
+            "x": 17,
+            "y": 542,
+            "hits": []
+          }
+        ],
+        "afterScroll60": {
+          "display": "block",
+          "opacity": "1",
+          "y": 289
+        }
+      },
+      {
+        "x": 717,
+        "y": 714,
+        "w": 60,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 717,
+        "y": 714,
+        "w": 60,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 885,
+        "y": 193,
+        "w": 59,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 890,
+        "y": 821,
+        "w": 57,
+        "visible": true,
+        "hits": []
+      },
+      {
+        "x": 876,
+        "y": 760,
+        "w": 51,
+        "visible": true,
+        "hits": []
+      }
+    ]
+  }
+}

@@ -15,3 +15,9 @@ Searan Kuganesan Portfolio (standalone)*.html
 
 # Playwright MCP session artifacts
 .playwright-mcp/
+
+# Bulky raw audit artifacts: kept locally, summarised in docs/overhaul/audit/*
+docs/overhaul/audit/perf/*.json.gz
+docs/overhaul/audit/perf/lh-*.json
+docs/overhaul/audit/perf/lh-*.html
+!docs/overhaul/audit/perf/lh-*.extract.json

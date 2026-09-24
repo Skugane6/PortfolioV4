@@ -1,0 +1,231 @@
+{
+  "baseUrl": "http://127.0.0.1:5199/",
+  "reduced": false,
+  "runs": [
+    {
+      "width": 375,
+      "height": 812,
+      "console": [],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 840,
+          "rawReadout": "00%",
+          "settledY": 840,
+          "settledReadout": "00%"
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1510,
+          "rawReadout": "38%",
+          "settledY": 1985,
+          "settledReadout": "43%"
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2180,
+          "rawReadout": "56%",
+          "settledY": 2569,
+          "settledReadout": "65%"
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 2850,
+          "rawReadout": "77%",
+          "settledY": 3166,
+          "settledReadout": "87%"
+        },
+        {
+          "progress": 1,
+          "requestedY": 3520,
+          "rawReadout": "100%",
+          "settledY": 4331,
+          "settledReadout": "100%"
+        }
+      ],
+      "docHeight": 7801
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "console": [],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 1033,
+          "rawReadout": "00%",
+          "settledY": 1033,
+          "settledReadout": "00%"
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1878,
+          "rawReadout": "42%",
+          "settledY": 2477,
+          "settledReadout": "43%"
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2723,
+          "rawReadout": "64%",
+          "settledY": 3214,
+          "settledReadout": "65%"
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 3567,
+          "rawReadout": "82%",
+          "settledY": 3967,
+          "settledReadout": "87%"
+        },
+        {
+          "progress": 1,
+          "requestedY": 4412,
+          "rawReadout": "100%",
+          "settledY": 5436,
+          "settledReadout": "100%"
+        }
+      ],
+      "docHeight": 8572
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "console": [],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 822,
+          "rawReadout": "00%",
+          "settledY": 822,
+          "settledReadout": "00%"
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1455,
+          "rawReadout": "42%",
+          "settledY": 1905,
+          "settledReadout": "43%"
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2089,
+          "rawReadout": "64%",
+          "settledY": 2458,
+          "settledReadout": "65%"
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 2722,
+          "rawReadout": "86%",
+          "settledY": 3022,
+          "settledReadout": "87%"
+        },
+        {
+          "progress": 1,
+          "requestedY": 3356,
+          "rawReadout": "100%",
+          "settledY": 4124,
+          "settledReadout": "100%"
+        }
+      ],
+      "docHeight": 7354
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "console": [],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 900,
+          "rawReadout": "00%",
+          "settledY": 900,
+          "settledReadout": "00%"
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1643,
+          "rawReadout": "29%",
+          "settledY": 1778,
+          "settledReadout": "30%"
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2385,
+          "rawReadout": "50%",
+          "settledY": 2385,
+          "settledReadout": "50%"
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 3128,
+          "rawReadout": "89%",
+          "settledY": 3600,
+          "settledReadout": "91%"
+        },
+        {
+          "progress": 1,
+          "requestedY": 3870,
+          "rawReadout": "100%",
+          "settledY": 4770,
+          "settledReadout": "100%"
+        }
+      ],
+      "docHeight": 7253
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "console": [],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 1080,
+          "rawReadout": "00%",
+          "settledY": 1080,
+          "settledReadout": "00%"
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1971,
+          "rawReadout": "29%",
+          "settledY": 2133,
+          "settledReadout": "30%"
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2862,
+          "rawReadout": "50%",
+          "settledY": 2862,
+          "settledReadout": "50%"
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 3753,
+          "rawReadout": "91%",
+          "settledY": 4320,
+          "settledReadout": "91%"
+        },
+        {
+          "progress": 1,
+          "requestedY": 4644,
+          "rawReadout": "100%",
+          "settledY": 5724,
+          "settledReadout": "100%"
+        }
+      ],
+      "docHeight": 8186
+    }
+  ]
+}
