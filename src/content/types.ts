@@ -35,7 +35,7 @@ export interface ProofRef {
   target: `#${string}` | null;
   /** Sheet the target lives on, printed in the detail bubble. */
   sheet: number | null;
-  mark?: { src: string; alt: string; width: number; height: number };
+  mark?: { src: string; srcSet?: string; alt: string; width: number; height: number };
 }
 
 export interface Profile {
@@ -87,7 +87,7 @@ export interface Role {
   location: string;
   start: string;
   end: string;
-  logo?: { src: string; width: number; height: number };
+  logo?: { src: string; srcSet?: string; width: number; height: number };
   /** Which drawing the callouts pin to. null renders the role without one. */
   drawing: 'crj700-side' | null;
   callouts: Callout[];
@@ -95,7 +95,9 @@ export interface Role {
 
 export interface Screen {
   kind: 'desktop' | 'phone';
-  webp: string;
+  /** Responsive WebP candidates, "url widthw" pairs (scripts/generate-images.mjs). */
+  srcSet: string;
+  /** Full-size original, the fallback for browsers without WebP. */
   png: string;
   width: number;
   height: number;

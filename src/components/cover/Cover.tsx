@@ -89,6 +89,7 @@ function CoverTitleBlock() {
         <span className="flex items-center gap-3">
           <img
             src={portrait}
+            srcSet="/img/portrait-40.webp 1x, /img/portrait-80.webp 2x, /img/portrait-120.webp 3x"
             alt={`Portrait of ${profile.name}`}
             width={40}
             height={40}
@@ -159,7 +160,6 @@ function KeyDrawing() {
     <a
       href="#experience"
       className="group relative block self-start lg:col-span-6"
-      aria-label={`Detail A, sheet 02: side elevation of the ${aircraft.family}, where the experience is drawn`}
     >
       <figure className="ground border border-faded/50 p-4 transition-colors duration-quick group-hover:border-blueprint sm:p-6">
         <div className="relative pb-10">
@@ -169,6 +169,7 @@ function KeyDrawing() {
         <figcaption className="mt-4 flex items-baseline justify-between gap-4 text-label text-faded">
           <span>
             <span className="lettering">Fig. A</span> Side elevation, {aircraft.family}
+            <span className="sr-only">: the experience is drawn in full on sheet 02</span>
           </span>
           <span className="lettering font-mono">NTS</span>
         </figcaption>

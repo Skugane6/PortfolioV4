@@ -31,7 +31,7 @@ export function DeviceFrames({ screens, animated, eager = false, url }: DeviceFr
             {url && <span className="truncate text-label text-faded">{url}</span>}
           </div>
           <picture>
-            <source srcSet={desktop.webp} type="image/webp" />
+            <source srcSet={desktop.srcSet} sizes={eager ? "(min-width: 1120px) 1000px, 92vw" : "(min-width: 1024px) 40vw, 92vw"} type="image/webp" />
             <img
               src={desktop.png}
               alt={desktop.alt}
@@ -50,7 +50,7 @@ export function DeviceFrames({ screens, animated, eager = false, url }: DeviceFr
           style={animated ? { y: phoneY } : undefined}
         >
           <picture>
-            <source srcSet={phone.webp} type="image/webp" />
+            <source srcSet={phone.srcSet} sizes="190px" type="image/webp" />
             <img
               src={phone.png}
               alt={phone.alt}

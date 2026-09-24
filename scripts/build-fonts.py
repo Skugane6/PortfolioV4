@@ -8,9 +8,10 @@ wdth 62-125, wght 100-900) and B612 Mono (400, 700), then:
 - instances Archivo down to the axis ranges the design uses
   (wdth 62-100, wght 400-700), which drops about a third of the file;
 - keeps B612 Mono as served (it is already a small Latin subset);
-- prints @font-face fallback overrides (size-adjust, ascent/descent/line-gap
-  overrides) that make a local Arial occupy the same box as each face, so the
-  swap from fallback to web font does not shift layout.
+- subsets both to the characters the site renders (CHARSET below).
+
+The fallback @font-face sizes in src/design/tokens.css are measured, not
+computed here: see scripts/audit/measure-fallback.mjs.
 
 Requires fontTools and brotli (pip install fonttools brotli).
 """
@@ -20,6 +21,7 @@ import sys
 import tempfile
 import urllib.request
 
+from fontTools import subset
 from fontTools.ttLib import TTFont
 from fontTools.varLib import instancer
 
@@ -33,8 +35,29 @@ SOURCES = {
     "b612mono-700": "https://fonts.gstatic.com/s/b612mono/v16/kmK6Zq85QVWbN1eW6lJdayvIpcVO.woff2",
 }
 
-# Arial's metrics, the fallback every target platform has.
-ARIAL = {"unitsPerEm": 2048, "xAvgCharWidth": 904, "ascent": 1854, "descent": 434, "lineGap": 67}
+# Every character the site renders: printable ASCII, Latin-1, and the
+# punctuation and symbols in use. Check new copy against this when adding
+# symbols (a glyph outside it falls back to the system font).
+CHARSET = (
+    "".join(chr(c) for c in range(0x20, 0x7F))
+    + "".join(chr(c) for c in range(0xA0, 0x100))
+    + "–—‘’“”•…←↑→↓↕▾−×°·"
+    + "⌘≈≥Σσ "
+)
+
+
+def subset_font(font):
+    opts = subset.Options()
+    opts.flavor = "woff2"
+    opts.layout_features = ["kern", "liga", "calt", "tnum", "lnum", "case", "ccmp", "locl", "mark", "mkmk"]
+    opts.name_IDs = ["*"]
+    opts.notdef_outline = True
+    sub = subset.Subsetter(opts)
+    sub.populate(text=CHARSET)
+    sub.subset(font)
+    return font
+
+
 
 
 def fetch(name, url, tmp):
@@ -45,37 +68,6 @@ def fetch(name, url, tmp):
     return path
 
 
-def avg_width(font):
-    """Average advance of lowercase a-z plus space, weighted evenly.
-
-    OS/2.xAvgCharWidth is computed differently across tools, so measure the
-    glyphs body text is actually made of instead."""
-    cmap = font.getBestCmap()
-    hmtx = font["hmtx"]
-    chars = "abcdefghijklmnopqrstuvwxyz "
-    widths = [hmtx[cmap[ord(c)]][0] for c in chars if ord(c) in cmap]
-    return sum(widths) / len(widths)
-
-
-def arial_avg():
-    # Arial advances for a-z and space (units per 2048 em), from its hmtx.
-    arial = [1139, 1139, 1024, 1139, 1139, 569, 1139, 1139, 455, 455, 1024, 455, 1706,
-             1139, 1139, 1139, 1139, 682, 1024, 569, 1139, 1024, 1479, 1024, 1024, 1024, 569]
-    return sum(arial) / len(arial)
-
-
-def overrides(font):
-    upm = font["head"].unitsPerEm
-    hhea = font["hhea"]
-    size_adjust = (avg_width(font) / upm) / (arial_avg() / ARIAL["unitsPerEm"])
-    return {
-        "size-adjust": f"{size_adjust * 100:.2f}%",
-        "ascent-override": f"{hhea.ascent / upm / size_adjust * 100:.2f}%",
-        "descent-override": f"{abs(hhea.descent) / upm / size_adjust * 100:.2f}%",
-        "line-gap-override": f"{hhea.lineGap / upm / size_adjust * 100:.2f}%",
-    }
-
-
 def main():
     os.makedirs(OUT, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
@@ -83,20 +75,18 @@ def main():
 
         archivo = TTFont(src["archivo"])
         inst = instancer.instantiateVariableFont(archivo, {"wght": (400, 700), "wdth": (62, 100)})
+        inst = subset_font(inst)
         inst.flavor = "woff2"
         out = os.path.join(OUT, "archivo-var.woff2")
         inst.save(out)
         print(f"archivo-var.woff2  {os.path.getsize(out):>7} bytes")
-        print("  fallback", overrides(TTFont(out)))
 
         for name in ("b612mono-400", "b612mono-700"):
-            font = TTFont(src[name])
+            font = subset_font(TTFont(src[name]))
             font.flavor = "woff2"
             out = os.path.join(OUT, name + ".woff2")
             font.save(out)
             print(f"{name}.woff2  {os.path.getsize(out):>7} bytes")
-            if name.endswith("400"):
-                print("  fallback", overrides(TTFont(out)))
     return 0
 
 

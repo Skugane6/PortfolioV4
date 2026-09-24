@@ -57,7 +57,13 @@ export const profile: Profile = {
       label: 'B.E.Sc. Software Engineering, Western University',
       target: '#education',
       sheet: 2,
-      mark: { src: '/western-mark.png', alt: '', width: 1025, height: 243 },
+      mark: {
+        src: '/western-mark.png',
+        srcSet: '/img/western-mark-128.webp 128w, /img/western-mark-256.webp 256w, /img/western-mark-384.webp 384w',
+        alt: '',
+        width: 1025,
+        height: 243,
+      },
     },
     {
       // Kept verbatim and flagged: 4 projects are shown (NEEDS-FROM-SEARAN.md #2).

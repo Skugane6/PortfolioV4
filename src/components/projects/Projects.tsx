@@ -117,7 +117,8 @@ function OpenButton({ project, onOpen, primary = false }: FigureProps & { primar
       data-open
       onClick={() => onOpen(project.id)}
       className={primary ? 'btn-primary' : 'btn-secondary'}
-      aria-label={`Open the detail sheet: ${project.name}`}
+      // Starts with the visible text, so speech-input users can say what they see (WCAG 2.5.3).
+      aria-label={`Open detail: ${project.name}`}
     >
       Open detail
     </button>

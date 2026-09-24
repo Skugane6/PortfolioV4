@@ -28,7 +28,7 @@ test.describe('projects sheet', () => {
 
   test('opens a detail sheet, closes with Escape, and returns focus', async ({ page }) => {
     await gotoHome(page);
-    const open = page.getByRole('button', { name: 'Open the detail sheet: Portfolio Risk Dashboard' });
+    const open = page.getByRole('button', { name: 'Open detail: Portfolio Risk Dashboard' });
     await open.scrollIntoViewIfNeeded();
     await open.click();
     const dialog = page.getByRole('dialog', { name: 'Portfolio Risk Dashboard' });

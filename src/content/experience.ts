@@ -16,7 +16,12 @@ export const roles: Role[] = [
     location: 'Mississauga, Canada',
     start: '05/2024',
     end: '08/2025',
-    logo: { src: '/MHIRJ_Logo.png', width: 613, height: 270 },
+    logo: {
+      src: '/MHIRJ_Logo.png',
+      srcSet: '/img/mhirj-80.webp 80w, /img/mhirj-160.webp 160w, /img/mhirj-240.webp 240w',
+      width: 613,
+      height: 270,
+    },
     drawing: 'crj700-side',
     callouts: [
       {

@@ -56,6 +56,8 @@ function RoleHeader({ role }: { role: Role }) {
         {role.logo && (
           <img
             src={role.logo.src}
+            srcSet={role.logo.srcSet}
+            sizes="80px"
             alt=""
             width={role.logo.width}
             height={role.logo.height}

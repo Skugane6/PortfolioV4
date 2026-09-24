@@ -9,14 +9,38 @@
   font-display: swap;
 }
 
-/* Arial resized to Archivo's box (scripts/build-fonts.py), so the swap from
-   fallback to web font does not move the name or the lede. */
+/* Local fallbacks sized so text wraps the same before and after Archivo
+   arrives, so the swap moves nothing. One per width the site sets: reading
+   text (Arial), headings (w-narrow, Arial Bold) and the condensed display
+   (w-cond, Arial Bold). size-adjust is the measured width ratio of Archivo
+   to the fallback for that setting (scripts/audit/measure-fallback.mjs);
+   the ascent and descent overrides keep Archivo's vertical metrics. */
 @font-face {
   font-family: 'Archivo Fallback';
   src: local('Arial'), local('ArialMT'), local('Helvetica');
-  size-adjust: 105.53%;
-  ascent-override: 83.2%;
-  descent-override: 19.9%;
+  size-adjust: 99%;
+  ascent-override: 88.7%;
+  descent-override: 21.2%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Archivo Narrow Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Helvetica Bold');
+  font-weight: 400 700;
+  size-adjust: 84.4%;
+  ascent-override: 104%;
+  descent-override: 24.9%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Archivo Condensed Fallback';
+  src: local('Arial Bold'), local('Arial-BoldMT'), local('Helvetica Bold');
+  font-weight: 400 700;
+  size-adjust: 74.3%;
+  ascent-override: 118.2%;
+  descent-override: 28.3%;
   line-gap-override: 0%;
 }
 
@@ -36,12 +60,13 @@
   font-display: swap;
 }
 
+/* Monospace falls back to monospace: Courier New at B612 Mono's measured width. */
 @font-face {
   font-family: 'B612 Mono Fallback';
-  src: local('Arial'), local('ArialMT'), local('Helvetica');
-  size-adjust: 134.94%;
-  ascent-override: 71.51%;
-  descent-override: 18.53%;
+  src: local('Courier New'), local('CourierNewPSMT'), local('Courier');
+  size-adjust: 108.3%;
+  ascent-override: 89.1%;
+  descent-override: 23.1%;
   line-gap-override: 0%;
 }
 

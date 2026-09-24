@@ -1,5 +1,5 @@
 import { Fragment, useState, type ReactNode } from 'react';
-import { skillMarks } from '../../data/skillIcons';
+import { useSkillMarks } from './useSkillMarks';
 import { skillGroups } from '../../content/skills';
 import type { SkillGroup } from '../../content/types';
 import { itemLabel, parts } from './partsIndex';
@@ -20,6 +20,7 @@ interface BomTableProps {
  */
 export function BomTable({ group, selected, onSelect, onHover, inlineDetail }: BomTableProps) {
   const [byQty, setByQty] = useState(false);
+  const marks = useSkillMarks();
   const rows = parts
     .filter((p) => group === 'all' || p.skill.group === group)
     .sort((a, b) => (byQty ? b.qty - a.qty || a.item - b.item : a.item - b.item));
@@ -51,7 +52,7 @@ export function BomTable({ group, selected, onSelect, onHover, inlineDetail }: B
       <tbody>
         {rows.map((p) => {
           const isSelected = p.item === selected;
-          const mark = skillMarks[p.skill.icon];
+          const mark = marks?.[p.skill.icon];
           return (
             <Fragment key={p.item}>
               <tr
@@ -69,12 +70,14 @@ export function BomTable({ group, selected, onSelect, onHover, inlineDetail }: B
                     onBlur={() => onHover(0)}
                     className="flex min-h-[40px] w-full items-center gap-3 text-left"
                   >
-                    <span aria-hidden="true" className="flex h-5 w-5 shrink-0 items-center justify-center" style={{ color: isSelected ? mark.hex : undefined }}>
-                      <svg
-                        viewBox={mark.viewBox}
-                        className={`h-full w-full ${isSelected ? '' : 'text-faded'}`}
-                        dangerouslySetInnerHTML={{ __html: mark.body }}
-                      />
+                    <span aria-hidden="true" className="flex h-5 w-5 shrink-0 items-center justify-center" style={{ color: isSelected ? mark?.hex : undefined }}>
+                      {mark && (
+                        <svg
+                          viewBox={mark.viewBox}
+                          className={`h-full w-full ${isSelected ? '' : 'text-faded'}`}
+                          dangerouslySetInnerHTML={{ __html: mark.body }}
+                        />
+                      )}
                     </span>
                     <span className={isSelected ? 'text-blueprint underline decoration-redline decoration-2 underline-offset-4' : 'text-blueprint'}>
                       {p.skill.name}

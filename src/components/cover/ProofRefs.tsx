@@ -21,6 +21,8 @@ export function ProofRefs({ items, firstLetter = 0 }: { items: ProofRef[]; first
               {item.mark ? (
                 <img
                   src={item.mark.src}
+                  srcSet={item.mark.srcSet}
+                  sizes="128px"
                   alt={item.mark.alt}
                   width={item.mark.width}
                   height={item.mark.height}
@@ -46,9 +48,9 @@ export function ProofRefs({ items, firstLetter = 0 }: { items: ProofRef[]; first
               <a
                 href={item.target}
                 className="group block h-full p-4 transition-colors duration-quick hover:bg-blueprint/[0.04] sm:p-5"
-                aria-label={`${item.figure} ${item.label}: see sheet ${pad2(item.sheet ?? 0)}`}
               >
                 {body}
+                <span className="sr-only">, see sheet {pad2(item.sheet ?? 0)}</span>
               </a>
             ) : (
               <div className="h-full p-4 sm:p-5">{body}</div>

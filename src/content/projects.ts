@@ -22,7 +22,8 @@ export const projects: Project[] = [
     screens: [
       {
         kind: 'desktop',
-        webp: '/crafttraq-board.webp',
+        srcSet:
+          '/img/crafttraq-board-480.webp 480w, /img/crafttraq-board-800.webp 800w, /img/crafttraq-board-1200.webp 1200w, /img/crafttraq-board-1600.webp 1600w',
         png: '/crafttraq-board.png',
         width: 1902,
         height: 938,
@@ -30,7 +31,7 @@ export const projects: Project[] = [
       },
       {
         kind: 'phone',
-        webp: '/crafttraq-calendar.webp',
+        srcSet: '/img/crafttraq-calendar-190.webp 190w, /img/crafttraq-calendar-375.webp 375w',
         png: '/crafttraq-calendar.png',
         width: 375,
         height: 835,

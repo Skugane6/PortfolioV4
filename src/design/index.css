@@ -68,9 +68,9 @@
 @layer components {
   /* Width axis of Archivo: the condensed gothic of drawing titles vs the
      normal width of reading text. */
-  .w-cond { font-stretch: 68%; }
-  .w-semi { font-stretch: 75%; }
-  .w-narrow { font-stretch: 85%; }
+  .w-cond { font-stretch: 68%; font-family: 'Archivo', 'Archivo Condensed Fallback', system-ui, sans-serif; }
+  .w-semi { font-stretch: 75%; font-family: 'Archivo', 'Archivo Narrow Fallback', system-ui, sans-serif; }
+  .w-narrow { font-stretch: 85%; font-family: 'Archivo', 'Archivo Narrow Fallback', system-ui, sans-serif; }
 
   /* Quantities, coordinates and times: Archivo with tabular lining figures.
      (B612 Mono is kept for identifiers: stations, sheet and item numbers,

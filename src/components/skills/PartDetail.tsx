@@ -1,4 +1,4 @@
-import { skillMarks } from '../../data/skillIcons';
+import { useSkillMarks } from './useSkillMarks';
 import { skillGroups } from '../../content/skills';
 import { itemLabel, mostUsed, type Part } from './partsIndex';
 
@@ -30,16 +30,16 @@ export function PartDetail({ part, onSelect }: PartDetailProps) {
 }
 
 function Selected({ part }: { part: Part }) {
-  const mark = skillMarks[part.skill.icon];
+  const mark = useSkillMarks()?.[part.skill.icon];
   return (
     <div>
       <div className="flex items-center gap-4">
         <span
           aria-hidden="true"
           className="flex h-14 w-14 shrink-0 items-center justify-center border border-faded/60"
-          style={{ color: mark.hex }}
+          style={{ color: mark?.hex }}
         >
-          <svg viewBox={mark.viewBox} className="h-8 w-8" dangerouslySetInnerHTML={{ __html: mark.body }} />
+          {mark && <svg viewBox={mark.viewBox} className="h-8 w-8" dangerouslySetInnerHTML={{ __html: mark.body }} />}
         </span>
         <div className="min-w-0">
           <p className="lettering font-mono text-label text-faded">Item {itemLabel(part.item)}</p>
