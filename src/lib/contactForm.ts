@@ -6,8 +6,12 @@ export interface ContactInput {
   name: string;
   email: string;
   message: string;
-  /** Honeypot: hidden from people, filled in by naive bots. Must be empty. */
-  company?: string;
+  /**
+   * Honeypot: hidden from people, filled in by naive bots. Must be empty. Its
+   * name matches nothing browser autofill or password managers recognise, so
+   * a real visitor's autofill can't fill it and get the message dropped.
+   */
+  honeypot?: string;
 }
 
 export type ContactField = 'name' | 'email' | 'message';
@@ -34,7 +38,13 @@ export function validateContact(input: ContactInput): ContactErrors {
 }
 
 export function isSpam(input: ContactInput): boolean {
-  return Boolean(input.company && input.company.trim());
+  return Boolean(input.honeypot && input.honeypot.trim());
+}
+
+/** One line of text: control characters (CR and LF included) become spaces. For anything that ends up in a mail header. */
+export function singleLine(s: string): string {
+  // eslint-disable-next-line no-control-regex
+  return s.replace(/[\u0000-\u001f\u007f]+/g, ' ').trim();
 }
 
 /** A mailto: URL with the message filled in, for when the form can't send. */

@@ -47,8 +47,11 @@ test.describe('contact sheet (approval) and footer', () => {
     await page.getByLabel('Email').fill('ada@example.com');
     await page.getByLabel('Message').fill('Hello');
     await page.getByRole('button', { name: 'Send message' }).click();
-    await expect(page.locator('#contact [role="status"]').getByText('Approved', { exact: true })).toBeVisible();
-    await expect(page.getByText(`Sent. I’ll reply from ${EMAIL}.`)).toBeVisible();
+    const sent = page.locator('#contact div[tabindex="-1"]', { hasText: 'Sent.' });
+    await expect(sent.getByText('Approved', { exact: true })).toBeVisible();
+    await expect(sent).toContainText(`Sent. I’ll reply from ${EMAIL}.`);
+    // The Send button is gone, so focus moves to the confirmation (and it is read out).
+    await expect(sent).toBeFocused();
   });
 
   test('the footer is a revision block with a way back to the cover', async ({ page }) => {

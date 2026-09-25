@@ -1,7 +1,8 @@
-import { useId, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import { m } from 'motion/react';
 import { LIMITS, mailtoFor, validateContact, type ContactErrors, type ContactField, type ContactInput } from '../../lib/contactForm';
 import { spring } from '../../lib/motion';
+import { useHydrated } from '../../lib/useMedia';
 import { Stamp } from '../drawing/Stamp';
 
 type Status = { kind: 'idle' } | { kind: 'sending' } | { kind: 'sent' } | { kind: 'fallback'; href: string };
@@ -18,11 +19,21 @@ const FIELDS: { name: ContactField; label: string; type: 'text' | 'email' | 'tex
  * message filled in and says so, so a message is never lost.
  */
 export function ApprovalForm({ to }: { to: string }) {
-  const [values, setValues] = useState<ContactInput>({ name: '', email: '', message: '', company: '' });
+  const [values, setValues] = useState<ContactInput>({ name: '', email: '', message: '', honeypot: '' });
   const [errors, setErrors] = useState<ContactErrors>({});
   const [status, setStatus] = useState<Status>({ kind: 'idle' });
   const formRef = useRef<HTMLFormElement>(null);
+  const sentRef = useRef<HTMLDivElement>(null);
   const base = useId();
+  // Until the app is running the form can't send, so it can't be submitted
+  // either (a plain submit would put the message in the URL and lose it).
+  const hydrated = useHydrated();
+
+  // The button that was focused is gone once the message is sent: move focus
+  // to the confirmation, which also has it read out.
+  useEffect(() => {
+    if (status.kind === 'sent') sentRef.current?.focus();
+  }, [status.kind]);
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -62,7 +73,7 @@ export function ApprovalForm({ to }: { to: string }) {
 
   if (status.kind === 'sent') {
     return (
-      <div role="status" className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+      <div ref={sentRef} tabIndex={-1} className="flex flex-col items-start gap-4 outline-offset-4 sm:flex-row sm:items-center">
         <m.div initial={{ scale: 1.3, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={spring.ui}>
           <Stamp lines={['Approved', 'Thank you']} tilt={-4} />
         </m.div>
@@ -72,7 +83,7 @@ export function ApprovalForm({ to }: { to: string }) {
   }
 
   return (
-    <form ref={formRef} onSubmit={submit} noValidate className="space-y-4">
+    <form ref={formRef} method="post" onSubmit={submit} noValidate className="space-y-4">
       {FIELDS.map((f) => {
         const id = `${base}-${f.name}`;
         const errorId = `${id}-error`;
@@ -110,23 +121,24 @@ export function ApprovalForm({ to }: { to: string }) {
         );
       })}
 
-      {/* Honeypot: off-screen, out of the tab order, ignored by people. */}
+      {/* Honeypot: off-screen, out of the tab order, ignored by people. Named
+          so autofill never recognises it (see ContactInput.honeypot). */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
         <label>
-          Company
+          Leave this empty
           <input
             type="text"
-            name="company"
+            name="honeypot"
             tabIndex={-1}
             autoComplete="off"
-            value={values.company}
-            onChange={(e) => setValues((v) => ({ ...v, company: e.target.value }))}
+            value={values.honeypot}
+            onChange={(e) => setValues((v) => ({ ...v, honeypot: e.target.value }))}
           />
         </label>
       </div>
 
       <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
-        <button type="submit" className="btn-primary" disabled={status.kind === 'sending'}>
+        <button type="submit" className="btn-primary" disabled={!hydrated || status.kind === 'sending'}>
           {status.kind === 'sending' ? 'Sending…' : 'Send message'}
         </button>
         <p role="status" className="text-small text-faded">

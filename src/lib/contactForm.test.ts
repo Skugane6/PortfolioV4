@@ -1,10 +1,20 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { POST } from '../../api/contact';
-import { mailtoFor, validateContact } from './contactForm';
+import { mailtoFor, singleLine, validateContact } from './contactForm';
 
 const valid = { name: 'Ada', email: 'ada@example.com', message: 'Hello' };
-const post = (body: unknown) =>
-  POST(new Request('http://x/api/contact', { method: 'POST', body: typeof body === 'string' ? body : JSON.stringify(body) }));
+const post = (body: unknown, headers: Record<string, string> = {}) =>
+  POST(
+    new Request('http://x/api/contact', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', ...headers },
+      body: typeof body === 'string' ? body : JSON.stringify(body),
+    }),
+  );
+const configure = () => {
+  vi.stubEnv('RESEND_API_KEY', 'k');
+  vi.stubEnv('CONTACT_TO', 'me@example.com');
+};
 
 describe('validateContact', () => {
   it('accepts a complete message', () => {
@@ -21,6 +31,12 @@ describe('validateContact', () => {
 
   it('limits message length', () => {
     expect(validateContact({ ...valid, message: 'x'.repeat(4001) }).message).toMatch(/under 4000/);
+  });
+});
+
+describe('singleLine', () => {
+  it('turns line breaks and other control characters into spaces', () => {
+    expect(singleLine(' Ada\r\nBcc: x@y.z\u0007 ')).toBe('Ada Bcc: x@y.z');
   });
 });
 
@@ -56,17 +72,26 @@ describe('POST /api/contact', () => {
     expect((await post('not json')).status).toBe(400);
   });
 
+  it('accepts only JSON, so other sites cannot post without a preflight', async () => {
+    expect((await post(valid, { 'content-type': 'text/plain' })).status).toBe(415);
+  });
+
+  it('refuses a browser post from another origin', async () => {
+    vi.stubEnv('RESEND_API_KEY', '');
+    expect((await post(valid, { origin: 'https://elsewhere.example' })).status).toBe(403);
+    expect((await post(valid, { origin: 'http://x' })).status).toBe(501);
+  });
+
   it('silently drops honeypot submissions', async () => {
     const fetchSpy = vi.fn();
     vi.stubGlobal('fetch', fetchSpy);
-    const res = await post({ ...valid, company: 'Spam Inc' });
+    const res = await post({ ...valid, honeypot: 'Spam Inc' });
     expect(res.status).toBe(200);
     expect(fetchSpy).not.toHaveBeenCalled();
   });
 
   it('sends through Resend with reply-to set to the visitor', async () => {
-    vi.stubEnv('RESEND_API_KEY', 'k');
-    vi.stubEnv('CONTACT_TO', 'me@example.com');
+    configure();
     const fetchSpy = vi.fn().mockResolvedValue(new Response('{}', { status: 200 }));
     vi.stubGlobal('fetch', fetchSpy);
     const res = await post(valid);
@@ -76,10 +101,23 @@ describe('POST /api/contact', () => {
     expect(JSON.parse(init.body)).toMatchObject({ to: ['me@example.com'], reply_to: 'ada@example.com' });
   });
 
+  it('keeps the subject on one line', async () => {
+    configure();
+    const fetchSpy = vi.fn().mockResolvedValue(new Response('{}', { status: 200 }));
+    vi.stubGlobal('fetch', fetchSpy);
+    await post({ ...valid, name: 'Ada\r\nBcc: x@y.z' });
+    expect(JSON.parse(fetchSpy.mock.calls[0][1].body).subject).toBe('Portfolio: message from Ada Bcc: x@y.z');
+  });
+
   it('reports a failed send as 502', async () => {
-    vi.stubEnv('RESEND_API_KEY', 'k');
-    vi.stubEnv('CONTACT_TO', 'me@example.com');
+    configure();
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('{}', { status: 422 })));
+    expect((await post(valid)).status).toBe(502);
+  });
+
+  it('reports a network failure as 502 instead of throwing', async () => {
+    configure();
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('fetch failed')));
     expect((await post(valid)).status).toBe(502);
   });
 });
