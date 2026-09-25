@@ -24,7 +24,7 @@ The design for the overhaul, derived from `AUDIT.md` and the brief. Every decisi
 | Q14 | Case studies: route or dialog? | Modal `dialog` with a hash deep link (`#projects/crafttraq`), so Back closes it and the link is shareable. The shared-element transition goes from the figure frame to the dialog sheet via Motion `layoutId`. No router. | No framework migration; small surface |
 | Q15 | Text-classification demo: real model or simulation? | A **real model trained for this page**. The smallest ready-made transformers.js text classifier I found is 67 MB (DistilBERT SST-2, int8), which is too heavy. I train a small logistic-regression classifier on hashed n-grams from an Apache-2.0 review dataset (Amazon Polarity) in Node, ship its weights as a few hundred KB of JSON, and run it in the browser. The page says plainly that this isn't the project's BERT ensemble, and states its measured held-out accuracy. | Brief: "real small in-browser model if it can be loaded on demand at a reasonable size; otherwise… clearly labeled" |
 | Q16 | Eye-tracking demo cost? | MediaPipe Tasks Vision: 11.8 MB of WASM (3.1 MB brotli on the wire) and a 3.8 MB model, about 7 MB downloaded, fetched only after the visitor opts in and grants the camera. The UI states the size, that video stays on the device, and that MediaPipe itself sends Google usage metrics (disclosed before opt-in). If permission is denied or the device can't run it, the simulated demo is the fallback. | Measured by downloading each file |
-| Q17 | A contact form? | Yes: "Submit for approval" in the sign-off block. It posts to a Vercel function (`/api/contact`) that sends through Resend when `RESEND_API_KEY` and `CONTACT_TO` are set. Otherwise the function answers 501 and the client opens a prefilled `mailto:`. A honeypot field and length limits guard it. | Brief |
+| Q17 | A contact form? | Yes: a "Send message" button in the sign-off block (first built as "Submit for approval", renamed after the design review because a button should say what it does). It posts to a Vercel function (`/api/contact`) that sends through Resend when `RESEND_API_KEY` and `CONTACT_TO` are set. Otherwise the function answers 501 and the client opens a prefilled `mailto:`. A honeypot field and length limits guard it. | Brief |
 | Q18 | Does the cat get a job? | Yes. On a drawing, the **checker** signs off the drawing after the drafter. The cat is the checker: it naps on the cover's title block, wakes when clicked, walks the title-block rule, and its paw print is the CHECKED signature in the sign-off block. It never covers content and ignores pointer events except on its own sprite. It stays still under reduced motion. It has no name; that's a question in NEEDS. | Brief item 11 |
 | Q19 | What happens to logos in Skills? | Parts are drawn in line colour at rest. A brand colour appears only on the one selected part, as a swatch. That removes the "logo wall" and keeps recognition. | Audit VIS-07 |
 | Q20 | What can go? | The hero IDE scene and every chip of fake UI chrome, the torch cursor, ghost words, "§ NN ·" eyebrows, middle-dot meta strings, the drifting grids, the stacked glow filters, the blanket `Reveal` fades, the project tabs, "Aviation / Data / Builds / Tomorrow" and "Build / Solve / Improve / Repeat". | §5 chrome audit |
@@ -96,7 +96,7 @@ Rules: **red means markup** (something changed, pending or chosen), and **yellow
 Two families, self-hosted, subset to Latin, `font-display: swap` with metric-matched fallbacks to keep CLS near zero:
 
 - **Archivo** (Omnibus-Type, SIL OFL), a variable font with width 62–125 and weight 100–900. Instanced to **width 62–100 and weight 400–700** (about 55 KB woff2). One family gives two voices: condensed (width 68–75) for drawing titles and the name, which echoes the condensed gothic lettering of title blocks, and normal width (100) for reading text.
-- **B612 Mono** (Airbus / Intactile, SIL OFL), 400 and 700 (about 19 KB each). **Data only**: stations, dimensions, coordinates, times, sheet numbers, item numbers, quantities. It's never used for sentences or buttons, so mono stays a signal ("this is a measured value").
+- **B612 Mono** (Airbus / Intactile, SIL OFL), 400 and 700 (about 19 KB each). **Data and identifiers only**: stations, dimensions, coordinates, times, sheet numbers, item numbers, figure and view identifiers, quantities. It's never used for sentences, buttons or field names, so mono stays a signal ("this is a measured value or a reference"). Labels on the drawing (field names, "Overall length", "Survey", "Item") are Archivo lettering: one annotation rule, applied everywhere after the design review.
 
 Rejected: IBM Plex and JetBrains Mono (the current and default pairing; the UI/UX Pro Max lookup also returned it, which is the problem), Space Grotesk and Saira Condensed (drift), and Inter (default).
 
@@ -149,7 +149,7 @@ Focus is its own convention: a 2 px `--checker` outline offset 3 px, with regist
 | `dur-quick` | 160 ms | Hover and focus state changes |
 | `dur-base` | 240 ms | Component state changes (select, expand) |
 | `dur-sheet` | 480 ms | Dialog open, shared-element transitions |
-| `dur-plot` | 900 ms | A line being plotted (intro, stamp) |
+| `dur-plot` | 900 ms | A line being plotted (the airframe, the stamp) |
 | `ease-pen` | cubic-bezier(0.65, 0, 0.35, 1) | Plotting a line: the pen accelerates, then settles |
 | `ease-settle` | cubic-bezier(0.2, 0.8, 0.2, 1) | Things arriving |
 | `ease-exit` | cubic-bezier(0.4, 0, 1, 1) | Things leaving (exit is about 30% faster than enter) |
@@ -159,7 +159,7 @@ Focus is its own convention: a 2 px `--checker` outline offset 3 px, with regist
 **Principles**
 
 1. **Motion is plotting.** Lines draw on with `ease-pen`. Text is never faded or slid in: it's there, or it's revealed by its line. The LCP element is never animated.
-2. **One ambient moment per sheet**, and it's scroll-linked or first-visit only. Cover: the plot-in intro (under 1.1 s, once per session, skippable, text already visible). Experience: the survey. Projects: CraftTraq screens panning with scroll. Skills: the exploded view separating. Contact: the checker walking to sign.
+2. **One ambient moment per sheet**, and it's scroll-linked or first-visit only. Cover: none; it is static (a first-visit plot-in was built and then cut in polish, see §10). Experience: the survey. Projects: CraftTraq screens panning with scroll. Skills: the exploded view separating. Contact: the checker walking to sign.
 3. **Responses are immediate and show what changed:** 80–240 ms, from the control to the thing it affected (a selected part's balloon, the station a card belongs to).
 4. **Nothing loops without a live reason.** The only recurring updates are the clock (once a minute) and the demo loops the visitor has started.
 5. **Offscreen is paused:** every rAF loop, camera stream and scroll handler gates on an IntersectionObserver or on Motion's in-view.
@@ -220,15 +220,15 @@ Desktop (1440)
 │   └──────────────────────────────────────────────────────────────────────┘ │
 ```
 
-Mobile: the name, the positioning line, two buttons, the proof references as a two-column list, the key drawing full width, and the title block stacked into two columns. No zone markers.
+Mobile: the name, the role, the positioning line, two buttons, the proof references as a one-column list (two columns from 640 px), the key drawing full width, and the title block stacked into two columns. No zone markers.
 
-The proof references are links styled as detail-reference bubbles (circle split by a rule: item on top, sheet number below). Each points to the sheet that proves it.
+The proof references are links styled as detail-reference bubbles (circle split by a rule: the target's own label on top, its sheet number below). Each lands on a labelled target: station 145 on sheet 02, figure 1 on sheet 03, note 4 on sheet 02. The key drawing is View A, captioned the same way on sheets 01 and 02.
 
 ### Sheet 02: side elevation (Experience)
 
 Job: show what you did at MHI RJ, anchored to the aircraft it was about.
 
-- **Desktop (≥1024 and height ≥700):** the sheet sticks for (N+1) × 70vh. Scroll progress 0–0.18 plots the airframe (object lines, then thin lines, then hidden lines). Each callout docks in its own window: its station tick lights, a leader draws from the station to the card, and the card's frame plots. At 1.0 the **SURVEY COMPLETE** stamp lands (redline ring, date of your last day there, 08/2025). Cards sit in one row under the airframe, ordered fore to aft, so reading order, station order and numbering all agree (fixes audit I-03).
+- **Desktop (≥1024 and height ≥700):** the sheet sticks for (N+1) × 50vh (planned at 70vh, built at 65vh, shortened after the design review). Scroll progress 0–0.18 plots the airframe (object lines, then thin lines, then hidden lines). Each callout docks in its own window: its station tick lights, a leader draws from the station to the card, and the card's frame plots. At 1.0 the **SURVEY COMPLETE** stamp lands beside the progress readout, clear of the drawing (redline ring, date of your last day there, 08/2025). Cards sit in one row under the airframe, ordered fore to aft, so reading order, station order and numbering all agree (fixes audit I-03).
 - Each card shows **title, one impact line** (verbatim from its tags or description) and a "Details" disclosure that opens the full existing paragraph and tags. Hover or focus on a card lights its station. Hover or focus on a station tick (a button) lights its card.
 - **Tablet and phone:** no pin. The airframe sticks at the top of the sheet (full width). The cards flow below in normal scroll, and the card crossing the centre of the viewport lights its station. The leader is a vertical line from the station down into the card stack.
 - **Reduced motion:** static sheet, fully plotted, all cards shown, stamp present, no sticky.
@@ -286,7 +286,7 @@ On a successful send (or a copy of the email) the APPROVED cell gets a redline s
 - **Sheet index (nav).** From 1024 px, a fixed right rail with sheet numbers joined by a centre line, the current sheet filled, and scroll progress drawn along the line. Labels are always visible from 1280 px, and show on hover or focus between 1024 and 1279. Content reserves the rail's width, so nothing sits under it (audit #9). Below 1024, a bottom **title strip** shows "02 / 05 Experience" plus an Index button that opens the sheet list; 13 px or larger, 48 px tall, clear of the home indicator.
 - **Command palette** (Ctrl/⌘ K, plus an Index button in the strip): jump to a sheet, copy email, download résumé, open GitHub, LinkedIn or CraftTraq, toggle motion, wake the cat.
 - **Drafting crosshair** (fine pointers, motion allowed): a small cross at the pointer with a readout of zone and sheet-relative coordinates in millimetres (CSS mm). It snaps its brackets to interactive targets. The native cursor stays visible. It can be turned off from the palette and is off by default under reduced motion.
-- **Intro:** first visit per session only. The sheet border, zone ticks and key-drawing lines plot in over about 900 ms while the text is already visible. Any key, click or scroll finishes it instantly.
+- **Intro (built, then removed):** a first-visit plot-in of the frame and key drawing. It was the accessory taken off in polish (§10).
 - **Console:** a short note for developers: the stack, the source link, and a hint about the Konami code.
 - **Skip link:** "Skip to content", drawn as a note tag.
 - **404:** Vercel's plain 404 is replaced by a "sheet not found" page drawn in the same language.
@@ -324,3 +324,25 @@ Checked against frontend-design's list of tells:
 - *Numbered markers used as decoration*: every number is a real index (sheet, figure, item, station).
 
 What I changed after this review: I dropped a planned "01 / 02 / 03" step numbering on the case-study sections (problem, approach, outcome), since they aren't a sequence the reader steps through. They're headings.
+
+## 10. Polish pass 3: the design review
+
+A separate reviewer looked only at screenshots. What changed as a result:
+
+- **References land on labelled things.** Bubbles printed arbitrary letters (B, C, D) that matched nothing on the target sheet. They now print the target's own label: station 145, figure 1, note 4. The key drawing is "View A" on both sheets.
+- **One annotation rule.** Identifiers in B612 Mono, labels in Archivo lettering. The dimension label, the BOM "Item" header and the cover caption were brought into line.
+- **Red means markup again.** The survey's progress bar and the callout impact bars were redline, which is decoration by §4.1's rule. They're now blueprint and faded.
+- **Sheet 02 layout.** The heading sits at the same height as every other sheet, with the drawing centred below. The pin is shorter. The stamp lands beside its readout instead of over the drawing, where at 1024 it covered a station label.
+- **Alignment.** Title blocks take the content's side padding (they were 8 px off on the right). The phone title strip sits inside the frame lines. Proof cells reserve bubble room, so their labels line up, and the proof strip is one column on phones.
+- **Projects.** Buttons follow the tags directly instead of dropping to the bottom of the feature figure. The three secondary figures are three-up only from 1024, and sketch-beside-text on tablets.
+- **Phones.** The exploded view is wide-screen only; on a phone it was a large picture ahead of the table that does the work.
+- **Contact.** The HOLD appears once, on the cover's title block. The form button says "Send message", and the helper line says what happens next.
+- **The cover names the role.** "Software engineer" sits under the name.
+- **The accessory taken off:** the first-visit intro. It was the one piece of motion that answered nothing the visitor did, and it competed with the survey as "the" moment.
+
+Declined, with reasons:
+
+- *Remove or shrink the cat.* The brief asks for it to stay and have a bigger role.
+- *Replace the HOLD with a stated availability.* There's nothing sourced to state. Inventing it breaks the truth rule, so it stays until you supply it (NEEDS-FROM-SEARAN #1).
+- *Drop the CRJ spec table and the "10 projects shipped" figure.* Both are content from the old site. The spec is sourced; the "10" is flagged rather than changed (NEEDS-FROM-SEARAN #2).
+

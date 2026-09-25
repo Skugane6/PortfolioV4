@@ -11,41 +11,41 @@
       "experience": [
         {
           "progress": 0,
-          "requestedY": 1602,
+          "requestedY": 1821,
           "rawReadout": null,
-          "settledY": 1602,
+          "settledY": 1821,
           "settledReadout": null
         },
         {
           "progress": 0.25,
-          "requestedY": 1961,
+          "requestedY": 2181,
           "rawReadout": null,
-          "settledY": 1961,
+          "settledY": 2181,
           "settledReadout": null
         },
         {
           "progress": 0.5,
-          "requestedY": 2321,
+          "requestedY": 2540,
           "rawReadout": null,
-          "settledY": 2321,
+          "settledY": 2540,
           "settledReadout": null
         },
         {
           "progress": 0.75,
-          "requestedY": 2680,
+          "requestedY": 2900,
           "rawReadout": null,
-          "settledY": 2680,
+          "settledY": 2900,
           "settledReadout": null
         },
         {
           "progress": 1,
-          "requestedY": 3040,
+          "requestedY": 3259,
           "rawReadout": null,
-          "settledY": 3040,
+          "settledY": 3259,
           "settledReadout": null
         }
       ],
-      "docHeight": 12223
+      "docHeight": 11793
     },
     {
       "width": 1440,
@@ -56,41 +56,41 @@
       "experience": [
         {
           "progress": 0,
-          "requestedY": 947,
+          "requestedY": 998,
           "rawReadout": null,
-          "settledY": 947,
+          "settledY": 998,
           "settledReadout": null
         },
         {
           "progress": 0.25,
-          "requestedY": 1011,
+          "requestedY": 1072,
           "rawReadout": null,
-          "settledY": 1011,
+          "settledY": 1072,
           "settledReadout": null
         },
         {
           "progress": 0.5,
-          "requestedY": 1075,
+          "requestedY": 1145,
           "rawReadout": null,
-          "settledY": 1075,
+          "settledY": 1145,
           "settledReadout": null
         },
         {
           "progress": 0.75,
-          "requestedY": 1139,
+          "requestedY": 1218,
           "rawReadout": null,
-          "settledY": 1139,
+          "settledY": 1218,
           "settledReadout": null
         },
         {
           "progress": 1,
-          "requestedY": 1203,
+          "requestedY": 1291,
           "rawReadout": null,
-          "settledY": 1203,
+          "settledY": 1291,
           "settledReadout": null
         }
       ],
-      "docHeight": 6576
+      "docHeight": 6665
     }
   ]
 }

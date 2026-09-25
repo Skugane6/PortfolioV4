@@ -45,7 +45,7 @@ Why: specific beats clever, and this version is both. It names the employer, the
 
 | Current | Proposed | Why |
 |---|---|---|
-| "SK" monogram, "SEARAN KUGANESAN" / "SOFTWARE ENGINEER" lockup | Removed. The name is the h1. | It duplicated the h1's job at 12 px |
+| "SK" monogram, "SEARAN KUGANESAN" / "SOFTWARE ENGINEER" lockup | Monogram removed. The name is the h1, with "Software engineer" as a line under it. | The lockup duplicated the h1 at 12 px. The role line was restored after the design review: a recruiter should read the job title in the first screen. |
 | "// FULL-STACK & DATA SYSTEMS" | Cut | Covered by the headline paragraph |
 | h1 "I build scalable systems that create real impact." | h1 "Searan Kuganesan", plus the paragraph in §1 | §1 |
 | "I design and develop web applications, streamline complex workflows, and turn ideas into reliable, user-focused products." | Cut | Generic. The new paragraph says the same thing with evidence. |
@@ -56,6 +56,7 @@ Why: specific beats clever, and this version is both. It names the employer, the
 | Stat "Western mark / WESTERN UNIVERSITY" + "2026 / B.E.SC SOFTWARE ENG" | "B.E.Sc. Software Engineering, Western University, 2026", linked to the education line on sheet 02 | One item. The Western mark remains beside it. |
 | Stat "LIVE / CRAFTTRAQ SAAS" → crafttraq.com | "CraftTraq, live", linked to FIG. 1 on sheet 03 (the site link is still one click on) | Brief: "each stat links to its proof" on the page |
 | — | New reference: "2,000+ aircraft, 100+ operators", linked to station 145 on sheet 02 | Existing fact, now in the first screen |
+| — | Each reference bubble prints its target's own label over the sheet: 145/02, 1/03, 4/02. The key drawing is captioned "View A: Side elevation, CRJ700", the same on sheet 02. | The first build printed letters (B, C, D) that matched nothing on the target sheet |
 | "OPEN TO OPPORTUNITIES" / "OPEN TO WORK · CANADA" | STATUS: "Open to opportunities", with redline **HOLD: role type and start date** | Brief: say what you're looking for, and use a placeholder when unknown (NEEDS #1) |
 | "BASED IN CANADA · CYYZ N 43.6777° W 79.6248°" | DATUM "CYYZ, N 43.6777° W 79.6248°" and LOCAL "Toronto" with the live time | Brief: live Toronto time next to CYYZ. The coordinate is kept verbatim (it's the airport's place coordinate, about 0.5 km from the published ARP; content inventory §5.2). |
 | "TURNING COMPLEXITY INTO SIMPLE SOLUTIONS →", "BUILD / SOLVE / IMPROVE / REPEAT", "STA 000 · HOME", "SCROLL" | Cut | Encode nothing |
@@ -166,9 +167,10 @@ Detail-sheet headings: **What it does · How it's built · Architecture · Where
 | "§ 04 · CONTACT" / "OPEN CHANNELS · 04 ROUTES" | Title "Contact", title-block row "Sheet 05 · Approval" | |
 | "CH 01 · PRIMARY", "CH 02"… | Cut | Not a sequence |
 | Email card "Send email" / "Copy address" / "Copied" | "Email me" / "Copy address" / "Copied to clipboard" (plus the announced live region) | Sentence case. The confirmation names the action. |
-| — | Form "Submit for approval": Name, Email, Message. Success: "Sent. Approved: I'll reply from searan.kuganesan4@gmail.com." Not configured or error: "Couldn't send from here. Your email app will open with the message filled in." | Brief. States what happens and the fix. |
+| — | Helper in the APPROVED cell: "You. Send a note and I'll reply by email." Sheet intro: "Email is the quickest way to reach me. Or send a note from the approval block below and it comes straight to my inbox." | Says what happens, in plain words (design review) |
+| — | Form "Send message": Name, Email, Message. Success: "Sent. Approved: I'll reply from searan.kuganesan4@gmail.com." Not configured or error: "Couldn't send from here. Your email app will open with the message filled in." | Brief. States what happens and the fix. |
 | Channel cards GitHub "skugane6", LinkedIn "searan-kuganesan", CraftTraq "crafttraq.com" | Unchanged handles, as rows in the approval block | |
-| — | DRAWN "S. Kuganesan"; CHECKED: the cat's paw stamp; APPROVED: "You"; STATUS as on the cover | The sign-off (DESIGN.md) |
+| — | DRAWN "S. Kuganesan"; CHECKED: the cat's paw stamp; APPROVED: "You"; STATUS "Open to opportunities" (the HOLD note shows once, on the cover) | The sign-off (DESIGN.md) |
 | Footer "BUILT BY SEARAN KUGANESAN" | Revision block: REV · DATE · DESCRIPTION for the last three commits, the build hash, "Source on GitHub" (github.com/Skugane6/PortfolioV4, public), and "Back to cover". "Designed and built by Searan Kuganesan" stays. | Brief: a real footer |
 
 ---

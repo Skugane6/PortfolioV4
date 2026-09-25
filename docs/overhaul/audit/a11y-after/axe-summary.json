@@ -17,90 +17,54 @@
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 90
+          "count": 54
         }
       ],
-      "bestPractice": [
-        {
-          "id": "region",
-          "impact": "moderate",
-          "count": 1,
-          "targets": [
-            ".min-w-0.px-4"
-          ]
-        }
-      ]
+      "bestPractice": []
     },
     {
       "width": 375,
       "state": "experience-top",
-      "scrollY": 1602,
+      "scrollY": 1821,
       "wcag": [],
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 90
+          "count": 55
         }
       ],
-      "bestPractice": [
-        {
-          "id": "region",
-          "impact": "moderate",
-          "count": 1,
-          "targets": [
-            ".min-w-0.px-4"
-          ]
-        }
-      ]
+      "bestPractice": []
     },
     {
       "width": 375,
       "state": "experience-mid",
-      "scrollY": 2392,
+      "scrollY": 2612,
       "wcag": [],
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 91
+          "count": 55
         }
       ],
-      "bestPractice": [
-        {
-          "id": "region",
-          "impact": "moderate",
-          "count": 1,
-          "targets": [
-            ".min-w-0.px-4"
-          ]
-        }
-      ]
+      "bestPractice": []
     },
     {
       "width": 375,
       "state": "projects",
-      "scrollY": 3852,
+      "scrollY": 4072,
       "wcag": [],
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 90
+          "count": 55
         }
       ],
-      "bestPractice": [
-        {
-          "id": "region",
-          "impact": "moderate",
-          "count": 1,
-          "targets": [
-            ".min-w-0.px-4"
-          ]
-        }
-      ]
+      "bestPractice": []
     },
     {
       "width": 375,
       "state": "projects-tab3",
-      "scrollY": 5464,
+      "scrollY": 5684,
       "wcag": [],
       "incomplete": [
         {
@@ -113,7 +77,7 @@
     {
       "width": 375,
       "state": "skills",
-      "scrollY": 6669,
+      "scrollY": 6889,
       "wcag": [],
       "incomplete": [
         {
@@ -126,7 +90,7 @@
     {
       "width": 375,
       "state": "contact",
-      "scrollY": 9750,
+      "scrollY": 9398,
       "wcag": [],
       "incomplete": [
         {
@@ -139,7 +103,7 @@
     {
       "width": 375,
       "state": "bottom",
-      "scrollY": 11345,
+      "scrollY": 10981,
       "wcag": [],
       "incomplete": [
         {
@@ -157,7 +121,7 @@
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 301
+          "count": 302
         }
       ],
       "bestPractice": []
@@ -165,12 +129,12 @@
     {
       "width": 1440,
       "state": "experience-top",
-      "scrollY": 947,
+      "scrollY": 998,
       "wcag": [],
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 301
+          "count": 302
         }
       ],
       "bestPractice": []
@@ -178,12 +142,12 @@
     {
       "width": 1440,
       "state": "experience-mid",
-      "scrollY": 2260,
+      "scrollY": 1941,
       "wcag": [],
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 301
+          "count": 302
         }
       ],
       "bestPractice": []
@@ -191,12 +155,12 @@
     {
       "width": 1440,
       "state": "projects",
-      "scrollY": 4235,
+      "scrollY": 3611,
       "wcag": [],
       "incomplete": [
         {
           "id": "color-contrast",
-          "count": 303
+          "count": 304
         }
       ],
       "bestPractice": []
@@ -204,7 +168,7 @@
     {
       "width": 1440,
       "state": "projects-tab3",
-      "scrollY": 4973,
+      "scrollY": 4349,
       "wcag": [],
       "incomplete": [
         {
@@ -217,7 +181,7 @@
     {
       "width": 1440,
       "state": "skills",
-      "scrollY": 5602,
+      "scrollY": 4978,
       "wcag": [],
       "incomplete": [
         {
@@ -230,7 +194,7 @@
     {
       "width": 1440,
       "state": "contact",
-      "scrollY": 7460,
+      "scrollY": 6837,
       "wcag": [],
       "incomplete": [
         {
@@ -243,7 +207,7 @@
     {
       "width": 1440,
       "state": "bottom",
-      "scrollY": 7808,
+      "scrollY": 7184,
       "wcag": [],
       "incomplete": [
         {

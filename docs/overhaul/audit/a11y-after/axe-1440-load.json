@@ -21,11 +21,11 @@
       ],
       "help": "Elements must meet minimum color contrast ratio thresholds",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
-      "count": 301,
+      "count": 302,
       "nodes": [
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
           ],
           "html": "<span data-zone-col=\"1\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">1</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -45,7 +45,7 @@
         },
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
           ],
           "html": "<span data-zone-col=\"2\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">2</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -65,7 +65,7 @@
         },
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
           ],
           "html": "<span data-zone-col=\"3\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">3</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -85,7 +85,7 @@
         },
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
           ],
           "html": "<span data-zone-col=\"4\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">4</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -105,7 +105,7 @@
         },
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
           ],
           "html": "<span data-zone-col=\"5\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">5</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -125,7 +125,7 @@
         },
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
           ],
           "html": "<span data-zone-col=\"6\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">6</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -145,7 +145,7 @@
         },
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
           ],
           "html": "<span data-zone-col=\"7\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">7</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -165,7 +165,7 @@
         },
         {
           "target": [
-            "#cover > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
+            "#cover > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
           ],
           "html": "<span data-zone-col=\"8\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">8</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -325,6 +325,26 @@
         },
         {
           "target": [
+            ".sm\\:mt-4"
+          ],
+          "html": "<p class=\"w-narrow mt-3 text-heading font-semibold text-faded sm:mt-4\">Software engineer</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "any": [
+            {
+              "id": "color-contrast",
+              "message": "Element's background color could not be determined due to a background gradient",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "18.0pt (24px)",
+                "fontWeight": "normal",
+                "messageKey": "bgGradient",
+                "expectedContrastRatio": "3:1"
+              }
+            }
+          ]
+        },
+        {
+          "target": [
             ".max-w-\\[44ch\\]"
           ],
           "html": "<p class=\"max-w-[44ch] text-lead text-blueprint\">I build the systems operators run on:<!-- --> <!-- -->a component tracker supporting 2,000+ aircraft across 100+ operators at Mitsubishi Heavy Industries, and CraftTraq, a live SaaS for trade contractors.</p>",
@@ -405,7 +425,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
           ],
           "html": "<span data-zone-col=\"1\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">1</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -425,7 +445,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
           ],
           "html": "<span data-zone-col=\"2\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">2</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -445,7 +465,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
           ],
           "html": "<span data-zone-col=\"3\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">3</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -465,7 +485,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
           ],
           "html": "<span data-zone-col=\"4\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">4</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -485,7 +505,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
           ],
           "html": "<span data-zone-col=\"5\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">5</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -505,7 +525,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
           ],
           "html": "<span data-zone-col=\"6\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">6</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -525,7 +545,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
           ],
           "html": "<span data-zone-col=\"7\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">7</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -545,7 +565,7 @@
         },
         {
           "target": [
-            "#experience > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
+            "#experience > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
           ],
           "html": "<span data-zone-col=\"8\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">8</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -765,7 +785,7 @@
         },
         {
           "target": [
-            ".text-right.shrink-0[aria-hidden=\"true\"] > .lettering"
+            ".items-end.flex-col.shrink-0 > .text-right > .lettering"
           ],
           "html": "<p class=\"lettering text-label text-faded\">Survey</p>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
@@ -799,6 +819,46 @@
                 "fontWeight": "bold",
                 "messageKey": "bgGradient",
                 "expectedContrastRatio": "3:1"
+              }
+            }
+          ]
+        },
+        {
+          "target": [
+            ".top-\\[4\\%\\]"
+          ],
+          "html": "<p aria-hidden=\"true\" class=\"absolute top-[4%] text-label text-faded\" style=\"left: 1.92132%;\"><span class=\"lettering mr-2 font-mono text-blueprint\">View A</span>Side elevation, CRJ700</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+          "any": [
+            {
+              "id": "color-contrast",
+              "message": "Element's background color could not be determined because it is overlapped by another element",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
+              }
+            }
+          ]
+        },
+        {
+          "target": [
+            ".top-\\[4\\%\\] > .mr-2.lettering.text-blueprint"
+          ],
+          "html": "<span class=\"lettering mr-2 font-mono text-blueprint\">View A</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
+          "any": [
+            {
+              "id": "color-contrast",
+              "message": "Element's background color could not be determined because it is overlapped by another element",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "9.8pt (13px)",
+                "fontWeight": "normal",
+                "messageKey": "bgOverlap",
+                "expectedContrastRatio": "4.5:1"
               }
             }
           ]
@@ -1165,7 +1225,7 @@
         },
         {
           "target": [
-            ".py-10.gap-10.lg\\:grid-cols-12 > .lg\\:col-span-7 > h3"
+            ".py-10 > .lg\\:col-span-7 > h3"
           ],
           "html": "<h3 class=\"lettering text-label text-faded\">Notes</h3>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
@@ -1341,7 +1401,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
           ],
           "html": "<span data-zone-col=\"1\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">1</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1361,7 +1421,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
           ],
           "html": "<span data-zone-col=\"2\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">2</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1381,7 +1441,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
           ],
           "html": "<span data-zone-col=\"3\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">3</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1401,7 +1461,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
           ],
           "html": "<span data-zone-col=\"4\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">4</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1421,7 +1481,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
           ],
           "html": "<span data-zone-col=\"5\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">5</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1441,7 +1501,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
           ],
           "html": "<span data-zone-col=\"6\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">6</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1461,7 +1521,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
           ],
           "html": "<span data-zone-col=\"7\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">7</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1481,7 +1541,7 @@
         },
         {
           "target": [
-            "#projects > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
+            "#projects > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
           ],
           "html": "<span data-zone-col=\"8\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">8</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1661,7 +1721,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
           ],
           "html": "<span data-zone-col=\"1\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">1</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1681,7 +1741,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
           ],
           "html": "<span data-zone-col=\"2\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">2</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1701,7 +1761,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
           ],
           "html": "<span data-zone-col=\"3\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">3</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1721,7 +1781,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
           ],
           "html": "<span data-zone-col=\"4\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">4</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1741,7 +1801,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
           ],
           "html": "<span data-zone-col=\"5\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">5</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1761,7 +1821,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
           ],
           "html": "<span data-zone-col=\"6\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">6</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1781,7 +1841,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
           ],
           "html": "<span data-zone-col=\"7\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">7</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -1801,7 +1861,7 @@
         },
         {
           "target": [
-            "#skills > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
+            "#skills > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
           ],
           "html": "<span data-zone-col=\"8\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">8</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -2341,9 +2401,9 @@
         },
         {
           "target": [
-            "text[y=\"233.76\"]"
+            "text[y=\"228.36\"]"
           ],
-          "html": "<text x=\"179.6\" y=\"233.76\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">07</text>",
+          "html": "<text x=\"198.6\" y=\"228.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">07</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2361,9 +2421,9 @@
         },
         {
           "target": [
-            "text[x=\"225.2\"]"
+            "text[y=\"247.8\"]"
           ],
-          "html": "<text x=\"225.2\" y=\"246.72\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">08</text>",
+          "html": "<text x=\"267\" y=\"247.8\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">08</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2381,9 +2441,9 @@
         },
         {
           "target": [
-            "text[x=\"270.8\"]"
+            "text[y=\"267.24\"]"
           ],
-          "html": "<text x=\"270.8\" y=\"259.68\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">09</text>",
+          "html": "<text x=\"335.4\" y=\"267.24\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">09</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2401,9 +2461,9 @@
         },
         {
           "target": [
-            "text[y=\"272.64\"]"
+            "text[y=\"244.56\"]"
           ],
-          "html": "<text x=\"316.4\" y=\"272.64\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">10</text>",
+          "html": "<text x=\"141.60000000000002\" y=\"244.56\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">10</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2421,9 +2481,9 @@
         },
         {
           "target": [
-            "text[y=\"255.36\"]"
+            "text[y=\"264\"]"
           ],
-          "html": "<text x=\"103.60000000000001\" y=\"255.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">11</text>",
+          "html": "<text x=\"210\" y=\"264\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">11</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2441,9 +2501,9 @@
         },
         {
           "target": [
-            "text[x=\"149.20000000000002\"]"
+            "text[y=\"283.44\"]"
           ],
-          "html": "<text x=\"149.20000000000002\" y=\"268.32\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">12</text>",
+          "html": "<text x=\"278.4\" y=\"283.44\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">12</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2461,9 +2521,9 @@
         },
         {
           "target": [
-            "text[x=\"194.8\"]"
+            "text[y=\"260.76\"]"
           ],
-          "html": "<text x=\"194.8\" y=\"281.28\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">13</text>",
+          "html": "<text x=\"84.6\" y=\"260.76\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">13</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2501,9 +2561,9 @@
         },
         {
           "target": [
-            "text[y=\"407.76\"]"
+            "text[y=\"402.36\"]"
           ],
-          "html": "<text x=\"179.6\" y=\"407.76\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">14</text>",
+          "html": "<text x=\"198.6\" y=\"402.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">14</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2521,9 +2581,9 @@
         },
         {
           "target": [
-            "text[x=\"213.8\"]"
+            "text[y=\"421.8\"]"
           ],
-          "html": "<text x=\"213.8\" y=\"417.48\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">15</text>",
+          "html": "<text x=\"267\" y=\"421.8\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">15</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2541,9 +2601,9 @@
         },
         {
           "target": [
-            "text[y=\"427.2\"]"
+            "text[y=\"441.24\"]"
           ],
-          "html": "<text x=\"248\" y=\"427.2\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">16</text>",
+          "html": "<text x=\"335.4\" y=\"441.24\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">16</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2561,9 +2621,9 @@
         },
         {
           "target": [
-            "text[x=\"282.20000000000005\"]"
+            "text[y=\"418.56\"]"
           ],
-          "html": "<text x=\"282.20000000000005\" y=\"436.92\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">17</text>",
+          "html": "<text x=\"141.60000000000002\" y=\"418.56\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">17</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2581,9 +2641,9 @@
         },
         {
           "target": [
-            "text[y=\"446.64\"]"
+            "text[y=\"438\"]"
           ],
-          "html": "<text x=\"316.4\" y=\"446.64\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">18</text>",
+          "html": "<text x=\"210\" y=\"438\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">18</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2601,9 +2661,9 @@
         },
         {
           "target": [
-            "text[y=\"429.36\"]"
+            "text[y=\"457.44\"]"
           ],
-          "html": "<text x=\"103.60000000000001\" y=\"429.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">19</text>",
+          "html": "<text x=\"278.4\" y=\"457.44\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">19</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2621,9 +2681,9 @@
         },
         {
           "target": [
-            "text[x=\"137.8\"]"
+            "text[y=\"434.76\"]"
           ],
-          "html": "<text x=\"137.8\" y=\"439.08\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">20</text>",
+          "html": "<text x=\"84.6\" y=\"434.76\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">20</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2641,9 +2701,9 @@
         },
         {
           "target": [
-            "text[y=\"448.8\"]"
+            "text[x=\"153\"]"
           ],
-          "html": "<text x=\"172\" y=\"448.8\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">21</text>",
+          "html": "<text x=\"153\" y=\"454.2\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">21</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2661,9 +2721,9 @@
         },
         {
           "target": [
-            "text[x=\"206.20000000000002\"]"
+            "text[x=\"221.39999999999998\"]"
           ],
-          "html": "<text x=\"206.20000000000002\" y=\"458.52\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">22</text>",
+          "html": "<text x=\"221.39999999999998\" y=\"473.64\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">22</text>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -2823,7 +2883,7 @@
           "target": [
             ".w-\\[4\\.5rem\\]"
           ],
-          "html": "<th scope=\"col\" class=\"lettering w-[4.5rem] py-2 pl-3 font-mono text-label font-normal text-faded\">Item</th>",
+          "html": "<th scope=\"col\" class=\"lettering w-[4.5rem] py-2 pl-3 text-label font-normal text-faded\">Item</th>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5001,7 +5061,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"1\"]"
           ],
           "html": "<span data-zone-col=\"1\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">1</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5021,7 +5081,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"2\"]"
           ],
           "html": "<span data-zone-col=\"2\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">2</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5041,7 +5101,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"3\"]"
           ],
           "html": "<span data-zone-col=\"3\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">3</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5061,7 +5121,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"4\"]"
           ],
           "html": "<span data-zone-col=\"4\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">4</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5081,7 +5141,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"5\"]"
           ],
           "html": "<span data-zone-col=\"5\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">5</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5101,7 +5161,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"6\"]"
           ],
           "html": "<span data-zone-col=\"6\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">6</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5121,7 +5181,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"7\"]"
           ],
           "html": "<span data-zone-col=\"7\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">7</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5141,7 +5201,7 @@
         },
         {
           "target": [
-            "#contact > .select-none.lg\\:block.inset-0 > .h-6.inset-x-0.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
+            "#contact > .select-none.lg\\:block.inset-0 > .inset-x-0.h-6.top-0 > .first\\:border-l-0.border-l[data-zone-col=\"8\"]"
           ],
           "html": "<span data-zone-col=\"8\" class=\"flex flex-1 items-center justify-center border-l border-construction/60 font-mono text-label text-faded first:border-l-0\">8</span>",
           "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
@@ -5303,7 +5363,7 @@
           "target": [
             ".max-w-\\[56ch\\]"
           ],
-          "html": "<p class=\"mt-3 max-w-[56ch] text-body text-faded\">Email is the quickest way to reach me. Or sign off the set below and your note comes straight to my inbox.</p>",
+          "html": "<p class=\"mt-3 max-w-[56ch] text-body text-faded\">Email is the quickest way to reach me. Or send a note from the approval block below and it comes straight to my inbox.</p>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5543,47 +5603,7 @@
           "target": [
             "div:nth-child(1) > .mt-1"
           ],
-          "html": "<dd class=\"mt-1 text-blueprint\">Open to opportunities<span class=\"mt-1 flex flex-wrap items-center gap-2\"><span class=\"hold\">Hold</span><span class=\"text-redline\">role type, start date</span></span></dd>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "11.3pt (15px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            ".mt-1.flex-wrap.gap-2 > .hold"
-          ],
-          "html": "<span class=\"hold\">Hold</span>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "9.8pt (13px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            ".mt-1.flex-wrap.gap-2 > .text-redline"
-          ],
-          "html": "<span class=\"text-redline\">role type, start date</span>",
+          "html": "<dd class=\"mt-1 text-blueprint\">Open to opportunities</dd>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5623,7 +5643,7 @@
           "target": [
             ".gap-y-4 > div:nth-child(2) > .mt-1"
           ],
-          "html": "<dd class=\"mt-1 text-blueprint\">Toronto<!-- --> <time class=\"figures\" datetime=\"2026-09-25T00:13:00.006Z\">20:13</time></dd>",
+          "html": "<dd class=\"mt-1 text-blueprint\">Toronto<!-- --> <time class=\"figures\" datetime=\"2026-09-25T04:32:16.610Z\">00:32</time></dd>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5641,9 +5661,9 @@
         },
         {
           "target": [
-            ".mt-1 > time"
+            "time[datetime=\"2026-09-25T04:32:16.610Z\"]"
           ],
-          "html": "<time class=\"figures\" datetime=\"2026-09-25T00:13:00.006Z\">20:13</time>",
+          "html": "<time class=\"figures\" datetime=\"2026-09-25T04:32:16.610Z\">00:32</time>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5703,7 +5723,7 @@
           "target": [
             ".border-faded\\/70:nth-child(1) > .p-3:nth-child(2)"
           ],
-          "html": "<td class=\"p-3 text-blueprint\">S. Kuganesan<span class=\"figures ml-3 text-faded\">2026-09-24</span></td>",
+          "html": "<td class=\"p-3 text-blueprint\">S. Kuganesan<span class=\"figures ml-3 text-faded\">2026-09-25</span></td>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5723,7 +5743,7 @@
           "target": [
             ".ml-3"
           ],
-          "html": "<span class=\"figures ml-3 text-faded\">2026-09-24</span>",
+          "html": "<span class=\"figures ml-3 text-faded\">2026-09-25</span>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5803,7 +5823,7 @@
           "target": [
             ".mb-4"
           ],
-          "html": "<p class=\"mb-4 text-small text-faded\">You. Send a note to sign off.</p>",
+          "html": "<p class=\"mb-4 text-small text-faded\">You. Send a note and I’ll reply by email.</p>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -5943,7 +5963,7 @@
           "target": [
             "button[type=\"submit\"]"
           ],
-          "html": "<button type=\"submit\" class=\"btn-primary\">Submit for approval</button>",
+          "html": "<button type=\"submit\" class=\"btn-primary\">Send message</button>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
           "any": [
             {
@@ -6003,7 +6023,7 @@
           "target": [
             ".lg\\:col-span-4 > p"
           ],
-          "html": "<p class=\"text-label text-faded\">Designed and built by <!-- -->Searan Kuganesan<!-- -->. Build <span class=\"font-mono\">24d3c3c</span>.</p>",
+          "html": "<p class=\"text-label text-faded\">Designed and built by <!-- -->Searan Kuganesan<!-- -->. Build <span class=\"font-mono\">af72d0a</span>.</p>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {
@@ -6023,7 +6043,7 @@
           "target": [
             ".lg\\:col-span-4 > p > .font-mono"
           ],
-          "html": "<span class=\"font-mono\">24d3c3c</span>",
+          "html": "<span class=\"font-mono\">af72d0a</span>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {

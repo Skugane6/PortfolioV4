@@ -240,7 +240,7 @@ Implement `stations.ts` with `DRAWING = { noseX: 2, tailX: 2106, lengthM: 32.51 
 
 - [ ] CommandPalette: a `<dialog>` with a combobox + listbox pattern (`aria-activedescendant`). Opens with Ctrl/⌘K and "/" and the index button. Commands per DESIGN.md. Fuzzy match on title and keywords. Closes with Escape and restores focus.
 - [ ] Crosshair: `(pointer: fine)` and motion allowed only. `pointer-events: none`. Writes transforms in a rAF only while the pointer moves. Readout is zone plus mm. Snap brackets hug `a, button, [role=option]` bounds. The toggle state is kept in localStorage (try/catch).
-- [ ] Intro: first visit per `sessionStorage`, ≤ 1.1 s, finishes on any input. The h1 is never hidden.
+- [ ] Intro: first visit per `sessionStorage`, ≤ 1.1 s, finishes on any input. The h1 is never hidden. *(Built, then removed in polish as the accessory taken off: DESIGN.md §10.)*
 - [ ] Pet: one skin, roam area = the cover title block's top rule, `pointer-events: none` except on the sprite, hidden when the cover is offscreen, static under reduce. The CHECKED stamp is in the approval block. "Wake the cat" is in the palette.
 - [ ] consoleNote: one `console.info` group once per load.
 - [ ] e2e: Ctrl+K opens, typing "resume" plus Enter triggers the résumé download event, Escape restores focus. At 375 the cat's rect doesn't intersect any `a, button, h1, p` rect. The crosshair is absent with `hasTouch` and under reduced motion.

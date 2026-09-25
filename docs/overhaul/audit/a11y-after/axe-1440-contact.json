@@ -1,7 +1,7 @@
 {
   "width": 1440,
   "state": "contact",
-  "scrollY": 7460,
+  "scrollY": 6837,
   "wcagViolations": [],
   "wcagIncomplete": [
     {
@@ -585,7 +585,7 @@
         },
         {
           "target": [
-            ".flex-col.border-faded\\/70.ground > .leading-tight.font-semibold.w-narrow"
+            ".flex-col.ground.border-faded\\/70 > .leading-tight.font-semibold.w-narrow"
           ],
           "html": "<span class=\"w-narrow text-small font-semibold leading-tight text-blueprint\">MLflow</span>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
@@ -605,7 +605,7 @@
         },
         {
           "target": [
-            ".flex-col.border-faded\\/70.ground > .mt-0\\.5.leading-tight.text-label"
+            ".flex-col.ground.border-faded\\/70 > .mt-0\\.5.leading-tight.text-label"
           ],
           "html": "<span class=\"mt-0.5 text-label leading-tight text-faded\">configs, hyperparameters</span>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",

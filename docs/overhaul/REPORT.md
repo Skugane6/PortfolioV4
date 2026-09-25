@@ -40,20 +40,20 @@ All "after" numbers are from the production build (prerendered, served locally w
 |---|---|---|---|---|
 | Lighthouse mobile: performance / a11y / best practices / SEO | 72 / 90 / 100 / 100 | 60 / 90 / 100 / 100 | **100 / 100 / 100 / 100** | ≥ 90 / 100 / ≥ 95 / 100 |
 | Lighthouse desktop | 98 / 90 / 100 / 100 | 97 / 90 / 100 / 100 | **100 / 100 / 100 / 100** | |
-| Mobile LCP (simulated slow 4G, 4× CPU) | 4.86 s | 6.58 s | **1.66 s** | ≤ 2.0 s |
-| Mobile FCP | 3.65 s | 3.74 s | **1.09 s** | |
-| Mobile TBT (INP stand-in) | 173 ms | 284 ms | **19 ms** | INP ≤ 200 ms |
-| CLS | 0 | 0 | **0** (0.046 worst of 5 runs) | ≤ 0.05 |
-| Initial JavaScript, gzip | 137 KB (+136 KB cat) | | **112 KB** | ≈ ≤ 200 KB |
-| Everything loaded on first view | 1.54 MB | | **280 KB** | |
+| Mobile LCP (simulated slow 4G, 4× CPU) | 4.86 s | 6.58 s | **1.66 s** (worst of 5: 2.52 s) | ≤ 2.0 s |
+| Mobile FCP | 3.65 s | 3.74 s | **1.04 s** | |
+| Mobile TBT (INP stand-in) | 173 ms | 284 ms | **17 ms** | INP ≤ 200 ms |
+| CLS | 0 | 0 | **0** (0 in all 5 runs) | ≤ 0.05 |
+| Initial JavaScript, gzip | 137 KB (+136 KB cat) | | **112 KB**, loaded after first paint | ≈ ≤ 200 KB |
+| Everything loaded on first view (phone) | 1.54 MB | | **283 KB** | |
 | Fonts | 5 families, 127 KB, render-blocking from Google | | 2 families, 66 KB, self-hosted, subset, preloaded | |
 | Largest image | 948 KB PNG airframe | | airframe is inline SVG; largest image at load 19 KB | |
 | axe WCAG 2.2 A/AA violations (16 states, 375 + 1440) | serious in all 16 | | **0 in all 16** | 0 |
-| Text under 12 px at 375 | 228 of 293 nodes | | **0 of 436** (none under 13 px) | none under 12 |
+| Text under 12 px at 375 | 228 of 293 nodes | | **0 of 404** (none under 13 px) | none under 12 |
 | Text failing 4.5:1 | 28 (375), 29 (1440) | | **0** (lowest ratio 6.38:1) | 0 |
-| Experience scroll, desktop, 4× CPU | 16.8 fps, p50 frame 55 ms, 41 long tasks | | **78.6 fps, p50 12 ms, 1 long task** | 60 fps |
+| Experience scroll, desktop, 4× CPU | 16.8 fps, p50 frame 55 ms, 41 long tasks | | **101.9 fps, p50 6.1 ms, p95 18.2 ms, 0 long tasks** | 60 fps |
 | Main-thread busy while idle (cover / contact) | 95% / 99% | | **8% / 14%** | |
-| Phone viewport, whole-page scroll, 4× CPU | not measured | | **p95 frame 16.7 ms, 0 long tasks** | |
+| Phone viewport, whole-page scroll, 4× CPU | not measured | | **p95 frame 16.8 ms, 0 long tasks** | |
 | Infinite animations running | 32, never paused | | **0 ambient loops** (the cat naps only while on screen) | |
 | Share metadata | title and description only | | OG and Twitter image, favicon set, manifest, Person JSON-LD, sitemap, robots, canonical | |
 
@@ -62,7 +62,7 @@ Raw data:
 - Baseline: `audit/perf/`, `audit/a11y/`.
 - After: `audit/perf-after/lighthouse-summary.json`, `audit/perf/runtime-after-x4.json`, `audit/a11y-after/`.
 
-Tests: 146 unit tests and 95 Playwright end-to-end checks, run against the production build at 1440 and at 375 with touch. The end-to-end run includes axe on every sheet, both dialogs and the palette. `npm run lint` and `npm run typecheck` are clean, and `npm run check:bundle` enforces the JavaScript budget.
+Tests: 146 unit tests and 95 Playwright end-to-end checks (plus 17 skipped because they only apply to one of the two devices), run against the production build at 1440 and at 375 with touch. The end-to-end run includes axe on every sheet, both dialogs and the palette. `npm run lint` and `npm run typecheck` are clean, and `npm run check:bundle` enforces the JavaScript budget.
 
 ---
 
@@ -70,7 +70,7 @@ Tests: 146 unit tests and 95 Playwright end-to-end checks, run against the produ
 
 **One concept, carried to every sheet.** The audit found the drawing idea fully committed only in Experience. Now every sheet has a zone-referenced frame and a title block, with sheet number, title, the git revision it was built from, and the date. The nav rail is the sheet index, and its numbers match the title blocks (the old site had 01 Home in the nav but "§ 01 Experience" as the heading). Chrome that carried no information is gone: ghost words, eyebrows, the fake IDE, "Build / Solve / Improve / Repeat". Each mark that remains means something. Stations are real positions on the drawing. Detail bubbles are links to the sheet that proves a claim. QTY in the bill of materials is counted from where a part is actually used. HOLD marks information not yet released.
 
-**The cover answers the recruiter's first question.** The name is the heading. The positioning line names the employer, the scale and the live product. The proof items link to their evidence on the page. The title block holds status, datum, live Toronto time and revision. The old hero's copy was generic and its illustration had no data behind it.
+**The cover answers the recruiter's first question.** The name is the heading, with the role under it. The positioning line names the employer, the scale and the live product. The proof items link to their evidence on the page, and each bubble prints the label of what it points at: station 145, figure 1, note 4. The title block holds status, datum, live Toronto time and revision. The old hero's copy was generic and its illustration had no data behind it.
 
 **The flagship, rebuilt rather than replaced.** The 948 KB raster airframe is now SVG line art, traced from it and grouped by drawing convention: object, thin, hidden, centre and panel lines. It plots itself as you arrive. The survey then pins, and each callout docks fore to aft: its station lights, a three-stroke leader draws, and the card appears. It reaches **100%** and the "Survey complete, inspected 08/2025" stamp lands; the old survey stopped at 87–91%. Cards lead with a verbatim impact line; the full text is one disclosure away. Stations and cards highlight each other. Keyboard focus completes the survey at once, so nothing focusable is ever invisible. Phones get a sticky airframe above normal-flow cards, lit by the card being read, instead of the desktop pin shrunk down. Reduced motion gets the finished sheet.
 
@@ -90,8 +90,9 @@ The old visuals' unsourced numbers are gone, and a test keeps them out.
 
 - a command palette (Ctrl/⌘ K);
 - a drafting crosshair that reads out sheet, zone and millimetres, on fine pointers only;
-- a first-visit plot-in of the frame, under a second and skippable;
 - a note in the console.
+
+A first-visit plot-in of the frame was built too, then removed in polish: the one accessory taken off. It answered nothing the visitor did and competed with the survey for attention.
 
 **Engineering.**
 
@@ -120,7 +121,7 @@ Removed: `framer-motion`.
 
 - **Not verified on real devices or with a real camera.** Touch was emulated. The eye demo's calibration and blink detection are unit-tested with synthetic landmarks and were never run against a face.
 - **Synthesized touch scrolling doesn't work in this machine's headless Chromium**, even on a plain test page (`scripts/audit/touch-scroll-probe.mjs`). The phone runtime figure therefore comes from wheel scrolling at a phone viewport.
-- **Lighthouse is simulated and noisy.** One of five mobile runs scored LCP 2.21 s and CLS 0.046, still inside targets. The measurements are local builds served by `vite preview`, not Vercel's edge; a preview deploy would give production numbers.
+- **Lighthouse is simulated and noisy.** The median mobile LCP is 1.66 s, but one of five runs scored 2.52 s (performance 97), over the 2.0 s target. A second run at 2.18 s was also over it. The median is inside the target; the spread isn't. The measurements are local builds served by `vite preview`, not Vercel's edge; a preview deploy would give production numbers.
 - **Font-swap residue at 360 and 390 px:** the cover's proof labels wrap about 20 px differently in the fallback face, below the fold (`scripts/audit/font-shift.mjs`). Some symbols (⌘, →, Σ) aren't in the font files Google serves for Latin, so they render from system fonts, as they did before.
 - **Delayed interactivity on slow connections.** The app starts after the page has painted. Links work immediately, but buttons (Details, Open detail, the palette) wait for hydration, a few hundred ms on slow 4G.
 - **No print stylesheet.** The whiteprint idea in DESIGN.md Q4 wasn't built; printing gives the dark page.
@@ -131,4 +132,25 @@ Removed: `framer-motion`.
 
 ## 5. Reviews
 
-A fresh code reviewer and a separate design reviewer, working from screenshots only, reviewed the branch. What they found and what was done about it: §6.
+Two independent reviews ran at the end: a design reviewer working only from screenshots, and a fresh code reviewer working only from the code. Neither had seen the build conversation.
+
+### Design review
+
+Acted on (details in DESIGN.md §10):
+
+- The cover's reference bubbles printed letters that matched nothing on the target sheet. They now print the target's own label (145/02, 1/03, 4/02), and the key drawing is "View A" on both sheets.
+- Identifiers and labels mixed faces at random. The rule is now identifiers in mono and labels in Archivo lettering, everywhere.
+- Redline was used decoratively on progress and impact bars. Those are neutral now; red is markup and selection only.
+- On sheet 02 the heading floated at a different height from the other sheets, the pin felt long, and at 1024 the stamp covered a station label. The heading is top-aligned, the pin is about a quarter shorter (65vh to 50vh per step), and the stamp lands beside its readout.
+- Title blocks sat 8 px off the content's right edge; the phone strip ran over the frame lines; proof labels didn't line up; the Western cell overflowed at 375 and 1024. All fixed.
+- Projects: buttons had drifted to the bottom of the feature figure, and three narrow cards at 768 cramped their text. Buttons now follow the tags; tablets get sketch-beside-text cards.
+- The exploded view was a large picture ahead of the table on phones. It's wide-screen only now.
+- Contact: the HOLD appeared twice, and "Submit for approval" didn't say what it did. The HOLD is on the cover only; the button says "Send message".
+- The cover didn't name the role. "Software engineer" sits under the name (it was in the old site's lockup).
+- The accessory removed: the first-visit intro.
+
+Declined: removing the cat (your brief asks for it), replacing the HOLD with a stated availability (nothing sourced to state), and dropping the CRJ spec table and the "10 projects shipped" figure (existing content; the second is flagged, not changed).
+
+### Code review
+
+(pending)

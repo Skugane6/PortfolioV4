@@ -1,7 +1,7 @@
 {
   "width": 375,
   "state": "experience-top",
-  "scrollY": 1602,
+  "scrollY": 1821,
   "wcagViolations": [],
   "wcagIncomplete": [
     {
@@ -21,7 +21,7 @@
       ],
       "help": "Elements must meet minimum color contrast ratio thresholds",
       "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
-      "count": 90,
+      "count": 55,
       "nodes": [
         {
           "target": [
@@ -57,6 +57,26 @@
                 "contrastRatio": 0,
                 "fontSize": "42.0pt (56px)",
                 "fontWeight": "bold",
+                "messageKey": "bgGradient",
+                "expectedContrastRatio": "3:1"
+              }
+            }
+          ]
+        },
+        {
+          "target": [
+            ".sm\\:mt-4"
+          ],
+          "html": "<p class=\"w-narrow mt-3 text-heading font-semibold text-faded sm:mt-4\">Software engineer</p>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+          "any": [
+            {
+              "id": "color-contrast",
+              "message": "Element's background color could not be determined due to a background gradient",
+              "data": {
+                "contrastRatio": 0,
+                "fontSize": "18.0pt (24px)",
+                "fontWeight": "normal",
                 "messageKey": "bgGradient",
                 "expectedContrastRatio": "3:1"
               }
@@ -138,46 +158,6 @@
                 "fontSize": "11.3pt (15px)",
                 "fontWeight": "normal",
                 "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "a[href$=\"#education\"] > .items-start.justify-between.gap-3 > .border-current.leading-none.h-10 > .text-label:nth-child(1)"
-          ],
-          "html": "<span class=\"text-label\">D</span>",
-          "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element content is too short to determine if it is actual text content",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "9.8pt (13px)",
-                "fontWeight": "normal",
-                "messageKey": "shortTextContent",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "a[href$=\"#education\"] > .items-start.justify-between.gap-3 > .border-current.leading-none.h-10 > .text-label:nth-child(3)"
-          ],
-          "html": "<span class=\"text-label\">02</span>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it's partially obscured by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "9.8pt (13px)",
-                "fontWeight": "normal",
-                "messageKey": "elmPartiallyObscured",
                 "expectedContrastRatio": "4.5:1"
               }
             }
@@ -761,646 +741,6 @@
         },
         {
           "target": [
-            "text[y=\"26\"]"
-          ],
-          "html": "<text x=\"20\" y=\"26\" class=\"fill-faded\" style=\"font-size:calc(var(--u) * 13px)\">Build surface</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because element contains an image node",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "imgNode",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"59.760000000000005\"]"
-          ],
-          "html": "<text x=\"179.6\" y=\"59.760000000000005\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">01</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"79.2\"]"
-          ],
-          "html": "<text x=\"248\" y=\"79.2\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">02</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"98.63999999999999\"]"
-          ],
-          "html": "<text x=\"316.4\" y=\"98.63999999999999\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">03</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"81.36\"]"
-          ],
-          "html": "<text x=\"103.60000000000001\" y=\"81.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">04</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"100.8\"]"
-          ],
-          "html": "<text x=\"172\" y=\"100.8\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">05</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"120.24000000000001\"]"
-          ],
-          "html": "<text x=\"240.4\" y=\"120.24000000000001\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">06</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"200\"]"
-          ],
-          "html": "<text x=\"20\" y=\"200\" class=\"fill-faded\" style=\"font-size:calc(var(--u) * 13px)\">Integrations</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because element contains an image node",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "imgNode",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"233.76\"]"
-          ],
-          "html": "<text x=\"179.6\" y=\"233.76\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">07</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"225.2\"]"
-          ],
-          "html": "<text x=\"225.2\" y=\"246.72\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">08</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"270.8\"]"
-          ],
-          "html": "<text x=\"270.8\" y=\"259.68\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">09</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"272.64\"]"
-          ],
-          "html": "<text x=\"316.4\" y=\"272.64\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">10</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"255.36\"]"
-          ],
-          "html": "<text x=\"103.60000000000001\" y=\"255.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">11</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"149.20000000000002\"]"
-          ],
-          "html": "<text x=\"149.20000000000002\" y=\"268.32\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">12</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"194.8\"]"
-          ],
-          "html": "<text x=\"194.8\" y=\"281.28\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">13</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"374\"]"
-          ],
-          "html": "<text x=\"20\" y=\"374\" class=\"fill-faded\" style=\"font-size:calc(var(--u) * 13px)\">Data and models</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because element contains an image node",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "imgNode",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"407.76\"]"
-          ],
-          "html": "<text x=\"179.6\" y=\"407.76\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">14</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"213.8\"]"
-          ],
-          "html": "<text x=\"213.8\" y=\"417.48\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">15</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"427.2\"]"
-          ],
-          "html": "<text x=\"248\" y=\"427.2\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">16</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"282.20000000000005\"]"
-          ],
-          "html": "<text x=\"282.20000000000005\" y=\"436.92\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">17</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"446.64\"]"
-          ],
-          "html": "<text x=\"316.4\" y=\"446.64\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">18</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"429.36\"]"
-          ],
-          "html": "<text x=\"103.60000000000001\" y=\"429.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">19</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"137.8\"]"
-          ],
-          "html": "<text x=\"137.8\" y=\"439.08\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">20</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"448.8\"]"
-          ],
-          "html": "<text x=\"172\" y=\"448.8\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">21</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[x=\"206.20000000000002\"]"
-          ],
-          "html": "<text x=\"206.20000000000002\" y=\"458.52\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">22</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"548\"]"
-          ],
-          "html": "<text x=\"20\" y=\"548\" class=\"fill-faded\" style=\"font-size:calc(var(--u) * 13px)\">Quality and delivery</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because element contains an image node",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "imgNode",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"581.76\"]"
-          ],
-          "html": "<text x=\"179.6\" y=\"581.76\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">23</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"601.2\"]"
-          ],
-          "html": "<text x=\"248\" y=\"601.2\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">24</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"620.64\"]"
-          ],
-          "html": "<text x=\"316.4\" y=\"620.64\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">25</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"603.36\"]"
-          ],
-          "html": "<text x=\"103.60000000000001\" y=\"603.36\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">26</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"622.8\"]"
-          ],
-          "html": "<text x=\"172\" y=\"622.8\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">27</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            "text[y=\"642.24\"]"
-          ],
-          "html": "<text x=\"240.4\" y=\"642.24\" dy=\"0.35em\" text-anchor=\"middle\" class=\"font-mono fill-blueprint\" style=\"font-size:calc(var(--u) * 13px)\">28</text>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined because it is overlapped by another element",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "12.7pt (16.904px)",
-                "fontWeight": "normal",
-                "messageKey": "bgOverlap",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
             "#contact-title"
           ],
           "html": "<h2 id=\"contact-title\" class=\"w-cond text-title font-bold\">Contact</h2>",
@@ -1423,7 +763,7 @@
           "target": [
             ".max-w-\\[56ch\\]"
           ],
-          "html": "<p class=\"mt-3 max-w-[56ch] text-body text-faded\">Email is the quickest way to reach me. Or sign off the set below and your note comes straight to my inbox.</p>",
+          "html": "<p class=\"mt-3 max-w-[56ch] text-body text-faded\">Email is the quickest way to reach me. Or send a note from the approval block below and it comes straight to my inbox.</p>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {
@@ -1623,47 +963,7 @@
           "target": [
             "div:nth-child(1) > .mt-1"
           ],
-          "html": "<dd class=\"mt-1 text-blueprint\">Open to opportunities<span class=\"mt-1 flex flex-wrap items-center gap-2\"><span class=\"hold\">Hold</span><span class=\"text-redline\">role type, start date</span></span></dd>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined due to a background gradient",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "11.3pt (15px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            ".mt-1.flex-wrap.gap-2 > .hold"
-          ],
-          "html": "<span class=\"hold\">Hold</span>",
-          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
-          "any": [
-            {
-              "id": "color-contrast",
-              "message": "Element's background color could not be determined due to a background gradient",
-              "data": {
-                "contrastRatio": 0,
-                "fontSize": "9.8pt (13px)",
-                "fontWeight": "normal",
-                "messageKey": "bgGradient",
-                "expectedContrastRatio": "4.5:1"
-              }
-            }
-          ]
-        },
-        {
-          "target": [
-            ".mt-1.flex-wrap.gap-2 > .text-redline"
-          ],
-          "html": "<span class=\"text-redline\">role type, start date</span>",
+          "html": "<dd class=\"mt-1 text-blueprint\">Open to opportunities</dd>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {
@@ -1703,7 +1003,7 @@
           "target": [
             ".gap-y-4 > div:nth-child(2) > .mt-1"
           ],
-          "html": "<dd class=\"mt-1 text-blueprint\">Toronto<!-- --> <time class=\"figures\" datetime=\"2026-09-25T00:12:31.031Z\">20:12</time></dd>",
+          "html": "<dd class=\"mt-1 text-blueprint\">Toronto<!-- --> <time class=\"figures\" datetime=\"2026-09-25T04:31:49.094Z\">00:31</time></dd>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {
@@ -1721,9 +1021,9 @@
         },
         {
           "target": [
-            "time[datetime=\"2026-09-25T00:12:31.031Z\"]"
+            "time[datetime=\"2026-09-25T04:31:49.094Z\"]"
           ],
-          "html": "<time class=\"figures\" datetime=\"2026-09-25T00:12:31.031Z\">20:12</time>",
+          "html": "<time class=\"figures\" datetime=\"2026-09-25T04:31:49.094Z\">00:31</time>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {
@@ -1783,7 +1083,7 @@
           "target": [
             ".lg\\:col-span-4 > p"
           ],
-          "html": "<p class=\"text-label text-faded\">Designed and built by <!-- -->Searan Kuganesan<!-- -->. Build <span class=\"font-mono\">24d3c3c</span>.</p>",
+          "html": "<p class=\"text-label text-faded\">Designed and built by <!-- -->Searan Kuganesan<!-- -->. Build <span class=\"font-mono\">af72d0a</span>.</p>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {
@@ -1803,7 +1103,7 @@
           "target": [
             ".lg\\:col-span-4 > p > .font-mono"
           ],
-          "html": "<span class=\"font-mono\">24d3c3c</span>",
+          "html": "<span class=\"font-mono\">af72d0a</span>",
           "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
           "any": [
             {
@@ -1822,39 +1122,7 @@
       ]
     }
   ],
-  "bestPracticeViolations": [
-    {
-      "id": "region",
-      "impact": "moderate",
-      "tags": [
-        "cat.keyboard",
-        "best-practice",
-        "RGAAv4",
-        "RGAA-9.2.1"
-      ],
-      "help": "All page content should be contained by landmarks",
-      "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=playwright",
-      "count": 1,
-      "nodes": [
-        {
-          "target": [
-            ".min-w-0.px-4"
-          ],
-          "html": "<p class=\"flex min-w-0 flex-1 items-center gap-3 px-4\"><span class=\"font-mono text-data text-faded\">02<!-- -->/<!-- -->05</span><span class=\"truncate text-small text-blueprint\">Experience</span></p>",
-          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
-          "any": [
-            {
-              "id": "region",
-              "message": "Some page content is not contained by landmarks",
-              "data": {
-                "isIframe": false
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ],
+  "bestPracticeViolations": [],
   "passes": [
     "aria-allowed-attr",
     "aria-conditional-attr",
