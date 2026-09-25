@@ -24,17 +24,23 @@ export interface ExternalLink {
 }
 
 /**
- * A proof item on the cover. `target` is the in-page anchor that proves it;
- * null means there is nothing on the page to point at (it is shown as text,
- * not a link, rather than pointing somewhere that doesn't prove it).
+ * A proof item on the cover. `target` is the labelled thing on the page that
+ * proves it; null means there is nothing on the page to point at (it is shown
+ * as text, not a link, rather than pointing somewhere that doesn't prove it).
  */
 export interface ProofRef {
   id: string;
   figure: string;
   label: string;
-  target: `#${string}` | null;
-  /** Sheet the target lives on, printed in the detail bubble. */
-  sheet: number | null;
+  target: {
+    href: `#${string}`;
+    /** Sheet the target lives on, printed below the bubble's rule. */
+    sheet: number;
+    /** The target's own label on that sheet (station, figure or note number), printed above the rule. */
+    ref: string;
+    /** How a screen reader names the target, e.g. "station 145". */
+    name: string;
+  } | null;
   mark?: { src: string; srcSet?: string; alt: string; width: number; height: number };
 }
 

@@ -32,7 +32,7 @@ export function BomTable({ group, selected, onSelect, onHover, inlineDetail }: B
       </caption>
       <thead>
         <tr className="border-b-2 border-faded/70 text-left">
-          <th scope="col" className="lettering w-[4.5rem] py-2 pl-3 font-mono text-label font-normal text-faded">
+          <th scope="col" className="lettering w-[4.5rem] py-2 pl-3 text-label font-normal text-faded">
             Item
           </th>
           <th scope="col" className="lettering py-2 text-label font-medium text-faded">

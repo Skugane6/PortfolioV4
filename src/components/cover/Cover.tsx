@@ -30,6 +30,7 @@ export function Cover() {
         <h1 id="cover-title" className="w-cond text-display font-bold tracking-[-0.012em]">
           {profile.name}
         </h1>
+        <p className="w-narrow mt-3 text-heading font-semibold text-faded sm:mt-4">{profile.role}</p>
 
         <div className="mt-6 grid gap-10 lg:mt-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-6">
@@ -70,7 +71,7 @@ export function Cover() {
 
         <div className="mt-10 lg:mt-auto lg:pt-12">
           <h2 className="sr-only">Proof</h2>
-          <ProofRefs items={profile.proof} firstLetter={1} />
+          <ProofRefs items={profile.proof} />
         </div>
       </div>
     </SheetFrame>
@@ -164,11 +165,11 @@ function KeyDrawing() {
       <figure className="ground border border-faded/50 p-4 transition-colors duration-quick group-hover:border-blueprint sm:p-6">
         <div className="relative pb-10">
           <Airframe detail="key" title={`Side elevation, ${aircraft.family}`} decorative />
-          <Dimension label="Overall" value={aircraft.overallLength} from={EXTENT.left} to={EXTENT.right} className="bottom-1" />
+          <Dimension label="Overall length" value={aircraft.overallLength} from={EXTENT.left} to={EXTENT.right} className="bottom-1" />
         </div>
         <figcaption className="mt-4 flex items-baseline justify-between gap-4 text-label text-faded">
           <span>
-            <span className="lettering">Fig. A</span> Side elevation, {aircraft.family}
+            <span className="lettering mr-2 font-mono text-blueprint">View A</span>Side elevation, {aircraft.drawnAs}
             <span className="sr-only">: the experience is drawn in full on sheet 02</span>
           </span>
           <span className="lettering font-mono">NTS</span>

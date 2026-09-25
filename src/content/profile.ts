@@ -41,22 +41,19 @@ export const profile: Profile = {
       id: 'aircraft',
       figure: '2,000+',
       label: 'aircraft across 100+ operators',
-      target: '#callout-component-tracker',
-      sheet: 2,
+      target: { href: '#callout-component-tracker', sheet: 2, ref: '145', name: 'station 145' },
     },
     {
       id: 'crafttraq',
       figure: 'Live',
       label: 'CraftTraq, SaaS for trade contractors',
-      target: '#fig-1',
-      sheet: 3,
+      target: { href: '#fig-1', sheet: 3, ref: '1', name: 'figure 1' },
     },
     {
       id: 'education',
       figure: '2026',
       label: 'B.E.Sc. Software Engineering, Western University',
-      target: '#education',
-      sheet: 2,
+      target: { href: '#education', sheet: 2, ref: '4', name: 'note 4' },
       mark: {
         src: '/western-mark.png',
         srcSet: '/img/western-mark-128.webp 128w, /img/western-mark-256.webp 256w, /img/western-mark-384.webp 384w',
@@ -71,7 +68,6 @@ export const profile: Profile = {
       figure: '10',
       label: 'projects shipped',
       target: null,
-      sheet: null,
     },
   ],
 };

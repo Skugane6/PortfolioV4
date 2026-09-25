@@ -3,7 +3,6 @@ interface DetailBubbleProps {
   id: string;
   /** Sheet the detail is drawn on, printed below the rule. Omit for a plain balloon. */
   sheet?: string;
-  size?: 'sm' | 'md';
   className?: string;
 }
 
@@ -13,12 +12,11 @@ interface DetailBubbleProps {
  * sheet 02"; here it marks a link that leads to the proof. Decorative: the
  * link around it carries the accessible name.
  */
-export function DetailBubble({ id, sheet, size = 'md', className = '' }: DetailBubbleProps) {
-  const box = size === 'sm' ? 'h-10 w-10' : 'h-12 w-12';
+export function DetailBubble({ id, sheet, className = '' }: DetailBubbleProps) {
   return (
     <span
       aria-hidden="true"
-      className={`inline-flex shrink-0 flex-col items-center justify-center rounded-full border border-current font-mono leading-none ${box} ${className}`}
+      className={`inline-flex shrink-0 flex-col items-center justify-center h-12 w-12 rounded-full border border-current font-mono leading-none ${className}`}
     >
       {sheet ? (
         <>

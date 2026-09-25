@@ -81,7 +81,7 @@ describe('content', () => {
     expect(profile.email).toBe('searan.kuganesan4@gmail.com');
     const shipped = profile.proof.find((p) => p.id === 'projects-shipped');
     expect(shipped).toMatchObject({ figure: '10', label: 'projects shipped', target: null });
-    for (const p of profile.proof) if (p.target) expect(p.target.startsWith('#')).toBe(true);
+    for (const p of profile.proof) if (p.target) expect(p.target.href.startsWith('#')).toBe(true);
   });
 
   it('lists 28 unique parts', () => {
