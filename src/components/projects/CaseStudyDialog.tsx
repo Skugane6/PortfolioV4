@@ -34,8 +34,10 @@ interface CaseStudyDialogProps {
 export function CaseStudyDialog({ project, onClose, onClosed }: CaseStudyDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [shown, setShown] = useState<Project | null>(null);
+  const current = useRef<Project | null>(null);
 
   useEffect(() => {
+    current.current = project;
     const dialog = dialogRef.current;
     if (!dialog || !project) return;
     setShown(project);
@@ -44,6 +46,9 @@ export function CaseStudyDialog({ project, onClose, onClosed }: CaseStudyDialogP
   }, [project]);
 
   const finishClose = () => {
+    // AnimatePresence reports exit-complete whenever an old sheet has left,
+    // including when another project replaced it: only close when none is open.
+    if (current.current) return;
     const dialog = dialogRef.current;
     if (dialog?.open) dialog.close();
     document.documentElement.classList.remove('modal-open');

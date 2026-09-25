@@ -39,10 +39,14 @@ export function Projects() {
     target?.focus({ preventScroll: false });
   };
 
-  // The command palette asks for a sheet through the UI store.
+  // The command palette asks for a sheet through the UI store. Focus was in
+  // the palette, which has closed, so closing the sheet returns focus to the
+  // figure's own Open button instead.
   const request = useUi((s) => s.projectRequest);
   useEffect(() => {
-    if (request) onOpen(request.id);
+    if (!request) return;
+    returnFocus.current = null;
+    open(request.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [request?.seq]);
 

@@ -7,11 +7,18 @@ const PATTERN = /^#projects\/([\w-]+)$/;
  * be linked to, and Back closes it. Opening from the page pushes a history
  * entry; closing one opened that way goes back, closing one that arrived by
  * deep link replaces the hash instead (there is nothing to go back to).
+ * Switching to another sheet while one is open replaces the entry, so one
+ * Close (or one Back) always leaves the dialog.
  */
 export function useCaseStudyRoute(ids: readonly string[]) {
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [openId, setOpenIdState] = useState<string | null>(null);
+  const current = useRef<string | null>(null);
   const pushed = useRef(false);
   const key = ids.join('|');
+  const setOpenId = useCallback((id: string | null) => {
+    current.current = id;
+    setOpenIdState(id);
+  }, []);
 
   useEffect(() => {
     const known = new Set(key.split('|'));
@@ -28,13 +35,21 @@ export function useCaseStudyRoute(ids: readonly string[]) {
       removeEventListener('popstate', sync);
       removeEventListener('hashchange', sync);
     };
-  }, [key]);
+  }, [key, setOpenId]);
 
-  const open = useCallback((id: string) => {
-    history.pushState(null, '', `#projects/${id}`);
-    pushed.current = true;
-    setOpenId(id);
-  }, []);
+  const open = useCallback(
+    (id: string) => {
+      if (id === current.current) return;
+      if (current.current) {
+        history.replaceState(null, '', `#projects/${id}`);
+      } else {
+        history.pushState(null, '', `#projects/${id}`);
+        pushed.current = true;
+      }
+      setOpenId(id);
+    },
+    [setOpenId],
+  );
 
   const close = useCallback(() => {
     if (pushed.current) {
@@ -44,7 +59,7 @@ export function useCaseStudyRoute(ids: readonly string[]) {
       history.replaceState(null, '', `${location.pathname}${location.search}#projects`);
     }
     setOpenId(null);
-  }, []);
+  }, [setOpenId]);
 
   return { openId, open, close };
 }

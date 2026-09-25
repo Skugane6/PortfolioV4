@@ -102,9 +102,12 @@ export function CommandPalette() {
       if (ok) window.setTimeout(() => ui.closePalette(), 700);
       return;
     }
-    // Close first so focus is free to move where the command sends it.
-    ui.closePalette();
+    // Close the dialog itself before running: while it is open the page is
+    // inert, and a command that moves focus (to a sheet heading, a detail
+    // sheet) would have nowhere to put it.
     returnTo.current = null;
+    dialogRef.current?.close();
+    ui.closePalette();
     await cmd.run(ctx);
   };
 
