@@ -85,6 +85,9 @@ export function SheetIndex() {
                 href={`#${sheet.id}`}
                 onClick={(e) => onClick(e, sheet.id)}
                 aria-current={current ? 'location' : undefined}
+                // Between 1024 and 1279 the name is hidden until hover, so the
+                // link carries it: "02 Experience", starting with what's visible.
+                aria-label={`${pad2(sheet.number)} ${sheet.title}`}
                 className="group flex items-center gap-3 py-1 outline-offset-4"
               >
                 <span

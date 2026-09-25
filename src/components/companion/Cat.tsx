@@ -55,6 +55,7 @@ export function Cat() {
   const [x, setX] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
   const walking = useRef(false);
+  const stopWalk = useRef<(() => void) | null>(null);
   const clicks = useRef<number[]>([]);
   const visible = useRef(true);
 
@@ -111,6 +112,16 @@ export function Cat() {
     const start = performance.now() + 350;
     const duration = (Math.abs(target - from) / SPEED) * 1000;
     let raf = 0;
+    let nap = 0;
+    stopWalk.current = () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(nap);
+      stopWalk.current = null;
+      if (walking.current) {
+        walking.current = false;
+        setPose('sleeping');
+      }
+    };
     const tick = (now: number) => {
       if (now < start) {
         raf = requestAnimationFrame(tick);
@@ -124,12 +135,15 @@ export function Cat() {
       else {
         walking.current = false;
         setPose('tired');
-        window.setTimeout(() => setPose((p) => (p === 'tired' ? 'sleeping' : p)), 900);
+        nap = window.setTimeout(() => setPose((p) => (p === 'tired' ? 'sleeping' : p)), 900);
       }
     };
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
   };
+
+  // A walk in progress stops where it is if motion gets reduced mid-walk
+  // (the cat sits still under reduced motion), and when the cat unmounts.
+  useEffect(() => () => stopWalk.current?.(), [reduced]);
 
   const wake = () => {
     if (walking.current) return;

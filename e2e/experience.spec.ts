@@ -76,7 +76,7 @@ test.describe('experience sheet', () => {
     await gotoHome(page);
     await scrollSurvey(page, 1);
     await page.locator('#callout-fleet-prediction').hover();
-    await expect(page.getByRole('button', { name: /Station 942/ })).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByRole('button', { name: /Station 942/ })).toHaveAttribute('data-active', 'true');
   });
 
   test('details disclose the full description', async ({ page }, info) => {

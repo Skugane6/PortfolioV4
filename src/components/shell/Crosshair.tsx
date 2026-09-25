@@ -82,12 +82,15 @@ export function Crosshair() {
     const onLeave = () => {
       [crossRef, readoutRef, bracketRef].forEach((r) => r.current && (r.current.style.opacity = '0'));
     };
+    // Scrolling moves the page under a still pointer: redraw at the same spot.
+    const onScroll = () => last && onMove(last);
     addEventListener('pointermove', onMove, { passive: true });
-    addEventListener('scroll', () => last && onMove(last), { passive: true });
+    addEventListener('scroll', onScroll, { passive: true });
     document.documentElement.addEventListener('pointerleave', onLeave);
     return () => {
       cancelAnimationFrame(frame);
       removeEventListener('pointermove', onMove);
+      removeEventListener('scroll', onScroll);
       document.documentElement.removeEventListener('pointerleave', onLeave);
       onLeave();
     };

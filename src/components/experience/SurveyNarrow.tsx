@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { animate, useInView, useMotionValue } from 'motion/react';
 import type { Role } from '../../content/types';
 import { aircraft } from '../../content/aircraft';
-import { ease } from '../../lib/motion';
+import { dur, ease } from '../../lib/motion';
 import { Airframe } from '../drawing/Airframe';
 import { Stamp } from '../drawing/Stamp';
 import { CalloutCard } from './CalloutCard';
@@ -27,6 +27,18 @@ export function SurveyNarrow({ role, animated, hovered, setHovered, header, airf
   const [inView, setInView] = useState<string | null>(null);
   const plot = useMotionValue(animated ? 0 : 1);
   const drawingInView = useInView(airframeRef, { once: true, amount: 0.5 });
+  const drawingNear = useInView(airframeRef, { once: true, margin: '300px 0px 300px 0px' });
+
+  // The value starts at 1 when hydrating (the prerendered sheet is finished).
+  // As the drawing comes within 300px of the screen it is rewound to 0, so it
+  // plots on arrival. This waits until then because Motion's renderer loads
+  // after hydration and a value set before it mounts never reaches the DOM.
+  // A drawing already on screen stays drawn rather than blinking out.
+  useEffect(() => {
+    if (!animated || !drawingNear || drawingInView) return;
+    const r = airframeRef.current?.getBoundingClientRect();
+    if (r && (r.top >= innerHeight || r.bottom <= 0)) plot.set(0);
+  }, [animated, drawingNear, drawingInView, plot, airframeRef]);
 
   // Plot the drawing once, the first time it is properly on screen.
   useEffect(() => {
@@ -35,7 +47,7 @@ export function SurveyNarrow({ role, animated, hovered, setHovered, header, airf
       return;
     }
     if (!drawingInView) return;
-    const controls = animate(plot, 1, { duration: 0.9, ease: ease.pen });
+    const controls = animate(plot, 1, { duration: dur.plot, ease: ease.pen });
     return () => controls.stop();
   }, [animated, drawingInView, plot]);
 

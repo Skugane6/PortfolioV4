@@ -147,7 +147,8 @@ export function Airframe({
               type="button"
               aria-label={`Station ${s.station}, ${s.zone}: ${s.subject}`}
               aria-controls={`callout-${s.id}`}
-              aria-pressed={active}
+              // Lit by hover, focus or scroll: a highlight, not a toggle, so no aria-pressed.
+              data-active={active || undefined}
               onPointerEnter={() => onStationActivate?.(s.id)}
               onPointerLeave={() => onStationActivate?.(null)}
               onFocus={() => onStationActivate?.(s.id)}
