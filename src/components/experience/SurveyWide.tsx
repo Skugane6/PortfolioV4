@@ -121,88 +121,99 @@ export function SurveyWide({ role, animated, hovered, setHovered, header, airfra
 
   const active = hovered ?? scrollActive;
 
+  // Heading at the same height as every other sheet; the drawing and its
+  // cards are centred in the room left below it.
   const stage = (
     <div
-      className={`${animated ? 'sticky top-0 h-[100svh]' : ''} flex flex-col justify-center px-6 py-10 lg:pl-16 lg:pr-12 [@media(max-height:860px)]:py-5`}
+      className={`${animated ? 'sticky top-0 h-[100svh]' : ''} flex flex-col px-6 pb-10 pt-10 lg:pl-16 lg:pr-12 lg:pt-16 [@media(max-height:860px)]:pb-5 [@media(max-height:860px)]:pt-8`}
       onFocusCapture={onFocusCapture}
     >
       <div className="flex items-end justify-between gap-8">
         {header}
-        <div aria-hidden="true" className="shrink-0 text-right">
-          <p className="lettering text-label text-faded">Survey</p>
-          <p className="mt-1 flex items-center justify-end gap-3">
-            <span className="relative block h-[2px] w-40 bg-construction/50">
-              <span
-                ref={barRef}
-                className="absolute inset-0 origin-left bg-redline"
-                style={{ transform: `scaleX(${animated ? 0 : 1})` }}
-              />
-            </span>
-            <span ref={readoutRef} className="figures w-[4.6ch] text-right text-data-lg font-bold text-blueprint">
-              {animated ? '0%' : '100%'}
-            </span>
-          </p>
+        <div aria-hidden="true" className="flex shrink-0 flex-col items-end gap-3">
+          {/* The stamp lands beside the readout it certifies, clear of the drawing. */}
+          <m.div className="pointer-events-none" style={animated ? { opacity: stamp, scale: stampScale } : undefined}>
+            <Stamp lines={['Survey complete', `Inspected ${role.end}`]} tilt={-4} />
+          </m.div>
+          <div className="text-right">
+            <p className="lettering text-label text-faded">Survey</p>
+            <p className="mt-1 flex items-center justify-end gap-3">
+              <span className="relative block h-[2px] w-24 bg-construction/50 xl:w-40">
+                <span
+                  ref={barRef}
+                  className="absolute inset-0 origin-left bg-blueprint"
+                  style={{ transform: `scaleX(${animated ? 0 : 1})` }}
+                />
+              </span>
+              <span ref={readoutRef} className="figures w-[4.6ch] text-right text-data-lg font-bold text-blueprint">
+                {animated ? '0%' : '100%'}
+              </span>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div ref={layoutRef} className="relative mt-12 [@media(max-height:860px)]:mt-10">
-        <div ref={airframeRef} className="relative">
-          <Dimension label="Overall length" value={aircraft.overallLength} from={EXTENT.left} to={EXTENT.right} className="-top-9" />
-          <Airframe
-            detail="full"
-            title={`Side elevation of a ${aircraft.family} regional jet, drawn as line art, with ${n} stations marked`}
-            plot={animated ? plot : undefined}
-            stations={role.callouts.map((c) => ({ id: c.id, station: c.station, zone: c.zone, subject: c.title }))}
-            activeStation={active}
-            onStationActivate={setHovered}
-            onStationSelect={selectStation}
-          />
-          <m.div
-            className="pointer-events-none absolute left-[21%] top-[2%]"
-            style={animated ? { opacity: stamp, scale: stampScale } : undefined}
-          >
-            <Stamp lines={['Survey complete', `Inspected ${role.end}`]} />
-          </m.div>
-        </div>
-
-        <div className="h-16 [@media(max-height:860px)]:h-10" aria-hidden="true" />
-
-        <div className="grid items-stretch gap-5" style={{ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` }}>
-          {role.callouts.map((c, i) => (
-            <Dock
-              key={c.id}
-              index={i}
-              n={n}
-              pinned={pinned}
-              reveal={reveal}
-              animated={animated}
-              render={(appear) => (
-                <div ref={(el) => (cardRefs.current[i] = el)} className="relative z-10 h-full">
-                  <CalloutCard callout={c} active={active === c.id} onActivate={setHovered} appear={appear} className="h-full" />
-                </div>
-              )}
+      <div className="flex flex-1 flex-col justify-center">
+        <div ref={layoutRef} className="relative mt-12 [@media(max-height:860px)]:mt-10">
+          <div ref={airframeRef} className="relative">
+            <Dimension label="Overall length" value={aircraft.overallLength} from={EXTENT.left} to={EXTENT.right} className="-top-9" />
+            <p
+              aria-hidden="true"
+              className="absolute top-[4%] text-label text-faded"
+              style={{ left: `${EXTENT.left * 100}%` }}
+            >
+              <span className="lettering mr-2 font-mono text-blueprint">View A</span>Side elevation, {aircraft.drawnAs}
+            </p>
+            <Airframe
+              detail="full"
+              title={`View A: side elevation of a ${aircraft.family} regional jet, drawn as line art, with ${n} stations marked`}
+              plot={animated ? plot : undefined}
+              stations={role.callouts.map((c) => ({ id: c.id, station: c.station, zone: c.zone, subject: c.title }))}
+              activeStation={active}
+              onStationActivate={setHovered}
+              onStationSelect={selectStation}
             />
-          ))}
-        </div>
+          </div>
 
-        {geo && (
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="h-16 [@media(max-height:860px)]:h-10" aria-hidden="true" />
+
+          <div className="grid items-stretch gap-5" style={{ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` }}>
             {role.callouts.map((c, i) => (
-              <Leader
+              <Dock
                 key={c.id}
                 index={i}
                 n={n}
                 pinned={pinned}
                 reveal={reveal}
                 animated={animated}
-                dot={geo.dots[i]}
-                card={geo.cards[i]}
-                railY={geo.railY}
-                active={active === c.id}
+                render={(appear) => (
+                  <div ref={(el) => (cardRefs.current[i] = el)} className="relative z-10 h-full">
+                    <CalloutCard callout={c} active={active === c.id} onActivate={setHovered} appear={appear} className="h-full" />
+                  </div>
+                )}
               />
             ))}
           </div>
-        )}
+
+          {geo && (
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+              {role.callouts.map((c, i) => (
+                <Leader
+                  key={c.id}
+                  index={i}
+                  n={n}
+                  pinned={pinned}
+                  reveal={reveal}
+                  animated={animated}
+                  dot={geo.dots[i]}
+                  card={geo.cards[i]}
+                  railY={geo.railY}
+                  active={active === c.id}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -210,7 +221,7 @@ export function SurveyWide({ role, animated, hovered, setHovered, header, airfra
   // The track is always rendered (useScroll needs its target mounted); only
   // the animated version gets the height the sticky stage travels over.
   return (
-    <div ref={trackRef} className="relative" style={animated ? { height: `${(n + 1) * 65}vh` } : undefined}>
+    <div ref={trackRef} className="relative" style={animated ? { height: `${(n + 1) * 50}vh` } : undefined}>
       {stage}
     </div>
   );

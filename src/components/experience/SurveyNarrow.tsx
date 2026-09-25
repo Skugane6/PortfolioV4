@@ -65,7 +65,7 @@ export function SurveyNarrow({ role, animated, hovered, setHovered, header, airf
           <Airframe
             detail="full"
             labels={false}
-            title={`Side elevation of a ${aircraft.family} regional jet, drawn as line art, with ${role.callouts.length} stations marked`}
+            title={`View A: side elevation of a ${aircraft.family} regional jet, drawn as line art, with ${role.callouts.length} stations marked`}
             plot={plot}
             stations={role.callouts.map((c) => ({ id: c.id, station: c.station, zone: c.zone, subject: c.title }))}
             activeStation={active}
@@ -82,6 +82,10 @@ export function SurveyNarrow({ role, animated, hovered, setHovered, header, airf
           ) : (
             <span className="text-faded">{role.callouts.length} stations, fore to aft</span>
           )}
+          <span className="ml-auto whitespace-nowrap text-faded">
+            <span className="lettering font-mono text-blueprint">View A</span>
+            <span className="ml-2 hidden sm:inline">Side elevation, {aircraft.drawnAs}</span>
+          </span>
         </p>
       </div>
 

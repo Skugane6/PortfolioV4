@@ -32,7 +32,7 @@ export function CalloutCard({ callout, active, onActivate, appear, className = '
       <h3 id={titleId} className="w-narrow mt-3 text-[20px] font-semibold leading-tight text-blueprint xl:text-heading">
         {callout.title}
       </h3>
-      <p className="figures mt-4 border-l-2 border-redline pl-3 text-body leading-snug text-blueprint">{callout.impact}</p>
+      <p className="figures mt-4 border-l-2 border-faded/70 pl-3 text-body leading-snug text-blueprint">{callout.impact}</p>
 
       <button
         type="button"
@@ -54,7 +54,7 @@ export function CalloutCard({ callout, active, onActivate, appear, className = '
             <li
               key={tag}
               className={`border px-2 py-1 text-label ${
-                callout.tagVariant === 'metric' ? 'figures border-redline/70 text-blueprint' : 'border-faded/60 text-faded'
+                callout.tagVariant === 'metric' ? 'figures border-blueprint/60 text-blueprint' : 'border-faded/60 text-faded'
               }`}
             >
               {tag}
