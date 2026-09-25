@@ -12,7 +12,6 @@ import { Contact } from './components/contact/Contact';
 import { RevisionBlock } from './components/contact/RevisionBlock';
 import { CommandPalette } from './components/shell/CommandPalette';
 import { Crosshair } from './components/shell/Crosshair';
-import { Intro } from './components/shell/Intro';
 import { printConsoleNote } from './components/shell/consoleNote';
 
 // Motion's animation features load in their own chunk after first paint.
@@ -41,7 +40,6 @@ export function App() {
         </div>
         <CommandPalette />
         <Crosshair />
-        <Intro />
       </MotionConfig>
     </LazyMotion>
   );
