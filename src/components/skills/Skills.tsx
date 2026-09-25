@@ -57,7 +57,8 @@ export function Skills() {
         </div>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5">
+          {/* The exploded view pictures the grouping on wide screens; phones get the filters and table straight away. */}
+          <div className="hidden lg:col-span-5 lg:block">
             <ExplodedView group={group} selected={selected} hovered={hovered} onGroup={chooseGroup} animated={hydrated && !reduced} />
             {/* The detail panel sticks while the table scrolls past it. */}
             {hydrated && wide && <div className="mt-8 lg:sticky lg:top-8">{detail}</div>}

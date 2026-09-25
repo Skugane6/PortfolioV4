@@ -23,7 +23,7 @@ test.describe('contact sheet (approval) and footer', () => {
 
   test('an empty form explains each field and focuses the first', async ({ page }) => {
     await gotoHome(page);
-    await page.getByRole('button', { name: 'Submit for approval' }).click();
+    await page.getByRole('button', { name: 'Send message' }).click();
     await expect(page.getByText('Enter your name.')).toBeVisible();
     await expect(page.getByLabel('Name')).toBeFocused();
     await expect(page.getByLabel('Name')).toHaveAttribute('aria-invalid', 'true');
@@ -35,7 +35,7 @@ test.describe('contact sheet (approval) and footer', () => {
     await page.getByLabel('Name').fill('Ada');
     await page.getByLabel('Email').fill('ada@example.com');
     await page.getByLabel('Message').fill('Hello');
-    await page.getByRole('button', { name: 'Submit for approval' }).click();
+    await page.getByRole('button', { name: 'Send message' }).click();
     await expect(page.getByText('Couldn’t send from here. Your email app will open with the message filled in.')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Open it again' })).toHaveAttribute('href', /^mailto:searan\.kuganesan4@gmail\.com\?subject=/);
   });
@@ -46,7 +46,7 @@ test.describe('contact sheet (approval) and footer', () => {
     await page.getByLabel('Name').fill('Ada');
     await page.getByLabel('Email').fill('ada@example.com');
     await page.getByLabel('Message').fill('Hello');
-    await page.getByRole('button', { name: 'Submit for approval' }).click();
+    await page.getByRole('button', { name: 'Send message' }).click();
     await expect(page.locator('#contact [role="status"]').getByText('Approved', { exact: true })).toBeVisible();
     await expect(page.getByText(`Sent. I’ll reply from ${EMAIL}.`)).toBeVisible();
   });

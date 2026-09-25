@@ -10,7 +10,8 @@ const IDS = sheets.map((s) => s.id);
  * Below 1024px the sheet index folds into a strip at the foot of the screen,
  * the way a title block sits at the foot of a sheet: the current sheet on the
  * left, the full index one tap away on the right. 52px tall, clear of the
- * home indicator, and nothing in it is under 13px.
+ * home indicator, and nothing in it is under 13px. It sits inside the
+ * frame's border lines, so the set's outline runs unbroken to the bottom.
  */
 export function TitleStrip({ onOpenIndex }: { onOpenIndex?: () => void }) {
   const active = useActiveSheet(IDS) as SheetId;
@@ -32,7 +33,7 @@ export function TitleStrip({ onOpenIndex }: { onOpenIndex?: () => void }) {
     <>
       <nav
         aria-label="Current sheet"
-        className="fixed inset-x-0 bottom-0 z-30 flex items-stretch border-t-2 border-construction bg-cyanotype lg:hidden"
+        className="fixed bottom-0 left-[var(--frame-inset)] right-[var(--frame-inset)] z-30 flex items-stretch border-x-2 border-t-2 border-construction bg-cyanotype lg:hidden"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         <p className="flex min-w-0 flex-1 items-center gap-3 px-4">

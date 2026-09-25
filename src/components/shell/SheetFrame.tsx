@@ -42,7 +42,8 @@ export function SheetFrame({ sheet, children, extraRows = [], titleBlock, classN
       <ZoneRefs />
       {children}
       {titleBlock ?? (
-        <div className="relative px-4 pb-6 sm:px-6 lg:px-10">
+        // Same side padding as the sheet content, so the block's right edge lines up with it.
+        <div className="relative px-4 pb-6 sm:px-8 lg:pl-16 lg:pr-12">
           <TitleBlock
             label={`Sheet ${pad2(sheet.number)} title block`}
             rows={rows}

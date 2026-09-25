@@ -60,7 +60,7 @@ export function Projects() {
 
         <div className="mt-10 space-y-6">
           <FeatureFigure project={feature} onOpen={onOpen} animated={hydrated && !reduced} />
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-3">
             {rest.map((p) => (
               <FigureCard key={p.id} project={p} onOpen={onOpen} />
             ))}
@@ -137,7 +137,7 @@ function FeatureFigure({ project, onOpen, animated }: FigureProps & { animated: 
         </h3>
         <p className="mt-4 max-w-[52ch] text-body text-blueprint">{project.tagline}</p>
         <Stack items={project.stack} />
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap xl:mt-auto xl:pt-8">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <OpenButton project={project} onOpen={onOpen} primary />
           {project.links.map((l) => (
             <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="btn-secondary">
@@ -158,14 +158,18 @@ function FeatureFigure({ project, onOpen, animated }: FigureProps & { animated: 
   );
 }
 
+/** A secondary figure: sketch beside the text on tablets, above it in the three-up row. */
 function FigureCard({ project, onOpen }: FigureProps) {
   const titleId = `fig-${project.fig}-title`;
+  const split = project.demo ? 'md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:flex' : '';
   return (
-    <article id={`fig-${project.fig}`} aria-labelledby={titleId} className="ground relative flex scroll-mt-10 flex-col">
+    <article id={`fig-${project.fig}`} aria-labelledby={titleId} className={`ground relative flex scroll-mt-10 flex-col ${split}`}>
       <FigureFrame project={project} />
       {project.demo && (
-        <div className="relative aspect-[14/9] border-b border-faded/40 p-5">
-          <FigureSketch kind={project.demo} />
+        <div className="relative flex items-center border-b border-faded/40 p-5 md:border-b-0 md:border-r lg:border-b lg:border-r-0">
+          <div className="aspect-[14/9] w-full">
+            <FigureSketch kind={project.demo} />
+          </div>
         </div>
       )}
       <div className="relative flex flex-1 flex-col p-5">

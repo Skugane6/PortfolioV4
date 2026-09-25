@@ -127,7 +127,7 @@ export function ApprovalForm({ to }: { to: string }) {
 
       <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
         <button type="submit" className="btn-primary" disabled={status.kind === 'sending'}>
-          {status.kind === 'sending' ? 'Sending…' : 'Submit for approval'}
+          {status.kind === 'sending' ? 'Sending…' : 'Send message'}
         </button>
         <p role="status" className="text-small text-faded">
           {status.kind === 'fallback' && (

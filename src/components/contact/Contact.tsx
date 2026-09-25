@@ -16,7 +16,6 @@ const NEW_TAB = <span className="sr-only"> (opens in a new tab)</span>;
  */
 export function Contact() {
   const { availability } = profile;
-  const hold = [availability.seeking ? null : 'role type', availability.from ? null : 'start date'].filter(Boolean);
   const kb = Math.round(profile.resume.bytes / 1000);
 
   return (
@@ -26,7 +25,7 @@ export function Contact() {
           {sheetById.contact.title}
         </h2>
         <p className="mt-3 max-w-[56ch] text-body text-faded">
-          Email is the quickest way to reach me. Or sign off the set below and your note comes straight to my inbox.
+          Email is the quickest way to reach me. Or send a note from the approval block below and it comes straight to my inbox.
         </p>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-12">
@@ -55,14 +54,11 @@ export function Contact() {
             <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 text-small">
               <div>
                 <dt className="lettering text-label text-faded">Status</dt>
+                {/* The HOLD on unconfirmed details is shown once, on the cover's title block. */}
                 <dd className="mt-1 text-blueprint">
                   {availability.status}
-                  {hold.length > 0 && (
-                    <span className="mt-1 flex flex-wrap items-center gap-2">
-                      <span className="hold">Hold</span>
-                      <span className="text-redline">{hold.join(', ')}</span>
-                    </span>
-                  )}
+                  {availability.seeking ? `: ${availability.seeking}` : ''}
+                  {availability.from ? `, from ${availability.from}` : ''}
                 </dd>
               </div>
               <div>
@@ -104,7 +100,7 @@ export function Contact() {
                     Approved
                   </th>
                   <td className="p-3 sm:p-5">
-                    <p className="mb-4 text-small text-faded">You. Send a note to sign off.</p>
+                    <p className="mb-4 text-small text-faded">You. Send a note and I&rsquo;ll reply by email.</p>
                     <ApprovalForm to={profile.email} />
                   </td>
                 </tr>
