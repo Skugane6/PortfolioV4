@@ -1,0 +1,257 @@
+{
+  "baseUrl": "http://127.0.0.1:4200/",
+  "axeTags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22a",
+    "wcag22aa"
+  ],
+  "runs": [
+    {
+      "width": 375,
+      "state": "load",
+      "scrollY": 0,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 90
+        }
+      ],
+      "bestPractice": [
+        {
+          "id": "region",
+          "impact": "moderate",
+          "count": 1,
+          "targets": [
+            ".min-w-0.px-4"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "state": "experience-top",
+      "scrollY": 1602,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 90
+        }
+      ],
+      "bestPractice": [
+        {
+          "id": "region",
+          "impact": "moderate",
+          "count": 1,
+          "targets": [
+            ".min-w-0.px-4"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "state": "experience-mid",
+      "scrollY": 2392,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 91
+        }
+      ],
+      "bestPractice": [
+        {
+          "id": "region",
+          "impact": "moderate",
+          "count": 1,
+          "targets": [
+            ".min-w-0.px-4"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "state": "projects",
+      "scrollY": 3852,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 90
+        }
+      ],
+      "bestPractice": [
+        {
+          "id": "region",
+          "impact": "moderate",
+          "count": 1,
+          "targets": [
+            ".min-w-0.px-4"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "state": "projects-tab3",
+      "scrollY": 5464,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 19
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 375,
+      "state": "skills",
+      "scrollY": 6669,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 19
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 375,
+      "state": "contact",
+      "scrollY": 9750,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 19
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 375,
+      "state": "bottom",
+      "scrollY": 11345,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 19
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "load",
+      "scrollY": 0,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 301
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "experience-top",
+      "scrollY": 947,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 301
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "experience-mid",
+      "scrollY": 2260,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 301
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "projects",
+      "scrollY": 4235,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 303
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "projects-tab3",
+      "scrollY": 4973,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 31
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "skills",
+      "scrollY": 5602,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 31
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "contact",
+      "scrollY": 7460,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 31
+        }
+      ],
+      "bestPractice": []
+    },
+    {
+      "width": 1440,
+      "state": "bottom",
+      "scrollY": 7808,
+      "wcag": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 31
+        }
+      ],
+      "bestPractice": []
+    }
+  ]
+}

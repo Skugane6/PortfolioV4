@@ -1,0 +1,18 @@
+{
+  "375": {
+    "textNodes": 436,
+    "under12": 0,
+    "under13": 0,
+    "fails": 0,
+    "minRatio": 6.38,
+    "failures": []
+  },
+  "1440": {
+    "textNodes": 551,
+    "under12": 0,
+    "under13": 0,
+    "fails": 0,
+    "minRatio": 6.38,
+    "failures": []
+  }
+}

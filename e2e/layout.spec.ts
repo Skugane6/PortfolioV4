@@ -59,7 +59,7 @@ test.describe('layout at every size', () => {
         const railOverlap = railBox && railBox.width > 0 ? Math.max(0, set.right - railBox.left) : 0;
 
         // Below 1024px the bottom strip must be clearable: the page reserves its height.
-        const strip = [...document.querySelectorAll<HTMLElement>('div.fixed.bottom-0')].find((e) => getComputedStyle(e).display !== 'none');
+        const strip = [...document.querySelectorAll<HTMLElement>('nav.fixed.bottom-0')].find((e) => getComputedStyle(e).display !== 'none');
         const stripH = strip ? strip.getBoundingClientRect().height : 0;
         const reserved = parseFloat(getComputedStyle(document.querySelector('.drawing-set')!).paddingBottom);
 

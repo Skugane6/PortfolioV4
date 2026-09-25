@@ -30,7 +30,8 @@ export function TitleStrip({ onOpenIndex }: { onOpenIndex?: () => void }) {
 
   return (
     <>
-      <div
+      <nav
+        aria-label="Current sheet"
         className="fixed inset-x-0 bottom-0 z-30 flex items-stretch border-t-2 border-construction bg-cyanotype lg:hidden"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
@@ -49,7 +50,7 @@ export function TitleStrip({ onOpenIndex }: { onOpenIndex?: () => void }) {
         >
           Index
         </button>
-      </div>
+      </nav>
 
       {!onOpenIndex && (
         <dialog
