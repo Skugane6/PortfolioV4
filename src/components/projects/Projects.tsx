@@ -128,16 +128,16 @@ function OpenButton({ project, onOpen, primary = false }: FigureProps & { primar
 function FeatureFigure({ project, onOpen, animated }: FigureProps & { animated: boolean }) {
   const titleId = `fig-${project.fig}-title`;
   return (
-    <article id={`fig-${project.fig}`} aria-labelledby={titleId} className="ground relative scroll-mt-10 lg:grid lg:grid-cols-12">
+    <article id={`fig-${project.fig}`} aria-labelledby={titleId} className="ground relative scroll-mt-10 xl:grid xl:grid-cols-12">
       <FigureFrame project={project} />
-      <div className="relative flex flex-col p-5 sm:p-8 lg:col-span-5">
+      <div className="relative flex flex-col p-5 sm:p-8 xl:col-span-5">
         <FigureMeta project={project} />
         <h3 id={titleId} className="w-cond mt-4 text-title font-bold">
           {project.name}
         </h3>
         <p className="mt-4 max-w-[52ch] text-body text-blueprint">{project.tagline}</p>
         <Stack items={project.stack} />
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:mt-auto lg:pt-8">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap xl:mt-auto xl:pt-8">
           <OpenButton project={project} onOpen={onOpen} primary />
           {project.links.map((l) => (
             <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="btn-secondary">
@@ -147,8 +147,12 @@ function FeatureFigure({ project, onOpen, animated }: FigureProps & { animated: 
           ))}
         </div>
       </div>
-      <div className="relative border-t border-faded/40 p-5 sm:p-8 lg:col-span-7 lg:border-l lg:border-t-0">
-        {project.screens && <DeviceFrames screens={project.screens} animated={animated} url="crafttraq.com" />}
+      <div className="relative flex items-center border-t border-faded/40 p-5 sm:p-8 xl:col-span-7 xl:border-l xl:border-t-0">
+        {project.screens && (
+          <div className="w-full">
+            <DeviceFrames screens={project.screens} animated={animated} url="crafttraq.com" />
+          </div>
+        )}
       </div>
     </article>
   );

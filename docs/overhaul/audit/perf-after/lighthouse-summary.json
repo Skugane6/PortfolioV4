@@ -1,0 +1,257 @@
+{
+  "mobile": {
+    "median": {
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcp": 1091,
+      "lcp": 1660,
+      "tbt": 19,
+      "cls": 0,
+      "si": 1091,
+      "lcpElement": "I build the systems operators run on: a component tracker supporting 2,000+ air…",
+      "failing": [
+        "unused-javascript: Est savings of 36 KiB",
+        "dom-size: 1,420 elements",
+        "image-delivery-insight: Est savings of 13 KiB",
+        "network-dependency-tree-insight: 0"
+      ]
+    },
+    "runs": [
+      {
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 1250,
+        "lcp": 2213,
+        "tbt": 40,
+        "cls": 0.046,
+        "si": 2602,
+        "lcpElement": "I build the systems operators run on: a component tracker supporting 2,000+ air…",
+        "failing": [
+          "mainthread-work-breakdown: 2.1 s",
+          "unused-javascript: Est savings of 36 KiB",
+          "dom-size: 1,420 elements",
+          "image-delivery-insight: Est savings of 13 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 1055,
+        "lcp": 1660,
+        "tbt": 27,
+        "cls": 0,
+        "si": 1055,
+        "lcpElement": "I build the systems operators run on: a component tracker supporting 2,000+ air…",
+        "failing": [
+          "unused-javascript: Est savings of 36 KiB",
+          "dom-size: 1,420 elements",
+          "image-delivery-insight: Est savings of 13 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 1091,
+        "lcp": 1660,
+        "tbt": 19,
+        "cls": 0,
+        "si": 1091,
+        "lcpElement": "I build the systems operators run on: a component tracker supporting 2,000+ air…",
+        "failing": [
+          "unused-javascript: Est savings of 36 KiB",
+          "dom-size: 1,420 elements",
+          "image-delivery-insight: Est savings of 13 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 1125,
+        "lcp": 1661,
+        "tbt": 24,
+        "cls": 0,
+        "si": 1125,
+        "lcpElement": "I build the systems operators run on: a component tracker supporting 2,000+ air…",
+        "failing": [
+          "unused-javascript: Est savings of 36 KiB",
+          "dom-size: 1,420 elements",
+          "image-delivery-insight: Est savings of 13 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 1063,
+        "lcp": 1659,
+        "tbt": 20,
+        "cls": 0,
+        "si": 1063,
+        "lcpElement": "I build the systems operators run on: a component tracker supporting 2,000+ air…",
+        "failing": [
+          "unused-javascript: Est savings of 36 KiB",
+          "dom-size: 1,420 elements",
+          "image-delivery-insight: Est savings of 13 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      }
+    ]
+  },
+  "desktop": {
+    "median": {
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "fcp": 336,
+      "lcp": 393,
+      "tbt": 0,
+      "cls": 0,
+      "si": 429,
+      "lcpElement": "Searan Kuganesan",
+      "failing": [
+        "unused-javascript: Est savings of 33 KiB",
+        "uses-responsive-images: Est savings of 15 KiB",
+        "dom-size: 1,473 elements",
+        "image-delivery-insight: Est savings of 27 KiB",
+        "network-dependency-tree-insight: 0"
+      ]
+    },
+    "runs": [
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 307,
+        "lcp": 531,
+        "tbt": 0,
+        "cls": 0,
+        "si": 365,
+        "lcpElement": "Searan Kuganesan",
+        "failing": [
+          "unused-javascript: Est savings of 33 KiB",
+          "uses-responsive-images: Est savings of 15 KiB",
+          "dom-size: 1,473 elements",
+          "image-delivery-insight: Est savings of 27 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 330,
+        "lcp": 421,
+        "tbt": 0,
+        "cls": 0,
+        "si": 386,
+        "lcpElement": "Searan Kuganesan",
+        "failing": [
+          "unused-javascript: Est savings of 33 KiB",
+          "uses-responsive-images: Est savings of 15 KiB",
+          "dom-size: 1,473 elements",
+          "image-delivery-insight: Est savings of 27 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 336,
+        "lcp": 393,
+        "tbt": 0,
+        "cls": 0,
+        "si": 429,
+        "lcpElement": "Searan Kuganesan",
+        "failing": [
+          "unused-javascript: Est savings of 33 KiB",
+          "uses-responsive-images: Est savings of 15 KiB",
+          "dom-size: 1,473 elements",
+          "image-delivery-insight: Est savings of 27 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 341,
+        "lcp": 386,
+        "tbt": 0,
+        "cls": 0,
+        "si": 405,
+        "lcpElement": "Searan Kuganesan",
+        "failing": [
+          "unused-javascript: Est savings of 33 KiB",
+          "uses-responsive-images: Est savings of 15 KiB",
+          "dom-size: 1,473 elements",
+          "image-delivery-insight: Est savings of 27 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "fcp": 337,
+        "lcp": 373,
+        "tbt": 0,
+        "cls": 0,
+        "si": 421,
+        "lcpElement": "Searan Kuganesan",
+        "failing": [
+          "unused-javascript: Est savings of 33 KiB",
+          "uses-responsive-images: Est savings of 15 KiB",
+          "dom-size: 1,473 elements",
+          "image-delivery-insight: Est savings of 27 KiB",
+          "network-dependency-tree-insight: 0"
+        ]
+      }
+    ]
+  }
+}

@@ -103,13 +103,15 @@ function Plate({ group, index, gap, dim, selected, hovered, onGroup }: PlateProp
   const face = `M${n.x} ${n.y} L${e.x} ${e.y} L${s.x} ${s.y} L${w.x} ${w.y} Z`;
   const edge = `M${w.x} ${w.y} L${s.x} ${s.y} L${e.x} ${e.y} L${e.x} ${e.y + THICK} L${s.x} ${s.y + THICK} L${w.x} ${w.y + THICK} Z`;
 
-  // Balloons in up to two rows across the plate.
-  const perRow = Math.ceil(parts.length / 2);
+  // Two rows of balloons across the plate, three for the larger groups, so
+  // neighbours never touch at the narrowest drawn size.
+  const rows = parts.length > 6 ? 3 : 2;
+  const perRow = Math.ceil(parts.length / rows);
   const balloons = parts.map((p, i) => {
     const row = Math.floor(i / perRow);
     const col = i % perRow;
     const u = 0.14 + (col / Math.max(1, perRow - 1)) * 0.72;
-    const v = row === 0 ? 0.3 : 0.7;
+    const v = rows === 3 ? [0.2, 0.5, 0.8][row] : row === 0 ? 0.3 : 0.7;
     return { part: p, ...iso(u, v, top) };
   });
 
