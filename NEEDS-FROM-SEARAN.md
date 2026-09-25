@@ -5,7 +5,7 @@ Listed in priority order. Everything below has a working placeholder or fallback
 ## Decisions and facts (highest priority)
 
 1. **What role you're looking for, and from when.** The site shows "Open to opportunities" with a redline **HOLD: role type and start date** note, because neither the repo nor the résumé says. Set `availability.seeking` and `availability.from` in `src/content/profile.ts` and the HOLD disappears. Example shape: "Full-time software engineering roles, Toronto or remote, from October 2026".
-2. **"10 projects shipped".** Kept verbatim as the brief requires. The site shows 4 projects, the résumé lists 3, and your GitHub has 15 public repos. Is 10 the number you want to stand behind? If so, a list (even private) would let the cover link it to proof.
+2. **"10 projects shipped".** Kept verbatim as the brief requires. The site shows 4 projects, the résumé lists 3, and your GitHub has 15 public repos. Is 10 the number you want to stand behind? If so, a list (even private) would let the cover link it to proof. Until then it's the only proof item without a reference bubble, because there's nothing on the page it points to. I haven't marked it HOLD on the page: your brief said to flag it to you, not to change it.
 3. **Experience wording differs from your résumé.** I kept the site's wording and changed nothing:
    - Component Tracker: the site says "Led cross-functional requirements gathering…". The résumé says "Engineered full-stack component tracking system…" and mentions D3.js/Chart.js and a RESTful API, which the site omits.
    - Fleet prediction: the site's "10-Year", "CRJ700/900", "retirement, operator-transfer and maintenance-scheduling rules" and "Drove requirements definition" aren't on the résumé. The résumé's "400,000+ monthly records from SQL Server/Oracle … pandas/NumPy ETL" isn't on the site. "50+ operators" is attached to a different bullet on the résumé (ML trend analysis, 6 regional markets).
@@ -31,7 +31,7 @@ Listed in priority order. Everything below has a working placeholder or fallback
 
 ## Keys and settings
 
-14. **Contact form.** Set `RESEND_API_KEY` and `CONTACT_TO` (and optionally `CONTACT_FROM`, a verified Resend sender) in Vercel project settings. Until then, the form opens a prefilled email instead of sending, and says so.
+14. **Contact form.** Set `RESEND_API_KEY` and `CONTACT_TO` (and optionally `CONTACT_FROM`, a verified Resend sender) in Vercel project settings. Until then, the form opens a prefilled email instead of sending, and says so. Once it sends, also add a rate-limit rule for `/api/contact` in the Vercel Firewall (for example 5 requests per minute per IP). The route already refuses cross-site posts and non-JSON bodies, but a serverless function can't count requests across instances on its own, and that rule is what keeps someone from using up your Resend quota.
 15. **Canonical domain.** I assumed `https://searan.vercel.app` for the canonical URL, sitemap and OG tags. Tell me if there's a custom domain.
 
 19. **The eye-tracking demo and Google telemetry.** MediaPipe Tasks (the library the in-browser demo uses) sends Google usage and performance metrics once the model starts, with no documented switch to turn it off. The video itself never leaves the visitor's device. The demo says this, with a link to Google's notice, before anyone opts in. If you'd rather not have it on your site at all, the demo can be switched to simulation only: tell me and I'll make the start button open the simulation instead.
