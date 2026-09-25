@@ -2,7 +2,7 @@
 // modules (src/data/skillIcons.ts, src/data/contactIcons.ts). The three icon packages this reads are devDeps and
 // never reach the bundle: only the handful of <path d=""> strings below do,
 // which keeps ~30 logos at a couple of kB instead of pulling a 3,000-icon
-// index through the tree-shaker.  Re-run after editing MARKS or CONTACT_MARKS:
+// index through the tree-shaker.  Re-run after editing MARKS:
 //   node scripts/generate-skill-icons.mjs
 //
 // Every mark is normalised to the same shape: a viewBox plus an inner-SVG body
@@ -95,13 +95,6 @@ const RAW_MARKS = {
       '<path fill="currentColor" d="M220 205h123v35h-55v89h-34v-89h-80a48 48 0 0 1 46-35z"/>' +
       '<path fill="currentColor" d="M170 272h37v55a39 39 0 0 0 39 39h64v38h-64a76 76 0 0 1-76-76z"/>',
   },
-};
-
-const CONTACT_MARKS = {
-  email: ['mdi', 'email-outline', '#5B8FF0'],
-  github: ['cib', 'github', '#E6EDF3'],
-  linkedin: ['cib', 'linkedin', '#0A66C2'],
-  crafttraq: ['raw', 'crafttraq', '#FC5B00'],
 };
 
 // A handful of official brand hexes are all but invisible on this site's dark
@@ -202,7 +195,6 @@ const build = (table) => {
 };
 
 const marks = build(MARKS);
-const contactMarks = build(CONTACT_MARKS);
 
 const serialise = (built) =>
   Object.entries(built)
@@ -248,25 +240,3 @@ ${entries}
 const dest = path.join(root, 'src', 'data', 'skillIcons.ts');
 fs.writeFileSync(dest, out);
 console.log(`Wrote ${dest}: ${Object.keys(marks).length} marks, ${(out.length / 1024).toFixed(1)} kB`);
-
-const contactOut = `// GENERATED FILE. Do not edit by hand.
-// Run \`node scripts/generate-skill-icons.mjs\` to regenerate; the slug list and
-// the reasoning behind each source live in that script.
-//
-// Same normalised shape as the Skills marks next door: a viewBox plus inner SVG
-// painted with \`currentColor\`, so the Contact cards can hold every mark at the
-// blueprint tint at rest and bloom one to \`hex\` on hover or focus.
-import type { SkillMark } from './skillIcons';
-
-export type ContactMarkSlug = ${union(contactMarks)};
-
-export const contactMarks: Record<ContactMarkSlug, SkillMark> = {
-${serialise(contactMarks)}
-};
-`;
-
-const contactDest = path.join(root, 'src', 'data', 'contactIcons.ts');
-fs.writeFileSync(contactDest, contactOut);
-console.log(
-  `Wrote ${contactDest}: ${Object.keys(contactMarks).length} marks, ${(contactOut.length / 1024).toFixed(1)} kB`,
-);

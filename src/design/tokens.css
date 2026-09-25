@@ -118,8 +118,8 @@
 
 @media (max-width: 1023.98px) {
   :root {
-    /* Height of the mobile title strip, plus the home indicator. */
-    --strip-h: calc(52px + env(safe-area-inset-bottom, 0px));
+    /* Height of the mobile title strip (52px row + 2px rule), plus the home indicator. */
+    --strip-h: calc(54px + env(safe-area-inset-bottom, 0px));
   }
 }
 

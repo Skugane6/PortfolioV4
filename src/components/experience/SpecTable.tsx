@@ -6,12 +6,11 @@ export function SpecTable() {
     <figure>
       <table className="ground w-full border-collapse text-small">
         <caption className="pb-2 text-left text-label text-faded">
-          <span className="lettering">{aircraft.family}</span>, {aircraft.kind.toLowerCase()}. Published dimensions
-          <sup>
-            <a href="#spec-sources" className="link ml-0.5">
-              1
-            </a>
-          </sup>
+          <span className="lettering">{aircraft.family}</span>, {aircraft.kind.toLowerCase()}. Published dimensions (sources in{' '}
+          <a href="#spec-sources" className="link">
+            note 1
+          </a>
+          ).
         </caption>
         <thead>
           <tr className="border-b border-faded/60">

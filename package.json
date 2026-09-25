@@ -11,7 +11,9 @@
     "typecheck": "tsc -b",
     "lint": "eslint .",
     "e2e": "playwright test",
-    "build:fonts": "python scripts/build-fonts.py"
+    "build:fonts": "python scripts/build-fonts.py",
+    "check:bundle": "node scripts/check-bundle.mjs",
+    "assets": "python scripts/build-icon.py && node scripts/generate-assets.mjs && node scripts/generate-images.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "1.0.1",
