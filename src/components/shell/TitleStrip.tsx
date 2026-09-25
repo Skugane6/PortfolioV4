@@ -13,7 +13,7 @@ const IDS = sheets.map((s) => s.id);
  * home indicator, and nothing in it is under 13px. It sits inside the
  * frame's border lines, so the set's outline runs unbroken to the bottom.
  */
-export function TitleStrip({ onOpenIndex }: { onOpenIndex?: () => void }) {
+export function TitleStrip() {
   const active = useActiveSheet(IDS) as SheetId;
   const sheet = sheetById[active];
   const reduced = useReducedMotionPref();
@@ -21,7 +21,6 @@ export function TitleStrip({ onOpenIndex }: { onOpenIndex?: () => void }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const openIndex = () => {
-    if (onOpenIndex) return onOpenIndex();
     dialogRef.current?.showModal();
     setOpen(true);
   };
@@ -53,40 +52,38 @@ export function TitleStrip({ onOpenIndex }: { onOpenIndex?: () => void }) {
         </button>
       </nav>
 
-      {!onOpenIndex && (
-        <dialog
-          ref={dialogRef}
-          onClose={() => setOpen(false)}
-          aria-label="Sheet index"
-          className="m-0 mt-auto w-full max-w-none border-t-2 border-construction bg-cyanotype p-0 text-blueprint backdrop:bg-cyanotype/70 lg:hidden"
-        >
-          <nav aria-label="Sheet index">
-            <ol>
-              {sheets.map((s) => (
-                <li key={s.id} className="border-b border-construction/60">
-                  <a
-                    href={`#${s.id}`}
-                    aria-current={s.id === active ? 'location' : undefined}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      close();
-                      goToSheet(s.id, reduced);
-                    }}
-                    className="flex items-center gap-4 px-4 py-4"
-                  >
-                    <span className={`font-mono text-data ${s.id === active ? 'text-redline' : 'text-faded'}`}>{pad2(s.number)}</span>
-                    <span className="text-body">{s.title}</span>
-                    <span className="ml-auto text-small text-faded">{s.drawingTitle}</span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
-          <button type="button" onClick={close} className="w-full px-4 py-4 text-left text-small text-faded">
-            Close
-          </button>
-        </dialog>
-      )}
+      <dialog
+        ref={dialogRef}
+        onClose={() => setOpen(false)}
+        aria-label="Sheet index"
+        className="m-0 mt-auto w-full max-w-none border-t-2 border-construction bg-cyanotype p-0 text-blueprint backdrop:bg-cyanotype/70 lg:hidden"
+      >
+        <nav aria-label="Sheet index">
+          <ol>
+            {sheets.map((s) => (
+              <li key={s.id} className="border-b border-construction/60">
+                <a
+                  href={`#${s.id}`}
+                  aria-current={s.id === active ? 'location' : undefined}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    close();
+                    goToSheet(s.id, reduced);
+                  }}
+                  className="flex items-center gap-4 px-4 py-4"
+                >
+                  <span className={`font-mono text-data ${s.id === active ? 'text-redline' : 'text-faded'}`}>{pad2(s.number)}</span>
+                  <span className="text-body">{s.title}</span>
+                  <span className="ml-auto text-small text-faded">{s.drawingTitle}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+        <button type="button" onClick={close} className="w-full px-4 py-4 text-left text-small text-faded">
+          Close
+        </button>
+      </dialog>
     </>
   );
 }

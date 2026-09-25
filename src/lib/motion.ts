@@ -1,20 +1,20 @@
 import { useSyncExternalStore } from 'react';
 
-/** Motion tokens (DESIGN.md §4.5), in the units Motion takes (seconds). */
-export const dur = { press: 0.08, quick: 0.16, base: 0.24, sheet: 0.48, plot: 0.9 } as const;
+/**
+ * Motion tokens (DESIGN.md §4.5) that script-driven animation uses, in the
+ * units Motion takes (seconds). The full set, including the CSS-only ones,
+ * lives in src/design/tokens.css.
+ */
+export const dur = { quick: 0.16, base: 0.24, plot: 0.9 } as const;
 
 export const ease = {
   /** A plotter pen: accelerates, then settles onto the line's end. */
   pen: [0.65, 0, 0.35, 1],
-  settle: [0.2, 0.8, 0.2, 1],
-  exit: [0.4, 0, 1, 1],
 } as const;
 
 export const spring = {
   ui: { type: 'spring', stiffness: 420, damping: 34 },
 } as const;
-
-export const stagger = 0.04;
 
 /*
  * Reduced motion has two sources: the OS preference, and the visitor's own

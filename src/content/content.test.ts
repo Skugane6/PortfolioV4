@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { profile } from './profile';
 import { roles } from './experience';
@@ -75,6 +77,12 @@ describe('content', () => {
         expect(e.to === 'boundary' || ids.has(e.to)).toBe(true);
       }
     }
+  });
+
+  it('index.html carries the profile description, so the two never drift', () => {
+    const html = readFileSync(join(process.cwd(), 'index.html'), 'utf8').replace(/\s+/g, ' ');
+    expect(html).toContain(`name="description" content="${profile.metaDescription}"`);
+    expect(html).toContain(`property="og:description" content="${profile.metaDescription}"`);
   });
 
   it('keeps the cover proof items, including the flagged 10', () => {
