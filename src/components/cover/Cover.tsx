@@ -26,7 +26,7 @@ export function Cover() {
 
   return (
     <SheetFrame sheet={sheetById.cover} titleBlock={<CoverTitleBlock />} className="flex min-h-[100svh] flex-col">
-      <div className="relative flex-1 px-4 pb-10 pt-10 sm:px-8 sm:pt-12 lg:pb-12 lg:pl-16 lg:pr-12 lg:pt-16">
+      <div className="relative flex flex-1 flex-col px-4 pb-10 pt-10 sm:px-8 sm:pt-12 lg:pb-12 lg:pl-16 lg:pr-12 lg:pt-16">
         <h1 id="cover-title" className="w-cond text-display font-bold tracking-[-0.012em]">
           {profile.name}
         </h1>
@@ -68,7 +68,7 @@ export function Cover() {
           <KeyDrawing />
         </div>
 
-        <div className="mt-10 lg:mt-12">
+        <div className="mt-10 lg:mt-auto lg:pt-12">
           <h2 className="sr-only">Proof</h2>
           <ProofRefs items={profile.proof} firstLetter={1} />
         </div>

@@ -104,7 +104,7 @@ Scale (px). Based on the classic typographic scale, floors at 13 for labels and 
 
 | Token | Size / line-height | Face | Use |
 |---|---|---|---|
-| `display` | clamp(56, 9.2vw, 136) / 0.9 | Archivo width 68, 700 | The name (h1) |
+| `display` | clamp(56, 9.2vw, 168) / 0.9 | Archivo width 68, 700 | The name (h1) |
 | `title` | clamp(30, 3.6vw, 48) / 1.02 | Archivo width 72, 650 | Sheet titles (h2) |
 | `heading` | 24 / 1.15 | Archivo width 85, 600 | Item titles (h3) |
 | `lead` | clamp(19, 1.6vw, 22) / 1.45 | Archivo 100, 400 | Standfirst, the positioning line |

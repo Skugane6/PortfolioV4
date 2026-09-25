@@ -167,7 +167,7 @@ export function SurveyWide({ role, animated, hovered, setHovered, header, airfra
 
         <div className="h-16 [@media(max-height:860px)]:h-10" aria-hidden="true" />
 
-        <div className="grid items-end gap-5" style={{ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` }}>
+        <div className="grid items-stretch gap-5" style={{ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` }}>
           {role.callouts.map((c, i) => (
             <Dock
               key={c.id}
@@ -177,8 +177,8 @@ export function SurveyWide({ role, animated, hovered, setHovered, header, airfra
               reveal={reveal}
               animated={animated}
               render={(appear) => (
-                <div ref={(el) => (cardRefs.current[i] = el)} className="relative z-10">
-                  <CalloutCard callout={c} active={active === c.id} onActivate={setHovered} appear={appear} />
+                <div ref={(el) => (cardRefs.current[i] = el)} className="relative z-10 h-full">
+                  <CalloutCard callout={c} active={active === c.id} onActivate={setHovered} appear={appear} className="h-full" />
                 </div>
               )}
             />

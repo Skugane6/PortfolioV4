@@ -1,0 +1,96 @@
+{
+  "baseUrl": "http://127.0.0.1:4200/",
+  "reduced": true,
+  "runs": [
+    {
+      "width": 375,
+      "height": 812,
+      "console": [],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 1602,
+          "rawReadout": null,
+          "settledY": 1602,
+          "settledReadout": null
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1961,
+          "rawReadout": null,
+          "settledY": 1961,
+          "settledReadout": null
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 2321,
+          "rawReadout": null,
+          "settledY": 2321,
+          "settledReadout": null
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 2680,
+          "rawReadout": null,
+          "settledY": 2680,
+          "settledReadout": null
+        },
+        {
+          "progress": 1,
+          "requestedY": 3040,
+          "rawReadout": null,
+          "settledY": 3040,
+          "settledReadout": null
+        }
+      ],
+      "docHeight": 12223
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "console": [],
+      "failed": [],
+      "badStatus": [],
+      "experience": [
+        {
+          "progress": 0,
+          "requestedY": 947,
+          "rawReadout": null,
+          "settledY": 947,
+          "settledReadout": null
+        },
+        {
+          "progress": 0.25,
+          "requestedY": 1011,
+          "rawReadout": null,
+          "settledY": 1011,
+          "settledReadout": null
+        },
+        {
+          "progress": 0.5,
+          "requestedY": 1075,
+          "rawReadout": null,
+          "settledY": 1075,
+          "settledReadout": null
+        },
+        {
+          "progress": 0.75,
+          "requestedY": 1139,
+          "rawReadout": null,
+          "settledY": 1139,
+          "settledReadout": null
+        },
+        {
+          "progress": 1,
+          "requestedY": 1203,
+          "rawReadout": null,
+          "settledY": 1203,
+          "settledReadout": null
+        }
+      ],
+      "docHeight": 6576
+    }
+  ]
+}

@@ -30,7 +30,7 @@ export default {
       heading: ['24px', { lineHeight: '1.15' }],
       'data-lg': ['clamp(24px, 2.4vw, 34px)', { lineHeight: '1' }],
       title: ['clamp(30px, 3.6vw, 48px)', { lineHeight: '1.02' }],
-      display: ['clamp(56px, 9.2vw, 136px)', { lineHeight: '0.9' }],
+      display: ['clamp(56px, 9.2vw, 168px)', { lineHeight: '0.9' }],
     },
     borderRadius: {
       none: '0',
