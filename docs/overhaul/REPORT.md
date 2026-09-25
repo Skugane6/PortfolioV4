@@ -1,6 +1,6 @@
 # Overhaul report
 
-Branch `overhaul/v2`, built on `master` @ `f95235e`. Nothing has been merged or deployed to production.
+Branch `overhaul/v2`, built on `master` @ `f95235e`, pushed to GitHub. Vercel built a preview from it: https://portfoliov4-n71n646ar-searan-kuganesans-projects.vercel.app (you need to be signed in to Vercel to see it). Nothing has been merged or deployed to production.
 
 The portfolio is now one engineering drawing set. Sheet 01 is the cover. Sheet 02 is a side elevation where the MHI RJ work pins to measured stations on a line-art CRJ700. Sheet 03 holds four detail drawings, each opening a full detail sheet, three of them with working demos. Sheet 04 is an assembly with a bill of materials. Sheet 05 is the approval block, followed by a revision block drawn from git. Every factual claim from the old site is kept. Anything I couldn't verify, or that disagrees with your résumé, is flagged in `NEEDS-FROM-SEARAN.md` rather than changed.
 
@@ -123,7 +123,7 @@ Removed: `framer-motion`.
 
 - **Not verified on real devices or with a real camera.** Touch was emulated. The eye demo's calibration and blink detection are unit-tested with synthetic landmarks and were never run against a face.
 - **Synthesized touch scrolling doesn't work in this machine's headless Chromium**, even on a plain test page (`scripts/audit/touch-scroll-probe.mjs`). The phone runtime figure therefore comes from wheel scrolling at a phone viewport.
-- **Lighthouse is simulated and noisy.** On the final build all five mobile runs scored LCP 1.66 s, and one had CLS 0.047. But the set before it, on nearly the same code, had one run at 2.52 s and one at 2.18 s, both over the 2.0 s target. The median is reliably inside the target; a single run may not be. The measurements are local builds served by `vite preview`, not Vercel's edge; a preview deploy would give production numbers.
+- **Lighthouse is simulated and noisy.** On the final build all five mobile runs scored LCP 1.66 s, and one had CLS 0.047. But the set before it, on nearly the same code, had one run at 2.52 s and one at 2.18 s, both over the 2.0 s target. The median is reliably inside the target; a single run may not be. The measurements are local builds served by `vite preview`, not Vercel's edge. The branch has a Vercel preview, but it sits behind Vercel's login (Deployment Protection), so I couldn't measure it; run Lighthouse on it while signed in, or after merging, for edge numbers.
 - **Font-swap residue at 360 and 390 px:** the cover's proof labels wrap about 20 px differently in the fallback face, below the fold (`scripts/audit/font-shift.mjs`). Some symbols (⌘, →, Σ) aren't in the font files Google serves for Latin, so they render from system fonts, as they did before.
 - **Delayed interactivity on slow connections.** The app starts after the page has painted. Links work immediately, but buttons (Details, Open detail, the palette) wait for hydration, a few hundred ms on slow 4G. Send message is disabled until then, so a message can't be submitted into a URL.
 - **No print stylesheet.** The whiteprint idea in DESIGN.md Q4 wasn't built; printing gives the dark page.
