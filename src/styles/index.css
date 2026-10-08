@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Blueprint / technical-manual theme tokens. Dark only, by design: no
+   light palette, no prefers-color-scheme branch, no toggle. */
+:root {
+  color-scheme: dark;
+
+  --color-bg: #0a0d13;
+  --color-surface: #12161f;
+  --color-ink: #e7ecf3;
+  --color-ink-dim: #8b94a3;
+  --color-border: #232b3a;
+
+  /* accent: solid fill for buttons/chips/borders. accent-text: the tint used
+     for text/links, brightened past the raw accent so it still clears
+     4.5:1 against the dark background (see contrast.test.ts). */
+  --color-accent: #2f6ad4;
+  --color-accent-hover: #4f7ad0;
+  --color-accent-text: #5b8ff0;
+  --color-accent-wash: rgba(79, 122, 208, 0.14);
+
+  /* Amber, scoped to the Experience cutaway's status/progress accents only. */
+  --color-amber: #f0a02a;
+
+  /* Blueprint micro-labels: station numbers, spec rows, figure captions, tab
+     sub-labels. These used to be ten hand-picked blues scattered across four
+     components (#33507e, #3f6098, #4a5f80, #4a6790, #3a5580 …), every one of
+     them landing between 2.4:1 and 3.4:1, under AA at the 9–10px sizes they
+     are set at. Two tokens replace the lot, both measured against the darker
+     of the two grounds they appear on:
+
+       annotation      5.5:1 on --color-bg, 5.1:1 on --color-surface
+       annotation-dim  4.6:1 on --color-bg, 4.3:1 on --color-surface
+
+     The pair still reads as a hierarchy (primary label vs. secondary tick
+     caption); it just does it inside AA instead of below it. Anything purely
+     structural (rules, ticks, hairlines) keeps its own low-alpha value; these
+     two are for text. */
+  --color-annotation: #6e8ab4;
+  --color-annotation-dim: #647fa8;
+}
+
+body {
+  @apply bg-bg font-sans text-ink antialiased;
+}
+
+a:focus-visible,
+button:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-accent-text;
+}
+
+/* ── Hero stage animations ─────────────────────────────────────────────
+   The hero's 3D stage is built from CSS and inline SVG rather than
+   framer-motion, so App.tsx's <MotionConfig reducedMotion="user"> never
+   reaches any of it: that config only rewrites motion.* components. The
+   guard at the bottom of this block is what honours prefers-reduced-motion
+   here instead: every animated element in the hero carries `hero-anim`
+   alongside its inline `animation` shorthand, and the one rule below turns
+   the whole scene static. Entrance animations (rise/fade/bar-grow) all
+   animate *from* a hidden state into the element's natural styles, so
+   cancelling them leaves the content visible rather than stuck at zero.
+
+   Names are hero-prefixed to keep them obviously section-scoped. */
+@keyframes hero-dash-flow { to { stroke-dashoffset: -240; } }
+@keyframes hero-pulse-travel { to { stroke-dashoffset: -900; } }
+@keyframes hero-node-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+@keyframes hero-grid-drift { to { background-position: 400px 400px, 400px 400px, 0 0; } }
+@keyframes hero-float-a { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -9px, 0); } }
+@keyframes hero-float-b { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, 7px, 0); } }
+@keyframes hero-scan-sweep {
+  0% { transform: translateY(-20px); opacity: 0; }
+  12% { opacity: 0.9; }
+  88% { opacity: 0.9; }
+  100% { transform: translateY(300px); opacity: 0; }
+}
+@keyframes hero-caret-blink { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } }
+@keyframes hero-rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hero-bar-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes hero-scroll-tick { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+@keyframes hero-glow-breathe { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.7; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim {
+    animation: none !important;
+  }
+}
+
+/* ── Projects carousel animations ──────────────────────────────────────
+   Same arrangement as the hero block above, and for the same reason: the
+   projects panels are built from CSS and inline SVG rather than motion.*
+   components, so <MotionConfig reducedMotion="user"> never reaches them.
+   Every animated element carries `proj-anim` next to its inline `animation`
+   shorthand, and the guard at the bottom flattens the whole section.
+
+   Entrance keyframes (rise/fade/draw/grow/track) all animate *from* a hidden
+   state into the element's natural styles, so cancelling them leaves the
+   content visible rather than stuck invisible. */
+@keyframes proj-rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes proj-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes proj-drift { from { background-position: 0 0, 0 0; } to { background-position: 64px 64px, 64px 64px; } }
+@keyframes proj-glide {
+  0% { left: -14%; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { left: 104%; opacity: 0; }
+}
+@keyframes proj-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+@keyframes proj-ring { 0% { transform: scale(0.5); opacity: 0.85; } 100% { transform: scale(3.2); opacity: 0; } }
+@keyframes proj-sheen { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes proj-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes proj-scan {
+  0% { transform: translateX(-30%); opacity: 0; }
+  10% { opacity: 0.75; }
+  90% { opacity: 0.75; }
+  100% { transform: translateX(340%); opacity: 0; }
+}
+
+/* Risk dashboard. proj-draw carries its own `from` rather than relying on a
+   stroke-dashoffset attribute on the element: an attribute would survive the
+   reduced-motion cancel below and leave the lines permanently undrawn. */
+@keyframes proj-draw { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
+@keyframes proj-grow { from { transform: scaleY(0.1); opacity: 0; } to { transform: scaleY(1); opacity: 1; } }
+@keyframes proj-vscan { from { left: 2%; } to { left: 98%; } }
+
+/* Ensemble network */
+@keyframes proj-dash { to { stroke-dashoffset: -240; } }
+@keyframes proj-offset { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@keyframes proj-track { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Gaze pointer */
+@keyframes proj-cursor {
+  0% { transform: translate(16%, 20%); }
+  22% { transform: translate(74%, 18%); }
+  44% { transform: translate(82%, 64%); }
+  68% { transform: translate(52%, 76%); }
+  88% { transform: translate(48%, 42%); }
+  100% { transform: translate(16%, 20%); }
+}
+@keyframes proj-click {
+  0%, 86%, 100% { transform: scale(0); opacity: 0; }
+  90% { transform: scale(1); opacity: 0.9; }
+  99% { transform: scale(2.6); opacity: 0; }
+}
+@keyframes proj-blink { 0%, 90%, 100% { transform: scaleY(0.02); } 94% { transform: scaleY(1); } }
+@keyframes proj-tilehit {
+  0%, 12%, 100% { border-color: rgba(91, 143, 240, 0.2); background: rgba(91, 143, 240, 0.02); }
+  4% { border-color: rgba(91, 143, 240, 0.85); background: rgba(91, 143, 240, 0.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-anim {
+    animation: none !important;
+  }
+}
+
+/* ── Skills plate ──────────────────────────────────────────
+   Every logo wears its own brand colour, at rest, on every device. The marks
+   used to sit drafted blue-grey until a cursor found them, which read as a
+   plate of grey squares to anyone who never hovered, and as *nothing at all*
+   on a touchscreen, where a `@media (hover: none)` fallback was the only thing
+   painting them at all. The colour is the point of the section, so it is
+   now the resting state and hover is what intensifies it: a brand-tinted
+   border, a glow under the mark, and the corner ticks picking up the same hue.
+
+   Each chip sets four weights of its one hex in SkillTile.tsx: --brand (the
+   mark), --brand-soft (hover border, glow), --brand-line (resting border) and
+   --brand-wash (the faint plate tint). All four are floored in lightness by
+   scripts/generate-skill-icons.mjs so they survive this near-black ground.
+
+   These states are CSS rather than framer-motion so one rule covers pointer,
+   touch and reduced-motion alike. Motion still owns what CSS does badly: the
+   staggered entrance, the pointer tilt, the bloom and light sweep. */
+.skill-chip {
+  border-color: var(--brand-line);
+  background-color: rgba(12, 17, 26, 0.55);
+  background-image: linear-gradient(158deg, var(--brand-wash), transparent 64%);
+  transition: border-color 300ms ease, background-color 300ms ease, box-shadow 300ms ease;
+}
+
+.skill-mark,
+.skill-ticks,
+.skill-note {
+  transition: color 350ms ease, filter 350ms ease;
+}
+
+.skill-mark {
+  color: var(--brand);
+}
+
+.skill-ticks {
+  color: rgba(120, 160, 225, 0.38);
+}
+
+.skill-note {
+  color: var(--color-ink-dim);
+}
+
+.skill-tile:hover .skill-chip {
+  border-color: var(--brand-soft);
+  background-color: rgba(16, 23, 36, 0.75);
+  box-shadow: 0 10px 30px -16px var(--brand);
+}
+
+/* The mark is already brand-coloured, so hover has to say something else:
+   the glow is that something. */
+.skill-tile:hover .skill-mark {
+  filter: drop-shadow(0 0 9px var(--brand-soft));
+}
+
+.skill-tile:hover .skill-ticks {
+  color: var(--brand);
+}
+
+.skill-tile:hover .skill-note {
+  color: rgba(190, 209, 236, 0.9);
+}
+
+/* ── Skills detail panel ─────────────────────────────────────
+   The margin callout inherits the same four custom properties from whichever
+   tile the pointer is on, set on the <aside> in SkillDetail.tsx, so the whole
+   panel transitions from one part's colour to the next's rather than cutting.
+   The transitions are long here (400ms against the grid's 300ms) because this
+   is a single large element changing colour, not a 90px chip. */
+.skill-detail-plate {
+  border-color: var(--brand-line);
+  background-color: rgba(10, 14, 21, 0.55);
+  transition: border-color 400ms ease;
+}
+
+.skill-detail-ticks {
+  color: var(--brand-soft);
+  transition: color 400ms ease;
+}
+
+.skill-detail-mark {
+  color: var(--brand);
+  filter: drop-shadow(0 0 14px var(--brand-soft));
+  transition: color 400ms ease, filter 400ms ease;
+}
+
+.skill-detail-name {
+  color: var(--color-ink);
+}
+
+/* ── Contact channels ──────────────────────────────────────────────────
+   Same arrangement as the Skills plate above, and for the same reason: each
+   card sets --brand (its channel's real hex, floored for this ground by
+   scripts/generate-skill-icons.mjs) and --brand-soft, the mark rests as
+   drafted blue-grey, and the card blooms to the brand colour under a pointer.
+   Two differences from the Skills rules. The states key off `:focus-within`
+   as well as `:hover`, because these cards *are* the links: a keyboard user
+   tabbing onto one should get the same confirmation a mouse user gets from
+   hovering it. And under `@media (hover: none)` the whole resting state moves
+   to brand colour rather than just the mark, since a touch device will never
+   fire either event. */
+.contact-card {
+  transition: border-color 300ms ease, background-color 300ms ease;
+}
+
+.contact-mark,
+.contact-ticks,
+.contact-handle,
+.contact-bloom,
+.contact-arrow {
+  transition: color 350ms ease, opacity 350ms ease, transform 300ms ease;
+}
+
+.contact-mark {
+  color: rgba(150, 178, 215, 0.72);
+}
+
+.contact-ticks {
+  color: rgba(120, 160, 225, 0.34);
+}
+
+.contact-handle {
+  color: var(--color-ink-dim);
+}
+
+.contact-bloom {
+  opacity: 0;
+}
+
+.contact-arrow {
+  color: rgba(139, 148, 163, 0.8);
+}
+
+.contact-card:hover,
+.contact-card:focus-within {
+  border-color: var(--brand-soft);
+  background-color: rgba(16, 23, 36, 0.78);
+}
+
+.contact-card:hover .contact-mark,
+.contact-card:focus-within .contact-mark,
+.contact-card:hover .contact-ticks,
+.contact-card:focus-within .contact-ticks,
+.contact-card:hover .contact-arrow,
+.contact-card:focus-within .contact-arrow {
+  color: var(--brand);
+}
+
+.contact-card:hover .contact-arrow,
+.contact-card:focus-within .contact-arrow {
+  transform: translate(2px, -2px);
+}
+
+.contact-card:hover .contact-handle,
+.contact-card:focus-within .contact-handle {
+  color: rgba(190, 209, 236, 0.9);
+}
+
+.contact-card:hover .contact-bloom,
+.contact-card:focus-within .contact-bloom {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .contact-mark {
+    color: var(--brand);
+  }
+
+  .contact-ticks {
+    color: var(--brand-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-arrow {
+    transition: color 350ms ease;
+  }
+
+  .contact-card:hover .contact-arrow,
+  .contact-card:focus-within .contact-arrow {
+    transform: none;
+  }
+}

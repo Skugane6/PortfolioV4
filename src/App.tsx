@@ -1,46 +1,36 @@
-import { useEffect } from 'react';
-import { LazyMotion, MotionConfig } from 'motion/react';
-import { useReducedMotionPref } from './lib/motion';
-import { SkipLink } from './components/shell/SkipLink';
-import { SheetIndex } from './components/shell/SheetIndex';
-import { TitleStrip } from './components/shell/TitleStrip';
-import { Cover } from './components/cover/Cover';
-import { Experience } from './components/experience/Experience';
-import { Projects } from './components/projects/Projects';
-import { Skills } from './components/skills/Skills';
-import { Contact } from './components/contact/Contact';
-import { RevisionBlock } from './components/contact/RevisionBlock';
-import { CommandPalette } from './components/shell/CommandPalette';
-import { Crosshair } from './components/shell/Crosshair';
-import { printConsoleNote } from './components/shell/consoleNote';
-
-// Motion's animation features load in their own chunk after first paint.
-// m.* components render their initial styles without them.
-const loadFeatures = () => import('./lib/motionFeatures').then((mod) => mod.default);
+import { MotionConfig } from 'framer-motion';
+import { Cursor } from './components/Cursor';
+import { Pet } from './components/Pet';
+import { NavRail } from './components/NavRail';
+import { Hero } from './components/Hero';
+import { Experience } from './components/Experience';
+import { Projects } from './components/Projects';
+import { Skills } from './components/Skills';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 
 export function App() {
-  const reduced = useReducedMotionPref();
-  useEffect(printConsoleNote, []);
-
   return (
-    <LazyMotion features={loadFeatures} strict>
-      <MotionConfig reducedMotion={reduced ? 'always' : 'never'}>
-        <SkipLink />
-        <SheetIndex />
-        <TitleStrip />
-        <div className="drawing-set">
-          <main id="main" tabIndex={-1} className="outline-none">
-            <Cover />
-            <Experience />
-            <Projects />
-            <Skills />
-            <Contact />
-          </main>
-          <RevisionBlock />
-        </div>
-        <CommandPalette />
-        <Crosshair />
-      </MotionConfig>
-    </LazyMotion>
+    // reducedMotion="user" is the global safety net: every motion.* element
+    // below automatically drops its x/y/scale/rotate animation (keeping
+    // opacity fades) for anyone with prefers-reduced-motion set.
+    <MotionConfig reducedMotion="user">
+      <div className="bg-bg">
+        {/* Outside <main> and aria-hidden: it is a replacement for the native
+            cursor, not content. Renders nothing without a fine pointer. */}
+        <Cursor />
+        {/* Pixel cat that wanders the page. Purely decorative. */}
+        <Pet />
+        <NavRail />
+        <main>
+          <Hero />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }
