@@ -7,8 +7,7 @@ import type { DemoKind } from '../../content/types';
  */
 export function FigureSketch({ kind }: { kind: DemoKind }) {
   if (kind === 'risk') return <RiskSketch />;
-  if (kind === 'text') return <TextSketch />;
-  return <EyeSketch />;
+  return <TextSketch />;
 }
 
 const common = {
@@ -70,23 +69,6 @@ function TextSketch() {
       ))}
       <path d="M217 90 H239" stroke="rgb(var(--c-redline))" strokeWidth={3} {...common} />
       <path d="M140 40 H216 M140 40 V56" stroke="rgb(var(--c-construction))" strokeWidth={1} strokeDasharray="5 4" {...common} />
-    </svg>
-  );
-}
-
-function EyeSketch() {
-  const grid = [0, 1, 2].flatMap((r) => [0, 1, 2].map((c) => ({ x: 150 + c * 44, y: 44 + r * 46 })));
-  return (
-    <svg viewBox="0 0 280 180" className="h-full w-full" aria-hidden="true">
-      <path d="M18 90 C 40 58, 92 58, 114 90 C 92 122, 40 122, 18 90 Z" stroke="rgb(var(--c-blueprint))" strokeWidth={2} {...common} />
-      <circle cx={72} cy={88} r={16} stroke="rgb(var(--c-blueprint))" strokeWidth={1.2} {...common} />
-      <circle cx={72} cy={88} r={6} fill="rgb(var(--c-blueprint))" />
-      <path d="M88 88 H132" stroke="rgb(var(--c-faded))" strokeWidth={1} strokeDasharray="5 4" {...common} />
-      {grid.map((g, i) => (
-        <rect key={i} x={g.x - 14} y={g.y - 14} width={28} height={28} stroke={i === 4 ? 'rgb(var(--c-redline))' : 'rgb(var(--c-faded) / 0.7)'} strokeWidth={i === 4 ? 2 : 1} {...common} />
-      ))}
-      <circle cx={194} cy={90} r={9} stroke="rgb(var(--c-redline))" strokeWidth={1.5} {...common} />
-      <path d="M194 76 V84 M194 96 V104 M180 90 H188 M200 90 H208" stroke="rgb(var(--c-redline))" strokeWidth={1.5} {...common} />
     </svg>
   );
 }

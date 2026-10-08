@@ -75,8 +75,66 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 'portfolio-risk-dashboard',
+    id: 'genshillion',
     fig: 2,
+    name: 'Genshillion',
+    tagline:
+      'A daily Genshin Impact trivia game. Seven open-ended prompts, twenty-five seconds each: type freely and the rarer the valid answer, the deeper you dive.',
+    live: true,
+    stack: ['React 19', 'TypeScript', 'Vite', 'Fastify', 'PostgreSQL', 'Drizzle', 'Zod'],
+    links: [{ label: 'Visit genshillion.com', href: 'https://genshillion.com' }],
+    demo: null,
+    screens: [
+      {
+        kind: 'desktop',
+        srcSet:
+          '/img/genshillion-desktop-480.webp 480w, /img/genshillion-desktop-800.webp 800w, /img/genshillion-desktop-1200.webp 1200w, /img/genshillion-desktop-1600.webp 1600w',
+        png: '/genshillion-desktop.png',
+        width: 1902,
+        height: 938,
+        alt: 'Genshillion’s start screen in pixel art: the gold logo over a Mondstadt-style skyline, a card reading Dive #3 with seven prompts of twenty-five seconds each, a Start button, and streak, best, dives and last-score counters.',
+      },
+      {
+        kind: 'phone',
+        srcSet: '/img/genshillion-phone-190.webp 190w, /img/genshillion-phone-375.webp 375w',
+        png: '/genshillion-phone.png',
+        width: 375,
+        height: 835,
+        alt: 'The same start screen on a phone: logo, the Dive #3 card, a full-width Start button and the streak counters stacked above the fan-game disclaimer.',
+      },
+    ],
+    caseStudy: {
+      does:
+        'A daily trivia game modeled on krillion.io. Every day brings seven open-ended prompts (“Name a sword”), twenty-five seconds each and one attempt. Answers are typed freely and scored by curated rarity.',
+      built: [
+        'React and Vite web client with a Fastify API behind it, in a TypeScript monorepo.',
+        'PostgreSQL through Drizzle, with Zod-validated contracts between client and API.',
+        'Curated seed content imported and scheduled one dive per day. Progress stays in the browser; the server stores only final scores.',
+        'Sound effects synthesized in the browser, with text names only: no official art, logos, audio or fonts.',
+      ],
+      standing: 'Live at genshillion.com. An unofficial fan game, not affiliated with HoYoverse.',
+      architecture: {
+        caption: 'Components named in the project README and its package manifests.',
+        nodes: [
+          { id: 'web', label: 'Web client', detail: 'React 19, Vite', col: 0, row: 1, inside: true },
+          { id: 'api', label: 'API', detail: 'Fastify, Zod', col: 1, row: 1, inside: true },
+          { id: 'db', label: 'Database', detail: 'PostgreSQL, Drizzle', col: 2, row: 1, inside: true },
+          { id: 'content', label: 'Curated content', detail: 'seed import, daily schedule', col: 1, row: 2, inside: true },
+          { id: 'local', label: 'Browser storage', detail: 'progress stays local', col: 0, row: 0, inside: false },
+        ],
+        edges: [
+          { from: 'web', to: 'api' },
+          { from: 'api', to: 'db' },
+          { from: 'content', to: 'db' },
+          { from: 'local', to: 'web', label: 'progress' },
+        ],
+      },
+      source: 'Project README (github.com/Skugane6/teyvat-dive) and the live site',
+    },
+  },
+  {
+    id: 'portfolio-risk-dashboard',
+    fig: 3,
     name: 'Portfolio Risk Dashboard',
     tagline: 'MPT and Value-at-Risk analytics on live market data, with efficient-frontier optimization.',
     live: false,
@@ -113,7 +171,7 @@ export const projects: Project[] = [
   },
   {
     id: 'text-classification-pipeline',
-    fig: 3,
+    fig: 4,
     name: 'Text Classification Pipeline',
     tagline: 'BERT + CNN/BiLSTM ensemble for text classification, with MLflow tracking and data augmentation.',
     live: false,
@@ -150,39 +208,6 @@ export const projects: Project[] = [
         ],
       },
       source: RESUME,
-    },
-  },
-  {
-    id: 'eye-mouse',
-    fig: 4,
-    name: 'Eye Tracking Mouse',
-    tagline: 'Hands-free cursor control from a webcam. Look to move, blink to click.',
-    live: false,
-    stack: ['Python', 'OpenCV', 'MediaPipe', 'PyAutoGUI', 'NumPy'],
-    links: [{ label: 'Source on GitHub', href: 'https://github.com/Skugane6/eye-mouse' }],
-    demo: 'eye',
-    caseStudy: {
-      does: 'Hands-free cursor control from a webcam. Look to move, blink to click.',
-      built: [
-        'Webcam frames through OpenCV, with MediaPipe finding the face and iris landmarks.',
-        'Gaze smoothed before it drives the cursor; a blink becomes a click through PyAutoGUI.',
-      ],
-      standing: null,
-      architecture: {
-        caption: 'The pipeline the site has always described: webcam → iris landmarks → smoothed gaze → cursor + click.',
-        nodes: [
-          { id: 'cam', label: 'Webcam', detail: 'OpenCV', col: 0, row: 0, inside: true },
-          { id: 'iris', label: 'Iris landmarks', detail: 'MediaPipe', col: 1, row: 0, inside: true },
-          { id: 'gaze', label: 'Smoothed gaze', detail: 'NumPy', col: 2, row: 0, inside: true },
-          { id: 'cursor', label: 'Cursor + click', detail: 'PyAutoGUI', col: 3, row: 0, inside: true },
-        ],
-        edges: [
-          { from: 'cam', to: 'iris' },
-          { from: 'iris', to: 'gaze' },
-          { from: 'gaze', to: 'cursor' },
-        ],
-      },
-      source: 'Project stack and the site’s existing pipeline description',
     },
   },
 ];

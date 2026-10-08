@@ -3,19 +3,17 @@ import { AnimatePresence, m } from 'motion/react';
 import type { DemoKind, Project } from '../../content/types';
 import { dur, spring } from '../../lib/motion';
 import { ArchitectureDiagram } from './ArchitectureDiagram';
-import { DeviceFrames } from './DeviceFrames';
+import { DeviceFrames, projectHost } from './DeviceFrames';
 
 // Each demo is its own chunk, fetched only when its detail sheet opens.
 const DEMOS: Partial<Record<DemoKind, LazyExoticComponent<ComponentType>>> = {
   risk: lazy(() => import('../demos/RiskDemo')),
   text: lazy(() => import('../demos/TextDemo')),
-  eye: lazy(() => import('../demos/EyeDemo')),
 };
 
 const DEMO_TITLES: Record<DemoKind, string> = {
   risk: 'Try it: move the portfolio along the frontier',
   text: 'Try it: send a sentence through the pipeline',
-  eye: 'Try it: look to move, blink to click',
 };
 
 interface CaseStudyDialogProps {
@@ -169,7 +167,7 @@ export function CaseStudyDialog({ project, onClose, onClosed }: CaseStudyDialogP
                 {project.screens && (
                   <div className="lg:col-span-12">
                     <Section title="Screens">
-                      <DeviceFrames screens={project.screens} animated={false} eager url="crafttraq.com" />
+                      <DeviceFrames screens={project.screens} animated={false} eager url={projectHost(project)} />
                     </Section>
                   </div>
                 )}

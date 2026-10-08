@@ -26,10 +26,10 @@ test.describe('global interactions', () => {
     test.skip(info.project.name !== 'desktop', 'keyboard shortcut');
     await gotoHome(page);
     await page.keyboard.press('Control+k');
-    await page.keyboard.type('eye tracking');
+    await page.keyboard.type('genshillion');
     await page.keyboard.press('Enter');
-    await expect(page.getByRole('dialog', { name: 'Eye Tracking Mouse' })).toBeVisible();
-    await expect(page).toHaveURL(/#projects\/eye-mouse$/);
+    await expect(page.getByRole('dialog', { name: 'Genshillion' })).toBeVisible();
+    await expect(page).toHaveURL(/#projects\/genshillion$/);
   });
 
   test('a palette command lands focus where it sends you', async ({ page }, info) => {

@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
 import { expectNoAxeViolations, gotoHome } from './helpers';
 
-const NAMES = ['CraftTraq', 'Portfolio Risk Dashboard', 'Text Classification Pipeline', 'Eye Tracking Mouse'];
+const NAMES = ['CraftTraq', 'Genshillion', 'Portfolio Risk Dashboard', 'Text Classification Pipeline'];
 // Numbers the previous project visuals printed without a source (CONTENT.md §5).
-const UNSOURCED = ['1.84', '14.2%', '94.1%', '0.921', '0.936', '0.908', 'RUN 47', '18ms', '0.7°', 'BLINKS 142'];
+const UNSOURCED = ['1.84', '14.2%', '94.1%', '0.921', '0.936', '0.908', 'RUN 47', '18ms', '0.7°'];
 
 test.describe('projects sheet', () => {
   test('all four projects are visible at a glance, no tabs', async ({ page }) => {

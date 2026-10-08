@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { m, useScroll, useTransform } from 'motion/react';
-import type { Screen } from '../../content/types';
+import type { Project, Screen } from '../../content/types';
 
 interface DeviceFramesProps {
   screens: Screen[];
@@ -11,9 +11,15 @@ interface DeviceFramesProps {
   url?: string;
 }
 
+/** The site's host, printed in the browser frame's address bar. */
+export function projectHost(project: Project) {
+  const href = project.links[0]?.href;
+  return href ? new URL(href).hostname : undefined;
+}
+
 /**
- * CraftTraq's real screens in drawn device frames: the job board in a
- * browser frame, the calendar in a phone frame set in front of it. The phone
+ * A live project's real screens in drawn device frames: the desktop view in a
+ * browser frame, the phone view in a phone frame set in front of it. The phone
  * rides a little faster than the page, so the two read as separate objects.
  */
 export function DeviceFrames({ screens, animated, eager = false, url }: DeviceFramesProps) {

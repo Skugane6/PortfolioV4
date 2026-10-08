@@ -8,7 +8,7 @@ import { useUi } from '../../lib/ui';
 import { useHydrated } from '../../lib/useMedia';
 import { SheetFrame } from '../shell/SheetFrame';
 import { CaseStudyDialog } from './CaseStudyDialog';
-import { DeviceFrames } from './DeviceFrames';
+import { DeviceFrames, projectHost } from './DeviceFrames';
 import { FigureSketch } from './FigureSketch';
 import { useCaseStudyRoute } from './useCaseStudyRoute';
 
@@ -17,7 +17,7 @@ const NEW_TAB = <span className="sr-only"> (opens in a new tab)</span>;
 /**
  * Sheet 03, detail drawings. Every project is visible at once as a figure;
  * each opens its full detail sheet (how it's built, architecture, and for
- * three of them a working demo) in a dialog linked from the URL.
+ * two of them a working demo) in a dialog linked from the URL.
  */
 export function Projects() {
   const ids = projects.map((p) => p.id);
@@ -50,7 +50,8 @@ export function Projects() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [request?.seq]);
 
-  const [feature, ...rest] = projects;
+  const features = projects.filter((p) => p.screens);
+  const rest = projects.filter((p) => !p.screens);
 
   return (
     <SheetFrame sheet={sheetById.projects}>
@@ -59,12 +60,14 @@ export function Projects() {
           {sheetById.projects.title}
         </h2>
         <p className="mt-3 max-w-[60ch] text-body text-faded">
-          Four projects, one figure each. Open a figure for how it’s built; three of them have a working demo inside.
+          Four projects, one figure each. Open a figure for how it’s built; two of them have a working demo inside.
         </p>
 
         <div className="mt-10 space-y-6">
-          <FeatureFigure project={feature} onOpen={onOpen} animated={hydrated && !reduced} />
-          <div className="grid gap-6 lg:grid-cols-3">
+          {features.map((p) => (
+            <FeatureFigure key={p.id} project={p} onOpen={onOpen} animated={hydrated && !reduced} />
+          ))}
+          <div className="grid gap-6 lg:grid-cols-2">
             {rest.map((p) => (
               <FigureCard key={p.id} project={p} onOpen={onOpen} />
             ))}
@@ -154,7 +157,7 @@ function FeatureFigure({ project, onOpen, animated }: FigureProps & { animated: 
       <div className="relative flex items-center border-t border-faded/40 p-5 sm:p-8 xl:col-span-7 xl:border-l xl:border-t-0">
         {project.screens && (
           <div className="w-full">
-            <DeviceFrames screens={project.screens} animated={animated} url="crafttraq.com" />
+            <DeviceFrames screens={project.screens} animated={animated} url={projectHost(project)} />
           </div>
         )}
       </div>

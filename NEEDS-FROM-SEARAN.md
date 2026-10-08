@@ -14,19 +14,19 @@ Listed in priority order. Everything below has a working placeholder or fallback
    - Résumé bullets not on the site: ML trend analysis with scikit-learn regression (50+ operators, 6 regional markets); pytest/Jest suites at 85% coverage with CI/CD; technical documentation and API specs; mentoring junior interns. Want any of them as callouts? Adding one is one entry in `src/content/experience.ts`, which adds a station and a card.
 4. **Employer name.** The text says "Mitsubishi Heavy Industries" (as the résumé does), but the logo is MHI RJ's (MHI RJ Aviation Group, the MHI subsidiary that owns the CRJ programme, with its Toronto office at 6415 Northam Dr, Mississauga). Which entity was your employer of record? One option: "MHI RJ Aviation Group (Mitsubishi Heavy Industries)".
 5. **CRJ spec table.** The old block mixed CRJ700 length (32.5 m) with CRJ900 wingspan and height. It's now a two-column table with published figures (CRJ700 32.5 / 23.2 / 7.6 m; CRJ900 36.2 / 24.9 / 7.5 m), with sources in the page notes. The drawing is scaled as a CRJ700. Please confirm, or tell me which variant your work centred on.
-6. **Unsourced project numbers, removed from display.** The old project visuals showed Sharpe 1.84, annual return 14.2%, volatility 7.7%, VaR 95 −2.4% (risk dashboard); MLflow run 47, accuracy 94.1%, F1 0.921, precision 0.936, recall 0.908 (text classification); 30 FPS, 9-point calibration, EAR 0.28, latency 18 ms, drift 0.7°, 142 blinks (eye mouse). If any are real results, tell me where they come from and I'll put them back with a source.
+6. **Unsourced project numbers, removed from display.** The old project visuals showed Sharpe 1.84, annual return 14.2%, volatility 7.7%, VaR 95 −2.4% (risk dashboard); MLflow run 47, accuracy 94.1%, F1 0.921, precision 0.936, recall 0.908 (text classification). If any are real results, tell me where they come from and I'll put them back with a source.
 
 ## Content that would make the case studies stronger
 
 7. **Problem and outcome for each project.** The detail sheets say what each project is and how it's built (from your résumé), but I didn't invent problems, users or results. One or two sentences each: who it's for, what changed.
-8. **Naming and stack differences.** The résumé calls it "Multi-Model Text Classification Pipeline"; the site says "Text Classification Pipeline". The risk dashboard stack lists Vite on the site and Python on the résumé. The Eye Tracking Mouse is on the site but not the résumé. Which should win?
+8. **Naming and stack differences.** The résumé calls it "Multi-Model Text Classification Pipeline"; the site says "Text Classification Pipeline". The risk dashboard stack lists Vite on the site and Python on the résumé. Which should win?
 9. **Text Classification Pipeline source.** No public repo is linked. Is there one?
 10. **Skill notes not on the résumé.** Stripe "webhooks", Twilio "voice" (the résumé says SMS), Supabase "auth", Google Cloud "Run", Cloudflare "Workers", PostgreSQL "RLS", SQL Server "T-SQL · SSMS", Oracle "PL/SQL", TensorFlow "BERT fine-tuning" (the résumé says BERT *embeddings*), scikit-learn "Ensembles" (the résumé says regression). All kept. Please confirm them. Also, the résumé lists skills the site doesn't: Java, C/C++, Kotlin, C#, SQL, MATLAB, HTML/CSS, Bash, Node, Express, Spring Boot, Django, .NET, MySQL, Selenium, Postman, Jira, Figma, D3.js, Chart.js, and more. Add any?
 
 ## Assets
 
 11. **CraftTraq screens.** The showcase uses the two screenshots in `public/` (job board and phone calendar). What would help most: the quote view, an invoice, and the job detail on a phone (PNG, at least 1600 px wide for desktop and 390 × 844 for phone), or a 10–20 second screen recording (MP4, no audio) of a quote turning into a scheduled job. Use the Apex Plumbing demo tenant, not real customer data.
-12. **Screenshots for the other three projects**, if you have them: the risk dashboard's frontier chart, an MLflow run page, the eye mouse in use.
+12. **Screenshots for the other two projects**, if you have them: the risk dashboard's frontier chart, an MLflow run page.
 13. **`public/crafttraq.png` is still publicly served** (nothing links to it) and shows test jobs named "HELLO", "HELLO 2", "TEST JOB". I didn't delete it (brief: keep your assets). Should it stop being served?
 
 ## Keys and settings
@@ -41,3 +41,5 @@ Listed in priority order. Everything below has a working placeholder or fallback
 16. **The cat's name**, if it has one. It's the drawing set's checker.
 17. **Phone number.** The résumé lists (647) 854-4416. I didn't put it on the site. Say if you want it there.
 18. **GitHub profile bio** still says "fourth-year software engineering student". You graduated 06/2026.
+
+15. **Genshillion project.** Added beside CraftTraq (Fig. 2) with live screenshots of genshillion.com. The stack and architecture come from the teyvat-dive README and package manifests; the Eye Tracking Mouse is removed. The résumé doesn't list Genshillion. Do you want it added there?

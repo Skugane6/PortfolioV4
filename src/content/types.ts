@@ -141,7 +141,7 @@ export interface CaseStudy {
   source: string;
 }
 
-export type DemoKind = 'risk' | 'text' | 'eye';
+export type DemoKind = 'risk' | 'text';
 
 export interface Project {
   id: string;

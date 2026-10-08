@@ -21,6 +21,10 @@ const jobs = [
   { src: 'public/crafttraq-board.png', name: 'crafttraq-board', widths: [480, 800, 1200, 1600], quality: 80 },
   // CraftTraq calendar in the phone frame: up to ~190 CSS px.
   { src: 'public/crafttraq-calendar.png', name: 'crafttraq-calendar', widths: [190, 375], quality: 82 },
+  // Genshillion start screen in the browser frame (same sizes as CraftTraq's board).
+  { src: 'public/genshillion-desktop.png', name: 'genshillion-desktop', widths: [480, 800, 1200, 1600], quality: 80 },
+  // Genshillion phone view in the phone frame.
+  { src: 'public/genshillion-phone.png', name: 'genshillion-phone', widths: [190, 375], quality: 82 },
 ];
 
 for (const job of jobs) {

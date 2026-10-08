@@ -20,8 +20,8 @@ describe('mentions', () => {
 });
 
 describe('deriveUsage', () => {
-  it('finds React in the component tracker and two projects', () => {
-    expect(places('React')).toEqual(['Component Tracker', 'CraftTraq', 'Portfolio Risk Dashboard']);
+  it('finds React in the component tracker and three projects', () => {
+    expect(places('React')).toEqual(['Component Tracker', 'CraftTraq', 'Genshillion', 'Portfolio Risk Dashboard']);
   });
 
   it('finds Oracle in the maintenance engine and the résumé’s ETL work', () => {

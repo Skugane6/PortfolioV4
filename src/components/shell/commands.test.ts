@@ -20,7 +20,7 @@ describe('command palette search', () => {
   });
 
   it('prefers label prefixes', () => {
-    expect(labels('open g')[0]).toBe('Open GitHub');
+    expect(labels('open git')[0]).toBe('Open GitHub');
   });
 
   it('returns nothing for nonsense', () => {
